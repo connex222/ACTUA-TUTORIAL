@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Shaun Ellison, Actua Business Services Limited">
+<title>QuickBooks Academy | Actua Business Services Limited</title>
+<!-- Actua tutorial series, tutorial 1: QuickBooks Academy. Built on house style master v3.0. By Shaun Ellison & Actua Business Services Limited, with AI. -->
+<style>
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --raised:#FAFBFD; --ink:#0F1226; --muted:#41465F; --line:#D6D9E6; --line-strong:#B9BED3;
+  --accent:#0E5F5A; --accent-ink:#FFFFFF; --accent-soft:#DDF0EE;
+  --cover:#0A2E2C; --cover-ink:#FFFFFF; --cover-muted:#C8E7E3; --cover-line:rgba(255,255,255,.16);
+  --rail:#ECEDF5; --mark:#FFC21A; --mark-ink:#231900;
+  --good:#0B5E32; --on-good:#FFFFFF; --good-soft:#E3F2E9; --bad:#A3203A; --on-bad:#FFFFFF; --bad-soft:#F8E6EA; --away:#D99400;
+  --bubble:#ECEDF3; --screen:#2A2E48;
+  --shadow:0 1px 2px rgba(15,18,38,.06),0 10px 30px -16px rgba(15,18,38,.22);
+  --r-l:16px; --r-m:12px; --r-s:8px;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+    --accent:#7FD9CF; --accent-ink:#0B0D19; --accent-soft:#173A3A;
+    --cover:#0B2624; --cover-ink:#FFFFFF; --cover-muted:#C8E7E3; --cover-line:rgba(255,255,255,.14);
+    --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+    --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+    --bubble:#23263D; --screen:#090A14;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+  --accent:#7FD9CF; --accent-ink:#0B0D19; --accent-soft:#173A3A;
+  --cover:#0B2624; --cover-ink:#FFFFFF; --cover-muted:#C8E7E3; --cover-line:rgba(255,255,255,.14);
+  --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+  --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+  --bubble:#23263D; --screen:#090A14;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.125rem;line-height:1.65;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:6px}
+svg{max-width:100%}
+.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
+.skip{position:absolute;left:-999px;top:0;background:var(--mark);color:var(--mark-ink);padding:.6rem 1rem;z-index:40;font-weight:700}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Top bar ===== */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1280px;margin:0 auto;padding:.55rem 1.1rem;display:flex;align-items:center;gap:.8rem;min-height:64px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);min-width:0}
+.mark-logo{width:38px;height:38px;flex:none}
+.brand-t{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-t b{font-size:.98rem;letter-spacing:-.01em;white-space:nowrap}
+.brand-t span{font-size:.78rem;color:var(--muted);white-space:nowrap}
+.bar-spacer{flex:1}
+.ring{display:flex;align-items:center;gap:.55rem;font-size:.88rem;color:var(--muted);white-space:nowrap}
+.ring svg{width:38px;height:38px;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--accent-soft);stroke-width:4}
+.ring .val{fill:none;stroke:var(--good);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .5s}
+.ring b{color:var(--ink)}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font:inherit;font-size:.9rem;font-weight:600;min-height:44px;min-width:44px;padding:0 .8rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ibtn:hover{border-color:var(--accent);color:var(--accent)}
+.only-narrow{display:none}
+@media (max-width:1099px){.only-narrow{display:inline-flex}}
+@media (max-width:720px){.brand-t span,.ring-label,.ibtn .lbl{display:none}.ibtn{padding:0 .6rem}}
+@media (max-width:420px){.brand-t{display:none}}
+
+/* ===== Cover ===== */
+.cover{background:var(--cover);color:var(--cover-ink);position:relative;overflow:hidden;border-bottom:4px solid var(--accent)}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--cover-line) 1px,transparent 1px),linear-gradient(90deg,var(--cover-line) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(115deg,transparent 35%,#000 100%);-webkit-mask-image:linear-gradient(115deg,transparent 35%,#000 100%);opacity:.55}
+.cover-in{position:relative;max-width:1280px;margin:0 auto;padding:3.4rem 1.1rem 3rem;display:grid;gap:2rem}
+@media (min-width:1000px){.cover-in{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end;padding:4.2rem 1.1rem 3.6rem}}
+.series{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--cover-muted);margin:0 0 1.1rem}
+.series .pip{width:8px;height:8px;border-radius:50%;background:var(--mark)}
+.cover h1{font-size:clamp(2.5rem,6.6vw,4.6rem);line-height:1;letter-spacing:-.035em;margin:0 0 1.1rem;font-weight:800;max-width:12ch}
+.cover .lead{font-size:1.25rem;line-height:1.55;color:var(--cover-muted);max-width:52ch;margin:0 0 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font:inherit;font-weight:700;font-size:1.02rem;min-height:52px;padding:0 1.35rem;border-radius:12px;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-light{background:#FFFFFF;color:#0A2E2C}
+.btn-light:hover{background:var(--mark);color:var(--mark-ink)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#FFFFFF;background:transparent}
+.btn-ghost:hover{border-color:#FFFFFF;background:rgba(255,255,255,.08)}
+.meta{list-style:none;margin:0;padding:1.3rem 1.4rem;border:1px solid var(--cover-line);border-radius:var(--r-l);background:rgba(255,255,255,.05);display:grid;gap:.95rem}
+.meta li{display:flex;gap:.8rem;align-items:flex-start}
+.meta .i{width:1.35rem;height:1.35rem;color:var(--mark);margin-top:.15rem}
+.meta b{display:block;font-size:1.02rem}
+.meta span{font-size:.92rem;color:var(--cover-muted)}
+.credit{margin:1.8rem 0 0;font-size:.92rem;color:var(--cover-muted);display:flex;align-items:center;gap:.6rem}
+.credit svg{width:26px;height:26px}
+
+/* ===== Layout ===== */
+.shell{max-width:1280px;margin:0 auto;padding:2rem 1.1rem 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2.4rem}
+@media (min-width:1100px){.shell{grid-template-columns:272px minmax(0,1fr)}}
+.outline{display:none}
+@media (min-width:1100px){.outline{display:block;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 116px);overflow:auto;padding-right:.2rem}}
+.outline h2{font-size:.82rem;font-weight:700;color:var(--muted);margin:.2rem 0 .7rem .7rem;letter-spacing:.02em}
+.outline ol{list-style:none;margin:0 0 1.2rem;padding:0}
+.outline a{display:grid;grid-template-columns:22px 1fr auto;gap:.65rem;align-items:center;padding:.5rem .7rem;border-radius:10px;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.3}
+.outline a:hover{background:var(--surface)}
+.outline a[aria-current="true"]{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);font-weight:700}
+.outline .st{width:22px;height:22px;border-radius:50%;border:2px solid var(--line-strong);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--muted)}
+.outline li.done .st{background:var(--good);border-color:var(--good);color:var(--on-good)}
+.outline .mins{font-size:.8rem;color:var(--muted)}
+.drawer-head{display:none}
+@media (max-width:1099px){
+  .outline.open{display:block;position:fixed;z-index:35;inset:0 auto 0 0;width:min(340px,88vw);background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem calc(env(safe-area-inset-bottom,0px) + 1rem);overflow:auto;box-shadow:20px 0 60px rgba(0,0,0,.35)}
+  .outline.open .drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+  .scrim{position:fixed;inset:0;background:rgba(6,8,20,.55);z-index:34}
+}
+.content{min-width:0}
+
+/* ===== Section frame ===== */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow);margin:0 0 1.6rem;overflow:hidden}
+.panel-body{padding:1.6rem clamp(1.1rem,3.2vw,2.4rem) 1.9rem}
+.sec-kicker{display:inline-flex;align-items:center;gap:.45rem;font-size:.9rem;font-weight:700;color:var(--accent);margin:0 0 .35rem}
+.panel h2{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.025em;margin:0 0 .6rem;font-weight:800}
+.panel h3{font-size:1.2rem;letter-spacing:-.01em;margin:1.8rem 0 .5rem}
+.panel p,.panel li{max-width:70ch}
+.panel p{margin:.55rem 0}
+
+/* Explorer */
+.explore-grid{display:grid;gap:1rem;margin-top:1.2rem}
+.mock-wrap{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:.6rem;overflow-x:auto}
+.mock{display:block;width:100%;min-width:640px;height:auto}
+.info{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;background:var(--raised);border:1px solid var(--line);border-left:5px solid var(--mark);border-radius:var(--r-m);padding:1rem 1.2rem;min-height:110px}
+.info .badge{width:42px;height:42px;border-radius:12px;background:var(--mark);color:var(--mark-ink);display:grid;place-items:center}
+.info h3{margin:0 0 .25rem;font-size:1.15rem}
+.info p{margin:0 0 .4rem}
+.info .hint{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font:inherit;font-size:.92rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:44px}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+
+/* SVG classes */
+.f-surface{fill:var(--surface)} .f-rail{fill:var(--rail)} .f-soft{fill:var(--accent-soft)}
+.f-brand{fill:var(--accent)} .f-bubble{fill:var(--bubble)} .f-screen{fill:var(--screen)}
+.f-good{fill:var(--good)} .f-bad{fill:var(--bad)} .f-away{fill:var(--away)} .f-mark{fill:var(--mark)}
+.s-line{stroke:var(--line-strong);stroke-width:1.5} .s-brand{stroke:var(--accent);stroke-width:2}
+.t,.tm,.tb,.tw,.tk,.tob{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+.t{fill:var(--ink)} .tm{fill:var(--muted)} .tb{fill:var(--accent-ink)} .tw{fill:#FFFFFF} .tk{fill:var(--mark-ink)} .tob{fill:var(--on-bad)}
+.ic{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.icw{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.hl{fill:none;stroke:var(--mark);stroke-width:4}
+.hs{fill:transparent;stroke:transparent;stroke-width:4;cursor:pointer;transition:stroke .15s,fill .15s}
+.hs:hover{stroke:var(--mark)}
+.hs:focus{outline:none}
+.hs:focus-visible,.hs.sel{stroke:var(--mark);fill:rgba(255,194,26,.16)}
+@keyframes nudge{0%,100%{stroke:transparent}50%{stroke:var(--mark)}}
+.mock.fresh .hs{animation:nudge 2.4s ease-in-out 2}
+
+/* Lesson header */
+.lesson-head{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start;padding:1.5rem clamp(1.1rem,3.2vw,2.4rem);border-bottom:1px solid var(--line);background:var(--raised)}
+.num{width:56px;height:56px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+.panel.done .num{background:var(--good);color:var(--on-good)}
+.lesson-head h2{margin:.1rem 0 .3rem}
+.lmeta{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;font-size:.92rem;color:var(--muted);margin:0}
+.lmeta span{display:inline-flex;align-items:center;gap:.35rem}
+.learn{margin:0 0 1.3rem;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--accent-soft)}
+.learn b{display:block;font-size:.95rem;margin-bottom:.3rem}
+.learn ul{margin:0;padding:0;list-style:none;display:grid;gap:.25rem}
+.learn li{display:flex;gap:.55rem;align-items:flex-start;font-size:1.02rem}
+.learn li .i{color:var(--accent);margin-top:.28rem}
+
+/* Content components */
+.steps{counter-reset:s;list-style:none;padding:0;margin:1rem 0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 1rem 3.2rem;min-height:2.4rem}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:-.05rem;width:2.15rem;height:2.15rem;border-radius:10px;background:var(--surface);border:2px solid var(--accent);color:var(--accent);font-weight:800;display:grid;place-items:center;font-size:.98rem}
+.steps>li:not(:last-child)::after{content:"";position:absolute;left:1.04rem;top:2.25rem;bottom:.15rem;width:2px;background:var(--line)}
+.btnlike{display:inline-block;padding:0 .45rem;border-radius:6px;background:var(--accent-soft);font-weight:700;white-space:nowrap}
+kbd{font-family:inherit;font-size:.88em;font-weight:700;padding:.05rem .45rem;border:1px solid var(--line-strong);border-bottom-width:3px;border-radius:6px;background:var(--raised);white-space:nowrap}
+.callout{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;padding:1rem 1.15rem;border-radius:var(--r-m);margin:1.3rem 0;background:var(--raised);border:1px solid var(--line)}
+.callout .ci{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.callout.warn{background:var(--bad-soft);border-color:transparent}
+.callout.warn .ci{background:var(--bad);color:var(--on-bad)}
+.callout>div>b:first-child{display:block;margin-bottom:.1rem}
+.callout p{margin:0}
+.figure{margin:1.4rem 0;background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:1.1rem;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:480px}
+.figcap{font-size:.9rem;color:var(--muted);margin:.7rem 0 0}
+.legend{margin:.8rem 0 0;padding-left:1.4rem;font-size:1rem}
+.legend li{margin:.2rem 0}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem;margin:1rem 0}
+.feature{padding:1rem 1.1rem;border-radius:var(--r-m);border:1px solid var(--line);background:var(--raised)}
+.feature .fi{width:40px;height:40px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin-bottom:.6rem}
+.feature b{display:block;font-size:1.05rem;margin-bottom:.15rem}
+.feature p{margin:0;font-size:1rem;color:var(--muted)}
+.lesson-foot{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.1rem,3.2vw,2.4rem);border-top:1px solid var(--line);background:var(--raised)}
+.done-btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;min-height:48px;padding:0 1.15rem;border-radius:12px;border:2px solid var(--good);background:var(--surface);color:var(--good);cursor:pointer}
+.panel.done .done-btn{background:var(--good);color:var(--on-good)}
+.next-btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;min-height:48px;padding:0 1.15rem;border-radius:12px;background:var(--accent);color:var(--accent-ink)}
+.next-btn:hover{filter:brightness(1.08)}
+
+/* Tables, fixes, glossary */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-m);margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{background:var(--raised);font-size:.92rem}
+details{border:1px solid var(--line);border-radius:var(--r-m);margin:.55rem 0;background:var(--raised);overflow:hidden}
+summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;min-height:52px;display:flex;align-items:center;gap:.7rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-left:auto;width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details[open] summary{border-bottom:1px solid var(--line)}
+details>div{padding:.6rem 1.1rem 1rem;background:var(--surface)}
+dl.gloss{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+dl.gloss dt,dl.gloss dd{padding:.65rem .9rem;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;background:var(--raised)}
+dl.gloss dt:last-of-type,dl.gloss dd:last-of-type{border-bottom:0}
+@media (max-width:560px){dl.gloss{grid-template-columns:1fr}dl.gloss dd{border-bottom:1px solid var(--line)}}
+
+/* Quiz */
+.q{border-top:1px solid var(--line);padding:1.2rem 0}
+.q:first-of-type{border-top:0;padding-top:.4rem}
+.qt{font-weight:700;margin:0 0 .7rem!important;font-size:1.08rem}
+.opts{display:grid;gap:.5rem}
+.opt{display:flex;align-items:center;gap:.7rem;font:inherit;text-align:left;padding:.7rem 1rem;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:52px}
+.opt::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong)}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--good);color:var(--on-good);font-weight:700}
+.opt.right::before{border-color:var(--on-good);background:var(--on-good)}
+.opt.wrong{border-color:var(--bad);border-width:2px}
+.why{margin:.7rem 0 0!important;padding:.7rem 1rem;border-radius:10px;background:var(--good-soft)}
+.why.miss{background:var(--bad-soft)}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;font-weight:700;font-size:1.1rem;margin-top:1rem}
+.ghost-btn{font:inherit;font-weight:700;font-size:.95rem;min-height:44px;padding:0 1rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ghost-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Certificate */
+.cert-lock{display:flex;gap:.9rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--raised);border:1px dashed var(--line-strong)}
+.cert-form{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-end;margin:1rem 0}
+.cert-form label{display:grid;gap:.3rem;font-weight:700;font-size:.95rem;flex:1 1 260px}
+.cert-form input{font:inherit;font-weight:400;min-height:50px;padding:0 .9rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+.cert{margin-top:1.2rem;background:#FFFFFF;color:#141943;border-radius:6px;padding:10px;box-shadow:var(--shadow)}
+.cert-in{border:2px solid #141943;outline:1px solid #141943;outline-offset:-8px;padding:2.6rem 2rem;text-align:center;font-family:Georgia,"Times New Roman",serif}
+.cert-in .ct{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:.85rem;color:#3B43A8;margin:0 0 .6rem}
+.cert-in h3{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 1.2rem;font-weight:400;letter-spacing:.01em}
+.cert-in .nm{font-size:clamp(1.7rem,4.6vw,2.6rem);font-style:italic;margin:.4rem 0 .4rem;border-bottom:1px solid #9EA2C4;display:inline-block;padding:0 1.5rem .3rem}
+.cert-in p{margin:.4rem auto;max-width:44ch;font-size:1.05rem;color:#2A2F55}
+.cert-in .cc{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:1.2rem;color:#141943}
+.cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-top:2rem;font-family:"Segoe UI",system-ui,sans-serif;font-size:.85rem;color:#2A2F55;text-align:left}
+.cert-foot svg{width:48px;height:48px}
+
+/* Sources, footer, dialog */
+.src{list-style:none;padding:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+.src li{padding:.8rem 1rem;border-bottom:1px solid var(--line);font-size:1rem}
+.src li:last-child{border-bottom:0}
+.src b{display:block}
+.src span{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;background:var(--good-soft);color:var(--ink);padding:.3rem .8rem;border-radius:999px;font-size:.92rem}
+footer{background:var(--cover);color:var(--cover-muted)}
+.foot-in{max-width:1280px;margin:0 auto;padding:2.2rem 1.1rem 2.6rem;display:grid;gap:1.4rem}
+@media (min-width:800px){.foot-in{grid-template-columns:auto 1fr;align-items:start}}
+.foot-brand{display:flex;gap:.8rem;align-items:center;color:var(--cover-ink)}
+.foot-brand svg{width:44px;height:44px}
+.foot-brand b{display:block;font-size:1.05rem}
+.foot-txt{font-size:.92rem;display:grid;gap:.45rem}
+.foot-txt p{margin:0}
+.foot-txt strong{color:var(--cover-ink)}
+dialog{max-width:580px;width:calc(100% - 2rem);border:1px solid var(--line);border-radius:var(--r-l);padding:0;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(6,8,20,.62)}
+.dlg-head{display:flex;gap:.9rem;align-items:center;padding:1.3rem 1.5rem;background:var(--cover);color:var(--cover-ink)}
+.dlg-head svg{width:44px;height:44px}
+.dlg-head h2{margin:0;font-size:1.3rem}
+.dlg-body{padding:1.1rem 1.5rem 1.5rem}
+.dlg-body p{margin:.55rem 0;font-size:1.02rem}
+
+/* Print */
+@media print{
+  .bar,.outline,.cta,.lesson-foot,#explore,#quiz,.skip,.cert-form,.cert-actions,.scrim{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .cover{background:#fff;color:#000;border:0}.cover::before{display:none}.cover .lead,.meta span,.credit{color:#333}
+  .panel{box-shadow:none;border:1px solid #999;break-inside:avoid-page}
+  details>div{display:block}
+  html.print-cert body *{visibility:hidden}
+  html.print-cert #certCard,html.print-cert #certCard *{visibility:visible}
+  html.print-cert #certCard{position:absolute;left:0;top:0;width:100%;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="var(--accent)"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="var(--mark)"/></symbol>
+    <symbol id="logo-cert" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#141943"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="#FFC21A"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></symbol>
+    <symbol id="i-level" viewBox="0 0 24 24"><path d="M4 20V14M10 20V9M16 20V4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M5 3l6 17 2.5-7.5L21 10z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11M11 10.5V4a1.5 1.5 0 0 1 3 0v6.5M14 10.5V5.5a1.5 1.5 0 0 1 3 0V13M17 11a1.5 1.5 0 0 1 3 0v3a7 7 0 0 1-7 7h-1a7 7 0 0 1-6.2-3.8L3.5 14a1.5 1.5 0 0 1 2.6-1.5L8 15"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a5 5 0 0 0 8 0M9 9.5v.5M15 9.5v.5"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17v.5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h1M10 10h1M14 10h1M18 10h0M7 14h10"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.5M4 12h.5M4 18h.5"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#lesson-1">Skip to the first lesson</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <button class="ibtn only-narrow" id="menuBtn" type="button" aria-controls="outline" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg><span class="lbl">Contents</span></button>
+    <a class="brand" href="#top"><svg class="mark-logo" aria-hidden="true"><use href="#logo"/></svg><span class="brand-t"><b>Actua Business Services Limited</b><span>Tutorial series</span></span></a>
+    <span class="bar-spacer"></span><a class="ibtn" href="../index.html" title="Back to the course library"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Library</span></a>
+    <div class="ring" aria-live="polite">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle class="trk" cx="20" cy="20" r="16"/><circle class="val" id="ringVal" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="100.53"/></svg>
+      <span class="ring-label" id="ringText"><b>0</b> of 13 lessons</span>
+    </div>
+    <button class="ibtn" id="themeBtn" type="button" aria-label="Switch to dark mode"><svg class="i"><use id="themeIcon" href="#i-moon"/></svg></button>
+    <button class="ibtn" id="aboutBtn" type="button" aria-haspopup="dialog"><svg class="i"><use href="#i-info"/></svg><span class="lbl">About</span></button>
+  </div>
+</header>
+
+<section class="cover" id="top" aria-labelledby="title">
+  <div class="cover-in">
+    <div>
+      <p class="series"><span class="pip" aria-hidden="true"></span>Bookkeeping software</p>
+      <h1 id="title">QuickBooks Academy</h1>
+      <p class="lead">Learn QuickBooks Online from the very first login: your bank feed, invoices, bills, VAT under Making Tax Digital, reconciling and reports. Written for UK businesses, in plain English.</p>
+      <div class="cta">
+        <a class="btn btn-light" href="#lesson-1">Start lesson 1 <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#explore"><svg class="i"><use href="#i-pointer"/></svg>Explore the dashboard</a>
+      </div>
+      <p class="credit"><svg aria-hidden="true"><use href="#logo"/></svg>By Shaun Ellison &amp; Actua Business Services Limited, with AI</p>
+    </div>
+    <ul class="meta" aria-label="Course details">
+      <li><svg class="i"><use href="#i-book"/></svg><div><b>13 short lessons</b><span>Plus a quiz, fixes and a glossary</span></div></li>
+      <li><svg class="i"><use href="#i-clock"/></svg><div><b>About 1 hour</b><span>Stop and start whenever you like</span></div></li>
+      <li><svg class="i"><use href="#i-level"/></svg><div><b>Beginner</b><span>For business owners and new staff</span></div></li>
+      <li><svg class="i"><use href="#i-shield"/></svg><div><b id="coverChecked">Facts checked 6 November 2026</b><span>Against Intuit’s UK help pages</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<div class="shell">
+  <nav class="outline" id="outline" aria-label="Course contents">
+    <div class="drawer-head"><b>Course contents</b><button class="ibtn" id="menuClose" type="button" aria-label="Close contents"><svg class="i"><use href="#i-x"/></svg></button></div>
+    <h2>Lessons</h2>
+    <ol id="outlineLessons"></ol>
+    <h2>Practice and help</h2>
+    <ol>
+      <li><a href="#explore"><span class="st" aria-hidden="true">◎</span><span>Explore the dashboard</span><span></span></a></li>
+      <li><a href="#quiz"><span class="st" aria-hidden="true">?</span><span>Check yourself</span><span></span></a></li>
+      <li><a href="#certificate"><span class="st" aria-hidden="true">★</span><span>Certificate</span><span></span></a></li>
+      <li><a href="#fixes"><span class="st" aria-hidden="true">!</span><span>Something’s gone wrong</span><span></span></a></li>
+      <li><a href="#glossary"><span class="st" aria-hidden="true">A</span><span>Glossary</span><span></span></a></li>
+      <li><a href="#sources"><span class="st" aria-hidden="true">§</span><span>Sources</span><span></span></a></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+
+<section class="panel" id="explore" aria-labelledby="hex">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-pointer"/></svg>Interactive</p>
+    <h2 id="hex">Explore the QuickBooks dashboard</h2>
+    <p>This is a pretend QuickBooks Online home screen for an imaginary company. Select any part of it, or use the buttons underneath, to see what it does. The figures are made up.</p>
+    <div class="explore-grid">
+      <div class="mock-wrap">
+<svg class="mock fresh" id="mock" viewBox="0 0 960 560" role="group" aria-label="A pretend QuickBooks Online home screen with selectable parts">
+  <defs><clipPath id="win"><rect x="1" y="1" width="958" height="558" rx="14"/></clipPath></defs>
+  <g clip-path="url(#win)">
+    <rect x="0" y="0" width="960" height="560" class="f-surface"/>
+    <rect x="0" y="0" width="80" height="560" class="f-rail"/>
+    <line x1="80" y1="0" x2="80" y2="560" class="s-line"/>
+    <circle cx="40" cy="34" r="17" class="f-brand"/><path d="M40 26 v16 M32 34 h16" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round"/>
+    <text x="40" y="66" class="t" font-size="11" text-anchor="middle" font-weight="700">Create</text>
+    <rect x="8" y="80" width="64" height="58" rx="9" class="f-soft"/>
+    <g transform="translate(40 102)"><path d="M-10 0 L0 -9 L10 0 V10 H-10 Z" class="ic"/><path d="M-3 10 V3 H3 V10" class="ic"/></g>
+    <text x="40" y="128" class="t" font-size="11" text-anchor="middle" font-weight="700">Home</text>
+    <g transform="translate(40 166)"><path d="M-10 -7 H10 M-10 0 H6 M-10 7 H10" class="ic"/></g>
+    <text x="40" y="192" class="t" font-size="11" text-anchor="middle">Feed</text>
+    <g transform="translate(40 228)"><path d="M-9 9 V1 M-2 9 V-5 M5 9 V-1 M12 9 V-9" class="ic"/></g>
+    <text x="40" y="256" class="t" font-size="11" text-anchor="middle">Reports</text>
+    <g transform="translate(40 292)"><rect x="-10" y="-10" width="8" height="8" rx="2" class="ic"/><rect x="2" y="-10" width="8" height="8" rx="2" class="ic"/><rect x="-10" y="2" width="8" height="8" rx="2" class="ic"/><rect x="2" y="2" width="8" height="8" rx="2" class="ic"/></g>
+    <text x="40" y="320" class="t" font-size="11" text-anchor="middle">All apps</text>
+    <line x1="16" y1="340" x2="64" y2="340" class="s-line"/>
+    <g transform="translate(40 370)"><path d="M-11 -2 L0 -10 L11 -2 Z M-8 0 V8 M-3 0 V8 M3 0 V8 M8 0 V8 M-11 10 H11" class="ic"/></g>
+    <text x="40" y="398" class="t" font-size="11" text-anchor="middle">Bank</text>
+    <g transform="translate(40 510)"><path d="M-8 8 l2 -7 l10 -10 l5 5 l-10 10z" class="ic"/></g>
+    <text x="40" y="538" class="t" font-size="11" text-anchor="middle">Customise</text>
+
+    <text x="102" y="36" class="t" font-size="17" font-weight="700">Bright Bakes Ltd</text>
+    <rect x="380" y="16" width="330" height="32" rx="16" class="f-surface s-line"/>
+    <circle cx="401" cy="31" r="6" class="ic"/><line x1="405" y1="35" x2="410" y2="40" class="ic"/>
+    <text x="418" y="37" class="tm" font-size="14">Search or ask a question</text>
+    <g transform="translate(862 32)"><circle r="9" fill="none" stroke="var(--ink)" stroke-width="4" stroke-dasharray="3.5 3.57"/><circle r="6.5" class="ic"/><circle r="2.5" class="ic"/></g>
+    <circle cx="900" cy="32" r="12" class="ic"/><text x="900" y="37" class="t" font-size="14" font-weight="700" text-anchor="middle">?</text>
+    <circle cx="936" cy="32" r="14" class="f-brand"/><text x="936" y="37" class="tb" font-size="11" font-weight="700" text-anchor="middle">BB</text>
+    <line x1="80" y1="64" x2="960" y2="64" class="s-line"/>
+    <text x="102" y="98" class="t" font-size="22" font-weight="700">Home</text>
+
+    <rect x="100" y="114" width="408" height="200" rx="12" class="f-surface s-line"/>
+    <text x="120" y="142" class="t" font-size="15" font-weight="700">Bank accounts</text>
+    <text x="120" y="174" class="t" font-size="13" font-weight="700">Business current account</text>
+    <text x="120" y="194" class="tm" font-size="12">Bank balance</text><text x="300" y="194" class="t" font-size="12" text-anchor="end">£12,480.20</text>
+    <text x="120" y="212" class="tm" font-size="12">In QuickBooks</text><text x="300" y="212" class="t" font-size="12" text-anchor="end">£11,905.70</text>
+    <rect x="364" y="178" width="124" height="30" rx="15" class="f-brand"/><text x="426" y="198" class="tb" font-size="12" font-weight="700" text-anchor="middle">23 to review</text>
+    <line x1="120" y1="230" x2="488" y2="230" class="s-line"/>
+    <text x="120" y="256" class="t" font-size="13" font-weight="700">Business credit card</text>
+    <text x="120" y="276" class="tm" font-size="12">Bank balance</text><text x="300" y="276" class="t" font-size="12" text-anchor="end">−£640.15</text>
+    <text x="120" y="294" class="tm" font-size="12">In QuickBooks</text><text x="300" y="294" class="t" font-size="12" text-anchor="end">−£588.40</text>
+    <rect x="364" y="260" width="124" height="30" rx="15" class="f-brand"/><text x="426" y="280" class="tb" font-size="12" font-weight="700" text-anchor="middle">4 to review</text>
+
+    <rect x="528" y="114" width="408" height="200" rx="12" class="f-surface s-line"/>
+    <text x="548" y="142" class="t" font-size="15" font-weight="700">Invoices</text>
+    <text x="548" y="176" class="t" font-size="20" font-weight="700">£4,200.00 unpaid</text>
+    <rect x="548" y="190" width="368" height="14" rx="7" class="f-soft"/>
+    <rect x="548" y="190" width="101" height="14" rx="7" class="f-bad"/>
+    <text x="548" y="226" class="tm" font-size="12">£1,150.00 overdue</text><text x="916" y="226" class="tm" font-size="12" text-anchor="end">£3,050.00 not due yet</text>
+    <text x="548" y="266" class="t" font-size="16" font-weight="700">£6,830.00 paid</text><text x="916" y="266" class="tm" font-size="12" text-anchor="end">last 30 days</text>
+    <rect x="548" y="278" width="368" height="14" rx="7" class="f-good"/>
+
+    <rect x="100" y="332" width="408" height="210" rx="12" class="f-surface s-line"/>
+    <text x="120" y="360" class="t" font-size="15" font-weight="700">Profit and loss</text><text x="488" y="360" class="tm" font-size="12" text-anchor="end">This month</text>
+    <text x="120" y="394" class="t" font-size="20" font-weight="700">£3,410.00</text><text x="120" y="412" class="tm" font-size="12">Net profit</text>
+    <text x="120" y="446" class="tm" font-size="12">Income</text><text x="488" y="446" class="t" font-size="12" text-anchor="end">£9,820.00</text>
+    <rect x="120" y="454" width="368" height="14" rx="7" class="f-good"/>
+    <text x="120" y="494" class="tm" font-size="12">Expenses</text><text x="488" y="494" class="t" font-size="12" text-anchor="end">£6,410.00</text>
+    <rect x="120" y="502" width="240" height="14" rx="7" class="f-brand"/>
+
+    <rect x="528" y="332" width="408" height="210" rx="12" class="f-surface s-line"/>
+    <text x="548" y="360" class="t" font-size="15" font-weight="700">Expenses</text><text x="916" y="360" class="tm" font-size="12" text-anchor="end">This month</text>
+    <text x="548" y="396" class="t" font-size="13">Wages</text><rect x="660" y="385" width="170" height="14" rx="7" class="f-brand"/><text x="916" y="396" class="t" font-size="12" text-anchor="end">£2,950</text>
+    <text x="548" y="432" class="t" font-size="13">Rent</text><rect x="660" y="421" width="104" height="14" rx="7" class="f-brand"/><text x="916" y="432" class="t" font-size="12" text-anchor="end">£1,800</text>
+    <text x="548" y="468" class="t" font-size="13">Ingredients</text><rect x="660" y="457" width="65" height="14" rx="7" class="f-brand"/><text x="916" y="468" class="t" font-size="12" text-anchor="end">£1,120</text>
+    <text x="548" y="504" class="t" font-size="13">Other</text><rect x="660" y="493" width="31" height="14" rx="7" class="f-brand"/><text x="916" y="504" class="t" font-size="12" text-anchor="end">£540</text>
+  </g>
+  <rect x="1" y="1" width="958" height="558" rx="14" fill="none" class="s-line"/>
+  <rect class="hs" data-hs="create"   x="6"   y="10"  width="68" height="64" rx="10" tabindex="0" role="button" aria-label="Create button"/>
+  <rect class="hs" data-hs="home"     x="6"   y="78"  width="68" height="62" rx="10" tabindex="0" role="button" aria-label="Home"/>
+  <rect class="hs" data-hs="feed"     x="6"   y="144" width="68" height="58" rx="10" tabindex="0" role="button" aria-label="Feed"/>
+  <rect class="hs" data-hs="reports"  x="6"   y="206" width="68" height="60" rx="10" tabindex="0" role="button" aria-label="Reports"/>
+  <rect class="hs" data-hs="allapps"  x="6"   y="270" width="68" height="60" rx="10" tabindex="0" role="button" aria-label="All apps"/>
+  <rect class="hs" data-hs="bankbm"   x="6"   y="348" width="68" height="60" rx="10" tabindex="0" role="button" aria-label="Bank transactions bookmark"/>
+  <rect class="hs" data-hs="custom"   x="6"   y="490" width="68" height="60" rx="10" tabindex="0" role="button" aria-label="Customise menu"/>
+  <rect class="hs" data-hs="search"   x="374" y="10"  width="342" height="44" rx="22" tabindex="0" role="button" aria-label="Search bar"/>
+  <rect class="hs" data-hs="gear"     x="844" y="14"  width="38" height="38" rx="10" tabindex="0" role="button" aria-label="Settings gear"/>
+  <rect class="hs" data-hs="help"     x="884" y="14"  width="34" height="38" rx="10" tabindex="0" role="button" aria-label="Help"/>
+  <rect class="hs" data-hs="bankw"    x="96"  y="110" width="416" height="208" rx="14" tabindex="0" role="button" aria-label="Bank accounts panel"/>
+  <rect class="hs" data-hs="invw"     x="524" y="110" width="416" height="208" rx="14" tabindex="0" role="button" aria-label="Invoices panel"/>
+  <rect class="hs" data-hs="plw"      x="96"  y="328" width="416" height="218" rx="14" tabindex="0" role="button" aria-label="Profit and loss panel"/>
+  <rect class="hs" data-hs="expw"     x="524" y="328" width="416" height="218" rx="14" tabindex="0" role="button" aria-label="Expenses panel"/>
+</svg>
+      </div>
+      <div class="info" aria-live="polite">
+        <span class="badge" aria-hidden="true"><svg class="i"><use href="#i-pointer"/></svg></span>
+        <div>
+          <h3 id="infoTitle">Pick a part of the screen</h3>
+          <p id="infoBody" class="hint">Select anything on the pretend dashboard, or one of the buttons below. The explanation appears here.</p>
+          <a id="infoLink" href="#lesson-1" hidden>Go to the lesson</a>
+        </div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Parts of the screen"></div>
+    </div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Does your screen look different?</b><p>Intuit has been moving QuickBooks Online to a new layout with a slim icon menu on the left. If you see a long list of words instead (Banking, Sales, Expenses and so on), you have the older layout. The same pages exist in both; only the route to them differs. This course gives both routes where they differ.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ LESSONS ============ -->
+<section class="panel" id="lesson-1" data-lesson="1" aria-labelledby="h1l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">1</span><div><p class="sec-kicker" style="margin:0">Lesson 1 of 13</p><h2 id="h1l">What QuickBooks Online is</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>3 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What QuickBooks does for a business</li><li><svg class="i"><use href="#i-check"/></svg>The words you’ll meet in every lesson</li></ul></div>
+    <p>QuickBooks Online is accounting software that runs in your web browser and on your phone. It keeps a record of every pound that comes into and goes out of a business, so you always know where you stand.</p>
+    <div class="feature-grid">
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-file"/></svg></span><b>Get paid</b><p>Send invoices and see who owes you money.</p></div>
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-list"/></svg></span><b>Track spending</b><p>Record bills, expenses and receipts.</p></div>
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-shield"/></svg></span><b>Stay compliant</b><p>Keep digital records and send VAT returns to HMRC under Making Tax Digital.</p></div>
+    </div>
+    <h3>Words you’ll meet</h3>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Word</th><th scope="col">What it means</th></tr></thead>
+      <tbody>
+        <tr><td><b>Customer</b></td><td>Someone who buys from the business.</td></tr>
+        <tr><td><b>Supplier</b></td><td>Someone the business buys from.</td></tr>
+        <tr><td><b>Category</b></td><td>A label for money in or out, such as “Rent” or “Sales”. Accountants call these accounts.</td></tr>
+        <tr><td><b>Invoice</b></td><td>A request for payment you send to a customer.</td></tr>
+        <tr><td><b>Bill</b></td><td>A request for payment you receive from a supplier.</td></tr>
+        <tr><td><b>Bank feed</b></td><td>The automatic link that brings your bank transactions into QuickBooks.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Plans differ</b><p>QuickBooks Online comes in several plans, such as Simple Start, Essentials, Plus and Advanced. Some features in this course, like bills or recurring invoices, aren’t available on every plan. If you can’t find something, your plan may not include it.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-2">Next: finding your way around <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-2" data-lesson="2" aria-labelledby="h2l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">2</span><div><p class="sec-kicker" style="margin:0">Lesson 2 of 13</p><h2 id="h2l">Signing in and finding your way around</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Sign in safely</li><li><svg class="i"><use href="#i-check"/></svg>The four places everything lives</li></ul></div>
+    <h3 style="margin-top:.4rem">Signing in</h3>
+    <ol class="steps">
+      <li>Go to <b>quickbooks.intuit.com/uk</b> and select <span class="btnlike">Sign in</span>. Or open the QuickBooks app on your phone.</li>
+      <li>Enter the email address and password for your Intuit account.</li>
+      <li>Enter the security code Intuit sends you by text or email.</li>
+      <li>If you have access to more than one company, pick the right one from the list.</li>
+    </ol>
+    <h3>The four places everything lives</h3>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Place</th><th scope="col">What it’s for</th></tr></thead>
+      <tbody>
+        <tr><td><b>+ Create</b> (older layout: <b>+ New</b>)</td><td>The one button for making anything new: an invoice, bill, expense, payment and so on.</td></tr>
+        <tr><td><b>Left menu</b></td><td>Your daily work. In the new layout: Home, Feed, Reports and <b>All apps</b>, which opens Accounting, Sales, Expenses, Taxes and the rest.</td></tr>
+        <tr><td><b>Search bar</b></td><td>Find a customer, supplier, amount or transaction. You can also type a page name, such as “Chart of accounts”, to jump there.</td></tr>
+        <tr><td><b>Gear ⚙</b></td><td>Company settings, users and other set-up options.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-pointer"/></svg></span><div><b>Pin what you use most</b><p>In the new layout, select <b>Customise</b> at the bottom of the left menu to pin pages such as Bank transactions, so they’re one click away.</p></div></div>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Never share your login</b><p>Each person should have their own user. The account owner can invite people from the Gear menu, under the users section, and choose what each person can see.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-3">Next: setting up your company <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-3" data-lesson="3" aria-labelledby="h3l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">3</span><div><p class="sec-kicker" style="margin:0">Lesson 3 of 13</p><h2 id="h3l">Setting up your company</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Check your company details</li><li><svg class="i"><use href="#i-check"/></svg>Know which settings to leave alone</li></ul></div>
+    <ol class="steps">
+      <li>Select the <b>Gear ⚙</b>, then <b>Account and settings</b>.</li>
+      <li>On the <b>Company</b> tab, check the company name, address, email and phone number. These appear on your invoices.</li>
+      <li>On the <b>Sales</b> tab, you can add your logo and set default payment terms, such as 30 days.</li>
+      <li>Select <b>Save</b>, then <b>Done</b>.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Leave these to your accountant</b><p>Don’t change the financial year, accounting method, closing date or VAT settings without speaking to your accountant first. Changing them can alter figures that have already been reported to HMRC.</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>If Actua looks after your books</b><p>We’ll usually have set this up for you. Check with us before changing any setting you’re unsure about.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-4">Next: the chart of accounts <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-4" data-lesson="4" aria-labelledby="h4l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">4</span><div><p class="sec-kicker" style="margin:0">Lesson 4 of 13</p><h2 id="h4l">The chart of accounts</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What the chart of accounts is</li><li><svg class="i"><use href="#i-check"/></svg>The five types of account</li></ul></div>
+    <p>The <b>chart of accounts</b> is the full list of categories QuickBooks uses to sort your money. Every transaction ends up in one of them. Your reports are built from this list.</p>
+    <p><b>To find it:</b> select <b>All apps</b>, then <b>Accounting</b>, then <b>Chart of accounts</b>. Or type “Chart of accounts” into the search bar.</p>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Type</th><th scope="col">What goes in it</th><th scope="col">Examples</th></tr></thead>
+      <tbody>
+        <tr><td><b>Income</b></td><td>Money the business earns</td><td>Sales, fees</td></tr>
+        <tr><td><b>Expenses</b></td><td>Day-to-day running costs</td><td>Rent, wages, phone</td></tr>
+        <tr><td><b>Assets</b></td><td>Things the business owns, or is owed</td><td>Bank account, equipment, money customers owe</td></tr>
+        <tr><td><b>Liabilities</b></td><td>Things the business owes</td><td>Loans, VAT owed, money owed to suppliers</td></tr>
+        <tr><td><b>Equity</b></td><td>The owners’ stake in the business</td><td>Share capital, retained profits</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Don’t delete, don’t duplicate</b><p>Ask your accountant before adding a new category. Never delete one that has been used; it can be made inactive instead. Too many similar categories (“Phone”, “Mobile”, “Phones”) make your reports hard to read.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-5">Next: connecting your bank <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-5" data-lesson="5" aria-labelledby="h5l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">5</span><div><p class="sec-kicker" style="margin:0">Lesson 5 of 13</p><h2 id="h5l">Connecting your bank</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Set up a bank feed</li><li><svg class="i"><use href="#i-check"/></svg>What to do if your bank can’t connect</li></ul></div>
+    <p>A bank feed brings your bank transactions into QuickBooks automatically, so you don’t have to type them in. QuickBooks doesn’t download transactions that are still pending at the bank.</p>
+    <ol class="steps">
+      <li>Go to <b>Transactions</b> (or <b>All apps</b>, then <b>Banking</b>) and select <b>Bank transactions</b>.</li>
+      <li>Select <span class="btnlike">Connect account</span> (it may say <span class="btnlike">Link account</span>).</li>
+      <li>Search for your bank and select it.</li>
+      <li>You’re sent to your bank’s own secure page. Sign in there and give permission. QuickBooks never sees your banking password.</li>
+      <li>Back in QuickBooks, choose which accounts to connect and how far back to bring in transactions.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Permission needs renewing</b><p>Your bank may ask you to renew your permission from time to time. If the feed stops bringing in new transactions, this is the most likely reason.</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-file"/></svg></span><div><b>Bank not listed?</b><p>You can upload transactions from a file downloaded from your online banking instead. The file must be no bigger than 350 KB, so upload a shorter date range if it’s too large.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-6">Next: reviewing transactions <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-6" data-lesson="6" aria-labelledby="h6l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">6</span><div><p class="sec-kicker" style="margin:0">Lesson 6 of 13</p><h2 id="h6l">Reviewing bank transactions</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The three tabs on the Bank transactions page</li><li><svg class="i"><use href="#i-check"/></svg>When to add, when to match, when to exclude</li></ul></div>
+    <p>This is the most important daily job in QuickBooks. New transactions wait in the <b>For review</b> tab until you tell QuickBooks what each one is.</p>
+    <div class="figure">
+<svg viewBox="0 0 680 300" role="img" aria-labelledby="d1t">
+  <title id="d1t">The Bank transactions page with For review, Categorised and Excluded tabs, and two transactions: one to add and one to match</title>
+  <rect x="10" y="10" width="660" height="280" rx="12" class="f-surface s-line"/>
+  <text x="30" y="44" class="t" font-size="17" font-weight="700">Bank transactions</text>
+  <text x="30" y="80" class="t" font-size="13" font-weight="700">For review (23)</text><rect x="30" y="86" width="104" height="3" class="f-brand"/>
+  <text x="160" y="80" class="tm" font-size="13">Categorised</text>
+  <text x="258" y="80" class="tm" font-size="13">Excluded</text>
+  <line x1="10" y1="92" x2="670" y2="92" class="s-line"/>
+  <text x="30" y="116" class="tm" font-size="11" font-weight="700">DATE</text><text x="110" y="116" class="tm" font-size="11" font-weight="700">DESCRIPTION</text><text x="330" y="116" class="tm" font-size="11" font-weight="700">CATEGORY OR MATCH</text><text x="540" y="116" class="tm" font-size="11" font-weight="700" text-anchor="end">AMOUNT</text><text x="610" y="116" class="tm" font-size="11" font-weight="700" text-anchor="middle">ACTION</text>
+  <line x1="10" y1="126" x2="670" y2="126" class="s-line"/>
+  <text x="30" y="160" class="t" font-size="13">03/11</text><text x="110" y="160" class="t" font-size="13">BT GROUP PLC</text>
+  <rect x="330" y="143" width="150" height="26" rx="6" class="f-surface s-line"/><text x="340" y="161" class="t" font-size="12">Telephone and internet</text>
+  <text x="540" y="160" class="t" font-size="13" text-anchor="end">−£48.00</text>
+  <rect x="578" y="143" width="64" height="28" rx="6" class="f-brand"/><text x="610" y="162" class="tb" font-size="13" font-weight="700" text-anchor="middle">Add</text>
+  <line x1="10" y1="186" x2="670" y2="186" class="s-line"/>
+  <rect x="11" y="187" width="658" height="56" class="f-soft"/>
+  <text x="30" y="220" class="t" font-size="13">04/11</text><text x="110" y="220" class="t" font-size="13">PARKER CAFE LTD</text>
+  <text x="330" y="214" class="t" font-size="12" font-weight="700">1 match found</text><text x="330" y="231" class="tm" font-size="11">Invoice 1042, Parker Cafe</text>
+  <text x="540" y="220" class="t" font-size="13" text-anchor="end">£360.00</text>
+  <rect x="578" y="203" width="64" height="28" rx="6" class="f-brand"/><text x="610" y="222" class="tb" font-size="13" font-weight="700" text-anchor="middle">Match</text>
+  <rect x="572" y="197" width="76" height="40" rx="9" class="hl"/>
+  <circle cx="148" cy="62" r="12" class="f-mark"/><text x="148" y="67" class="tk" font-size="13" font-weight="700" text-anchor="middle">1</text>
+  <circle cx="660" cy="157" r="12" class="f-mark"/><text x="660" y="162" class="tk" font-size="13" font-weight="700" text-anchor="middle">2</text>
+  <circle cx="660" cy="217" r="12" class="f-mark"/><text x="660" y="222" class="tk" font-size="13" font-weight="700" text-anchor="middle">3</text>
+  <text x="30" y="272" class="tm" font-size="12">Simplified drawing with example transactions.</text>
+</svg>
+      <ol class="legend">
+        <li><b>For review</b> holds new transactions. <b>Categorised</b> holds ones you’ve dealt with. <b>Excluded</b> holds ones you’ve removed.</li>
+        <li><b>Add</b>: QuickBooks has suggested a category. Check it, change it if wrong, then add it.</li>
+        <li><b>Match</b>: QuickBooks has found something you already entered, such as an invoice. Matching links the two, so nothing is counted twice.</li>
+      </ol>
+    </div>
+    <h3>How to deal with each transaction</h3>
+    <ol class="steps">
+      <li>Go to <b>Bank transactions</b> and pick the bank account at the top.</li>
+      <li>On the <b>For review</b> tab, look at the first transaction.</li>
+      <li>If it says <b>Match</b>, check the suggested record is right, then select <span class="btnlike">Match</span>. If it’s wrong, open the row and find the correct record.</li>
+      <li>If it says <b>Add</b> (or <b>Post</b>), check the category and the VAT, then select <span class="btnlike">Add</span>.</li>
+      <li>If one payment covers several things, open the row and use <b>Split</b> to divide it across categories.</li>
+    </ol>
+    <h3>When to exclude</h3>
+    <p>Exclude a transaction only if it’s a duplicate, or it shouldn’t be in the business’s books at all. Excluded transactions don’t appear in your accounts or reports. Tick it and select <span class="btnlike">Exclude</span>. If you do it by mistake, go to the <b>Excluded</b> tab and select <b>Undo</b>.</p>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>The most common mistake in QuickBooks</b><p>A customer pays an invoice. The money arrives in the bank feed. If you <b>Add</b> it as sales income instead of <b>Matching</b> it to the invoice, the sale is counted twice and the invoice still shows as unpaid. Always match payments to invoices and bills.</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Personal spending on a business account</b><p>Don’t exclude it. Ask your accountant which category to use, so it’s recorded correctly as money taken out by the owner.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-7">Next: bank rules <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-7" data-lesson="7" aria-labelledby="h7l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">7</span><div><p class="sec-kicker" style="margin:0">Lesson 7 of 13</p><h2 id="h7l">Bank rules</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What a bank rule does</li><li><svg class="i"><use href="#i-check"/></svg>Create a safe first rule</li></ul></div>
+    <p>A bank rule tells QuickBooks how to categorise a transaction it sees again and again. For example: “anything from BT goes to Telephone and internet”.</p>
+    <ol class="steps">
+      <li>On the <b>Bank transactions</b> page, open <b>Rules</b> (in the new layout it’s in the banking section of the left menu).</li>
+      <li>Select <span class="btnlike">New rule</span>.</li>
+      <li>Give the rule a clear name, such as “BT phone bill”, and choose whether it applies to money in or money out.</li>
+      <li>Set the condition, such as <b>Description contains</b> “BT GROUP”.</li>
+      <li>Choose the category, the supplier and the VAT rate to apply.</li>
+      <li>Save the rule.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Start with rules that suggest, not rules that post</b><p>Rules can be set to add transactions automatically, without you checking them. Until you’re confident, let rules only suggest a category so you still see every transaction before it’s added. A wrong automatic rule can put months of transactions in the wrong place.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-8">Next: customers and invoices <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-8" data-lesson="8" aria-labelledby="h8l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">8</span><div><p class="sec-kicker" style="margin:0">Lesson 8 of 13</p><h2 id="h8l">Customers and invoices</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Create and send an invoice</li><li><svg class="i"><use href="#i-check"/></svg>Invoice or sales receipt: which to use</li></ul></div>
+    <h3 style="margin-top:.4rem">Create an invoice</h3>
+    <ol class="steps">
+      <li>Select <span class="btnlike">+ Create</span> (or <span class="btnlike">+ New</span>), then <b>Invoice</b>.</li>
+      <li>Choose the <b>customer</b>. If they’re new, select <b>Add new</b> and enter their name and email address.</li>
+      <li>Check the <b>invoice date</b> and <b>due date</b>.</li>
+      <li>On each line, pick the <b>product or service</b>, then enter the quantity and rate.</li>
+      <li>If you’re VAT-registered, check the <b>VAT</b> on each line is right.</li>
+      <li>Select <span class="btnlike">Save and send</span> to email it, or <span class="btnlike">Save and close</span> to send it later.</li>
+    </ol>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Use</th><th scope="col">When</th></tr></thead>
+      <tbody>
+        <tr><td><b>Invoice</b></td><td>The customer will pay later.</td></tr>
+        <tr><td><b>Sales receipt</b></td><td>The customer pays at the time of the sale.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>An invoice counts as income straight away</b><p>QuickBooks Online records the income on your Profit and Loss report as soon as you create the invoice, not when the money arrives. That’s why the payment must be <b>matched</b>, not added again (lesson 9).</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-clock"/></svg></span><div><b>Repeat invoices</b><p>Recurring invoices can save time for regular customers, but they aren’t available on QuickBooks Online Simple Start.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-9">Next: recording payments <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-9" data-lesson="9" aria-labelledby="h9l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">9</span><div><p class="sec-kicker" style="margin:0">Lesson 9 of 13</p><h2 id="h9l">Recording customer payments</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Mark an invoice as paid</li><li><svg class="i"><use href="#i-check"/></svg>Avoid recording a payment twice</li></ul></div>
+    <p>There are two ways to record that a customer has paid. <b>Use one, never both.</b></p>
+    <h3>Way 1: from the bank feed (recommended)</h3>
+    <ol class="steps">
+      <li>When the payment appears in <b>Bank transactions</b>, open it.</li>
+      <li>If QuickBooks shows <b>1 match found</b> with the right invoice, select <span class="btnlike">Match</span>.</li>
+      <li>The invoice is marked as paid and the bank is updated in one go.</li>
+    </ol>
+    <h3>Way 2: by hand</h3>
+    <ol class="steps">
+      <li>Select <span class="btnlike">+ Create</span> (or <span class="btnlike">+ New</span>), then <b>Receive payment</b>.</li>
+      <li>Choose the <b>customer</b>.</li>
+      <li>Tick the invoice they’ve paid under <b>Outstanding transactions</b>, and choose the <b>payment method</b>.</li>
+      <li>Save. Later, when the money shows in the bank feed, <b>match</b> it to this payment.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Part payments</b><p>If a customer pays only part of an invoice, enter the amount they actually paid. The rest stays open on the invoice.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-10">Next: suppliers, bills and expenses <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-10" data-lesson="10" aria-labelledby="h10l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">10</span><div><p class="sec-kicker" style="margin:0">Lesson 10 of 13</p><h2 id="h10l">Suppliers, bills and expenses</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The difference between a bill and an expense</li><li><svg class="i"><use href="#i-check"/></svg>Attach receipts so your records are complete</li></ul></div>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Use</th><th scope="col">When</th><th scope="col">Example</th></tr></thead>
+      <tbody>
+        <tr><td><b>Expense</b></td><td>You’ve already paid.</td><td>Fuel paid on the business card</td></tr>
+        <tr><td><b>Bill</b></td><td>You’ll pay later.</td><td>A supplier invoice due in 30 days</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Enter a bill</h3>
+    <ol class="steps">
+      <li>Select <span class="btnlike">+ Create</span> (or <span class="btnlike">+ New</span>), then <b>Bill</b>.</li>
+      <li>Choose the <b>supplier</b>, then enter the bill date, due date and the supplier’s invoice number.</li>
+      <li>On each line, choose the <b>category</b>, enter the amount and check the <b>VAT</b>.</li>
+      <li>Attach a copy of the supplier’s invoice, then save.</li>
+      <li>When you pay it and the payment appears in the bank feed, <b>match</b> it to the bill.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-file"/></svg></span><div><b>Keep the paperwork</b><p>To reclaim VAT, you need a valid VAT invoice or receipt. Attaching a photo or PDF to each bill or expense keeps it with the transaction. The QuickBooks phone app can photograph receipts for you.</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>New suppliers appear on their own</b><p>QuickBooks adds new suppliers it recognises from your bank feed automatically. If that creates a messy list, it can be turned off in the settings on the Bank transactions page.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-11">Next: VAT and Making Tax Digital <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-11" data-lesson="11" aria-labelledby="h11l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">11</span><div><p class="sec-kicker" style="margin:0">Lesson 11 of 13</p><h2 id="h11l">VAT and Making Tax Digital</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Connect QuickBooks to HMRC</li><li><svg class="i"><use href="#i-check"/></svg>Check and submit a VAT return</li></ul></div>
+    <p>All VAT-registered businesses must keep digital records and send VAT returns to HMRC using compatible software. QuickBooks Online is compatible, and can send your return directly.</p>
+    <h3>Step 1: connect to HMRC (once)</h3>
+    <ol class="steps">
+      <li>Go to <b>Taxes</b> and select <b>Set up MTD</b>.</li>
+      <li>Select <span class="btnlike">Authorise now</span>, then <span class="btnlike">Continue</span>.</li>
+      <li>Sign in with the business’s HMRC <b>Government Gateway</b> user ID and password.</li>
+      <li>Select <b>Give permission</b>. When it’s done, an MTD badge appears on the Taxes page.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-clock"/></svg></span><div><b>Every 18 months</b><p>HMRC’s rules mean QuickBooks has to be re-authorised every 18 months. If a submission fails with an authorisation error, repeat the steps above.</p></div></div>
+    <h3>Step 2: check and submit a return</h3>
+    <ol class="steps">
+      <li>Make sure every bank transaction for the period has been reviewed and the bank reconciled (lesson 12).</li>
+      <li>Go to <b>Taxes</b>, then <b>VAT</b>, and open the <b>Returns</b> tab.</li>
+      <li>Next to the return that’s due, select <span class="btnlike">Prepare return</span>.</li>
+      <li>Use the <b>VAT error checker</b> from the drop-down to look for common mistakes, then review the figures.</li>
+      <li>When you’re sure, tick the declaration and select <span class="btnlike">Submit to HMRC</span>. Keep the confirmation.</li>
+      <li>When you pay HMRC, record the payment and match it in the bank feed.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Once it’s submitted, it’s with HMRC</b><p>A submitted return can’t simply be undone in QuickBooks. If Actua prepares your VAT returns, never submit one yourself; we’ll review and file it for you. VAT returns and payments are normally due one calendar month and seven days after the end of the VAT period.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-12">Next: reconciling your bank <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-12" data-lesson="12" aria-labelledby="h12l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">12</span><div><p class="sec-kicker" style="margin:0">Lesson 12 of 13</p><h2 id="h12l">Reconciling your bank</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What reconciling proves</li><li><svg class="i"><use href="#i-check"/></svg>Reconcile to a £0.00 difference</li></ul></div>
+    <p>Reconciling means checking that QuickBooks agrees with your real bank statement. When it’s finished, the difference between the two must be <b>£0.00</b>. It’s the proof your books are right.</p>
+    <ol class="steps">
+      <li>First, deal with everything in <b>For review</b> for that account.</li>
+      <li>Go to <b>All apps</b>, then <b>Accounting</b>, then <b>Reconcile</b> (older layout: <b>Transactions</b>, then <b>Reconcile</b>).</li>
+      <li>Choose the account, then enter the <b>ending balance</b> and <b>ending date</b> from your statement. Some banks call it the closing balance or new balance.</li>
+      <li>Select <span class="btnlike">Start reconciling</span>.</li>
+      <li>Tick each transaction that appears on your statement. Leave it unticked if it isn’t on the statement yet.</li>
+      <li>When the <b>Difference</b> shows £0.00, select <span class="btnlike">Finish now</span>.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-help"/></svg></span><div><b>Not reaching £0.00?</b><p>Select <b>Edit info</b> and check the ending balance and date you typed. Then look for a transaction that’s missing, duplicated, or the wrong amount. See “Something’s gone wrong” below.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-13">Next: reports that matter <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-13" data-lesson="13" aria-labelledby="h13l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">13</span><div><p class="sec-kicker" style="margin:0">Lesson 13 of 13</p><h2 id="h13l">Reports that matter</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The reports worth knowing</li><li><svg class="i"><use href="#i-check"/></svg>Run, print and export a report</li></ul></div>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Report</th><th scope="col">Answers the question</th></tr></thead>
+      <tbody>
+        <tr><td><b>Profit and Loss</b></td><td>Did the business make money over this period?</td></tr>
+        <tr><td><b>Balance Sheet</b></td><td>What does the business own and owe on this date?</td></tr>
+        <tr><td><b>Aged receivables</b> (who owes you)</td><td>Which customers owe money, and how overdue is it?</td></tr>
+        <tr><td><b>Aged payables</b> (who you owe)</td><td>Which suppliers are waiting to be paid?</td></tr>
+      </tbody>
+    </table></div>
+    <ol class="steps">
+      <li>Select <b>Reports</b> on the left menu.</li>
+      <li>Find the report by name, or type it into the report search box.</li>
+      <li>Set the <b>date range</b>, such as “This month” or “Last financial year”, and run the report.</li>
+      <li>Use the print or export buttons to save a PDF or a spreadsheet.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Reports are only as good as the bookkeeping</b><p>If transactions are still waiting in For review, or the bank isn’t reconciled, the reports will be wrong. Review and reconcile first, then report.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#quiz">Next: check yourself <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="quiz" aria-labelledby="hqz">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-help"/></svg>Check yourself</p>
+    <h2 id="hqz">Eight quick questions</h2>
+    <p>Pick an answer to see whether you’re right, and why.</p>
+    <div id="quizBody"></div>
+    <div class="score" id="quizScore" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="panel" id="certificate" aria-labelledby="hct">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-award"/></svg>Certificate</p>
+    <h2 id="hct">Your certificate of completion</h2>
+    <div id="certArea"></div>
+  </div>
+</section>
+
+<section class="panel" id="fixes" aria-labelledby="hfx">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-alert"/></svg>Help</p>
+    <h2 id="hfx">Something’s gone wrong</h2>
+    <p>Select a problem to see the fix.</p>
+    <details><summary>My bank feed has stopped bringing in transactions</summary><div>
+      <ol class="steps">
+        <li>Go to <b>Bank transactions</b> and look for a message on the account, such as a request to reconnect.</li>
+        <li>Follow the prompt to sign in to your bank again and renew your permission.</li>
+        <li>Remember pending transactions don’t come through until they’ve cleared at the bank.</li>
+      </ol>
+    </div></details>
+    <details><summary>The same transaction appears twice</summary><div>
+      <p>On the <b>For review</b> tab, tick the duplicate and select <b>Exclude</b>. If both copies have already been added, ask your accountant before deleting anything.</p>
+    </div></details>
+    <details><summary>I added something with the wrong category</summary><div>
+      <p>Go to the <b>Categorised</b> tab, find the transaction and select <b>Undo</b>. It goes back to For review, where you can deal with it properly.</p>
+    </div></details>
+    <details><summary>An invoice still shows as unpaid, but the customer has paid</summary><div>
+      <p>The payment was probably added as income instead of matched. Find it on the <b>Categorised</b> tab, select <b>Undo</b>, then <b>Match</b> it to the invoice.</p>
+    </div></details>
+    <details><summary>My reconciliation won’t reach £0.00</summary><div>
+      <ul>
+        <li>Select <b>Edit info</b> and check the ending balance and ending date match your statement exactly.</li>
+        <li>Look for transactions on the statement that aren’t ticked, or that are missing from QuickBooks.</li>
+        <li>Look for duplicates, or amounts typed wrongly.</li>
+        <li>Still stuck? Save for later and ask your accountant. Don’t force it to finish.</li>
+      </ul>
+    </div></details>
+    <details><summary>My VAT return won’t submit</summary><div>
+      <p>The most common cause is that QuickBooks needs re-authorising with HMRC (every 18 months). Go to <b>Taxes</b> and follow the MTD set-up steps in lesson 11 again. Also check the VAT registration number in QuickBooks matches HMRC’s records.</p>
+    </div></details>
+    <details><summary>I can’t find a page</summary><div>
+      <p>Type its name into the search bar at the top, such as “Reconcile” or “Chart of accounts”. Or open <b>All apps</b>. If it still isn’t there, your plan or your user permissions may not include it.</p>
+    </div></details>
+  </div>
+</section>
+
+<section class="panel" id="glossary" aria-labelledby="hgl">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-list"/></svg>Reference</p>
+    <h2 id="hgl">Bookkeeping words explained</h2>
+    <dl class="gloss">
+      <dt>Accruals</dt><dd>Recording income and costs when they’re invoiced or billed, not when cash moves. QuickBooks Online works this way.</dd>
+      <dt>Aged receivables</dt><dd>A report of who owes the business money, and for how long. Also called aged debtors.</dd>
+      <dt>Bank feed</dt><dd>The automatic link that brings bank transactions into QuickBooks.</dd>
+      <dt>Bank rule</dt><dd>An instruction telling QuickBooks how to categorise repeat transactions.</dd>
+      <dt>Bill</dt><dd>A supplier’s request for payment that you’ll pay later.</dd>
+      <dt>Category</dt><dd>A label for money in or out. Also called an account.</dd>
+      <dt>Chart of accounts</dt><dd>The full list of categories.</dd>
+      <dt>Exclude</dt><dd>Remove a downloaded transaction so it never reaches the books.</dd>
+      <dt>Expense</dt><dd>A cost you’ve already paid.</dd>
+      <dt>Government Gateway</dt><dd>The HMRC sign-in used to connect QuickBooks for VAT.</dd>
+      <dt>Invoice</dt><dd>A request for payment sent to a customer.</dd>
+      <dt>Match</dt><dd>Link a bank transaction to something already in QuickBooks, so it isn’t counted twice.</dd>
+      <dt>MTD</dt><dd>Making Tax Digital: HMRC’s rules for digital records and online returns.</dd>
+      <dt>Reconcile</dt><dd>Check QuickBooks agrees with the bank statement, to a £0.00 difference.</dd>
+      <dt>Sales receipt</dt><dd>A record of a sale paid for at the time.</dd>
+      <dt>Supplier</dt><dd>A business you buy from.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="panel" id="sources" aria-labelledby="hsr">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-shield"/></svg>Sources</p>
+    <h2 id="hsr">Sources and last checked</h2>
+    <p><span class="pill"><svg class="i"><use href="#i-check"/></svg><span id="checkedDate">Facts last checked: 6 November 2026</span></span></p>
+    <p>Key facts were checked against Intuit’s QuickBooks UK help pages on that date. Intuit updates QuickBooks Online often and is changing its layout, so menus and wording may differ slightly from what you see.</p>
+    <ul class="src">
+      <li><b>Categorise and match online bank transactions in QuickBooks Online</b><span>QuickBooks UK help, quickbooks.intuit.com/learn-support/en-uk. Used for lessons 5, 6 and 10.</span></li>
+      <li><b>Online banking guide for QuickBooks Online</b><span>QuickBooks UK help. Used for lessons 5 to 7 (tabs, exclude, file upload size).</span></li>
+      <li><b>Create and send an invoice / Record a customer payment</b><span>QuickBooks UK help. Used for lessons 8 and 9.</span></li>
+      <li><b>How invoicing works after switching to QuickBooks Online</b><span>QuickBooks UK help. Used for lessons 8 and 9 (accruals, “1 match found”).</span></li>
+      <li><b>Difference between an invoice, sales receipt, bill and statement</b><span>QuickBooks UK help. Used for lessons 8 and 10.</span></li>
+      <li><b>Set up MTD for VAT / Submit a VAT return to HMRC using MTD</b><span>QuickBooks UK help and quickbooks.intuit.com/uk. Used for lesson 11.</span></li>
+      <li><b>Reconcile an account in QuickBooks</b><span>QuickBooks UK help. Used for lesson 12.</span></li>
+      <li><b>New QuickBooks Online interface</b><span>QuickBooks Community (Intuit) answers on the new layout. Used for lesson 2 and the dashboard.</span></li>
+      <li><b>VAT return deadlines</b><span>HMRC guidance on GOV.UK (“VAT returns”). Used for lesson 11.</span></li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand"><svg aria-hidden="true"><use href="#logo"/></svg><div><b>Actua Business Services Limited</b><span>Tutorial series</span></div></div>
+    <div class="foot-txt">
+      <p><strong>By Shaun Ellison &amp; Actua Business Services Limited, with AI.</strong></p>
+      <p>© 2026 Actua Business Services Limited. Your progress is saved on this device only. For general training purposes; not tax or accounting advice for your specific circumstances.</p>
+      <p>QuickBooks and Intuit are trademarks of Intuit Inc. This course is independent and is not made, endorsed or supported by Intuit. Drawings are simplified and figures are examples, so your screen may look different.</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="about" aria-labelledby="aboutTitle">
+  <div class="dlg-head"><svg aria-hidden="true"><use href="#logo"/></svg><div><h2 id="aboutTitle">About this course</h2><span id="aboutVersion"></span></div></div>
+  <div class="dlg-body">
+    <p><b>QuickBooks Academy</b></p>
+    <p>By Shaun Ellison &amp; Actua Business Services Limited, with AI. Part of the Actua Business Services Limited tutorial series for staff and clients.</p>
+    <p>Written with AI assistance. Facts were checked against official sources on the date shown in Sources. This is general training, not advice for your specific circumstances.</p>
+    <p>Works fully offline. Your progress and certificate name are stored on this device only; nothing is sent anywhere.</p>
+    <p>QuickBooks and Intuit are trademarks of Intuit Inc. This course is independent and not endorsed by Intuit.</p>
+    <button class="next-btn" style="border:0;font:inherit;font-weight:700;cursor:pointer" type="button" id="aboutClose">Close</button>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  /* ================= TUTORIAL CONFIG ================= */
+  var CONFIG = { title:"QuickBooks Academy", version:"Version 1.0", checked:"6 November 2026", storageKey:"actua.quickbooks" };
+  var LESSONS = [
+    ["What QuickBooks Online is",3],["Signing in and finding your way around",5],["Setting up your company",5],["The chart of accounts",4],
+    ["Connecting your bank",4],["Reviewing bank transactions",6],["Bank rules",4],["Customers and invoices",6],
+    ["Recording customer payments",4],["Suppliers, bills and expenses",5],["VAT and Making Tax Digital",6],["Reconciling your bank",5],["Reports that matter",4]
+  ];
+  var QUIZ = [
+    {q:"A customer pays invoice 1042 and the money appears in your bank feed with “1 match found”. What should you do?", o:["Add it as sales income","Match it to the invoice","Exclude it"], a:1, why:"Matching marks the invoice as paid. Adding it as income would count the sale twice."},
+    {q:"Where do new, unchecked bank transactions wait?", o:["The Categorised tab","The Excluded tab","The For review tab"], a:2, why:"New downloads land in For review until you add, match or exclude them."},
+    {q:"You paid for fuel on the business card today. What do you record?", o:["An expense","A bill","An invoice"], a:0, why:"An expense is for something already paid. A bill is for something you’ll pay later."},
+    {q:"When is an invoice’s income shown on the Profit and Loss report in QuickBooks Online?", o:["When the customer pays","When you create the invoice","At the end of the VAT quarter"], a:1, why:"QuickBooks Online uses accruals, so income is recorded when the invoice is created."},
+    {q:"When is a bank reconciliation finished?", o:["When every transaction is ticked","When the difference is £0.00","When the month ends"], a:1, why:"A £0.00 difference proves QuickBooks agrees with your bank statement."},
+    {q:"Your VAT return fails to submit with an authorisation error. What’s the most likely fix?", o:["Re-authorise QuickBooks with HMRC","Delete the VAT return","Change your VAT number"], a:0, why:"QuickBooks must be re-authorised with HMRC every 18 months."},
+    {q:"A VAT quarter ends on 30 September. When are the return and payment normally due?", o:["31 October","7 November","30 November"], a:1, why:"The normal deadline is one calendar month and seven days after the period ends."},
+    {q:"You notice a transaction was added with the wrong category. What should you do?", o:["Exclude it","Delete the category","Undo it from the Categorised tab and redo it"], a:2, why:"Undo sends it back to For review so you can deal with it properly."}
+  ];
+  var PARTS = [
+    {id:"create",label:"Create",title:"+ Create",lesson:2,body:"The one button for making anything new: an invoice, bill, expense, payment and more. In the older layout it’s called + New."},
+    {id:"home",label:"Home",title:"Home (dashboard)",lesson:2,body:"Your business at a glance: bank balances, invoices, profit and expenses. It’s the first screen you see after signing in."},
+    {id:"feed",label:"Feed",title:"Feed",lesson:2,body:"A list of things QuickBooks thinks need your attention, such as tasks and updates."},
+    {id:"reports",label:"Reports",title:"Reports",lesson:13,body:"The full list of reports, including Profit and Loss and Balance Sheet."},
+    {id:"allapps",label:"All apps",title:"All apps",lesson:2,body:"Opens every area of QuickBooks: Accounting, Banking, Sales, Expenses, Taxes and more. Chart of accounts and Reconcile are under Accounting."},
+    {id:"bankbm",label:"Bank",title:"Bank transactions (pinned)",lesson:6,body:"A pinned shortcut to Bank transactions, where new bank lines wait for you to add, match or exclude them."},
+    {id:"custom",label:"Customise",title:"Customise",lesson:2,body:"Pin the pages you use most to the left menu, so they’re one click away."},
+    {id:"search",label:"Search",title:"Search bar",lesson:2,body:"Find customers, suppliers, amounts and transactions. You can also type a page name, such as “Reconcile”, to jump there."},
+    {id:"gear",label:"Gear",title:"Gear (settings)",lesson:3,body:"Company details, invoice settings and users. Leave financial year, accounting method and VAT settings to your accountant."},
+    {id:"help",label:"Help",title:"Help",lesson:2,body:"Search Intuit’s help articles or contact QuickBooks support."},
+    {id:"bankw",label:"Bank accounts",title:"Bank accounts panel",lesson:6,body:"Compares the balance at the bank with the balance in QuickBooks. “23 to review” means 23 transactions are waiting in For review. Select it to start."},
+    {id:"invw",label:"Invoices",title:"Invoices panel",lesson:8,body:"How much customers owe you, how much of that is overdue (red), and what’s been paid recently (green)."},
+    {id:"plw",label:"Profit and loss",title:"Profit and loss panel",lesson:13,body:"Income minus expenses for the period. Only accurate once all transactions are reviewed and the bank is reconciled."},
+    {id:"expw",label:"Expenses",title:"Expenses panel",lesson:10,body:"Where the money went this month, by category."}
+  ];
+  /* =================================================== */
+
+  var TOTAL = LESSONS.length;
+  var K_DONE = CONFIG.storageKey + ".done.v1", K_NAME = CONFIG.storageKey + ".name.v1", K_THEME = "actua.theme.v1";
+  function load(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function save(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls, txt){ var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+
+  $("aboutVersion").textContent = CONFIG.version + ", facts checked " + CONFIG.checked;
+  $("checkedDate").textContent = "Facts last checked: " + CONFIG.checked;
+  $("coverChecked").textContent = "Facts checked " + CONFIG.checked;
+
+  /* Theme */
+  var root = document.documentElement, themeBtn = $("themeBtn"), themeIcon = $("themeIcon");
+  function isDark(){ var t = root.getAttribute("data-theme"); if (t === "dark") return true; if (t === "light") return false; return !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches); }
+  function paintTheme(){ var d = isDark(); themeIcon.setAttribute("href", d ? "#i-sun" : "#i-moon"); themeBtn.setAttribute("aria-label", d ? "Switch to light mode" : "Switch to dark mode"); }
+  var st = load(K_THEME); if (st === "dark" || st === "light") root.setAttribute("data-theme", st);
+  paintTheme();
+  themeBtn.addEventListener("click", function(){ var n = isDark() ? "light" : "dark"; root.setAttribute("data-theme", n); save(K_THEME, n); paintTheme(); });
+
+  /* About */
+  var dlg = $("about");
+  $("aboutBtn").addEventListener("click", function(){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); });
+  $("aboutClose").addEventListener("click", function(){ if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); });
+
+  /* Outline + drawer */
+  var outline = $("outline"), ol = $("outlineLessons"), menuBtn = $("menuBtn"), scrim = null;
+  LESSONS.forEach(function(L, i){
+    var n = i + 1, li = el("li"); li.dataset.for = n;
+    var a = el("a"); a.href = "#lesson-" + n;
+    var s = el("span","st", String(n)); s.setAttribute("aria-hidden","true");
+    a.appendChild(s); a.appendChild(el("span", null, L[0])); a.appendChild(el("span","mins", L[1] + " min"));
+    li.appendChild(a); ol.appendChild(li);
+  });
+  function openMenu(){ outline.classList.add("open"); menuBtn.setAttribute("aria-expanded","true"); scrim = el("div","scrim"); scrim.addEventListener("click", closeMenu); document.body.appendChild(scrim); var f = outline.querySelector("a"); if (f) f.focus(); }
+  function closeMenu(){ outline.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); if (scrim){ scrim.remove(); scrim = null; } }
+  menuBtn.addEventListener("click", function(){ outline.classList.contains("open") ? closeMenu() : openMenu(); });
+  $("menuClose").addEventListener("click", function(){ closeMenu(); menuBtn.focus(); });
+  outline.addEventListener("click", function(e){ if (e.target.closest("a")) closeMenu(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && outline.classList.contains("open")) { closeMenu(); menuBtn.focus(); } });
+
+  /* Scrollspy */
+  var links = Array.prototype.slice.call(outline.querySelectorAll("a"));
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          var id = "#" + en.target.id;
+          links.forEach(function(a){ a.setAttribute("aria-current", a.getAttribute("href") === id ? "true" : "false"); });
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll("main .panel[id]").forEach(function(p){ io.observe(p); });
+  }
+
+  /* Explorer */
+  var byId = {}; PARTS.forEach(function(p){ byId[p.id] = p; });
+  var mock = $("mock"), chips = $("chips"), hotspots = Array.prototype.slice.call(mock.querySelectorAll("[data-hs]"));
+  PARTS.forEach(function(p){
+    var b = el("button","chip",p.label); b.type = "button"; b.setAttribute("aria-pressed","false"); b.dataset.part = p.id;
+    b.addEventListener("click", function(){ pick(p.id); }); chips.appendChild(b);
+  });
+  function pick(id){
+    var p = byId[id]; if (!p) return;
+    mock.classList.remove("fresh");
+    hotspots.forEach(function(h){ h.classList.toggle("sel", h.getAttribute("data-hs") === id); });
+    Array.prototype.forEach.call(chips.children, function(c){ c.setAttribute("aria-pressed", c.dataset.part === id ? "true" : "false"); });
+    $("infoTitle").textContent = p.title;
+    var b = $("infoBody"); b.textContent = p.body; b.classList.remove("hint");
+    var l = $("infoLink"); l.hidden = false; l.href = "#lesson-" + p.lesson; l.textContent = "Learn more in lesson " + p.lesson;
+  }
+  hotspots.forEach(function(h){
+    var id = h.getAttribute("data-hs");
+    h.addEventListener("click", function(){ pick(id); });
+    h.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(id); } });
+  });
+
+  /* Progress */
+  var done = []; try { done = JSON.parse(load(K_DONE) || "[]"); if (!Array.isArray(done)) done = []; } catch(e){ done = []; }
+  var panels = Array.prototype.slice.call(document.querySelectorAll("[data-lesson]"));
+  function render(){
+    panels.forEach(function(sec){
+      var n = Number(sec.dataset.lesson), d = done.indexOf(n) !== -1, btn = sec.querySelector(".done-btn");
+      sec.classList.toggle("done", d);
+      btn.innerHTML = "";
+      var ic = document.createElementNS("http://www.w3.org/2000/svg","svg"); ic.setAttribute("class","i");
+      var u = document.createElementNS("http://www.w3.org/2000/svg","use"); u.setAttribute("href","#i-check"); ic.appendChild(u);
+      btn.appendChild(ic); btn.appendChild(document.createTextNode(d ? "Completed (select to undo)" : "Mark lesson " + n + " complete"));
+      btn.setAttribute("aria-pressed", d ? "true" : "false");
+      var li = ol.querySelector('li[data-for="' + n + '"]');
+      if (li){ li.classList.toggle("done", d); li.querySelector(".st").textContent = d ? "✓" : String(n); }
+    });
+    var c = done.length;
+    $("ringVal").setAttribute("stroke-dashoffset", String(100.53 * (1 - c / TOTAL)));
+    $("ringText").innerHTML = "<b>" + c + "</b> of " + TOTAL + " lessons";
+    renderCert();
+  }
+  panels.forEach(function(sec){
+    var n = Number(sec.dataset.lesson);
+    sec.querySelector(".done-btn").addEventListener("click", function(){
+      var i = done.indexOf(n); if (i === -1) done.push(n); else done.splice(i,1);
+      save(K_DONE, JSON.stringify(done)); render();
+    });
+  });
+
+  /* Certificate */
+  function renderCert(){
+    var area = $("certArea"); area.innerHTML = "";
+    var left = TOTAL - done.length;
+    if (left > 0){
+      var lock = el("div","cert-lock");
+      lock.innerHTML = '<svg class="i" style="width:1.6em;height:1.6em;color:var(--accent)"><use href="#i-award"/></svg>';
+      lock.appendChild(el("p", null, "Mark all " + TOTAL + " lessons complete to unlock your certificate. " + left + (left === 1 ? " lesson" : " lessons") + " to go."));
+      lock.querySelector("p").style.margin = "0";
+      area.appendChild(lock); return;
+    }
+    area.appendChild(el("p", null, "Well done, you’ve completed every lesson. Type your name as you’d like it to appear, then print or save it as a PDF."));
+    var form = el("div","cert-form");
+    var lab = el("label", null, "Your full name");
+    var inp = el("input"); inp.type = "text"; inp.autocomplete = "name"; inp.maxLength = 60; inp.value = load(K_NAME) || "";
+    lab.appendChild(inp); form.appendChild(lab);
+    var pr = el("button","next-btn"); pr.type = "button"; pr.style.border = "0"; pr.style.font = "inherit"; pr.style.fontWeight = "700"; pr.style.cursor = "pointer";
+    pr.innerHTML = '<svg class="i"><use href="#i-print"/></svg>'; pr.appendChild(document.createTextNode("Print certificate"));
+    form.appendChild(pr); area.appendChild(form);
+    var hint = el("p","figcap","If the print window doesn’t open, press Ctrl + P (Cmd + P on a Mac)."); area.appendChild(hint);
+
+    var card = el("div","cert"); card.id = "certCard";
+    var inner = el("div","cert-in");
+    inner.appendChild(el("p","ct","Actua Business Services Limited tutorial series"));
+    inner.appendChild(el("h3", null, "Certificate of completion"));
+    inner.appendChild(el("p", null, "This is to certify that"));
+    var nm = el("div","nm", inp.value || "Your name"); inner.appendChild(nm);
+    inner.appendChild(el("p", null, "has successfully completed the course"));
+    inner.appendChild(el("p","cc", CONFIG.title));
+    var dateStr = new Date().toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" });
+    var foot = el("div","cert-foot");
+    var l = el("div"); l.innerHTML = "<b>Date</b><br>"; l.appendChild(document.createTextNode(dateStr));
+    var m = el("div"); m.style.textAlign = "center"; m.innerHTML = '<svg aria-hidden="true"><use href="#logo-cert"/></svg>';
+    var r = el("div"); r.style.textAlign = "right"; r.innerHTML = "<b>Issued by</b><br>Actua Business Services Limited";
+    foot.appendChild(l); foot.appendChild(m); foot.appendChild(r);
+    inner.appendChild(foot);
+    inner.appendChild(el("p","figcap","By Shaun Ellison & Actua Business Services Limited, with AI. " + CONFIG.version + "."));
+    card.appendChild(inner); area.appendChild(card);
+
+    inp.addEventListener("input", function(){ nm.textContent = inp.value.trim() || "Your name"; save(K_NAME, inp.value.trim()); });
+    pr.addEventListener("click", function(){
+      root.classList.add("print-cert");
+      var cleanup = function(){ root.classList.remove("print-cert"); window.removeEventListener("afterprint", cleanup); };
+      window.addEventListener("afterprint", cleanup);
+      try { window.print(); } catch(e){}
+      setTimeout(cleanup, 4000);
+    });
+  }
+
+  /* Quiz */
+  var answered, right;
+  function buildQuiz(){
+    answered = 0; right = 0; var qb = $("quizBody"); qb.innerHTML = ""; $("quizScore").innerHTML = "";
+    QUIZ.forEach(function(item, qi){
+      var w = el("div","q"), qt = el("p","qt",(qi + 1) + ". " + item.q); qt.id = "qt" + qi; w.appendChild(qt);
+      var opts = el("div","opts"); opts.setAttribute("role","group"); opts.setAttribute("aria-labelledby","qt" + qi);
+      var why = el("p","why"); why.hidden = true; why.setAttribute("aria-live","polite");
+      item.o.forEach(function(text, oi){
+        var b = el("button","opt",text); b.type = "button";
+        b.addEventListener("click", function(){
+          var all = opts.querySelectorAll(".opt");
+          Array.prototype.forEach.call(all, function(x){ x.disabled = true; });
+          all[item.a].classList.add("right");
+          var ok = oi === item.a; if (!ok) b.classList.add("wrong");
+          why.hidden = false; why.classList.toggle("miss", !ok);
+          why.textContent = (ok ? "Correct. " : "Not quite. ") + item.why;
+          answered++; if (ok) right++;
+          if (answered === QUIZ.length) finish();
+        });
+        opts.appendChild(b);
+      });
+      w.appendChild(opts); w.appendChild(why); qb.appendChild(w);
+    });
+  }
+  function finish(){
+    var s = $("quizScore");
+    s.appendChild(el("span", null, "You scored " + right + " out of " + QUIZ.length + ". " + (right === QUIZ.length ? "Brilliant, you’ve got the essentials of QuickBooks." : "Look back at the lessons for any you missed, then try again.")));
+    var r = el("button","ghost-btn","Try again"); r.type = "button"; r.addEventListener("click", buildQuiz); s.appendChild(r);
+  }
+
+  buildQuiz();
+  render();
+})();
+</script>
+</body>
+</html>

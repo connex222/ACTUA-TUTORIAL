@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Shaun Ellison, Actua Business Services Limited">
+<title>FreeAgent Essentials | Actua Business Services Limited</title>
+<!-- Actua tutorial series, tutorial 4: FreeAgent Essentials. Built on house style master v3.0. By Shaun Ellison & Actua Business Services Limited, with AI. -->
+<style>
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --raised:#FAFBFD; --ink:#0F1226; --muted:#41465F; --line:#D6D9E6; --line-strong:#B9BED3;
+  --accent:#8A3B00; --accent-ink:#FFFFFF; --accent-soft:#F8E8DC;
+  --cover:#2E1505; --cover-ink:#FFFFFF; --cover-muted:#F0D6C4; --cover-line:rgba(255,255,255,.16);
+  --rail:#ECEDF5; --mark:#FFC21A; --mark-ink:#231900;
+  --good:#0B5E32; --on-good:#FFFFFF; --good-soft:#E3F2E9; --bad:#A3203A; --on-bad:#FFFFFF; --bad-soft:#F8E6EA; --away:#D99400;
+  --bubble:#ECEDF3; --screen:#2A2E48;
+  --shadow:0 1px 2px rgba(15,18,38,.06),0 10px 30px -16px rgba(15,18,38,.22);
+  --r-l:16px; --r-m:12px; --r-s:8px;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+    --accent:#F5B489; --accent-ink:#0B0D19; --accent-soft:#3A2416;
+    --cover:#24110A; --cover-ink:#FFFFFF; --cover-muted:#F0D6C4; --cover-line:rgba(255,255,255,.14);
+    --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+    --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+    --bubble:#23263D; --screen:#090A14;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+  --accent:#F5B489; --accent-ink:#0B0D19; --accent-soft:#3A2416;
+  --cover:#24110A; --cover-ink:#FFFFFF; --cover-muted:#F0D6C4; --cover-line:rgba(255,255,255,.14);
+  --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+  --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+  --bubble:#23263D; --screen:#090A14;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.125rem;line-height:1.65;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:6px}
+svg{max-width:100%}
+.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
+.skip{position:absolute;left:-999px;top:0;background:var(--mark);color:var(--mark-ink);padding:.6rem 1rem;z-index:40;font-weight:700}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Top bar ===== */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1280px;margin:0 auto;padding:.55rem 1.1rem;display:flex;align-items:center;gap:.8rem;min-height:64px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);min-width:0}
+.mark-logo{width:38px;height:38px;flex:none}
+.brand-t{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-t b{font-size:.98rem;letter-spacing:-.01em;white-space:nowrap}
+.brand-t span{font-size:.78rem;color:var(--muted);white-space:nowrap}
+.bar-spacer{flex:1}
+.ring{display:flex;align-items:center;gap:.55rem;font-size:.88rem;color:var(--muted);white-space:nowrap}
+.ring svg{width:38px;height:38px;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--accent-soft);stroke-width:4}
+.ring .val{fill:none;stroke:var(--good);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .5s}
+.ring b{color:var(--ink)}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font:inherit;font-size:.9rem;font-weight:600;min-height:44px;min-width:44px;padding:0 .8rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ibtn:hover{border-color:var(--accent);color:var(--accent)}
+.only-narrow{display:none}
+@media (max-width:1099px){.only-narrow{display:inline-flex}}
+@media (max-width:720px){.brand-t span,.ring-label,.ibtn .lbl{display:none}.ibtn{padding:0 .6rem}}
+@media (max-width:420px){.brand-t{display:none}}
+
+/* ===== Cover ===== */
+.cover{background:var(--cover);color:var(--cover-ink);position:relative;overflow:hidden;border-bottom:4px solid var(--accent)}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--cover-line) 1px,transparent 1px),linear-gradient(90deg,var(--cover-line) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(115deg,transparent 35%,#000 100%);-webkit-mask-image:linear-gradient(115deg,transparent 35%,#000 100%);opacity:.55}
+.cover-in{position:relative;max-width:1280px;margin:0 auto;padding:3.4rem 1.1rem 3rem;display:grid;gap:2rem}
+@media (min-width:1000px){.cover-in{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end;padding:4.2rem 1.1rem 3.6rem}}
+.series{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--cover-muted);margin:0 0 1.1rem}
+.series .pip{width:8px;height:8px;border-radius:50%;background:var(--mark)}
+.cover h1{font-size:clamp(2.5rem,6.6vw,4.6rem);line-height:1;letter-spacing:-.035em;margin:0 0 1.1rem;font-weight:800;max-width:12ch}
+.cover .lead{font-size:1.25rem;line-height:1.55;color:var(--cover-muted);max-width:52ch;margin:0 0 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font:inherit;font-weight:700;font-size:1.02rem;min-height:52px;padding:0 1.35rem;border-radius:12px;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-light{background:#FFFFFF;color:#2E1505}
+.btn-light:hover{background:var(--mark);color:var(--mark-ink)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#FFFFFF;background:transparent}
+.btn-ghost:hover{border-color:#FFFFFF;background:rgba(255,255,255,.08)}
+.meta{list-style:none;margin:0;padding:1.3rem 1.4rem;border:1px solid var(--cover-line);border-radius:var(--r-l);background:rgba(255,255,255,.05);display:grid;gap:.95rem}
+.meta li{display:flex;gap:.8rem;align-items:flex-start}
+.meta .i{width:1.35rem;height:1.35rem;color:var(--mark);margin-top:.15rem}
+.meta b{display:block;font-size:1.02rem}
+.meta span{font-size:.92rem;color:var(--cover-muted)}
+.credit{margin:1.8rem 0 0;font-size:.92rem;color:var(--cover-muted);display:flex;align-items:center;gap:.6rem}
+.credit svg{width:26px;height:26px}
+
+/* ===== Layout ===== */
+.shell{max-width:1280px;margin:0 auto;padding:2rem 1.1rem 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2.4rem}
+@media (min-width:1100px){.shell{grid-template-columns:272px minmax(0,1fr)}}
+.outline{display:none}
+@media (min-width:1100px){.outline{display:block;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 116px);overflow:auto;padding-right:.2rem}}
+.outline h2{font-size:.82rem;font-weight:700;color:var(--muted);margin:.2rem 0 .7rem .7rem;letter-spacing:.02em}
+.outline ol{list-style:none;margin:0 0 1.2rem;padding:0}
+.outline a{display:grid;grid-template-columns:22px 1fr auto;gap:.65rem;align-items:center;padding:.5rem .7rem;border-radius:10px;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.3}
+.outline a:hover{background:var(--surface)}
+.outline a[aria-current="true"]{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);font-weight:700}
+.outline .st{width:22px;height:22px;border-radius:50%;border:2px solid var(--line-strong);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--muted)}
+.outline li.done .st{background:var(--good);border-color:var(--good);color:var(--on-good)}
+.outline .mins{font-size:.8rem;color:var(--muted)}
+.drawer-head{display:none}
+@media (max-width:1099px){
+  .outline.open{display:block;position:fixed;z-index:35;inset:0 auto 0 0;width:min(340px,88vw);background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem calc(env(safe-area-inset-bottom,0px) + 1rem);overflow:auto;box-shadow:20px 0 60px rgba(0,0,0,.35)}
+  .outline.open .drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+  .scrim{position:fixed;inset:0;background:rgba(6,8,20,.55);z-index:34}
+}
+.content{min-width:0}
+
+/* ===== Section frame ===== */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow);margin:0 0 1.6rem;overflow:hidden}
+.panel-body{padding:1.6rem clamp(1.1rem,3.2vw,2.4rem) 1.9rem}
+.sec-kicker{display:inline-flex;align-items:center;gap:.45rem;font-size:.9rem;font-weight:700;color:var(--accent);margin:0 0 .35rem}
+.panel h2{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.025em;margin:0 0 .6rem;font-weight:800}
+.panel h3{font-size:1.2rem;letter-spacing:-.01em;margin:1.8rem 0 .5rem}
+.panel p,.panel li{max-width:70ch}
+.panel p{margin:.55rem 0}
+
+/* Explorer */
+.explore-grid{display:grid;gap:1rem;margin-top:1.2rem}
+.mock-wrap{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:.6rem;overflow-x:auto}
+.mock{display:block;width:100%;min-width:640px;height:auto}
+.info{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;background:var(--raised);border:1px solid var(--line);border-left:5px solid var(--mark);border-radius:var(--r-m);padding:1rem 1.2rem;min-height:110px}
+.info .badge{width:42px;height:42px;border-radius:12px;background:var(--mark);color:var(--mark-ink);display:grid;place-items:center}
+.info h3{margin:0 0 .25rem;font-size:1.15rem}
+.info p{margin:0 0 .4rem}
+.info .hint{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font:inherit;font-size:.92rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:44px}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+
+/* SVG classes */
+.f-surface{fill:var(--surface)} .f-rail{fill:var(--rail)} .f-soft{fill:var(--accent-soft)}
+.f-brand{fill:var(--accent)} .f-bubble{fill:var(--bubble)} .f-screen{fill:var(--screen)}
+.f-good{fill:var(--good)} .f-bad{fill:var(--bad)} .f-away{fill:var(--away)} .f-mark{fill:var(--mark)}
+.s-line{stroke:var(--line-strong);stroke-width:1.5} .s-brand{stroke:var(--accent);stroke-width:2}
+.t,.tm,.tb,.tw,.tk,.tob{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+.t{fill:var(--ink)} .tm{fill:var(--muted)} .tb{fill:var(--accent-ink)} .tw{fill:#FFFFFF} .tk{fill:var(--mark-ink)} .tob{fill:var(--on-bad)}
+.ic{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.icw{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.hl{fill:none;stroke:var(--mark);stroke-width:4}
+.hs{fill:transparent;stroke:transparent;stroke-width:4;cursor:pointer;transition:stroke .15s,fill .15s}
+.hs:hover{stroke:var(--mark)}
+.hs:focus{outline:none}
+.hs:focus-visible,.hs.sel{stroke:var(--mark);fill:rgba(255,194,26,.16)}
+@keyframes nudge{0%,100%{stroke:transparent}50%{stroke:var(--mark)}}
+.mock.fresh .hs{animation:nudge 2.4s ease-in-out 2}
+
+/* Lesson header */
+.lesson-head{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start;padding:1.5rem clamp(1.1rem,3.2vw,2.4rem);border-bottom:1px solid var(--line);background:var(--raised)}
+.num{width:56px;height:56px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+.panel.done .num{background:var(--good);color:var(--on-good)}
+.lesson-head h2{margin:.1rem 0 .3rem}
+.lmeta{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;font-size:.92rem;color:var(--muted);margin:0}
+.lmeta span{display:inline-flex;align-items:center;gap:.35rem}
+.learn{margin:0 0 1.3rem;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--accent-soft)}
+.learn b{display:block;font-size:.95rem;margin-bottom:.3rem}
+.learn ul{margin:0;padding:0;list-style:none;display:grid;gap:.25rem}
+.learn li{display:flex;gap:.55rem;align-items:flex-start;font-size:1.02rem}
+.learn li .i{color:var(--accent);margin-top:.28rem}
+
+/* Content components */
+.steps{counter-reset:s;list-style:none;padding:0;margin:1rem 0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 1rem 3.2rem;min-height:2.4rem}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:-.05rem;width:2.15rem;height:2.15rem;border-radius:10px;background:var(--surface);border:2px solid var(--accent);color:var(--accent);font-weight:800;display:grid;place-items:center;font-size:.98rem}
+.steps>li:not(:last-child)::after{content:"";position:absolute;left:1.04rem;top:2.25rem;bottom:.15rem;width:2px;background:var(--line)}
+.btnlike{display:inline-block;padding:0 .45rem;border-radius:6px;background:var(--accent-soft);font-weight:700;white-space:nowrap}
+kbd{font-family:inherit;font-size:.88em;font-weight:700;padding:.05rem .45rem;border:1px solid var(--line-strong);border-bottom-width:3px;border-radius:6px;background:var(--raised);white-space:nowrap}
+.callout{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;padding:1rem 1.15rem;border-radius:var(--r-m);margin:1.3rem 0;background:var(--raised);border:1px solid var(--line)}
+.callout .ci{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.callout.warn{background:var(--bad-soft);border-color:transparent}
+.callout.warn .ci{background:var(--bad);color:var(--on-bad)}
+.callout>div>b:first-child{display:block;margin-bottom:.1rem}
+.callout p{margin:0}
+.figure{margin:1.4rem 0;background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:1.1rem;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:480px}
+.figcap{font-size:.9rem;color:var(--muted);margin:.7rem 0 0}
+.legend{margin:.8rem 0 0;padding-left:1.4rem;font-size:1rem}
+.legend li{margin:.2rem 0}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem;margin:1rem 0}
+.feature{padding:1rem 1.1rem;border-radius:var(--r-m);border:1px solid var(--line);background:var(--raised)}
+.feature .fi{width:40px;height:40px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin-bottom:.6rem}
+.feature b{display:block;font-size:1.05rem;margin-bottom:.15rem}
+.feature p{margin:0;font-size:1rem;color:var(--muted)}
+.lesson-foot{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.1rem,3.2vw,2.4rem);border-top:1px solid var(--line);background:var(--raised)}
+.done-btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;min-height:48px;padding:0 1.15rem;border-radius:12px;border:2px solid var(--good);background:var(--surface);color:var(--good);cursor:pointer}
+.panel.done .done-btn{background:var(--good);color:var(--on-good)}
+.next-btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;min-height:48px;padding:0 1.15rem;border-radius:12px;background:var(--accent);color:var(--accent-ink)}
+.next-btn:hover{filter:brightness(1.08)}
+
+/* Tables, fixes, glossary */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-m);margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{background:var(--raised);font-size:.92rem}
+details{border:1px solid var(--line);border-radius:var(--r-m);margin:.55rem 0;background:var(--raised);overflow:hidden}
+summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;min-height:52px;display:flex;align-items:center;gap:.7rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-left:auto;width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details[open] summary{border-bottom:1px solid var(--line)}
+details>div{padding:.6rem 1.1rem 1rem;background:var(--surface)}
+dl.gloss{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+dl.gloss dt,dl.gloss dd{padding:.65rem .9rem;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;background:var(--raised)}
+dl.gloss dt:last-of-type,dl.gloss dd:last-of-type{border-bottom:0}
+@media (max-width:560px){dl.gloss{grid-template-columns:1fr}dl.gloss dd{border-bottom:1px solid var(--line)}}
+
+/* Quiz */
+.q{border-top:1px solid var(--line);padding:1.2rem 0}
+.q:first-of-type{border-top:0;padding-top:.4rem}
+.qt{font-weight:700;margin:0 0 .7rem!important;font-size:1.08rem}
+.opts{display:grid;gap:.5rem}
+.opt{display:flex;align-items:center;gap:.7rem;font:inherit;text-align:left;padding:.7rem 1rem;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:52px}
+.opt::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong)}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--good);color:var(--on-good);font-weight:700}
+.opt.right::before{border-color:var(--on-good);background:var(--on-good)}
+.opt.wrong{border-color:var(--bad);border-width:2px}
+.why{margin:.7rem 0 0!important;padding:.7rem 1rem;border-radius:10px;background:var(--good-soft)}
+.why.miss{background:var(--bad-soft)}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;font-weight:700;font-size:1.1rem;margin-top:1rem}
+.ghost-btn{font:inherit;font-weight:700;font-size:.95rem;min-height:44px;padding:0 1rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ghost-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Certificate */
+.cert-lock{display:flex;gap:.9rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--raised);border:1px dashed var(--line-strong)}
+.cert-form{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-end;margin:1rem 0}
+.cert-form label{display:grid;gap:.3rem;font-weight:700;font-size:.95rem;flex:1 1 260px}
+.cert-form input{font:inherit;font-weight:400;min-height:50px;padding:0 .9rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+.cert{margin-top:1.2rem;background:#FFFFFF;color:#141943;border-radius:6px;padding:10px;box-shadow:var(--shadow)}
+.cert-in{border:2px solid #141943;outline:1px solid #141943;outline-offset:-8px;padding:2.6rem 2rem;text-align:center;font-family:Georgia,"Times New Roman",serif}
+.cert-in .ct{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:.85rem;color:#3B43A8;margin:0 0 .6rem}
+.cert-in h3{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 1.2rem;font-weight:400;letter-spacing:.01em}
+.cert-in .nm{font-size:clamp(1.7rem,4.6vw,2.6rem);font-style:italic;margin:.4rem 0 .4rem;border-bottom:1px solid #9EA2C4;display:inline-block;padding:0 1.5rem .3rem}
+.cert-in p{margin:.4rem auto;max-width:44ch;font-size:1.05rem;color:#2A2F55}
+.cert-in .cc{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:1.2rem;color:#141943}
+.cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-top:2rem;font-family:"Segoe UI",system-ui,sans-serif;font-size:.85rem;color:#2A2F55;text-align:left}
+.cert-foot svg{width:48px;height:48px}
+
+/* Sources, footer, dialog */
+.src{list-style:none;padding:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+.src li{padding:.8rem 1rem;border-bottom:1px solid var(--line);font-size:1rem}
+.src li:last-child{border-bottom:0}
+.src b{display:block}
+.src span{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;background:var(--good-soft);color:var(--ink);padding:.3rem .8rem;border-radius:999px;font-size:.92rem}
+footer{background:var(--cover);color:var(--cover-muted)}
+.foot-in{max-width:1280px;margin:0 auto;padding:2.2rem 1.1rem 2.6rem;display:grid;gap:1.4rem}
+@media (min-width:800px){.foot-in{grid-template-columns:auto 1fr;align-items:start}}
+.foot-brand{display:flex;gap:.8rem;align-items:center;color:var(--cover-ink)}
+.foot-brand svg{width:44px;height:44px}
+.foot-brand b{display:block;font-size:1.05rem}
+.foot-txt{font-size:.92rem;display:grid;gap:.45rem}
+.foot-txt p{margin:0}
+.foot-txt strong{color:var(--cover-ink)}
+dialog{max-width:580px;width:calc(100% - 2rem);border:1px solid var(--line);border-radius:var(--r-l);padding:0;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(6,8,20,.62)}
+.dlg-head{display:flex;gap:.9rem;align-items:center;padding:1.3rem 1.5rem;background:var(--cover);color:var(--cover-ink)}
+.dlg-head svg{width:44px;height:44px}
+.dlg-head h2{margin:0;font-size:1.3rem}
+.dlg-body{padding:1.1rem 1.5rem 1.5rem}
+.dlg-body p{margin:.55rem 0;font-size:1.02rem}
+
+/* Print */
+@media print{
+  .bar,.outline,.cta,.lesson-foot,#explore,#quiz,.skip,.cert-form,.cert-actions,.scrim{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .cover{background:#fff;color:#000;border:0}.cover::before{display:none}.cover .lead,.meta span,.credit{color:#333}
+  .panel{box-shadow:none;border:1px solid #999;break-inside:avoid-page}
+  details>div{display:block}
+  html.print-cert body *{visibility:hidden}
+  html.print-cert #certCard,html.print-cert #certCard *{visibility:visible}
+  html.print-cert #certCard{position:absolute;left:0;top:0;width:100%;box-shadow:none}
+}
+
+.c-orange{color:#7A3F00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .c-orange{color:#FFB366}}
+:root[data-theme="dark"] .c-orange{color:#FFB366}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="var(--accent)"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="var(--mark)"/></symbol>
+    <symbol id="logo-cert" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#141943"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="#FFC21A"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></symbol>
+    <symbol id="i-level" viewBox="0 0 24 24"><path d="M4 20V14M10 20V9M16 20V4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M5 3l6 17 2.5-7.5L21 10z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11M11 10.5V4a1.5 1.5 0 0 1 3 0v6.5M14 10.5V5.5a1.5 1.5 0 0 1 3 0V13M17 11a1.5 1.5 0 0 1 3 0v3a7 7 0 0 1-7 7h-1a7 7 0 0 1-6.2-3.8L3.5 14a1.5 1.5 0 0 1 2.6-1.5L8 15"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a5 5 0 0 0 8 0M9 9.5v.5M15 9.5v.5"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17v.5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h1M10 10h1M14 10h1M18 10h0M7 14h10"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.5M4 12h.5M4 18h.5"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#lesson-1">Skip to the first lesson</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <button class="ibtn only-narrow" id="menuBtn" type="button" aria-controls="outline" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg><span class="lbl">Contents</span></button>
+    <a class="brand" href="#top"><svg class="mark-logo" aria-hidden="true"><use href="#logo"/></svg><span class="brand-t"><b>Actua Business Services Limited</b><span>Tutorial series</span></span></a>
+    <span class="bar-spacer"></span><a class="ibtn" href="../index.html" title="Back to the course library"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Library</span></a>
+    <div class="ring" aria-live="polite">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle class="trk" cx="20" cy="20" r="16"/><circle class="val" id="ringVal" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="100.53"/></svg>
+      <span class="ring-label" id="ringText"><b>0</b> of 10 lessons</span>
+    </div>
+    <button class="ibtn" id="themeBtn" type="button" aria-label="Switch to dark mode"><svg class="i"><use id="themeIcon" href="#i-moon"/></svg></button>
+    <button class="ibtn" id="aboutBtn" type="button" aria-haspopup="dialog"><svg class="i"><use href="#i-info"/></svg><span class="lbl">About</span></button>
+  </div>
+</header>
+
+<section class="cover" id="top" aria-labelledby="title">
+  <div class="cover-in">
+    <div>
+      <p class="series"><span class="pip" aria-hidden="true"></span>Bookkeeping software</p>
+      <h1 id="title">FreeAgent Essentials</h1>
+      <p class="lead">Everything a sole trader or small company needs to run FreeAgent with confidence: explaining bank transactions, invoicing, expenses, the Tax Timeline and VAT. Free for many NatWest Group customers.</p>
+      <div class="cta">
+        <a class="btn btn-light" href="#lesson-1">Start lesson 1 <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#explore"><svg class="i"><use href="#i-pointer"/></svg>Explore the Overview screen</a>
+      </div>
+      <p class="credit"><svg aria-hidden="true"><use href="#logo"/></svg>By Shaun Ellison &amp; Actua Business Services Limited, with AI</p>
+    </div>
+    <ul class="meta" aria-label="Course details">
+      <li><svg class="i"><use href="#i-book"/></svg><div><b>10 short lessons</b><span>Plus a quiz, fixes and a glossary</span></div></li>
+      <li><svg class="i"><use href="#i-clock"/></svg><div><b>About 45 minutes</b><span>Stop and start whenever you like</span></div></li>
+      <li><svg class="i"><use href="#i-level"/></svg><div><b>Beginner</b><span>For sole traders and small companies</span></div></li>
+      <li><svg class="i"><use href="#i-shield"/></svg><div><b id="coverChecked">Facts checked 6 November 2026</b><span>Against FreeAgent’s own help pages</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<div class="shell">
+  <nav class="outline" id="outline" aria-label="Course contents">
+    <div class="drawer-head"><b>Course contents</b><button class="ibtn" id="menuClose" type="button" aria-label="Close contents"><svg class="i"><use href="#i-x"/></svg></button></div>
+    <h2>Lessons</h2>
+    <ol id="outlineLessons"></ol>
+    <h2>Practice and help</h2>
+    <ol>
+      <li><a href="#explore"><span class="st" aria-hidden="true">◎</span><span>Explore the Overview</span><span></span></a></li>
+      <li><a href="#quiz"><span class="st" aria-hidden="true">?</span><span>Check yourself</span><span></span></a></li>
+      <li><a href="#certificate"><span class="st" aria-hidden="true">★</span><span>Certificate</span><span></span></a></li>
+      <li><a href="#fixes"><span class="st" aria-hidden="true">!</span><span>Something’s gone wrong</span><span></span></a></li>
+      <li><a href="#glossary"><span class="st" aria-hidden="true">A</span><span>Glossary</span><span></span></a></li>
+      <li><a href="#sources"><span class="st" aria-hidden="true">§</span><span>Sources</span><span></span></a></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="main">
+
+<section class="panel" id="explore" aria-labelledby="hex">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-pointer"/></svg>Interactive</p>
+    <h2 id="hex">Explore the FreeAgent Overview screen</h2>
+    <p>This is a pretend FreeAgent Overview screen for an imaginary company. Select any part of it, or use the buttons underneath, to see what it does. The figures are made up.</p>
+    <div class="explore-grid">
+      <div class="mock-wrap">
+<svg class="mock fresh" id="mock" viewBox="0 0 960 560" role="group" aria-label="A pretend FreeAgent Overview screen with selectable parts">
+  <defs><clipPath id="win"><rect x="1" y="1" width="958" height="558" rx="14"/></clipPath></defs>
+  <g clip-path="url(#win)">
+    <rect x="0" y="0" width="960" height="560" class="f-rail"/>
+    <rect x="0" y="0" width="960" height="58" class="f-surface"/>
+    <line x1="0" y1="58" x2="960" y2="58" class="s-line"/>
+    <text x="24" y="36" class="t" font-size="16" font-weight="700">Bright Bakes Ltd</text>
+    <text x="196" y="35" class="t" font-size="14" font-weight="700">Overview</text><rect x="196" y="52" width="64" height="4" class="f-brand"/>
+    <text x="290" y="35" class="t" font-size="14">Contacts</text>
+    <text x="376" y="35" class="t" font-size="14">Work ▾</text>
+    <text x="452" y="35" class="t" font-size="14">Banking ▾</text>
+    <text x="546" y="35" class="t" font-size="14">Taxes ▾</text>
+    <text x="628" y="35" class="t" font-size="14">Accounting ▾</text>
+    <g transform="translate(860 30)"><circle r="9" fill="none" stroke="var(--ink)" stroke-width="4" stroke-dasharray="3.5 3.57"/><circle r="6.5" class="ic"/><circle r="2.5" class="ic"/></g>
+    <circle cx="900" cy="30" r="12" class="ic"/><text x="900" y="35" class="t" font-size="14" font-weight="700" text-anchor="middle">?</text>
+    <circle cx="936" cy="30" r="14" class="f-brand"/><text x="936" y="35" class="tb" font-size="11" font-weight="700" text-anchor="middle">BB</text>
+
+    <rect x="24" y="76" width="520" height="210" rx="12" class="f-surface s-line"/>
+    <text x="44" y="104" class="t" font-size="15" font-weight="700">Cashflow</text><text x="524" y="104" class="tm" font-size="12" text-anchor="end">Last 6 months</text>
+    <g>
+      <rect x="64" y="186" width="22" height="70" class="f-good"/><rect x="90" y="206" width="22" height="50" class="f-brand"/>
+      <rect x="144" y="166" width="22" height="90" class="f-good"/><rect x="170" y="196" width="22" height="60" class="f-brand"/>
+      <rect x="224" y="176" width="22" height="80" class="f-good"/><rect x="250" y="186" width="22" height="70" class="f-brand"/>
+      <rect x="304" y="146" width="22" height="110" class="f-good"/><rect x="330" y="191" width="22" height="65" class="f-brand"/>
+      <rect x="384" y="156" width="22" height="100" class="f-good"/><rect x="410" y="181" width="22" height="75" class="f-brand"/>
+      <rect x="464" y="136" width="22" height="120" class="f-good"/><rect x="490" y="176" width="22" height="80" class="f-brand"/>
+      <line x1="54" y1="256" x2="524" y2="256" class="s-line"/>
+      <text x="88" y="274" class="tm" font-size="11" text-anchor="middle">May</text><text x="168" y="274" class="tm" font-size="11" text-anchor="middle">Jun</text><text x="248" y="274" class="tm" font-size="11" text-anchor="middle">Jul</text><text x="328" y="274" class="tm" font-size="11" text-anchor="middle">Aug</text><text x="408" y="274" class="tm" font-size="11" text-anchor="middle">Sep</text><text x="488" y="274" class="tm" font-size="11" text-anchor="middle">Oct</text>
+      <rect x="44" y="118" width="10" height="10" class="f-good"/><text x="60" y="127" class="tm" font-size="11">Money in</text>
+      <rect x="124" y="118" width="10" height="10" class="f-brand"/><text x="140" y="127" class="tm" font-size="11">Money out</text>
+    </g>
+
+    <rect x="24" y="304" width="520" height="230" rx="12" class="f-surface s-line"/>
+    <text x="44" y="332" class="t" font-size="15" font-weight="700">Banking</text>
+    <text x="44" y="368" class="t" font-size="13" font-weight="700">Business Current Account</text>
+    <text x="524" y="368" class="t" font-size="16" font-weight="700" text-anchor="end">£8,214.60</text>
+    <rect x="44" y="384" width="150" height="28" rx="14" class="f-bad"/><text x="119" y="403" class="tob" font-size="12" font-weight="700" text-anchor="middle">12 unexplained</text>
+    <rect x="204" y="384" width="150" height="28" rx="14" fill="#E07A00"/><text x="279" y="403" font-size="12" font-weight="700" text-anchor="middle" fill="#1A0D00" font-family="Segoe UI,system-ui,sans-serif">3 for approval</text>
+    <line x1="44" y1="430" x2="524" y2="430" class="s-line"/>
+    <text x="44" y="462" class="t" font-size="13" font-weight="700">Business Savings</text>
+    <text x="524" y="462" class="t" font-size="16" font-weight="700" text-anchor="end">£5,000.00</text>
+    <rect x="44" y="478" width="150" height="28" rx="14" class="f-good"/><text x="119" y="497" font-size="12" font-weight="700" text-anchor="middle" fill="var(--on-good)" font-family="Segoe UI,system-ui,sans-serif">All explained</text>
+
+    <rect x="564" y="76" width="372" height="290" rx="12" class="f-surface s-line"/>
+    <text x="584" y="104" class="t" font-size="15" font-weight="700">Tax Timeline</text>
+    <line x1="598" y1="130" x2="598" y2="340" stroke="var(--line-strong)" stroke-width="2"/>
+    <circle cx="598" cy="140" r="7" class="f-bad"/>
+    <text x="616" y="138" class="t" font-size="13" font-weight="700">VAT return, Jul to Sep</text><text x="916" y="138" class="t" font-size="13" font-weight="700" text-anchor="end">£1,284.20</text>
+    <text x="616" y="156" class="tm" font-size="12">File and pay by 7 Nov 2026</text>
+    <circle cx="598" cy="200" r="7" class="f-brand"/>
+    <text x="616" y="198" class="t" font-size="13" font-weight="700">VAT return, Oct to Dec</text><text x="916" y="198" class="tm" font-size="12" text-anchor="end">Building up</text>
+    <text x="616" y="216" class="tm" font-size="12">File and pay by 7 Feb 2027</text>
+    <circle cx="598" cy="260" r="7" class="f-brand"/>
+    <text x="616" y="258" class="t" font-size="13" font-weight="700">Corporation Tax</text><text x="916" y="258" class="tm" font-size="12" text-anchor="end">Estimate £2,940</text>
+    <text x="616" y="276" class="tm" font-size="12">Year ending 30 Sep 2026</text>
+    <circle cx="598" cy="320" r="7" class="f-brand"/>
+    <text x="616" y="318" class="t" font-size="13" font-weight="700">Confirmation statement</text>
+    <text x="616" y="336" class="tm" font-size="12">Companies House</text>
+
+    <rect x="564" y="384" width="372" height="150" rx="12" class="f-surface s-line"/>
+    <text x="584" y="412" class="t" font-size="15" font-weight="700">Invoice timeline</text>
+    <text x="584" y="448" class="tm" font-size="12">Overdue</text><text x="916" y="448" class="t" font-size="13" font-weight="700" text-anchor="end">£1,150.00</text>
+    <rect x="584" y="456" width="332" height="10" rx="5" class="f-soft"/><rect x="584" y="456" width="100" height="10" rx="5" class="f-bad"/>
+    <text x="584" y="494" class="tm" font-size="12">Due in the next 30 days</text><text x="916" y="494" class="t" font-size="13" font-weight="700" text-anchor="end">£3,050.00</text>
+    <rect x="584" y="502" width="332" height="10" rx="5" class="f-soft"/><rect x="584" y="502" width="260" height="10" rx="5" class="f-brand"/>
+  </g>
+  <rect x="1" y="1" width="958" height="558" rx="14" fill="none" class="s-line"/>
+  <rect class="hs" data-hs="overview"   x="186" y="12" width="84" height="44" rx="8" tabindex="0" role="button" aria-label="Overview tab"/>
+  <rect class="hs" data-hs="contacts"   x="280" y="12" width="80" height="40" rx="8" tabindex="0" role="button" aria-label="Contacts tab"/>
+  <rect class="hs" data-hs="work"       x="366" y="12" width="70" height="40" rx="8" tabindex="0" role="button" aria-label="Work tab"/>
+  <rect class="hs" data-hs="banking"    x="442" y="12" width="88" height="40" rx="8" tabindex="0" role="button" aria-label="Banking tab"/>
+  <rect class="hs" data-hs="taxes"      x="536" y="12" width="76" height="40" rx="8" tabindex="0" role="button" aria-label="Taxes tab"/>
+  <rect class="hs" data-hs="accounting" x="618" y="12" width="110" height="40" rx="8" tabindex="0" role="button" aria-label="Accounting tab"/>
+  <rect class="hs" data-hs="settings"   x="842" y="12" width="36" height="36" rx="8" tabindex="0" role="button" aria-label="Settings"/>
+  <rect class="hs" data-hs="cashflow"   x="20"  y="72" width="528" height="218" rx="14" tabindex="0" role="button" aria-label="Cashflow panel"/>
+  <rect class="hs" data-hs="bankpanel"  x="20"  y="300" width="528" height="238" rx="14" tabindex="0" role="button" aria-label="Banking panel"/>
+  <rect class="hs" data-hs="taxtl"      x="560" y="72" width="380" height="298" rx="14" tabindex="0" role="button" aria-label="Tax Timeline panel"/>
+  <rect class="hs" data-hs="invtl"      x="560" y="380" width="380" height="158" rx="14" tabindex="0" role="button" aria-label="Invoice timeline panel"/>
+</svg>
+      </div>
+      <div class="info" aria-live="polite">
+        <span class="badge" aria-hidden="true"><svg class="i"><use href="#i-pointer"/></svg></span>
+        <div>
+          <h3 id="infoTitle">Pick a part of the screen</h3>
+          <p id="infoBody" class="hint">Select anything on the pretend Overview screen, or one of the buttons below. The explanation appears here.</p>
+          <a id="infoLink" href="#lesson-1" hidden>Go to the lesson</a>
+        </div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Parts of the screen"></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="lesson-1" data-lesson="1" aria-labelledby="h1l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">1</span><div><p class="sec-kicker" style="margin:0">Lesson 1 of 10</p><h2 id="h1l">What FreeAgent is, and who it’s for</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>3 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What FreeAgent does</li><li><svg class="i"><use href="#i-check"/></svg>Who can get it free</li></ul></div>
+    <p>FreeAgent is online accounting software built for small businesses: sole traders, partnerships, small limited companies and landlords. It runs in a web browser and has a phone app for iPhone and Android.</p>
+    <div class="feature-grid">
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-list"/></svg></span><b>Bank and bookkeeping</b><p>Bank transactions come in automatically and you “explain” what each one was.</p></div>
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-file"/></svg></span><b>Invoices and expenses</b><p>Send invoices, record bills and claim back money you spent personally.</p></div>
+      <div class="feature"><span class="fi"><svg class="i"><use href="#i-clock"/></svg></span><b>Tax Timeline</b><p>Shows upcoming tax deadlines and estimated bills in one place.</p></div>
+    </div>
+    <h3>Free with NatWest Group banks</h3>
+    <p>FreeAgent is owned by NatWest Group. You can usually get it free if the business has a business current account with <b>NatWest</b>, <b>Royal Bank of Scotland</b> or <b>Ulster Bank</b>, for as long as you keep the account. With a <b>Mettle</b> account, it’s free if you make at least one transaction a month through Mettle. Optional add-ons may cost extra.</p>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Check with us before signing up</b><p>If Actua looks after your books, let us set FreeAgent up with you, so your account is linked to us from the start.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-2">Next: finding your way around <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-2" data-lesson="2" aria-labelledby="h2l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">2</span><div><p class="sec-kicker" style="margin:0">Lesson 2 of 10</p><h2 id="h2l">Finding your way around</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The six tabs along the top</li><li><svg class="i"><use href="#i-check"/></svg>What the Overview screen tells you</li></ul></div>
+    <p>FreeAgent keeps everything in a row of tabs along the top of the screen. Some tabs open a drop-down menu when you select them.</p>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Tab</th><th scope="col">What’s in it</th></tr></thead>
+      <tbody>
+        <tr><td><b>Overview</b></td><td>Your home screen: cashflow, bank accounts, invoices and the Tax Timeline.</td></tr>
+        <tr><td><b>Contacts</b></td><td>Your customers and suppliers.</td></tr>
+        <tr><td><b>Work</b></td><td>Invoicing, estimates, bills, expenses, projects and timeslips.</td></tr>
+        <tr><td><b>Banking</b></td><td>Your bank accounts and the transactions waiting to be explained.</td></tr>
+        <tr><td><b>Taxes</b></td><td>VAT returns, Self Assessment and Corporation Tax, depending on your business type.</td></tr>
+        <tr><td><b>Accounting</b></td><td>Reports such as Profit and Loss and Balance Sheet.</td></tr>
+      </tbody>
+    </table></div>
+    <p><a href="#explore">Go to the pretend Overview screen</a> and select each tab to see it described.</p>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>On your phone</b><p>The FreeAgent app has the same areas as icons along the bottom of the screen. Anything you do in the app shows up on the computer version too.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-3">Next: getting set up <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-3" data-lesson="3" aria-labelledby="h3l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">3</span><div><p class="sec-kicker" style="margin:0">Lesson 3 of 10</p><h2 id="h3l">Getting set up</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The settings to check first</li><li><svg class="i"><use href="#i-check"/></svg>What access levels mean</li></ul></div>
+    <ol class="steps">
+      <li>Open <b>Settings</b> (the gear icon) and check your business name, address and contact details. These appear on your invoices.</li>
+      <li>Add your logo and bank details for invoices, so customers know how to pay you.</li>
+      <li>If the business is VAT-registered, check the VAT details are entered correctly. Ask your accountant if unsure.</li>
+      <li>Connect your bank account (lesson 4).</li>
+    </ol>
+    <h3>Access levels</h3>
+    <p>Everyone who uses FreeAgent gets an <b>access level</b> that controls what they can see and do. For example, you need <b>level 6 or above</b> to explain bank transactions. If a button is missing for you, your access level may be too low; ask the account owner.</p>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Leave these to your accountant</b><p>Don’t change your accounting year dates, VAT registration date or VAT scheme without speaking to your accountant. FreeAgent uses these dates to build your tax returns and the Tax Timeline.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-4">Next: the Banking area <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-4" data-lesson="4" aria-labelledby="h4l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">4</span><div><p class="sec-kicker" style="margin:0">Lesson 4 of 10</p><h2 id="h4l">Your bank and the colour code</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Find your bank transactions</li><li><svg class="i"><use href="#i-check"/></svg>What red, orange and green mean</li></ul></div>
+    <ol class="steps">
+      <li>Select the <b>Banking</b> tab, then <b>Bank Accounts</b> from the drop-down menu.</li>
+      <li>Choose the bank account. You’ll see this month’s transactions.</li>
+      <li>Use the tabs above the list to filter: <b>Unexplained</b> and <b>For Approval</b> show what needs your attention.</li>
+    </ol>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Colour</th><th scope="col">Meaning</th><th scope="col">What to do</th></tr></thead>
+      <tbody>
+        <tr><td><b style="color:var(--bad)">Red</b></td><td>Unexplained: FreeAgent doesn’t know what this is yet.</td><td>Explain it (lesson 5).</td></tr>
+        <tr><td><b class="c-orange">Orange</b></td><td>For approval: FreeAgent has guessed an explanation.</td><td>Check and approve it (lesson 6).</td></tr>
+        <tr><td><b style="color:var(--good)">Green</b></td><td>Explained.</td><td>Nothing, unless it’s wrong.</td></tr>
+        <tr><td><b>Grey</b></td><td>A transaction in an account marked as personal.</td><td>Only explain the business ones.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Connecting a bank</b><p>In the Banking area you can add a bank account and connect a bank feed, which signs you in through your bank’s own secure page. NatWest Group accounts connect easily; many other banks are supported too. If yours isn’t, you can upload a statement file instead.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-5">Next: explaining transactions <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-5" data-lesson="5" aria-labelledby="h5l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">5</span><div><p class="sec-kicker" style="margin:0">Lesson 5 of 10</p><h2 id="h5l">Explaining transactions</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Explain a single transaction</li><li><svg class="i"><use href="#i-check"/></svg>The explanations that link to invoices, bills and transfers</li></ul></div>
+    <p>“Explaining” is FreeAgent’s word for telling it what a bank transaction was. It’s the same job other software calls categorising or reconciling.</p>
+    <ol class="steps">
+      <li>Open the bank account and select a red, unexplained transaction.</li>
+      <li>Choose the <b>type</b>: for example, a payment, an invoice receipt, a bill payment or a transfer.</li>
+      <li>For payments, choose the <b>category</b> (such as Telephone or Travel) and check the <b>VAT</b>.</li>
+      <li>Attach a receipt if you have one.</li>
+      <li>Select <span class="btnlike">Explain Transaction</span>. It turns green.</li>
+    </ol>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">If the money is…</th><th scope="col">Explain it as</th></tr></thead>
+      <tbody>
+        <tr><td>A customer paying an invoice you sent from FreeAgent</td><td><b>Invoice receipt</b>, linked to that invoice. Don’t use a sales category, or the sale is counted twice.</td></tr>
+        <tr><td>You paying a supplier’s bill already entered</td><td><b>Bill payment</b>, linked to that bill.</td></tr>
+        <tr><td>Moving money between two of your business accounts</td><td><b>Transfer</b>. FreeAgent records equal money out and money in on the two accounts.</td></tr>
+        <tr><td>Everything else, such as a card purchase</td><td>A <b>payment</b> with the right category and VAT.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-clock"/></svg></span><div><b>Lots of similar transactions?</b><p>When you explain one, FreeAgent may offer to explain others with similar descriptions in the same way. You can also select several unexplained transactions and explain them in bulk. This doesn’t work for invoice receipts or bill payments, which need linking one by one.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-6">Next: Guess and approving <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-6" data-lesson="6" aria-labelledby="h6l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">6</span><div><p class="sec-kicker" style="margin:0">Lesson 6 of 10</p><h2 id="h6l">Guess, and approving its work</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>3 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What Guess does</li><li><svg class="i"><use href="#i-check"/></svg>Why every guess needs checking</li></ul></div>
+    <p><b>Guess</b> is a FreeAgent feature that tries to explain new bank feed transactions for you, based on how you’ve explained similar ones before. Its guesses land in the <b>For Approval</b> tab, shown in orange.</p>
+    <ol class="steps">
+      <li>Open the bank account and select the <b>For Approval</b> tab.</li>
+      <li>Check each guess: is the type, category and VAT right?</li>
+      <li>If it’s right, approve it. If it’s wrong, change it before approving.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Guesses count straight away</b><p>Guessed transactions already behave like explained ones in your figures, even before you approve them. A wrong guess left unchecked flows straight into your VAT return and tax estimates. Check the For Approval tab every week.</p></div></div>
+    <p>If Guess keeps getting a supplier wrong, you can switch off that rule, or switch Guess off for a whole bank account, from the Banking area.</p>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-7">Next: invoices <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-7" data-lesson="7" aria-labelledby="h7l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">7</span><div><p class="sec-kicker" style="margin:0">Lesson 7 of 10</p><h2 id="h7l">Creating and sending invoices</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Create and send an invoice</li><li><svg class="i"><use href="#i-check"/></svg>Why “Mark as Sent” matters</li></ul></div>
+    <ol class="steps">
+      <li>Select the <b>Work</b> tab, then <b>Invoicing</b>.</li>
+      <li>Select <span class="btnlike">Add New Invoice</span> (or <span class="btnlike">Create your first invoice</span>).</li>
+      <li>Choose the customer, check the dates and payment terms, and add a line for each thing you’re charging for.</li>
+      <li>Save it. It starts as a <b>draft</b>.</li>
+      <li>Email it from FreeAgent, or select <span class="btnlike">Mark as Sent</span> and send it yourself.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Drafts don’t count</b><p>An invoice only counts in your accounts and VAT return once it’s sent or marked as sent. A forgotten draft means missing sales, and missing VAT on your return.</p></div></div>
+    <h3>When the customer pays</h3>
+    <p>When the money arrives in your bank, explain the bank transaction as an <b>invoice receipt</b> and pick the invoice. FreeAgent marks the invoice as paid.</p>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-8">Next: bills and expenses <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-8" data-lesson="8" aria-labelledby="h8l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">8</span><div><p class="sec-kicker" style="margin:0">Lesson 8 of 10</p><h2 id="h8l">Bills and out-of-pocket expenses</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>When to use a bill, an expense or just the bank</li></ul></div>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Situation</th><th scope="col">Where to record it</th></tr></thead>
+      <tbody>
+        <tr><td>A supplier sends an invoice you’ll pay later</td><td><b>Work</b>, then <b>Bills</b>. When you pay it, explain the bank payment as a bill payment.</td></tr>
+        <tr><td>You paid for something business-related with your <b>own personal</b> money or card</td><td><b>Work</b>, then <b>Expenses</b>, as an out-of-pocket expense. The business owes you that money back.</td></tr>
+        <tr><td>You paid with the <b>business</b> card or account</td><td>Nothing extra: just explain the bank transaction, and attach the receipt there.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Don’t record it twice</b><p>If you paid with the business card, don’t also add it as an out-of-pocket expense. That would claim the cost twice, and record that the business owes you money it doesn’t.</p></div></div>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-file"/></svg></span><div><b>Snap receipts on the go</b><p>The FreeAgent phone app can photograph receipts and attach them. The Snap &amp; Send course in this series covers good receipt habits.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-9">Next: the Tax Timeline and VAT <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-9" data-lesson="9" aria-labelledby="h9l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">9</span><div><p class="sec-kicker" style="margin:0">Lesson 9 of 10</p><h2 id="h9l">The Tax Timeline and VAT</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Read the Tax Timeline</li><li><svg class="i"><use href="#i-check"/></svg>Check and file a VAT return</li></ul></div>
+    <h3 style="margin-top:.4rem">The Tax Timeline</h3>
+    <p>The Tax Timeline on the Overview screen is a calendar of your important tax dates and payments, built from your accounting and VAT dates. From each item’s three-dot menu you can file online with HMRC (where FreeAgent supports it), mark it as filed, or mark a bill as paid.</p>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Estimates are only as good as your bookkeeping</b><p>The tax amounts shown are estimates based on what’s in FreeAgent today. Unexplained transactions, guesses awaiting approval and draft invoices all make them less accurate.</p></div></div>
+    <h3>Filing a VAT return</h3>
+    <ol class="steps">
+      <li>Explain every transaction in the VAT period, approve all guesses, and make sure every invoice is sent or marked as sent.</li>
+      <li>Select the <b>Taxes</b> tab, then <b>VAT</b>, and open the return that’s due.</li>
+      <li>Check the figures. The <b>Full Report</b> tab shows the breakdown behind them.</li>
+      <li>Tick the legal declaration and select <span class="btnlike">Submit VAT Return</span>. FreeAgent sends it to HMRC through its Making Tax Digital connection.</li>
+      <li>Pay HMRC by the deadline: normally one calendar month and seven days after the period ends.</li>
+    </ol>
+    <div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>If your accountant files for you</b><p>If Actua prepares your VAT returns, Self Assessment or company accounts, don’t file them yourself from FreeAgent. Once a return reaches HMRC, it can’t simply be taken back.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-10">Next: reports and your accountant <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="lesson-10" data-lesson="10" aria-labelledby="h10l">
+  <header class="lesson-head"><span class="num" aria-hidden="true">10</span><div><p class="sec-kicker" style="margin:0">Lesson 10 of 10</p><h2 id="h10l">Reports, and working with your accountant</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+  <div class="panel-body">
+    <div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The reports worth knowing</li><li><svg class="i"><use href="#i-check"/></svg>A simple routine that keeps your accountant happy</li></ul></div>
+    <p>Reports live under the <b>Accounting</b> tab. The two most useful are:</p>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">Report</th><th scope="col">Answers the question</th></tr></thead>
+      <tbody>
+        <tr><td><b>Profit and Loss</b></td><td>Did the business make money over this period?</td></tr>
+        <tr><td><b>Balance Sheet</b></td><td>What does the business own and owe on this date?</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Your weekly ten minutes</h3>
+    <ol class="steps">
+      <li>Explain anything red in Banking.</li>
+      <li>Check and approve anything orange in For Approval.</li>
+      <li>Send or mark as sent any draft invoices.</li>
+      <li>Add any out-of-pocket expenses and bills.</li>
+      <li>Glance at the Tax Timeline for anything coming up.</li>
+    </ol>
+    <div class="callout"><span class="ci"><svg class="i"><use href="#i-shield"/></svg></span><div><b>Your accountant can see your FreeAgent</b><p>When your account is linked to your accountant’s practice, they can review your books directly. Leave a note on any transaction you’re unsure about rather than guessing.</p></div></div>
+  </div>
+  <footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#quiz">Next: check yourself <svg class="i"><use href="#i-arrow"/></svg></a></footer>
+</section>
+
+<section class="panel" id="quiz" aria-labelledby="hqz">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-help"/></svg>Check yourself</p>
+    <h2 id="hqz">Seven quick questions</h2>
+    <p>Pick an answer to see whether you’re right, and why.</p>
+    <div id="quizBody"></div>
+    <div class="score" id="quizScore" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="panel" id="certificate" aria-labelledby="hct">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-award"/></svg>Certificate</p>
+    <h2 id="hct">Your certificate of completion</h2>
+    <div id="certArea"></div>
+  </div>
+</section>
+
+<section class="panel" id="fixes" aria-labelledby="hfx">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-alert"/></svg>Help</p>
+    <h2 id="hfx">Something’s gone wrong</h2>
+    <p>Select a problem to see the fix.</p>
+    <details><summary>I can’t see the Explain button</summary><div><p>You need access level 6 or above to explain bank transactions. Ask the account owner or your accountant to raise your access level.</p></div></details>
+    <details><summary>A customer has paid but the invoice still shows as unpaid</summary><div><p>The bank transaction was probably explained as a sale or other income instead of an invoice receipt. Open the transaction, change the type to invoice receipt and pick the invoice.</p></div></details>
+    <details><summary>My sales look too low</summary><div><p>Check <b>Work</b>, then <b>Invoicing</b>, for invoices still in draft. Drafts don’t count until they’re sent or marked as sent.</p></div></details>
+    <details><summary>Guess keeps getting one supplier wrong</summary><div><p>Correct the guesses, then switch off that Guess rule in the Banking area so future transactions from that supplier stay unexplained for you to explain yourself.</p></div></details>
+    <details><summary>A transfer appears twice</summary><div><p>When both accounts have bank feeds, a transfer comes in on each side. Explain one side as a transfer and FreeAgent normally explains the other side automatically. If both were explained separately, ask your accountant before deleting anything.</p></div></details>
+    <details><summary>My bank feed has stopped</summary><div><p>Bank permissions need renewing from time to time. Look for a message in the Banking area and reconnect through your bank’s secure page.</p></div></details>
+  </div>
+</section>
+
+<section class="panel" id="glossary" aria-labelledby="hgl">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-list"/></svg>Reference</p>
+    <h2 id="hgl">FreeAgent words explained</h2>
+    <dl class="gloss">
+      <dt>Access level</dt><dd>Controls what each user can see and do. Level 6 or above is needed to explain bank transactions.</dd>
+      <dt>Bill payment</dt><dd>The explanation type for paying a supplier bill already entered in FreeAgent.</dd>
+      <dt>Draft</dt><dd>An invoice that hasn’t been sent or marked as sent, so it doesn’t count yet.</dd>
+      <dt>Explain</dt><dd>Tell FreeAgent what a bank transaction was.</dd>
+      <dt>For Approval</dt><dd>The tab of transactions Guess has explained, shown in orange, waiting for you to check.</dd>
+      <dt>Guess</dt><dd>FreeAgent’s feature that tries to explain new transactions automatically.</dd>
+      <dt>Invoice receipt</dt><dd>The explanation type for a customer paying one of your FreeAgent invoices.</dd>
+      <dt>Out-of-pocket expense</dt><dd>A business cost paid with your own personal money, which the business owes back to you.</dd>
+      <dt>Tax Timeline</dt><dd>The calendar of tax deadlines and estimated bills on the Overview screen.</dd>
+      <dt>Unexplained</dt><dd>A bank transaction FreeAgent doesn’t know about yet, shown in red.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="panel" id="sources" aria-labelledby="hsr">
+  <div class="panel-body">
+    <p class="sec-kicker"><svg class="i"><use href="#i-shield"/></svg>Sources</p>
+    <h2 id="hsr">Sources and last checked</h2>
+    <p><span class="pill"><svg class="i"><use href="#i-check"/></svg><span id="checkedDate">Facts last checked: 6 November 2026</span></span></p>
+    <p>Key facts were checked against FreeAgent’s own help centre and website on that date. FreeAgent updates its software often, so screens and wording may differ slightly from what you see.</p>
+    <ul class="src">
+      <li><b>Get FreeAgent for free; Mettle and FreeAgent</b><span>freeagent.com. Used for lesson 1.</span></li>
+      <li><b>Explain a bank transaction; Explain multiple bank transactions in bulk; Explain funds transferred between bank accounts</b><span>support.freeagent.com. Used for lessons 3 to 5.</span></li>
+      <li><b>How does Guess explain your transactions?; Approve explanations for bank feed transactions; Manage Guess</b><span>support.freeagent.com. Used for lesson 6.</span></li>
+      <li><b>Create a new invoice</b><span>support.freeagent.com. Used for lesson 7.</span></li>
+      <li><b>An introduction to the Tax Timeline; File a VAT return; Review a VAT return</b><span>support.freeagent.com. Used for lesson 9.</span></li>
+      <li><b>VAT return deadlines</b><span>HMRC VAT Default Surcharge Officers’ Guide, VDSOG400, GOV.UK. Used for lesson 9.</span></li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand"><svg aria-hidden="true"><use href="#logo"/></svg><div><b>Actua Business Services Limited</b><span>Tutorial series</span></div></div>
+    <div class="foot-txt">
+      <p><strong>By Shaun Ellison &amp; Actua Business Services Limited, with AI.</strong></p>
+      <p>© 2026 Actua Business Services Limited. Your progress is saved on this device only. For general training purposes; not tax or accounting advice for your specific circumstances.</p>
+      <p>FreeAgent, NatWest, Royal Bank of Scotland, Ulster Bank and Mettle are trademarks of their respective owners. This course is independent and is not made, endorsed or supported by FreeAgent or NatWest Group. Drawings are simplified and figures are examples.</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="about" aria-labelledby="aboutTitle">
+  <div class="dlg-head"><svg aria-hidden="true"><use href="#logo"/></svg><div><h2 id="aboutTitle">About this course</h2><span id="aboutVersion"></span></div></div>
+  <div class="dlg-body">
+    <p><b>FreeAgent Essentials</b></p>
+    <p>By Shaun Ellison &amp; Actua Business Services Limited, with AI. Part of the Actua Business Services Limited tutorial series for staff and clients.</p>
+    <p>Written with AI assistance. Facts were checked against official sources on the date shown in Sources. This is general training, not advice for your specific circumstances.</p>
+    <p>Works fully offline. Your progress and certificate name are stored on this device only; nothing is sent anywhere.</p>
+    <p>FreeAgent is a trademark of its owner. This course is independent and not endorsed by FreeAgent or NatWest Group.</p>
+    <button class="next-btn" style="border:0;font:inherit;font-weight:700;cursor:pointer" type="button" id="aboutClose">Close</button>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  "use strict";
+  /* ================= TUTORIAL CONFIG ================= */
+  var CONFIG = { title:"FreeAgent Essentials", version:"Version 1.0", checked:"6 November 2026", storageKey:"actua.freeagent" };
+  var LESSONS = [
+    ["What FreeAgent is, and who it’s for",3],["Finding your way around",4],["Getting set up",4],["Your bank and the colour code",4],
+    ["Explaining transactions",6],["Guess, and approving its work",3],["Creating and sending invoices",5],["Bills and out-of-pocket expenses",5],
+    ["The Tax Timeline and VAT",6],["Reports, and working with your accountant",4]
+  ];
+  var QUIZ = [
+    {q:"A transaction in your bank account is shown in red. What does that mean?", o:["It’s money out","It’s unexplained","It’s been rejected"], a:1, why:"Red means unexplained: FreeAgent doesn’t yet know what it is."},
+    {q:"What does orange mean?", o:["Guess has explained it and it’s waiting for your approval","It’s overdue","It’s a personal transaction"], a:0, why:"Orange transactions sit in the For Approval tab. Check and approve them."},
+    {q:"A customer pays an invoice you sent from FreeAgent. How do you explain the bank transaction?", o:["As sales income","As an invoice receipt, linked to the invoice","As a transfer"], a:1, why:"Linking it to the invoice marks it paid without counting the sale twice."},
+    {q:"Why does “Mark as Sent” matter?", o:["It emails the customer automatically","Draft invoices don’t count in your accounts or VAT return until sent or marked as sent","It isn’t important"], a:1, why:"Until it’s sent or marked as sent, the invoice is a draft and doesn’t count."},
+    {q:"You paid for train tickets with your personal card. Where do you record them?", o:["Work, then Expenses, as an out-of-pocket expense","Nowhere","As a bill"], a:0, why:"Out-of-pocket expenses record what the business owes you back."},
+    {q:"You paid for printer ink with the business card. What do you do?", o:["Add an out-of-pocket expense and explain the bank line","Just explain the bank transaction, with the receipt attached","Add a bill"], a:1, why:"Recording it as an expense as well would claim it twice."},
+    {q:"Which access level do you need to explain bank transactions?", o:["Level 2","Level 6 or above","Any level"], a:1, why:"FreeAgent requires level 6 or above to explain bank transactions."}
+  ];
+  var PARTS = [
+    {id:"overview",label:"Overview",title:"Overview tab",lesson:2,body:"Your home screen, showing cashflow, bank accounts, invoices and the Tax Timeline at a glance."},
+    {id:"contacts",label:"Contacts",title:"Contacts tab",lesson:2,body:"Your customers and suppliers. Add a contact once and pick them on invoices and bills."},
+    {id:"work",label:"Work",title:"Work tab",lesson:7,body:"Invoicing, estimates, bills, out-of-pocket expenses, projects and timeslips."},
+    {id:"banking",label:"Banking",title:"Banking tab",lesson:4,body:"Your bank accounts. This is where you explain transactions and approve guesses."},
+    {id:"taxes",label:"Taxes",title:"Taxes tab",lesson:9,body:"VAT returns, and Self Assessment or Corporation Tax depending on the type of business."},
+    {id:"accounting",label:"Accounting",title:"Accounting tab",lesson:10,body:"Reports such as Profit and Loss and Balance Sheet."},
+    {id:"settings",label:"Settings",title:"Settings",lesson:3,body:"Business details, invoice settings, users and access levels. Leave accounting and VAT dates to your accountant."},
+    {id:"cashflow",label:"Cashflow",title:"Cashflow panel",lesson:10,body:"Money in (green) and money out over recent months, from your bank accounts."},
+    {id:"bankpanel",label:"Banking panel",title:"Banking panel",lesson:4,body:"Each bank account with its balance. “12 unexplained” (red) and “3 for approval” (orange) tell you what needs doing."},
+    {id:"taxtl",label:"Tax Timeline",title:"Tax Timeline",lesson:9,body:"Upcoming tax deadlines and estimated bills. The VAT return in red is due very soon."},
+    {id:"invtl",label:"Invoice timeline",title:"Invoice timeline",lesson:7,body:"How much customers owe you, and how much of it is overdue."}
+  ];
+  /* =================================================== */
+
+  var TOTAL = LESSONS.length;
+  var K_DONE = CONFIG.storageKey + ".done.v1", K_NAME = CONFIG.storageKey + ".name.v1", K_THEME = "actua.theme.v1";
+  function load(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function save(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls, txt){ var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+
+  $("aboutVersion").textContent = CONFIG.version + ", facts checked " + CONFIG.checked;
+  $("checkedDate").textContent = "Facts last checked: " + CONFIG.checked;
+  $("coverChecked").textContent = "Facts checked " + CONFIG.checked;
+
+  /* Theme */
+  var root = document.documentElement, themeBtn = $("themeBtn"), themeIcon = $("themeIcon");
+  function isDark(){ var t = root.getAttribute("data-theme"); if (t === "dark") return true; if (t === "light") return false; return !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches); }
+  function paintTheme(){ var d = isDark(); themeIcon.setAttribute("href", d ? "#i-sun" : "#i-moon"); themeBtn.setAttribute("aria-label", d ? "Switch to light mode" : "Switch to dark mode"); }
+  var st = load(K_THEME); if (st === "dark" || st === "light") root.setAttribute("data-theme", st);
+  paintTheme();
+  themeBtn.addEventListener("click", function(){ var n = isDark() ? "light" : "dark"; root.setAttribute("data-theme", n); save(K_THEME, n); paintTheme(); });
+
+  /* About */
+  var dlg = $("about");
+  $("aboutBtn").addEventListener("click", function(){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); });
+  $("aboutClose").addEventListener("click", function(){ if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); });
+
+  /* Outline + drawer */
+  var outline = $("outline"), ol = $("outlineLessons"), menuBtn = $("menuBtn"), scrim = null;
+  LESSONS.forEach(function(L, i){
+    var n = i + 1, li = el("li"); li.dataset.for = n;
+    var a = el("a"); a.href = "#lesson-" + n;
+    var s = el("span","st", String(n)); s.setAttribute("aria-hidden","true");
+    a.appendChild(s); a.appendChild(el("span", null, L[0])); a.appendChild(el("span","mins", L[1] + " min"));
+    li.appendChild(a); ol.appendChild(li);
+  });
+  function openMenu(){ outline.classList.add("open"); menuBtn.setAttribute("aria-expanded","true"); scrim = el("div","scrim"); scrim.addEventListener("click", closeMenu); document.body.appendChild(scrim); var f = outline.querySelector("a"); if (f) f.focus(); }
+  function closeMenu(){ outline.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); if (scrim){ scrim.remove(); scrim = null; } }
+  menuBtn.addEventListener("click", function(){ outline.classList.contains("open") ? closeMenu() : openMenu(); });
+  $("menuClose").addEventListener("click", function(){ closeMenu(); menuBtn.focus(); });
+  outline.addEventListener("click", function(e){ if (e.target.closest("a")) closeMenu(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && outline.classList.contains("open")) { closeMenu(); menuBtn.focus(); } });
+
+  /* Scrollspy */
+  var links = Array.prototype.slice.call(outline.querySelectorAll("a"));
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          var id = "#" + en.target.id;
+          links.forEach(function(a){ a.setAttribute("aria-current", a.getAttribute("href") === id ? "true" : "false"); });
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll("main .panel[id]").forEach(function(p){ io.observe(p); });
+  }
+
+  /* Explorer */
+  var byId = {}; PARTS.forEach(function(p){ byId[p.id] = p; });
+  var mock = $("mock"), chips = $("chips"), hotspots = Array.prototype.slice.call(mock.querySelectorAll("[data-hs]"));
+  PARTS.forEach(function(p){
+    var b = el("button","chip",p.label); b.type = "button"; b.setAttribute("aria-pressed","false"); b.dataset.part = p.id;
+    b.addEventListener("click", function(){ pick(p.id); }); chips.appendChild(b);
+  });
+  function pick(id){
+    var p = byId[id]; if (!p) return;
+    mock.classList.remove("fresh");
+    hotspots.forEach(function(h){ h.classList.toggle("sel", h.getAttribute("data-hs") === id); });
+    Array.prototype.forEach.call(chips.children, function(c){ c.setAttribute("aria-pressed", c.dataset.part === id ? "true" : "false"); });
+    $("infoTitle").textContent = p.title;
+    var b = $("infoBody"); b.textContent = p.body; b.classList.remove("hint");
+    var l = $("infoLink"); l.hidden = false; l.href = "#lesson-" + p.lesson; l.textContent = "Learn more in lesson " + p.lesson;
+  }
+  hotspots.forEach(function(h){
+    var id = h.getAttribute("data-hs");
+    h.addEventListener("click", function(){ pick(id); });
+    h.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(id); } });
+  });
+
+  /* Progress */
+  var done = []; try { done = JSON.parse(load(K_DONE) || "[]"); if (!Array.isArray(done)) done = []; } catch(e){ done = []; }
+  var panels = Array.prototype.slice.call(document.querySelectorAll("[data-lesson]"));
+  function render(){
+    panels.forEach(function(sec){
+      var n = Number(sec.dataset.lesson), d = done.indexOf(n) !== -1, btn = sec.querySelector(".done-btn");
+      sec.classList.toggle("done", d);
+      btn.innerHTML = "";
+      var ic = document.createElementNS("http://www.w3.org/2000/svg","svg"); ic.setAttribute("class","i");
+      var u = document.createElementNS("http://www.w3.org/2000/svg","use"); u.setAttribute("href","#i-check"); ic.appendChild(u);
+      btn.appendChild(ic); btn.appendChild(document.createTextNode(d ? "Completed (select to undo)" : "Mark lesson " + n + " complete"));
+      btn.setAttribute("aria-pressed", d ? "true" : "false");
+      var li = ol.querySelector('li[data-for="' + n + '"]');
+      if (li){ li.classList.toggle("done", d); li.querySelector(".st").textContent = d ? "✓" : String(n); }
+    });
+    var c = done.length;
+    $("ringVal").setAttribute("stroke-dashoffset", String(100.53 * (1 - c / TOTAL)));
+    $("ringText").innerHTML = "<b>" + c + "</b> of " + TOTAL + " lessons";
+    renderCert();
+  }
+  panels.forEach(function(sec){
+    var n = Number(sec.dataset.lesson);
+    sec.querySelector(".done-btn").addEventListener("click", function(){
+      var i = done.indexOf(n); if (i === -1) done.push(n); else done.splice(i,1);
+      save(K_DONE, JSON.stringify(done)); render();
+    });
+  });
+
+  /* Certificate */
+  function renderCert(){
+    var area = $("certArea"); area.innerHTML = "";
+    var left = TOTAL - done.length;
+    if (left > 0){
+      var lock = el("div","cert-lock");
+      lock.innerHTML = '<svg class="i" style="width:1.6em;height:1.6em;color:var(--accent)"><use href="#i-award"/></svg>';
+      lock.appendChild(el("p", null, "Mark all " + TOTAL + " lessons complete to unlock your certificate. " + left + (left === 1 ? " lesson" : " lessons") + " to go."));
+      lock.querySelector("p").style.margin = "0";
+      area.appendChild(lock); return;
+    }
+    area.appendChild(el("p", null, "Well done, you’ve completed every lesson. Type your name as you’d like it to appear, then print or save it as a PDF."));
+    var form = el("div","cert-form");
+    var lab = el("label", null, "Your full name");
+    var inp = el("input"); inp.type = "text"; inp.autocomplete = "name"; inp.maxLength = 60; inp.value = load(K_NAME) || "";
+    lab.appendChild(inp); form.appendChild(lab);
+    var pr = el("button","next-btn"); pr.type = "button"; pr.style.border = "0"; pr.style.font = "inherit"; pr.style.fontWeight = "700"; pr.style.cursor = "pointer";
+    pr.innerHTML = '<svg class="i"><use href="#i-print"/></svg>'; pr.appendChild(document.createTextNode("Print certificate"));
+    form.appendChild(pr); area.appendChild(form);
+    var hint = el("p","figcap","If the print window doesn’t open, press Ctrl + P (Cmd + P on a Mac)."); area.appendChild(hint);
+
+    var card = el("div","cert"); card.id = "certCard";
+    var inner = el("div","cert-in");
+    inner.appendChild(el("p","ct","Actua Business Services Limited tutorial series"));
+    inner.appendChild(el("h3", null, "Certificate of completion"));
+    inner.appendChild(el("p", null, "This is to certify that"));
+    var nm = el("div","nm", inp.value || "Your name"); inner.appendChild(nm);
+    inner.appendChild(el("p", null, "has successfully completed the course"));
+    inner.appendChild(el("p","cc", CONFIG.title));
+    var dateStr = new Date().toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" });
+    var foot = el("div","cert-foot");
+    var l = el("div"); l.innerHTML = "<b>Date</b><br>"; l.appendChild(document.createTextNode(dateStr));
+    var m = el("div"); m.style.textAlign = "center"; m.innerHTML = '<svg aria-hidden="true"><use href="#logo-cert"/></svg>';
+    var r = el("div"); r.style.textAlign = "right"; r.innerHTML = "<b>Issued by</b><br>Actua Business Services Limited";
+    foot.appendChild(l); foot.appendChild(m); foot.appendChild(r);
+    inner.appendChild(foot);
+    inner.appendChild(el("p","figcap","By Shaun Ellison & Actua Business Services Limited, with AI. " + CONFIG.version + "."));
+    card.appendChild(inner); area.appendChild(card);
+
+    inp.addEventListener("input", function(){ nm.textContent = inp.value.trim() || "Your name"; save(K_NAME, inp.value.trim()); });
+    pr.addEventListener("click", function(){
+      root.classList.add("print-cert");
+      var cleanup = function(){ root.classList.remove("print-cert"); window.removeEventListener("afterprint", cleanup); };
+      window.addEventListener("afterprint", cleanup);
+      try { window.print(); } catch(e){}
+      setTimeout(cleanup, 4000);
+    });
+  }
+
+  /* Quiz */
+  var answered, right;
+  function buildQuiz(){
+    answered = 0; right = 0; var qb = $("quizBody"); qb.innerHTML = ""; $("quizScore").innerHTML = "";
+    QUIZ.forEach(function(item, qi){
+      var w = el("div","q"), qt = el("p","qt",(qi + 1) + ". " + item.q); qt.id = "qt" + qi; w.appendChild(qt);
+      var opts = el("div","opts"); opts.setAttribute("role","group"); opts.setAttribute("aria-labelledby","qt" + qi);
+      var why = el("p","why"); why.hidden = true; why.setAttribute("aria-live","polite");
+      item.o.forEach(function(text, oi){
+        var b = el("button","opt",text); b.type = "button";
+        b.addEventListener("click", function(){
+          var all = opts.querySelectorAll(".opt");
+          Array.prototype.forEach.call(all, function(x){ x.disabled = true; });
+          all[item.a].classList.add("right");
+          var ok = oi === item.a; if (!ok) b.classList.add("wrong");
+          why.hidden = false; why.classList.toggle("miss", !ok);
+          why.textContent = (ok ? "Correct. " : "Not quite. ") + item.why;
+          answered++; if (ok) right++;
+          if (answered === QUIZ.length) finish();
+        });
+        opts.appendChild(b);
+      });
+      w.appendChild(opts); w.appendChild(why); qb.appendChild(w);
+    });
+  }
+  function finish(){
+    var s = $("quizScore");
+    s.appendChild(el("span", null, "You scored " + right + " out of " + QUIZ.length + ". " + (right === QUIZ.length ? "Brilliant, you’ve got the essentials of FreeAgent." : "Look back at the lessons for any you missed, then try again.")));
+    var r = el("button","ghost-btn","Try again"); r.type = "button"; r.addEventListener("click", buildQuiz); s.appendChild(r);
+  }
+
+  buildQuiz();
+  render();
+})();
+</script>
+</body>
+</html>

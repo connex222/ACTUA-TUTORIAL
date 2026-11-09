@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17694a">
+<meta name="application-name" content="Xero Academy"><meta name="apple-mobile-web-app-title" content="Xero Academy"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjEyIDEyIDg0IDg0Ij48cmVjdCB4PSIxMiIgeT0iMTIiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4NCIgcng9IjE5IiBmaWxsPSIjMTc2OTRhIi8+PHBhdGggZD0iTTMwIDQwSDc4TTU0IDQwVjgwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KPHRleHQgeD0iMzMiIHk9IjY0IiB0ZXh0TGVuZ3RoPSIxNCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIiBmb250LWZhbWlseT0iUm9ib3RvLCdTZWdvZSBVSScsc3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTIuNSIgZmlsbD0iI2ZmZiI+RHI8L3RleHQ+Cjx0ZXh0IHg9IjYxIiB5PSI2NCIgdGV4dExlbmd0aD0iMTQiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyIgZm9udC1mYW1pbHk9IlJvYm90bywnU2Vnb2UgVUknLHN5c3RlbS11aSxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iODAwIiBmb250LXNpemU9IjEyLjUiIGZpbGw9IiNmZmYiPkNyPC90ZXh0Pjwvc3ZnPg==">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACgUlEQVR4nOyXXUhTYRjH/8/ZKS9GUOBSuhsSCmGGQi7JEKqtDIMIt4qCqF3kYH0QXUQEXVSsICoCK6yLiKCuoiKXhFQMC4TUChIR20Vh+/Jj7UOn297ec0qZ7MDm3HZu/F09531e3v//vOec9zmPiFTsu0t0cZwmRluIsJGP6JEf3IzhK8A++lbgNu44Y3MJmgt0baZGYpqHXHg9Cgg3Mswocdx/t8s1b2CtbU8Dz7j4hYAiwIAk19vmu+fsobIjRi3Tar4QUQWKCGNshCKJGjGpFVsFQlHFJaQbTmiFFpFvuwEqoQEZRKhogIGaBCJWBZWQtPkOUAlUg0pEpeGVoohDDSaUrlqNfBAITeJJTxdmE/G0nKKBxspNcBywIZ+4/aP4MNifNq548PzwjSIQDiJfSGu5/b8Vc1TW1syQA/UVG/Di7HU53nvjHHpHviMXRKjMsoGM1c9i2IFTuyxYt6Y001T5sz1pMqOldiuyJaOBndWbMROfxTP7ZRir63Fx3zHU6isV5z4/40AwGkZoKgq7sRVXzCcyLZ9d/X/7rRfe4Djq9FUY459Un3sobQ6vbtAIAh65OvF+sA9mw3bcdD7NuHZW70CH9Tx+TfgQno7CMzmmOIfXd7z87MKl/VZMzcQQiU3LJ+CSDVg7riJbHK8ez8fXUuIlGSg0ywbUP4gY2BBUQtLmP8QYQA4Me37+W0TqNP7Hi0XSFpOMDfAfQwsWyXjkD+ouHJXuAhOREHJB0iadrbmcGPq5m3IUEb5xXsRjNYK/vdNDyeRhuV0qljjXSgp00Peg2yvXAu/9N90MiSbpcaLAyM0p1wq0v34nXdOCbIHbc0bsk1/ErdT2/C8AAAD//9qgmH8AAAAGSURBVAMANCvwF2pcyeMAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<title>Xero Academy: From Xero to Expert</title>
+<style>
+/* ===== Tokens: "analysis pad" — ledger green, red margin ink, ruled paper ===== */
+:root{
+ --bg:#F3F4F8;--card:#FFFFFF;--ink:#0F1226;--mut:#41465F;--line:#D6D9E6;--rule:#ECEDF3;
+ --acc:#0E4E7A;--accT:#fff;--accSoft:#E0EBF5;
+ --red:#A3203A;--redbg:#F8E6EA;--ok:#0B5E32;--okbg:#E3F2E9;
+ --amb:#7a4a00;--ambbg:#fff3d6;--blu:#2b4a7e;--blubg:#e9eef8;--gold:#9a6b00;
+ --sh:0 1px 0 rgba(16,36,26,.06),0 6px 18px -10px rgba(16,36,26,.25);
+ --serif:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+ --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+ --sidebarw:296px;--topH:60px;--botH:0px;--r:12px;
+ color-scheme:light;
+}
+:root[data-theme=dark]{
+ --bg:#0B0D19;--card:#151829;--ink:#F3F4FB;--mut:#BFC3DB;--line:#2D3152;--rule:#1A1E33;
+ --acc:#8CC4EE;--accT:#0B0D19;--accSoft:#16293D;
+ --red:#FF8A9C;--redbg:#3A1520;--ok:#63DCA0;--okbg:#12301F;
+ --amb:#f4c158;--ambbg:#30250b;--blu:#9db8f2;--blubg:#16213a;--gold:#f4c158;
+ --sh:0 1px 0 rgba(0,0,0,.4),0 8px 20px -12px rgba(0,0,0,.7);color-scheme:dark;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){
+ --bg:#0B0D19;--card:#151829;--ink:#F3F4FB;--mut:#BFC3DB;--line:#2D3152;--rule:#1A1E33;
+ --acc:#8CC4EE;--accT:#0B0D19;--accSoft:#16293D;
+ --red:#FF8A9C;--redbg:#3A1520;--ok:#63DCA0;--okbg:#12301F;
+ --amb:#f4c158;--ambbg:#30250b;--blu:#9db8f2;--blubg:#16213a;--gold:#f4c158;
+ --sh:0 1px 0 rgba(0,0,0,.4),0 8px 20px -12px rgba(0,0,0,.7);color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--topH) + 12px);scroll-padding-bottom:calc(var(--botH) + 24px + env(safe-area-inset-bottom,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);display:flex;min-height:100vh;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;z-index:99;background:var(--acc);color:var(--accT);padding:10px 14px;border-radius:8px;font-weight:700}
+.skip:focus{left:8px}
+button{font:inherit;color:inherit}
+
+/* ===== Sidebar ===== */
+aside#sidebar{width:var(--sidebarw);background:var(--card);border-right:1px solid var(--line);position:fixed;top:0;bottom:0;left:0;z-index:40;display:flex;flex-direction:column;transition:transform .22s ease}
+.side-header{padding:18px 18px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.mark{width:40px;height:40px;flex:none;color:var(--acc)}
+.side-header h1{font:700 18px/1.15 var(--serif);margin:0;letter-spacing:-.01em}
+.side-header h1 small{display:block;font:400 12.5px/1.4 var(--sans);color:var(--mut);margin-top:3px}
+.side-nav{flex:1;overflow-y:auto;padding:12px 12px 24px;overscroll-behavior:contain}
+.side-nav>a{display:flex;align-items:center;gap:12px;padding:0 12px;min-height:44px;color:var(--ink);text-decoration:none;font-size:15px;font-weight:600;border-radius:10px;margin-bottom:2px}
+.side-nav>a b{font-size:18px;width:22px;text-align:center}
+.side-nav>a:hover{background:var(--accSoft)}
+.side-nav>a.on{background:var(--acc);color:var(--accT)}
+.side-section{font:700 14px/1.3 var(--serif);color:var(--ink);margin:20px 12px 6px}
+.side-section small{display:block;font:500 12px/1.4 var(--sans);color:var(--mut)}
+.side-modules{margin:0 0 0 14px;border-left:2px solid var(--rule)}
+.side-mod-link{display:flex;gap:8px;align-items:baseline;font-size:14px;color:var(--mut);text-decoration:none;padding:7px 10px 7px 12px;line-height:1.35;margin-left:-2px;border-left:2px solid transparent}
+.side-mod-link .sn{font-variant-numeric:tabular-nums;min-width:20px;color:var(--mut);font-size:12.5px}
+.side-mod-link.dn .sn{color:var(--ok);font-weight:700}
+.side-mod-link:hover{color:var(--ink)}
+.side-mod-link.on{color:var(--ink);font-weight:700;border-left-color:var(--acc);background:linear-gradient(90deg,var(--accSoft),transparent)}
+.scrim{position:fixed;inset:0;background:rgba(5,15,10,.5);z-index:39;opacity:0;visibility:hidden;transition:opacity .2s}
+.scrim.show{opacity:1;visibility:visible}
+
+/* ===== Top bar ===== */
+#wrapper{flex:1;margin-left:var(--sidebarw);display:flex;flex-direction:column;min-width:0}
+header#top{background:var(--card);background:color-mix(in srgb,var(--card) 92%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(8px);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:8px 20px;padding-top:calc(8px + env(safe-area-inset-top,0px));min-height:var(--topH);position:sticky;top:0;z-index:20}
+#pagetitle{font:700 16px/1.2 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.top-actions{margin-left:auto;display:flex;align-items:center;gap:8px;flex:none}
+.iconbtn{background:var(--card);border:1px solid var(--line);color:var(--ink);font-size:15px;font-weight:600;cursor:pointer;padding:0 12px;min-width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:6px;line-height:1}
+.iconbtn:hover{border-color:var(--acc);color:var(--acc)}
+.iconbtn .lbl{font-size:14px}
+.ring{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:10.5px;font-weight:800;letter-spacing:-.02em;background:conic-gradient(var(--acc) calc(var(--p)*1%),var(--line) 0);flex:none;font-variant-numeric:tabular-nums}
+.ring span{width:35px;height:35px;border-radius:50%;background:var(--card);display:grid;place-items:center}
+main{max-width:860px;margin:0 auto;padding:28px 24px 40px;width:100%;flex:1}
+main:focus{outline:none}
+
+/* ===== Type ===== */
+h2{font:700 30px/1.15 var(--serif);letter-spacing:-.015em;margin:8px 0 10px}
+h3{font:700 21px/1.25 var(--serif);margin:24px 0 8px}
+h4{font:700 16px/1.3 var(--sans);margin:18px 0 6px}
+p{margin:10px 0}a{color:var(--acc);text-underline-offset:3px}
+.mut{color:var(--mut)}.small{font-size:14.5px}
+ol,ul{padding-left:24px}li{margin:6px 0}li::marker{color:var(--mut)}
+.lede{font-size:18px;color:var(--mut);max-width:62ch}
+
+/* ===== Surfaces ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:16px 0;box-shadow:var(--sh)}
+.card>h3:first-child{margin-top:0}
+.sec{position:relative}
+.sec h3{display:flex;gap:12px;align-items:baseline}
+.stepno{font:700 15px/1 var(--serif);color:var(--acc);font-variant-numeric:tabular-nums;min-width:1.4em}
+.chip{display:inline-block;font-size:13px;font-weight:700;padding:4px 12px;border-radius:99px;background:var(--accSoft);color:var(--acc)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;color:var(--mut);font-size:14.5px;margin:4px 0 6px}
+.lvl{border-left:5px solid var(--acc)}
+.lvlhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.lvlhead .count{font:700 15px/1 var(--serif);color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap;padding-top:6px}
+.bar{height:6px;background:var(--rule);border-radius:6px;overflow:hidden;margin:12px 0 6px}
+.bar i{display:block;height:100%;background:var(--acc);transition:width .3s}
+.mod{display:flex;gap:14px;align-items:center;padding:12px 8px;min-height:56px;border-top:1px solid var(--rule);color:inherit;text-decoration:none;border-radius:8px}
+.mod:hover{background:var(--accSoft)}
+.mod:first-of-type{border-top:0}
+.mod .n{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-weight:700;font-size:13.5px;flex:none;color:var(--mut);font-variant-numeric:tabular-nums}
+.mod.done .n{background:var(--ok);border-color:var(--ok);color:var(--accT)}
+.mod.next .n{border-color:var(--acc);color:var(--acc)}
+.mod .t{flex:1;font-weight:600;line-height:1.3}
+.mod .t small{display:block;font-weight:400;color:var(--mut);font-size:14px;margin-top:2px}
+
+/* ===== Hero: the ledger sheet ===== */
+.hero{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 22px 44px;box-shadow:var(--sh);overflow:hidden;margin:4px 0 20px}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:26px;width:2px;background:var(--red);opacity:.55}
+.hero h2{font-size:clamp(30px,6vw,42px);margin:0}
+.hero-sub{font:italic 600 clamp(18px,3.4vw,22px)/1.3 var(--serif);color:var(--acc);margin:2px 0 12px}
+.hero .lede{margin:0 0 18px}
+.ledger{width:100%;max-width:520px;border-collapse:collapse;font-variant-numeric:tabular-nums;display:table;margin:6px 0 18px;font-size:16px;background:transparent}
+.ledger th,.ledger td{border:0;padding:6px 10px 6px 0;background:transparent}
+.ledger th{font:700 13.5px/1.3 var(--sans);color:var(--mut);border-bottom:2px solid var(--ink);text-align:left}
+.ledger td{border-bottom:1px solid var(--line)}
+.ledger .num{text-align:right;width:90px}
+.ledger tr.tot td{font-weight:800;border-bottom:3px double var(--ink)}
+.stamp{position:absolute;right:18px;top:20px;transform:rotate(-8deg);border:3px solid var(--ok);color:var(--ok);font:800 15px/1 var(--sans);letter-spacing:.08em;padding:8px 12px;border-radius:6px;opacity:.85}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:var(--accT);border:2px solid var(--acc);border-radius:10px;padding:10px 20px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;text-align:center}
+.btn:hover{filter:brightness(1.08)}
+.btn.alt{background:transparent;color:var(--acc)}
+.btn.alt:hover{background:var(--accSoft);filter:none}
+.btn.sm{padding:6px 14px;min-height:44px;font-size:15px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* ===== Callouts ===== */
+.callout{border-radius:10px;padding:14px 16px;margin:16px 0;border:1px solid;border-left-width:5px;color:var(--ink)}
+.callout.tip{background:var(--okbg);border-color:var(--ok)}
+.callout.warn{background:var(--ambbg);border-color:var(--amb)}
+.callout.ex{background:var(--blubg);border-color:var(--blu)}
+.callout b.k{display:block;font:700 15px/1.3 var(--serif);margin-bottom:4px}
+.callout.tip b.k{color:var(--ok)}.callout.warn b.k{color:var(--amb)}.callout.ex b.k{color:var(--blu)}
+
+/* ===== Ledger-style tables ===== */
+table{border-collapse:collapse;width:100%;font-size:15.5px;margin:14px 0;display:block;overflow-x:auto;font-variant-numeric:tabular-nums;-webkit-overflow-scrolling:touch}
+th,td{border-bottom:1px solid var(--line);padding:9px 14px 9px 0;text-align:left;vertical-align:top}
+th{font-weight:700;font-size:14px;color:var(--mut);border-bottom:2px solid var(--ink);white-space:nowrap}
+tr:last-child td{border-bottom:2px solid var(--line)}
+td:first-child{font-weight:600}
+
+/* ===== Checklists, quiz, forms ===== */
+.chk{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--rule);cursor:pointer;min-height:48px}
+.chk:first-of-type{border-top:0}
+.chk input{width:24px;height:24px;flex:none;margin-top:1px;accent-color:var(--acc)}
+.chk input:checked+span{color:var(--mut);text-decoration:line-through;text-decoration-color:var(--line)}
+.qmeta{display:flex;justify-content:space-between;gap:8px;color:var(--mut);font-size:14.5px;margin:0 0 6px}
+.qq{font:700 19px/1.35 var(--serif);margin:4px 0 12px}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:13px 14px;margin:10px 0;font:inherit;cursor:pointer;min-height:52px;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt .key{flex:none;width:26px;height:26px;border-radius:6px;border:1px solid var(--line);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--mut)}
+.opt .txt{flex:1}
+.opt .mk{flex:none;font-weight:800}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.ok .mk{color:var(--ok)}
+.opt.bad{border-color:var(--red);background:var(--redbg)}
+.opt.bad .mk{color:var(--red)}
+.why{margin:10px 0 12px;font-size:15.5px;color:var(--ink)}
+.why b{color:var(--acc)}
+.why.no b{color:var(--red)}
+.rev .card{box-shadow:none}
+.rev .ro{margin:4px 0;color:var(--mut)}
+.rev .ro.c{color:var(--ok);font-weight:700}
+.rev .ro.w{color:var(--red)}
+input[type=text],input[type=number],input[type=email],select,textarea{font:inherit;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:100%;min-height:48px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--accSoft)}
+label.f{display:block;margin:12px 0 4px;font-weight:600;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+
+/* ===== Tiles, results, misc ===== */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:16px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;color:inherit;text-decoration:none;box-shadow:var(--sh);min-height:96px}
+.tile:hover{border-color:var(--acc)}
+.tile b{display:block;font:700 18px/1.25 var(--serif);margin-bottom:4px}.tile span{color:var(--mut);font-size:14.5px}
+.res{background:var(--accSoft);border-radius:10px;padding:14px 16px;margin:12px 0;font-variant-numeric:tabular-nums}
+.res.fail{background:var(--ambbg)}
+.res p{margin:4px 0 0}
+.big{font:800 30px/1.1 var(--serif);font-variant-numeric:tabular-nums}
+.cert{border:6px double var(--acc);padding:40px 22px;text-align:center;border-radius:14px;background:var(--card);box-shadow:var(--sh)}
+.cert h2{font-size:34px}.cert .nm{font:800 32px/1.2 var(--serif);border-bottom:2px solid var(--ink);display:inline-block;padding:0 24px 4px;margin:16px 0}
+.gl dt{font:700 17px/1.3 var(--serif);margin-top:18px}.gl dd{margin:3px 0 0;color:var(--ink)}
+.disc{font-size:13.5px;color:var(--mut);margin:28px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.sticky-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap}
+.sticky-nav .btn{flex:1 1 160px}
+#totop{position:fixed;right:20px;bottom:calc(20px + var(--botH) + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;background:var(--acc);color:var(--accT);border:0;font-size:20px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25);display:none;z-index:30}
+#totop.show{display:block}
+#searchov{position:fixed;inset:0;background:rgba(5,15,10,.6);z-index:50;display:none;padding:calc(64px + env(safe-area-inset-top,0px)) 14px 14px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+#searchov.show{display:block}
+#searchov .box{max-width:640px;margin:0 auto;background:var(--card);border-radius:14px;padding:16px;max-height:76vh;overflow:auto;box-shadow:0 24px 40px -12px rgba(0,0,0,.4)}
+#searchov input{font-size:18px;padding:14px}
+#sres a{display:block;padding:12px 10px;color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);border-radius:8px}
+#sres a:hover,#sres a:focus-visible{background:var(--accSoft)}
+#sres a b{display:block}#sres a small{color:var(--mut)}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.badge{background:var(--card);border:2px dashed var(--line);border-radius:12px;padding:14px;text-align:center;color:var(--mut)}
+.badge .bi{font-size:30px;line-height:1.2;filter:grayscale(1);opacity:.45}
+.badge.on{border:2px solid var(--gold);color:var(--ink)}
+.badge.on .bi{filter:none;opacity:1}
+.badge b{display:block;font-size:14px;margin-top:6px}
+.badge small{font-size:12.5px;display:block;margin-top:2px}
+.lvlchips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
+.lvlchip{font-size:13px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--rule);color:var(--mut);font-variant-numeric:tabular-nums}
+.lvlchip.done{background:var(--okbg);color:var(--ok)}
+.timer{position:sticky;top:calc(var(--topH) + 8px);background:var(--ambbg);color:var(--amb);border:1px solid var(--amb);padding:8px 16px;border-radius:10px;font-weight:800;text-align:center;margin-bottom:16px;font-variant-numeric:tabular-nums;z-index:15}
+.kbd{display:inline-block;padding:1px 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;font-size:12px;font-family:ui-monospace,monospace;background:var(--bg)}
+.cashwrap input{min-height:40px;padding:4px 6px;width:84px;font-size:15px}
+.cashwrap td,.cashwrap th{padding:6px 8px 6px 0;font-size:14px}
+.nomatch{padding:10px}
+
+/* ===== Bottom tab bar (phones/tablets: one-thumb use) ===== */
+.tabbar{display:none}
+@media(hover:none){.desk-only{display:none}}
+@media(max-width:1024px){
+ :root{--sidebarw:0px;--botH:64px}
+ aside#sidebar{width:300px;max-width:86vw;transform:translateX(-100%);visibility:hidden;padding-top:env(safe-area-inset-top,0px)}
+ aside#sidebar.open{transform:translateX(0);visibility:visible;box-shadow:0 0 40px rgba(0,0,0,.35)}
+ #wrapper{margin-left:0}
+ main{padding:20px 16px calc(32px + var(--botH) + env(safe-area-inset-bottom,0px))}
+ header#top{padding-left:16px;padding-right:12px}
+ .iconbtn .lbl{display:none}
+ .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -6px 18px -12px rgba(0,0,0,.3)}
+ .tabbar a,.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:var(--botH);text-decoration:none;color:var(--mut);font-size:11.5px;font-weight:700;background:none;border:0;cursor:pointer;padding:6px 2px}
+ .tabbar b{font-size:20px;line-height:1}
+ .tabbar .on{color:var(--acc)}
+ .tabbar .on b{transform:translateY(-1px)}
+ h2{font-size:26px}
+ .hero{padding:22px 16px 18px 34px}.hero::before{left:18px}
+ .stamp{right:10px;top:12px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{
+ aside#sidebar,header#top,.noprint,#totop,.tabbar,.scrim{display:none!important}
+ body{background:#fff!important;color:#000!important;display:block}
+ #wrapper{margin-left:0!important}
+ .cert{border-color:#000!important;color:#000!important;background:#fff!important;box-shadow:none!important}
+ .card,.hero{break-inside:avoid;box-shadow:none!important;background:#fff!important;color:#000!important;border-color:#ccc!important}
+ .res,.callout{background:#f6f6f6!important;color:#000!important;border-color:#333!important}
+}
+
+/* ---- Actua tutorial series skin ---- */
+h1,h2,h3{letter-spacing:-.025em}
+.side-credit{padding:0 1rem}
+.actua-credit{display:flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:600;color:var(--mut);margin:.4rem 0 .8rem;line-height:1.3}
+.actua-foot{max-width:60rem;margin:2rem auto 0;padding:1.2rem 1.2rem calc(env(safe-area-inset-bottom,0px) + 1.4rem);border-top:1px solid var(--line);font-size:.85rem;color:var(--mut)}
+.actua-foot p{margin:.3rem 0}
+:focus-visible{outline-color:#FFC21A}
+</style></head><body>
+<a class="skip" href="#app">Skip to content</a>
+
+<aside id="sidebar" aria-label="Course contents">
+  <div class="side-header">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1.5" y="1.5" width="37" height="37" rx="9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M9 14h22M20 14v17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="8" y="27" font-size="7" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Dr</text><text x="22.5" y="27" font-size="7" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Cr</text></svg>
+    <h1>Xero Academy<small>From Xero to expert</small></h1>
+  </div>
+  <div class="side-credit"><p class="actua-credit"><svg viewBox="0 0 40 40" aria-hidden="true" width="22" height="22" style="flex:none"><rect width="40" height="40" rx="10" fill="var(--acc)"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="var(--accT)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="var(--accT)" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="#FFC21A"/></svg><span>By Shaun Ellison &amp; Actua Business Services Limited, with AI</span></p>
+  </div>
+  <nav class="side-nav" aria-label="Main">
+    <a href="#/" data-k="learn"><b aria-hidden="true">📖</b>Course home</a>
+    <a href="#/tools" data-k="tools"><b aria-hidden="true">🧰</b>Practice tools</a>
+    <a href="#/gloss" data-k="gloss"><b aria-hidden="true">🔎</b>Glossary</a>
+    <a href="#/me" data-k="me"><b aria-hidden="true">🎓</b>Progress and certificate</a>
+    <div id="side-index"></div>
+  </nav>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div id="wrapper">
+  <header id="top">
+    <div id="pagetitle" aria-live="polite">Course home</div>
+    <div class="top-actions">
+      <button class="iconbtn" id="searchbtn" aria-label="Search the course" title="Search (press /)"><span aria-hidden="true">🔍</span><span class="lbl">Search</span></button>
+      <button class="iconbtn" id="themebtn" aria-label="Theme: match device" title="Theme"><span aria-hidden="true" id="themeic">◐</span></button>
+      <div class="ring" id="ring" style="--p:0" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span>0%</span></div>
+    </div>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <footer class="actua-foot"><p class="actua-credit"><svg viewBox="0 0 40 40" aria-hidden="true" width="22" height="22" style="flex:none"><rect width="40" height="40" rx="10" fill="var(--acc)"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="var(--accT)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="var(--accT)" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="#FFC21A"/></svg><span>By Shaun Ellison &amp; Actua Business Services Limited, with AI</span></p><p>Part of the Actua Business Services Limited tutorial series. Xero is a trademark of Xero Limited; this course is independent.</p></footer>
+</div>
+
+<nav class="tabbar noprint" aria-label="Quick navigation">
+  <a href="#/" data-k="learn"><b aria-hidden="true">📖</b>Learn</a>
+  <a href="#/tools" data-k="tools"><b aria-hidden="true">🧰</b>Tools</a>
+  <a href="#/gloss" data-k="gloss"><b aria-hidden="true">🔎</b>Glossary</a>
+  <a href="#/me" data-k="me"><b aria-hidden="true">🎓</b>Progress</a>
+  <button id="menubtn" aria-controls="sidebar" aria-expanded="false"><b aria-hidden="true">☰</b>Contents</button>
+</nav>
+
+<button id="totop" aria-label="Back to top" title="Back to top">↑</button>
+<div id="searchov" role="dialog" aria-modal="true" aria-label="Search the course"><div class="box">
+  <input type="text" id="sq" placeholder="Search modules, topics and glossary" autocomplete="off" aria-label="Search">
+  <div id="sres" role="list"></div>
+</div></div>
+
+<script>
+/* Xero Academy — From Xero to Expert. Independent UK course. v5.6 (content reviewed October 2026) */
+var LEVELS=[
+ {n:1,name:'Foundations',sub:'Understand accounting and set Xero up correctly from day one'},
+ {n:2,name:'Daily Bookkeeping',sub:'Invoices, bills, payments, bank connection and reconciliation'},
+ {n:3,name:'Running the Business',sub:'VAT, payroll, reports, credit control, assets and budgets'},
+ {n:4,name:'Connecting Apps',sub:'Shopify, eBay, marketplaces, payment platforms and automation'},
+ {n:5,name:'Expert Practice',sub:'Month-end, year-end, fixing errors, security and speed'}
+];
+var MODS=[];
+function M(o){o.n=MODS.length+1;o.id='m'+o.n;MODS.push(o)}
+
+var SETUP_LIST=[
+ {h:'Account and organisation',i:['Create the Xero organisation with the exact legal name and registered address','Choose the correct plan for your invoice and bill volume (check xero.com/uk/pricing-plans — plans change)','Set financial year end and VAT scheme / return period to match HMRC','Add your logo and branding theme','Invite users with the minimum role they need (never share one login)','Add your accountant or bookkeeper as an Adviser user','Turn on multi-factor authentication for every user']},
+ {h:'Accounting structure',i:['Review and tidy the chart of accounts; archive what you will not use','Check the system accounts (VAT, debtors, creditors, retained earnings)','Add bank accounts, credit cards and PayPal/Stripe as bank accounts','Set a conversion date and enter opening balances','Import or add contacts (customers and suppliers)','Check VAT rates match your VAT situation','Set payment terms and invoice numbering']},
+ {h:'Automation and control',i:['Connect bank feeds (Open Banking) and confirm transactions are flowing','Create the first 10 bank rules for repeat payments','Set up invoice reminders','Connect online payment services (Stripe, GoCardless, PayPal) on invoices','Connect Shopify/eBay via a payout-based tool if you sell online','Set a lock date once each period is finalised','Connect Xero to HMRC for MTD VAT (Tax menu); diary the 18-month re-authorisation','Save a Business snapshot / key reports for monthly review']}
+];
+var MONTH_LIST=[
+ {h:'Bank and cash',i:['All bank, card and PayPal feeds reconciled to the last day of the month','Bank balance in Xero equals the bank statement balance at month end','Clearing accounts (Shopify, eBay, Stripe, PayPal) at or near nil','Petty cash counted and reconciled']},
+ {h:'Sales and purchases',i:['All sales invoices raised and posted for the month','All supplier bills entered; missing bills chased','Aged Receivables reviewed; overdue customers chased','Aged Payables reviewed; payment run planned','Credit notes and refunds allocated']},
+ {h:'Adjustments and checks',i:['Accruals and prepayments journals posted if needed','Depreciation run for fixed assets','Payroll posted, PAYE/NI/pension liabilities agree to HMRC and provider','VAT control account agrees to the VAT return','Suspense accounts at nil','Trial balance reviewed for odd balances']},
+ {h:'Finish',i:['P&L and Balance Sheet reviewed against last month and budget','Notes added on anything unusual','Lock date moved to month end','Management pack sent to owner/director']}
+];
+var DRILL=[
+ {s:'You invoice a customer £1,000 + £200 VAT for work done. They have not paid yet.',o:['Dr Bank £1,200 / Cr Sales £1,000 / Cr VAT £200','Dr Accounts Receivable £1,200 / Cr Sales £1,000 / Cr VAT £200','Dr Sales £1,000 / Dr VAT £200 / Cr Accounts Receivable £1,200'],a:1,w:'Unpaid sales create a debtor (Accounts Receivable, an asset, debit). Income and VAT owed are credits.'},
+ {s:'The customer pays the £1,200 invoice into your bank.',o:['Dr Bank £1,200 / Cr Accounts Receivable £1,200','Dr Accounts Receivable £1,200 / Cr Bank £1,200','Dr Bank £1,200 / Cr Sales £1,200'],a:0,w:'Cash comes in (debit Bank). The debtor is cleared (credit Receivable).'},
+ {s:'You buy stationery for £60 + £12 VAT, paid straight from the bank.',o:['Dr Office costs £60 / Dr VAT £12 / Cr Bank £72','Dr Bank £72 / Cr Office costs £60 / Cr VAT £12','Dr Office costs £72 / Cr Bank £72 / Cr VAT £12'],a:0,w:'Expense up (debit). Input VAT is a debit. Bank down (credit). Total debits £72 = credits £72.'},
+ {s:'You receive a supplier bill for £480 inc. VAT, to pay next month.',o:['Dr Bank / Cr Expense','Dr Expense £400 / Dr VAT £80 / Cr Accounts Payable £480','Dr Accounts Payable £480 / Cr Expense £400 / Cr VAT £80'],a:1,w:'Expense and reclaimable VAT are debits; what you owe (a liability) increases with a credit.'},
+ {s:'You (the owner) put £5,000 of your own money into the business bank account.',o:['Dr Bank £5,000 / Cr Sales £5,000','Dr Bank £5,000 / Cr Funds introduced (Equity) £5,000','Dr Funds introduced £5,000 / Cr Bank £5,000'],a:1,w:'It is not income. It is equity: money the business owes back to the owner.'},
+ {s:'You pay £200 from the business account to buy a personal item for the owner (sole trader).',o:['Dr Drawings (Equity) £200 / Cr Bank £200','Dr Office costs £200 / Cr Bank £200','Dr Bank £200 / Cr Drawings £200'],a:0,w:'Personal spending reduces owner equity (Drawings, debit) and reduces bank (credit).'},
+ {s:'You buy a van for £15,000 and pay by bank.',o:['Dr Vehicle expenses £15,000 / Cr Bank £15,000','Dr Fixed Assets: Vehicles £15,000 / Cr Bank £15,000','Dr Bank £15,000 / Cr Fixed Assets £15,000'],a:1,w:'Large long-life purchases are assets, not expenses. They are then depreciated.'},
+ {s:'Month-end: you owe a supplier for electricity used but no bill has arrived (£300). You record an accrual.',o:['Dr Utilities expense £300 / Cr Accruals (liability) £300','Dr Accruals £300 / Cr Utilities expense £300','Dr Bank £300 / Cr Utilities £300'],a:0,w:'Accruals put the cost in the right month. Expense up (debit), liability up (credit).'}
+];
+var RECSIM=[
+ {d:'03 Oct',desc:'FASTER PAYMENTS FROM SMITH BUILDERS',amt:1200,ctx:'An unpaid invoice INV-0042 to Smith Builders for £1,200.',a:0,w:'Matches an open invoice exactly. Use Match (Find & Match) and tick the invoice.'},
+ {d:'04 Oct',desc:'SCREWFIX 28374',amt:-47.5,ctx:'No bill or receipt entered.',a:1,w:'No document exists, so Create: pick the contact, account and VAT rate.'},
+ {d:'05 Oct',desc:'TRANSFER TO SAVINGS 0099',amt:-2000,ctx:'The Savings account shows +£2,000 the same day.',a:2,w:'Money between your own accounts is not income or expense. Use Transfer.'},
+ {d:'06 Oct',desc:'REF 88231 J WILLIAMS',amt:350,ctx:'You do not recognise this and no invoice matches.',a:3,w:'Do not guess. Use Discuss or ask the customer.'},
+ {d:'08 Oct',desc:'WICKES DIRECT BILL',amt:-860,ctx:'Supplier bill BILL-118 for £860, awaiting payment.',a:0,w:'A bill exists and the amount matches, so Match it.'},
+ {d:'09 Oct',desc:'MONTHLY BANK FEE',amt:-12,ctx:'Nothing entered. Appears every month.',a:1,w:'Create it, code to Bank Fees with No VAT, and save a bank rule.'},
+ {d:'10 Oct',desc:'AMEX PAYMENT',amt:-1500,ctx:'Your Amex account shows a +£1,500 payment received.',a:2,w:'Paying off a credit card from the bank is a transfer.'},
+ {d:'11 Oct',desc:'STRIPE PAYOUT',amt:964.2,ctx:'A £964.20 payout journal has been posted by your summary tool.',a:0,w:'The payout journal is the match.'}
+];
+var GLOSS=[
+ ['Accounts Payable (Creditors)','Money your business owes suppliers for bills you have entered but not yet paid.'],
+ ['Accounts Receivable (Debtors)','Money customers owe you for invoices you have sent but not yet been paid.'],
+ ['Accrual','A cost or income that belongs to a period but has not been billed or paid yet.'],
+ ['Aged Receivables / Payables','Reports listing who owes you (or you owe) grouped by how overdue the amounts are.'],
+ ['Archive','Hide an account or contact you no longer use without deleting its history.'],
+ ['Asset','Something the business owns or is owed: cash, equipment, debtors, stock.'],
+ ['Bank feed','A secure read-only link that sends bank transactions into Xero each day.'],
+ ['Bank reconciliation','Matching each bank line to a record in Xero so the balances agree.'],
+ ['Bank rule','A saved instruction that tells Xero how to code a repeating bank transaction.'],
+ ['Bill','A purchase invoice from a supplier recorded in Xero to pay later.'],
+ ['Capital allowances','The tax equivalent of depreciation. HMRC lets you deduct the cost of qualifying assets on its own rules.'],
+ ['Chart of accounts','The list of categories used to sort every transaction.'],
+ ['Clearing account','A holding account (e.g. Shopify Clearing) that returns to nil once payouts are reconciled.'],
+ ['CIS','Construction Industry Scheme. Contractors deduct tax from payments to subcontractors.'],
+ ['Contact','A customer or supplier in Xero.'],
+ ['Conversion date','The date you start using Xero. Opening balances are entered as at the day before.'],
+ ['Corporation Tax','Tax on a limited company’s profits. Payment is normally due 9 months and 1 day after the year-end; the CT600 return is due 12 months after it.'],
+ ['Credit note','A document that reduces what a customer owes you or what you owe a supplier.'],
+ ['Debit and credit','The two sides of every entry. Debits increase assets and expenses; credits increase liabilities, equity and income.'],
+ ['Depreciation','Spreading the cost of an asset over its useful life as an expense each period.'],
+ ['Director loan account','Records money owed between a company and its director.'],
+ ['Dividend','A distribution of company profit to shareholders. Not a business expense.'],
+ ['Double-entry','Every transaction is recorded twice (a debit and an equal credit).'],
+ ['Drawings','Money a sole trader or partner takes out for personal use.'],
+ ['Equity','What belongs to the owners: money put in plus profits kept, minus drawings/dividends.'],
+ ['Exempt (VAT)','No VAT is charged by law, e.g. insurance and bank charges. Exempt items still appear in Box 6 or 7 of the VAT return, unlike No VAT items.'],
+ ['Expense claim','A cost an employee paid personally and claims back.'],
+ ['Fixed asset','A long-life item the business owns and uses, such as vehicles, tools or computers.'],
+ ['Flat Rate Scheme','A VAT scheme where you pay HMRC a fixed % of gross turnover.'],
+ ['Funds introduced','Money a sole trader or partner puts into the business. Equity, not income. Also called capital introduced.'],
+ ['Gross / Net','Net is before VAT. Gross is including VAT.'],
+ ['Input VAT','VAT you pay on purchases and can usually reclaim if VAT-registered.'],
+ ['IR35','Off-payroll working rules. Contractors who are effectively employees are taxed as such.'],
+ ['Journal (manual journal)','A hand-made accounting entry that moves amounts between accounts.'],
+ ['Liability','Money the business owes: creditors, VAT, PAYE, loans.'],
+ ['Lock date','A date before which Xero stops people changing transactions.'],
+ ['Margin scheme','A VAT scheme for second-hand goods, where VAT is on the profit margin.'],
+ ['Making Tax Digital','HMRC digital record-keeping and filing rules.'],
+ ['No VAT (out of scope)','Items outside the VAT system altogether: wages, dividends, loans, transfers, HMRC payments. They never appear on the VAT return.'],
+ ['Open Banking','A regulated way to share bank data with apps like Xero. Consent must be renewed periodically, usually every 90 days. Xero warns you before it lapses.'],
+ ['Output VAT','VAT you charge customers on sales.'],
+ ['Overpayment / Prepayment','Money received or paid beyond the invoice/bill.'],
+ ['P&L','Report showing income minus costs over a period.'],
+ ['Balance Sheet','Snapshot at one date of what you own, what you owe and the owners’ stake.'],
+ ['PAYE / RTI','Pay As You Earn. Real Time Information reporting each payroll.'],
+ ['Payout','The batch of money Shopify, eBay, Stripe or PayPal sends to your bank.'],
+ ['P11D','End-of-year form reporting benefits in kind.'],
+ ['Purchase order','A document sent to a supplier stating what you want to buy.'],
+ ['Quote','An estimate you send a customer.'],
+ ['Repeating invoice','An invoice Xero creates automatically on a schedule.'],
+ ['Retained earnings','Profit from earlier years kept in the business.'],
+ ['Reverse charge','A rule where the buyer, not the seller, accounts for VAT.'],
+ ['Suspense account','A temporary place for items you cannot yet classify.'],
+ ['Tracking category','A tag (Department, Location) to report profit by that tag.'],
+ ['Trial balance','A list of every account balance. Debits equal credits.'],
+ ['VAT return','A summary of output and input VAT submitted to HMRC.'],
+ ['Write-off','Removing a bad debt or small difference.'],
+ ['Zero-rated','Taxable at 0%. Still a taxable supply: it counts towards the VAT registration threshold and appears in Box 6 or 7.']
+];
+
+/* ============ LEVEL 1 ============ */
+M({lvl:1,t:'How Xero works: an interface tour',min:15,goal:'Find your way around Xero so the rest of the course is quick to follow.',widget:null,
+secs:[
+{h:'The dashboard',html:'<p>When you log in you land on the <b>Dashboard</b>. It shows cash in and out, money owed to you and by you, a profit snapshot, bank accounts, and any alerts. Treat it as the morning glance screen.</p>'},
+{h:'The menus you will use most',html:'<table><tr><th>Menu</th><th>What lives there</th></tr><tr><td><b>Sales</b></td><td>Invoices, quotes, credit notes, products and services, online payments</td></tr><tr><td><b>Purchases</b></td><td>Bills, purchase orders, expense claims, batch payments</td></tr><tr><td><b>Reporting</b></td><td>Every report: Profit and Loss, Balance Sheet, Aged Receivables and more</td></tr><tr><td><b>Accounting</b></td><td>Bank accounts and reconciliation, chart of accounts, fixed assets, manual journals</td></tr><tr><td><b>Tax</b></td><td>VAT returns and the HMRC (MTD) connection</td></tr><tr><td><b>Contacts</b></td><td>Customers, suppliers, statements, contact groups, imports</td></tr></table><p class="small mut">Xero switched to this layout from September 2025. If you see one <b>Business</b> menu instead, you are on the older layout: the same items live inside it.</p>'},
+{h:'The + quick-create button',html:'<p>The blue <b>+</b> at the top starts almost anything: new invoice, bill, contact, quote, expense claim, manual journal, spend/receive money. Use it instead of hunting through menus.</p>'},
+{h:'Global search',html:'<p>The magnifying glass at the top searches almost anything in Xero: contacts, invoices, bills, settings, reports. Learn it early.</p>'},
+{h:'Switching organisations and settings',html:'<p>The <b>organisation name</b> at the top-left opens a dropdown to switch between organisations, open the Demo Company, or start a new one. <b>Settings</b> is in that same area.</p>'},
+{h:'The Xero mobile app',html:'<p>Excellent for photographing receipts, checking balances, sending an invoice from site and approving expense claims.</p>'},
+{h:'The Demo Company',html:'<p>Every Xero login includes a <b>Demo Company</b> with sample data. It resets roughly every 28 days. It is where you do every "Try it in Xero" task.</p>'}],
+tip:'Learn three habits on day one: use the search, use + to create, and use the organisation menu to switch.',
+warn:'The Demo Company cannot connect to a real bank or file a real VAT return.',
+do:['Open the Demo Company. Click around the Dashboard, then the Sales, Purchases and Accounting menus.','Use the search to find "aged receivables".','Open the + menu and see what you can create.'],
+quiz:[
+{q:'What does the + button do?',o:['Only creates invoices','Starts almost any new record','Restarts Xero'],a:1,w:'Universal quick-create.'},
+{q:'Where do you switch to the Demo Company?',o:['Settings → Users','The organisation menu at the top-left','Contacts'],a:1,w:'Organisation name opens the menu.'},
+{q:'You cannot find a setting or report. Quickest route?',o:['The search at the top of Xero','Click through every menu','Log out and back in'],a:0,w:'Search finds contacts, transactions, reports and settings.'},
+{q:'Where do you find bank reconciliation?',o:['Sales menu','Contacts','Accounting menu'],a:2,w:'Accounting → Bank accounts → Reconcile.'},
+{q:'What should you NOT use the Demo Company for?',o:['Practising reconciliation','Connecting a real bank feed','Trying reports'],a:1,w:'No real feeds or filings.'}]});
+
+M({lvl:1,key:'basics',t:'Accounting basics: how Xero thinks',min:25,goal:'Understand debits, credits and the five account types so Xero stops feeling like magic.',widget:'drill',
+secs:[
+{h:'What bookkeeping really is',html:'<p>Bookkeeping is recording every money event in the right category, on the right date, so you can answer three questions: <b>Did I make a profit? What do I own and owe? How much tax do I owe?</b></p>'},
+{h:'The five types of account',html:'<table><tr><th>Family</th><th>Meaning</th><th>Examples</th><th>Report</th></tr><tr><td>Assets</td><td>What you own or are owed</td><td>Bank, debtors, stock, vans</td><td>Balance Sheet</td></tr><tr><td>Liabilities</td><td>What you owe</td><td>Creditors, VAT, PAYE, loans</td><td>Balance Sheet</td></tr><tr><td>Equity</td><td>The owners’ stake</td><td>Share capital, retained earnings, drawings</td><td>Balance Sheet</td></tr><tr><td>Income</td><td>Money you earn</td><td>Sales, interest received</td><td>Profit and Loss</td></tr><tr><td>Expenses</td><td>Costs of running</td><td>Wages, rent, fuel, fees</td><td>Profit and Loss</td></tr></table><p>Master equation: <b>Assets = Liabilities + Equity</b>.</p>'},
+{h:'Debits and credits without tears',html:'<p>Every transaction has two sides, an equal debit and credit. Called <b>double-entry</b>.</p><table><tr><th></th><th>Debit increases</th><th>Credit increases</th></tr><tr><td>Assets</td><td>Yes</td><td></td></tr><tr><td>Expenses</td><td>Yes</td><td></td></tr><tr><td>Liabilities</td><td></td><td>Yes</td></tr><tr><td>Equity</td><td></td><td>Yes</td></tr><tr><td>Income</td><td></td><td>Yes</td></tr></table><div class="callout ex"><b class="k">Example</b>You buy £100 of fuel by card. Expense up: <b>debit £100</b>. Bank down: <b>credit £100</b>. Debits equal credits.</div>'},
+{h:'Accrual vs cash',html:'<p><b>Accrual</b> records income when invoiced and costs when billed. <b>Cash</b> records when money moves. Xero reports use accrual by default. (VAT Cash Accounting is a separate VAT setting, covered in Level 3.)</p>'},
+{h:'The three Xero ideas to remember',html:'<ol><li><b>Documents first.</b> Invoices and bills so Xero knows what is owed.</li><li><b>Bank second.</b> Match bank lines to documents.</li><li><b>Reports last.</b> Accurate steps 1 and 2 give accurate reports.</li></ol>'}],
+tip:'Print the double-entry table and stick it near your desk for the first month.',
+warn:'Never treat money in as sales. Loans, owner funds, refunds and transfers are not income.',
+do:['Open the Balance Sheet in the Demo Company. Find one asset, one liability and one equity line.','Open the Profit and Loss. Identify income and expense lines.','Run the Journal Report (Reporting menu) for one day and look at the debits and credits Xero created behind each invoice.'],
+quiz:[
+{q:'Which of these INCREASES with a debit?',o:['A liability','An asset such as bank','Income'],a:1,w:'Assets and expenses increase with debits.'},
+{q:'The owner pays £5,000 of their own money in. How is it recorded?',o:['As sales income','As equity','As an expense'],a:1,w:'It is not income; it is the owner’s stake.'},
+{q:'Under the accrual basis, when is a sale recorded?',o:['When you send the invoice','When the customer pays','When the bank statement arrives'],a:0,w:'When earned and invoiced.'},
+{q:'Assets = ?',o:['Liabilities + Equity','Income − Expenses','Bank + Debtors'],a:0,w:'The accounting equation.'},
+{q:'You buy £80 of fuel by card. Correct entry?',o:['Dr Fuel £80 / Cr Bank £80','Dr Bank £80 / Cr Fuel £80','Dr Fuel £80 / Cr Sales £80'],a:0,w:'Expense up (debit), asset down (credit).'}]});
+
+M({lvl:1,t:'Sole trader, limited company or partnership',min:20,goal:'Choose the right legal structure and know how it changes the bookkeeping and your tax.',widget:null,
+secs:[
+{h:'The three common structures',html:'<table><tr><th></th><th>Sole trader</th><th>Limited company</th><th>Partnership / LLP</th></tr><tr><td>Legal person</td><td>You and the business are the same</td><td>Separate legal entity</td><td>Partners (or LLP as separate entity)</td></tr><tr><td>Taxed via</td><td>Self Assessment (Income Tax + Class 4 NI)</td><td>Corporation Tax + personal tax on salary/dividends</td><td>Each partner taxed on their share</td></tr><tr><td>Owner equity</td><td>Capital + Drawings</td><td>Share capital + Retained earnings + Director Loan</td><td>Capital accounts per partner</td></tr><tr><td>Public records</td><td>None</td><td>Accounts and directors at Companies House</td><td>LLP files; ordinary partnership does not</td></tr></table>'},
+{h:'When incorporation makes sense',html:'<ul><li>Profits high enough that salary + dividends beat sole trader tax.</li><li>You want limited liability.</li><li>You want investors or to sell shares.</li><li>Big customers only deal with limited companies.</li></ul><p>Incorporation adds compliance: annual accounts, confirmation statement, Corporation Tax return, and stricter director loan rules.</p>'},
+{h:'What changes in Xero',html:'<table><tr><th></th><th>Sole trader</th><th>Limited company</th></tr><tr><td>Owner money in</td><td>Funds introduced (equity)</td><td>Director loan (liability) or share capital</td></tr><tr><td>Owner money out for personal use</td><td>Drawings (equity)</td><td>Salary, dividend, or repayment of money the director lent. Anything else makes the director loan overdrawn.</td></tr><tr><td>Who pays tax</td><td>You, via Self Assessment</td><td>The company pays CT; you pay on salary and dividends</td></tr></table>'},
+{h:'Xero setup differences',html:'<p>Sole trader: equity accounts "Funds introduced" (also called capital introduced) and "Drawings". Limited company: "Share capital", "Retained earnings", "Director loan account". Partnership: one capital and one current account per partner.</p>'}],
+tip:'If unsure, ask your accountant before you trade, not after.',
+warn:'Do not mix owner money with business money in the same bank account, whatever the structure.',
+do:['Write down your current legal structure and year-end.','Find your equity accounts in the Demo Company.'],
+quiz:[
+{q:'Which structure is a separate legal entity?',o:['Sole trader','Limited company','Neither'],a:1,w:'A limited company (and LLP) is separate.'},
+{q:'Money an owner takes from a sole trader business for personal use is…',o:['Salary','Drawings (equity)','An expense'],a:1,w:'Reduces equity; not a business cost.'},
+{q:'A limited company pays what on its profits?',o:['Corporation Tax','Income Tax','Nothing'],a:0,w:'The company pays CT; the director pays personal tax on salary/dividends.'},
+{q:'Partnership profits are shared…',o:['By the partnership agreement (equal by default)','Always equally','By seniority'],a:0,w:'The agreement governs.'},
+{q:'Which account would a limited company use?',o:['Drawings','Director loan account','Funds introduced'],a:1,w:'Director loan account.'}]});
+
+M({lvl:1,t:'Choosing a plan, signing up and your safe practice area',min:20,goal:'Pick the right plan, create your organisation and practise safely.',widget:null,
+secs:[
+{h:'Plans change — check the live page',html:'<p>Xero UK offers several plans. Names and prices change frequently, so this course does not list figures. Always check <b>xero.com/uk/pricing-plans</b>.</p>'},
+{h:'How to choose: six questions',html:'<ol><li>How many sales invoices and supplier bills a month?</li><li>Do you trade in other currencies?</li><li>Do staff claim expenses?</li><li>Do you need to report on projects or jobs?</li><li>Do you need payroll? (Usually a separate per-employee charge.)</li><li>Do you need analytics, forecasting or detailed user roles?</li></ol><p>If unsure, start on the free trial (usually 30 days).</p>'},
+{h:'Creating your organisation',html:'<ol><li>Go to xero.com/uk and choose <b>Try for free</b>.</li><li>Enter your name, email and a strong password.</li><li>Enter the organisation name exactly as it appears on legal documents.</li><li>Choose your industry and start date.</li><li>Turn on multi-factor authentication immediately.</li></ol>'},
+{h:'The Demo Company',html:'<p>Every Xero login includes a Demo Company. It resets roughly every 28 days. Use it for every "Try it in Xero" task in this course.</p>'},
+{h:'Who should have access?',html:'<p>Xero roles: <b>Read only</b>, <b>Invoice only</b>, <b>Standard</b>, <b>Adviser</b>. Give each person their own login and the lowest role that fits.</p>'}],
+tip:'Do not close the old system until Xero has run in parallel for a full month and the reports agree. Keep the old records: HMRC can ask for at least 6 years of them.',
+warn:'Do not enter real customer data in the Demo Company.',
+do:['Open xero.com/uk/pricing-plans and note the invoice and bill limits.','Open the Demo Company and find the Dashboard.','Locate Settings and Users.'],
+quiz:[
+{q:'Why use the Demo Company first?',o:['It files real VAT returns','Practise without affecting real data','It is the only way to connect a bank'],a:1,w:'Sandbox.'},
+{q:'How should your accountant get access?',o:['Share your own login','Invite them as an Adviser user','Email screenshots'],a:1,w:'Own login with Adviser role.'},
+{q:'Where is the official UK plan comparison?',o:['xero.com/uk/pricing-plans','The invoice footer','LinkedIn'],a:0,w:'Always check the live page.'},
+{q:'Downside of the Demo Company?',o:['Cannot connect a real bank feed or file returns','Costs money','Deletes your real data'],a:0,w:'No real feeds or filings.'},
+{q:'Which role for an investor?',o:['Adviser','Standard','Read only'],a:2,w:'Read only.'}]});
+
+M({lvl:1,t:'Organisation settings that matter',min:25,goal:'Set the financial year, VAT scheme, branding and lock dates correctly once.',widget:null,
+secs:[
+{h:'Organisation details',html:'<p>Under <b>Settings → Organisation details</b>: legal name, registered address, company number, VAT number, contact details.</p>'},
+{h:'Financial settings',html:'<table><tr><th>Setting</th><th>What to choose</th></tr><tr><td>Financial year end</td><td>Match Companies House / HMRC.</td></tr><tr><td>VAT scheme and basis</td><td>Standard or Flat Rate; invoice (accrual) basis or Cash Accounting. Must match exactly what HMRC has for you.</td></tr><tr><td>VAT period</td><td>Quarterly, monthly or annually, matching your HMRC stagger.</td></tr><tr><td>Report basis</td><td>Reports default to accrual (recommended). Since April 2024 HMRC’s cash basis is the default for sole traders’ tax, but you can still keep accrual books. Ask your accountant.</td></tr><tr><td>Currency</td><td>GBP as base.</td></tr></table>'},
+{h:'Invoice branding and terms',html:'<p>In <b>Settings → Invoice settings</b>: branding themes, logo, bank details, default payment terms, invoice reminders, and invoice numbering prefixes.</p>'},
+{h:'Users and roles',html:'<p>Under <b>Settings → Users</b>, invite staff with the lowest role needed. Remove access the same day someone leaves.</p>'},
+{h:'Lock dates: your safety net',html:'<p>Under <b>Financial settings → Lock dates</b> you can stop anyone entering or changing transactions before a certain date.</p><div class="callout ex"><b class="k">Why it matters</b>If VAT for the June quarter is filed and then someone edits a June invoice, the filed return no longer agrees with Xero. A lock date prevents this.</div>'}],
+tip:'Set your first lock date at the day before your conversion date.',
+warn:'Wrong VAT scheme or start date makes every VAT return wrong.',
+do:['Open Financial settings in the Demo Company and find VAT scheme, year-end, lock dates.','View a branding theme.','Check the available user roles.'],
+quiz:[
+{q:'Where do you find the correct VAT scheme and period?',o:['Your HMRC VAT registration','The first invoice','Your bank statement'],a:0,w:'Xero must mirror HMRC.'},
+{q:'What is the main purpose of a lock date?',o:['Stop invoices being emailed','Protect finished periods','Log users out'],a:1,w:'Prevent changes to filed periods.'},
+{q:'Why use numbered invoice prefixes?',o:['Looks professional only','HMRC expects unique sequential numbers','Xero requires them'],a:1,w:'HMRC requirement.'},
+{q:'Which setting must match HMRC exactly?',o:['VAT scheme and period','Theme colour','Logo size'],a:0,w:'Any mismatch breaks returns.'},
+{q:'What should you do before your first real transaction?',o:['Set a lock date at the day before conversion','Delete the chart','Turn off MFA'],a:0,w:'Protects opening position.'}]});
+
+M({lvl:1,t:'The chart of accounts',min:25,goal:'Build a clean list of categories that gives useful reports and makes VAT right.',widget:null,
+secs:[
+{h:'What it is and why it matters',html:'<p>The <b>chart of accounts</b> is the list of categories every transaction gets sorted into. Find it at <b>Accounting → Chart of accounts</b>. Reports are only as good as this list.</p>'},
+{h:'Account types in Xero',html:'<table><tr><th>Xero type</th><th>Goes to</th><th>Use for</th></tr><tr><td>Bank</td><td>Balance Sheet</td><td>Bank, credit cards, PayPal, Stripe</td></tr><tr><td>Current/Fixed/Non-current Asset, Inventory, Prepayment</td><td>Balance Sheet</td><td>Debtors, equipment, stock, prepaid</td></tr><tr><td>Current/Non-current Liability</td><td>Balance Sheet</td><td>Creditors, VAT, PAYE, loans</td></tr><tr><td>Equity</td><td>Balance Sheet</td><td>Share capital, drawings, retained earnings</td></tr><tr><td>Revenue, Sales, Other income</td><td>P&L</td><td>Money earned</td></tr><tr><td>Direct costs</td><td>P&L (cost of sales)</td><td>Costs of what you sell</td></tr><tr><td>Expense, Overhead, Depreciation</td><td>P&L</td><td>Running costs</td></tr></table>'},
+{h:'System accounts: hands off',html:'<p>Do not delete or change the type of Xero system accounts: Accounts Receivable, Accounts Payable, VAT, Retained Earnings, Historical Adjustment, Suspense, Rounding, Unpaid Expense Claims and the currency gain/revaluation accounts.</p>'},
+{h:'Good design rules',html:'<ul><li>Think about the report you want.</li><li>Do not make an account per supplier.</li><li>Split Cost of Sales from Overheads.</li><li>Separate owner items.</li><li>Leave gaps in numbering.</li><li>Set the default VAT rate on each account.</li></ul>'},
+{h:'Adding, editing and archiving',html:'<ol><li>Accounting → Chart of accounts → Add account.</li><li>Pick the type, code and name, set the tax default.</li><li>Archive rather than delete.</li></ol>'}],
+tip:'A tidy chart should usually be 60–120 accounts for a small business.',
+warn:'Putting a loan receipt in Sales inflates profit and VAT.',
+do:['Open the Demo Company chart and filter by type.','Click one expense account and look at the default VAT rate.','Add a test account and archive it.'],
+quiz:[
+{q:'You want Fuel and Vehicle Repairs separately. What do you do?',o:['Create two accounts','One account per supplier','Use one account'],a:0,w:'Separate accounts for separate report lines.'},
+{q:'Where do you store each supplier’s details?',o:['One account per supplier','The supplier as a contact','Account description'],a:1,w:'Suppliers are contacts.'},
+{q:'Can you delete an account with transactions?',o:['Yes','No, archive','Yes if no one is logged in'],a:1,w:'Archive it.'},
+{q:'What should you set on each account to help bank rules?',o:['A default VAT rate','A logo','A currency'],a:0,w:'Default VAT rates stop miscoding.'},
+{q:'Which type should "Shopify Clearing" be?',o:['Current Asset','Sales','Expense'],a:0,w:'It holds money in transit, so it is an asset. Some apps set it up as a Bank-type account so payouts can be reconciled through it, which is also fine. Never Sales or Expense.'}]});
+
+M({lvl:1,t:'Contacts and VAT (tax) rates',min:20,goal:'Add customers and suppliers properly and understand UK VAT rates in Xero.',widget:null,
+secs:[
+{h:'Contacts',html:'<p>Every invoice and bill needs a <b>contact</b>. Set default payment terms, default sales or purchase account, and default VAT rate on each. Search before adding to avoid duplicates. Merge duplicates.</p>'},
+{h:'How VAT works (the 60-second version)',html:'<p>If VAT-registered you <b>charge</b> VAT on sales (output) and <b>reclaim</b> VAT on purchases (input). You pay HMRC the difference.</p><div class="callout ex"><b class="k">Example</b>Sell £100 + £20 VAT; buy £40 + £8 VAT. You owe HMRC £20 − £8 = £12.</div>'},
+{h:'Standard UK rates in Xero',html:'<table><tr><th>Treatment</th><th>Xero rate name</th><th>Use</th><th>On the VAT return?</th></tr><tr><td>Standard 20%</td><td>20% (VAT on Income) / 20% (VAT on Expenses)</td><td>Most goods and services</td><td>Yes</td></tr><tr><td>Reduced 5%</td><td>5% (VAT on Income / Expenses)</td><td>Domestic fuel and power, children’s car seats</td><td>Yes</td></tr><tr><td>Zero-rated 0%</td><td>Zero Rated Income / Expenses</td><td>Most food, books, children’s clothes, bus/train/Tube fares, exports of goods</td><td>Yes, Box 6 or 7</td></tr><tr><td>Exempt</td><td>Exempt Income / Expenses</td><td>Insurance, bank charges, most financial services, some education and health</td><td>Yes, Box 6 or 7</td></tr><tr><td>No VAT (out of scope)</td><td>No VAT</td><td>Wages, dividends, owner funds, loans, transfers, HMRC payments</td><td>No</td></tr><tr><td>Reverse charge</td><td>Reverse Charge / Domestic Reverse Charge rates</td><td>CIS construction services; services bought from abroad</td><td>Yes</td></tr></table>'},
+{h:'Check Settings → VAT rates',html:'<p>Check the standard rates are present. Add a custom rate only if you understand the HMRC treatment.</p>'}],
+tip:'Put the correct default VAT rate on each supplier and account.',
+warn:'Zero-rated, exempt and No VAT are three different things. Zero-rated and exempt both appear on the VAT return; No VAT does not. Zero-rated sales count towards the registration threshold; exempt sales do not.',
+do:['Add a new customer with 14-day payment terms in the Demo Company.','List the VAT rates.','Set a default expense account and VAT rate on a supplier.'],
+quiz:[
+{q:'Bank charges are normally coded with which VAT rate?',o:['20% (VAT on Expenses)','Exempt Expenses','Zero Rated Expenses'],a:1,w:'Bank charges are an exempt financial service: no VAT to reclaim, but strictly they belong in Box 7. Many bookkeepers use No VAT; the reclaimable VAT is nil either way.'},
+{q:'Best way to avoid duplicate contacts?',o:['Search before adding and merge','Add a new one every time','Delete old ones'],a:0,w:'Merge to keep one record.'},
+{q:'Sell £100 + £20 VAT, buy £40 + £8 VAT. What do you owe HMRC?',o:['£20','£12','£28'],a:1,w:'Output minus input.'},
+{q:'Which is safest when unsure about a rate?',o:['Pick 20%','Check HMRC guidance or ask your accountant','Leave blank'],a:1,w:'VAT is not a guessing game.'},
+{q:'Which feature saves time on each contact?',o:['Default account, VAT rate and payment terms','A profile photo','Email signature'],a:0,w:'Defaults flow through.'}]});
+
+M({lvl:1,t:'Opening balances and conversion date',min:25,goal:'Move into Xero with the right starting numbers.',widget:null,
+secs:[
+{h:'The conversion date',html:'<p>The day you start recording in Xero. Everything before is summarised as opening balances. Best choice is the first day of a month, ideally the start of a financial year or VAT quarter.</p>'},
+{h:'What you need from the old books',html:'<ul><li>Closing trial balance as at the day before conversion.</li><li>Bank statements and uncleared items.</li><li>Unpaid sales invoices and unpaid supplier bills.</li><li>VAT, PAYE and loan balances.</li><li>Fixed asset register.</li></ul>'},
+{h:'Entering the balances',html:'<ol><li>Go to Settings → Conversion balances and set the conversion date.</li><li>Enter each unpaid sales invoice and bill as a normal invoice dated as originally issued.</li><li>Enter each bank balance from the old trial balance (the book balance). Enter uncleared cheques and receipts as individual transactions dated before conversion, so they reconcile when they clear.</li><li>Enter remaining balances from the trial balance.</li><li>Run Trial Balance as at the conversion date and compare.</li></ol>'},
+{h:'Check your work',html:'<table><tr><th>Check</th><th>Expected</th></tr><tr><td>Trial balance matches old books</td><td>Same totals</td></tr><tr><td>Accounts Receivable</td><td>Equals old debtor list</td></tr><tr><td>Accounts Payable</td><td>Equals old creditor list</td></tr><tr><td>Bank balances</td><td>Match statements</td></tr><tr><td>Historical Adjustment</td><td>Nil or explained</td></tr></table>'}],
+tip:'A conversion date that matches a VAT quarter start makes the first VAT return clean.',
+warn:'Never put a lump sum into debtors "to make it balance".',
+do:['Search "Conversion balances" in the Demo Company.','Run the Trial Balance for a date.','Write down the date you would convert and the documents you would need.'],
+quiz:[
+{q:'Where should unpaid customer invoices at conversion be entered?',o:['One lump sum','As individual invoices dated as originally issued','Ignored'],a:1,w:'Individual so they can be chased and aged.'},
+{q:'The best conversion date is usually…',o:['A random mid-month day','First day of a month or financial period','Whenever'],a:1,w:'Clean start.'},
+{q:'Which report proves opening balances match?',o:['Trial Balance','Invoice list','Contacts list'],a:0,w:'Should equal the old trial balance.'},
+{q:'What should Historical Adjustment be at conversion?',o:['A large unexplained balance','Nil or explained','Always negative'],a:1,w:'Balancing figure.'},
+{q:'What must accompany a lump sum for opening stock?',o:['A stock count or valuation','An invoice number','A VAT return'],a:0,w:'Must be supported.'}]});
+
+/* ============ LEVEL 2 ============ */
+M({lvl:2,t:'Sales invoices, quotes and credit notes',min:25,goal:'Create accurate, professional invoices and handle quotes, repeats and refunds.',widget:null,
+secs:[
+{h:'Create an invoice',html:'<ol><li>Use + or go to Sales → Invoices → New invoice.</li><li>Choose or add the contact.</li><li>Check the date and due date.</li><li>Set Amounts are: Tax exclusive, Tax inclusive or No tax.</li><li>Add lines: description, quantity, unit price, account and VAT rate.</li><li>Click Approve (or Approve & email).</li></ol>'},
+{h:'Statuses',html:'<table><tr><th>Status</th><th>Meaning</th><th>In books?</th></tr><tr><td>Draft</td><td>Saved, not final</td><td>No</td></tr><tr><td>Awaiting approval</td><td>Submitted for someone to check</td><td>No</td></tr><tr><td>Awaiting payment</td><td>Approved (sent or not)</td><td>Yes (debtor)</td></tr><tr><td>Paid</td><td>Fully settled</td><td>Yes</td></tr><tr><td>Voided</td><td>Cancelled, kept for audit</td><td>No (reversed)</td></tr></table>'},
+{h:'Quotes',html:'<p>An estimate that does not touch your accounts. Copy to invoice when accepted.</p>'},
+{h:'Repeating invoices',html:'<p>For regular work, set the schedule and choose Save as draft, Approve or Approve and send.</p>'},
+{h:'Credit notes and refunds',html:'<p>For overcharges, returns or post-invoice discounts. Allocate to the invoice or refund the customer.</p>'},
+{h:'Sending, attaching and branding',html:'<p>Approve & email sends a PDF. Attach purchase orders or job sheets with the paperclip.</p>'}],
+tip:'Invoice the day the work is done. Most late payment problems start with late invoicing.',
+warn:'Once a customer has an invoice, correct it with a credit note (or void and re-issue if they have not processed it). Xero lets you edit an approved invoice with no payment on it, but never edit one in a VAT period you have already filed.',
+do:['Create an invoice for £500 + 20% VAT in the Demo Company.','Copy to a credit note and allocate.','Create a repeating invoice saved as a draft.'],
+quiz:[
+{q:'Can an approved invoice be deleted?',o:['Yes','No. Void or credit note','Only on Fridays'],a:1,w:'Once approved it is in your books.'},
+{q:'What is a quote in Xero?',o:['Posts to sales','An estimate not affecting accounts','A supplier bill'],a:1,w:'Estimate.'},
+{q:'"Amounts are tax inclusive" means…',o:['Prices already include VAT','VAT ignored','VAT added on top'],a:0,w:'Gross prices.'},
+{q:'Why is voiding better than deleting?',o:['Keeps the audit trail','Faster','Reduces VAT'],a:0,w:'Voided documents remain.'},
+{q:'When to use a repeating invoice?',o:['One-off jobs','Regular work like monthly retainers','Never'],a:1,w:'Schedule-based.'}]});
+
+M({lvl:2,t:'Bills, purchases and supplier payments',min:25,goal:'Record supplier bills accurately and pay efficiently.',widget:null,
+secs:[
+{h:'Entering a bill',html:'<ol><li>Purchases → Bills → New bill.</li><li>Choose supplier.</li><li>Date is the invoice date on the supplier document.</li><li>Reference: supplier invoice number.</li><li>Add lines with account and VAT rate.</li><li>Attach the PDF, then Approve.</li></ol>'},
+{h:'Faster entry',html:'<p>Forward supplier emails to your Xero files inbox. Use receipt-capture apps such as Dext or Hubdoc. Snap receipts with the mobile app.</p>'},
+{h:'Approvals',html:'<p>Enable bill approvals so only a manager can approve above a limit.</p>'},
+{h:'Purchase orders',html:'<p>Record what you ordered before the bill arrives. Copy to bill when the bill comes.</p>'},
+{h:'Paying suppliers',html:'<p>Batch payments: tick bills, choose the bank account, produce a file for online banking.</p>'},
+{h:'Supplier credit notes',html:'<p>Record a credit note and allocate against the bill or a future bill.</p>'}],
+tip:'Date bills by the supplier invoice date, not the date you typed them.',
+warn:'Doing both a bill and a coded bank line is a duplicate cost. Match instead.',
+do:['Create a bill with a reference, due date and attachment.','Filter Bills for overdue.','Open a batch payment screen.'],
+quiz:[
+{q:'What date to use on a bill?',o:['Today','Supplier invoice date','Due date'],a:1,w:'Decides period and VAT quarter.'},
+{q:'Why put the supplier invoice number in Reference?',o:['Tidy','Find the bill and catch duplicates','Xero needs it'],a:1,w:'Search and duplicate check.'},
+{q:'What is a batch payment for?',o:['Paying several bills in one bank upload','Creating invoices in bulk','Archiving contacts'],a:0,w:'Groups bills.'},
+{q:'What must you do with the PDF?',o:['Attach to the bill','Throw away','Email to HMRC'],a:0,w:'Evidence.'},
+{q:'When would a PO be useful?',o:['When you order first and the bill comes later','For every expense','Never'],a:0,w:'Controls spend.'}]});
+
+M({lvl:2,t:'Receiving payments, overpayments and prepayments',min:20,goal:'Record money in and out against documents.',widget:null,
+secs:[
+{h:'Two correct ways to record a payment',html:'<ol><li>Via the bank: reconcile and choose Match.</li><li>From the invoice: Add payment, choose bank and date.</li></ol><div class="callout warn"><b class="k">Never do both wrongly</b>If you record a payment on the invoice and code the bank line as new income, the sale counts twice.</div>'},
+{h:'Part payments and combined payments',html:'<p>Part-payment: invoice stays Awaiting payment. One payment for several invoices: tick all in Find & Match.</p>'},
+{h:'Overpayments and prepayments',html:'<table><tr><th>Situation</th><th>Name</th><th>Action</th></tr><tr><td>Customer pays more</td><td>Overpayment</td><td>Credit held until allocated or refunded</td></tr><tr><td>Customer pays before invoicing</td><td>Prepayment</td><td>Allocate to the invoice when raised</td></tr><tr><td>You pay supplier in advance</td><td>Prepayment (paid)</td><td>Apply to their bill</td></tr></table>'},
+{h:'Refunds',html:'<p>Create a credit note, then refund it from the bank.</p>'},
+{h:'Write-offs',html:'<p>Small differences can be written off in the reconcile screen.</p>'}],
+tip:'Search by amount in Find & Match — faster than scrolling.',
+warn:'Do not use shortcuts that break the link between books and bank.',
+do:['Open an unpaid invoice and Add payment.','Look at a contact statement for overpayment examples.','Open a credit note and find Allocate and Refund.'],
+quiz:[
+{q:'Customer pays £600, invoice £500. Extra £100?',o:['Sales','Overpayment credit','Deleted'],a:1,w:'Held for customer.'},
+{q:'Safest way to record a customer payment?',o:['Match the bank line to the invoice','Type twice','Edit the invoice'],a:0,w:'One payment reconciled.'},
+{q:'Customer pays in advance. This is a…',o:['Prepayment','Credit note','Bill'],a:0,w:'Allocate later.'},
+{q:'Recording payment on invoice AND coding bank separately causes…',o:['Double-counted sale','Nothing','Faster books'],a:0,w:'Double-count.'},
+{q:'Where to write off a 5p short-payment?',o:['Reconcile screen write-off','Suspense','P&L expense'],a:0,w:'Xero offers write-off.'}]});
+
+M({lvl:2,t:'Connecting your bank to Xero',min:30,goal:'Connect a bank feed safely and know what to do when it breaks.',widget:null,
+secs:[
+{h:'What a bank feed is',html:'<p>A secure read-only link that sends bank transactions into Xero each day via <b>Open Banking</b>. Xero cannot move money. Feeds are free to Xero users, though some banks charge for commercial feeds.</p>'},
+{h:'Before you connect',html:'<ul><li>Use a business account.</li><li>Only the account holder or authorised user can approve.</li><li>Have your online banking login and phone ready.</li><li>Decide your start date. Use your conversion date.</li></ul>'},
+{h:'Step-by-step',html:'<ol><li>Accounting → Bank accounts → Add bank account.</li><li>Search your bank and pick the right one.</li><li>Choose type: current, savings, credit card.</li><li>Connect your bank. Approve in your bank app.</li><li>Choose start date.</li><li>Wait for transactions. Check balance.</li></ol>'},
+{h:'Renewing consent',html:'<p>Open Banking consent must be renewed periodically, usually every 90 days for UK banks. Xero shows the expiry date on the bank account and emails you before it lapses. Renewing takes a couple of clicks; if it lapses, the feed stops until you do.</p>'},
+{h:'When a feed breaks',html:'<table><tr><th>Problem</th><th>Fix</th></tr><tr><td>Feed stops</td><td>Reconnect, import history</td></tr><tr><td>Bank not supported</td><td>Import CSV/OFX/QIF statement</td></tr><tr><td>Duplicates</td><td>Do not import on top of a feed</td></tr><tr><td>Rules stop working</td><td>Use "Any text field contains"</td></tr><tr><td>Balance wrong</td><td>Compare line by line</td></tr></table>'},
+{h:'Other accounts',html:'<p>Credit cards, savings, PayPal, Stripe, Wise, online banks — each as a bank-type account. Cash as a bank account with no feed.</p>'}],
+tip:'Set a calendar reminder every 80 days: Renew Xero bank consent.',
+warn:'Start the feed the day after the last transaction already in your books (usually your conversion date). Earlier duplicates items in your opening balances; later leaves a gap.',
+do:['Look at the Demo Company bank screen.','Find Import a statement.','Note your bank and the start date you would use.'],
+quiz:[
+{q:'Can Xero move money through a bank feed?',o:['Yes with approval','No, read-only','Yes up to £500'],a:1,w:'Read-only.'},
+{q:'Who can authorise a new bank feed?',o:['Your accountant','Account holder or authorised user','Any Xero user'],a:1,w:'Bank authority only.'},
+{q:'How often must Open Banking consent be renewed?',o:['Usually every 90 days','Every 10 years','Never'],a:0,w:'Usually every 90 days for UK banks. Xero warns you before it expires.'},
+{q:'What if you import statements on top of a live feed?',o:['Duplicate transactions','Nothing','Faster'],a:0,w:'Lines arrive twice.'},
+{q:'Which should be its own bank-type account?',o:['PayPal','Fuel','Rent'],a:0,w:'Anything holding money.'}]});
+
+M({lvl:2,key:'recon',t:'Bank reconciliation: the heart of Xero',min:30,goal:'Match every bank line quickly and correctly.',widget:'recsim',
+secs:[
+{h:'What reconciliation proves',html:'<p>Reconciling means checking each bank line against a record in Xero. When done, Balance in Xero equals Statement balance.</p>'},
+{h:'The four tabs',html:'<table><tr><th>Tab</th><th>Use it when</th></tr><tr><td>Match</td><td>The money relates to an existing document</td></tr><tr><td>Create</td><td>No document exists. Choose contact, account, VAT rate.</td></tr><tr><td>Transfer</td><td>Money moved between your own accounts</td></tr><tr><td>Discuss</td><td>You do not know what it is</td></tr></table>'},
+{h:'The routine',html:'<ol><li>Accounting → Bank accounts → Reconcile.</li><li>Start at the oldest line.</li><li>Check contact, account and VAT, click OK.</li><li>Match before Create.</li><li>Split if one payment covers several costs.</li><li>Transfer for own-account moves.</li></ol>'},
+{h:'Tricky lines',html:'<ul><li>One payment, many invoices: tick all in Find & Match.</li><li>Small difference: write-off or discount.</li><li>Unknown: Discuss.</li><li>Wrongly posted: Remove & redo.</li></ul>'},
+{h:'Proving it',html:'<p>Run the Bank Reconciliation Summary at month end.</p>'}],
+tip:'Reconcile weekly, even for ten minutes.',
+warn:'Do not push entries to suspense to clear the screen.',
+do:['Open Reconcile in the Demo Company.','Find a Transfer example.','Open the Bank Reconciliation Summary report.'],
+quiz:[
+{q:'Own-account money movement. Which tab?',o:['Match','Create as expense','Transfer'],a:2,w:'Transfer.'},
+{q:'Why Match before Create?',o:['Create slower','Avoid double-counting','No reason'],a:1,w:'Double-count.'},
+{q:'When complete, which two numbers agree?',o:['Sales and costs','Statement balance and Balance in Xero','Debtors and creditors'],a:1,w:'Balances agree.'},
+{q:'Unidentified payment. Which tab?',o:['Discuss','Match','Transfer'],a:0,w:'Discuss.'},
+{q:'What does Bank Reconciliation Summary prove?',o:['Unreconciled items and balances','The chart','VAT returns'],a:0,w:'Proof.'}]});
+
+M({lvl:2,t:'Bank rules and automation',min:20,goal:'Teach Xero to code repeating transactions.',widget:null,
+secs:[
+{h:'What a bank rule does',html:'<p>If a bank line looks like this, code it like that. The line appears pre-filled, you check and press OK.</p>'},
+{h:'Three types',html:'<ul><li>Receive money</li><li>Spend money</li><li>Transfer money</li></ul>'},
+{h:'Creating a good rule',html:'<ol><li>On the Create tab, code correctly.</li><li>Click Create rule.</li><li>Set conditions, e.g. Any text field contains "SCREWFIX".</li><li>Set contact, account and VAT.</li><li>Save and test.</li></ol>'},
+{h:'Rules that earn their keep',html:'<table><tr><th>Line</th><th>Rule idea</th></tr><tr><td>Bank charges</td><td>Contains "BANK FEE" → Bank Fees, Exempt</td></tr><tr><td>Insurance</td><td>Insurer → Insurance, Exempt</td></tr><tr><td>Software</td><td>Supplier name → Software, 20% if UK VAT is shown; reverse charge if billed from abroad</td></tr><tr><td>Platform payouts</td><td>Contains "STRIPE" → matches payout journal</td></tr></table>'},
+{h:'Keeping rules safe',html:'<ul><li>Avoid vague terms.</li><li>Review quarterly.</li><li>Specific rules first.</li><li>Use "Any text field contains".</li></ul>'}],
+tip:'Aim for 80% of lines pre-coded within three months.',
+warn:'A too-broad rule is worse than none.',
+do:['View bank rules in the Demo Company.','Create a rule: contains "TFL" → Travel, Zero Rated Expenses (bus and Tube fares are zero-rated).','Move a rule up the list.'],
+quiz:[
+{q:'What does a bank rule do?',o:['Pays bills','Pre-fills coding','Locks the account'],a:1,w:'Suggest, not file.'},
+{q:'Safest condition for a supplier rule?',o:['Any text field contains specific name','Amount greater than £0','Contains "A"'],a:0,w:'Specific.'},
+{q:'Why order rules carefully?',o:['First matching rule wins','No reason','Alphabetical'],a:0,w:'First match.'},
+{q:'How often review rules?',o:['Quarterly','Never','Daily'],a:0,w:'Quarterly.'},
+{q:'Common rule mistake?',o:['Too broad keyword','Using supplier name','Adding VAT rate'],a:0,w:'Broad keywords catch too much.'}]});
+
+M({lvl:2,t:'Expenses, cards, cash and owner money',min:25,goal:'Handle receipts, claims, mileage and owner money.',widget:null,
+secs:[
+{h:'Business credit cards',html:'<p>Add each card as its own bank-type account and connect its feed. Paying the card from the bank is a Transfer.</p>'},
+{h:'Cash and petty cash',html:'<p>Create a Petty Cash bank account with no feed. Record spends with Spend money. Top up with Transfer. Count monthly.</p>'},
+{h:'Expense claims',html:'<p>Staff pay personally, submit a claim with receipt. Approve and pay. Keep records for at least 6 years for a limited company, or at least 5 years after the 31 January filing deadline for a sole trader.</p>'},
+{h:'Mileage',html:'<p>HMRC approved rates (at time of writing 45p a mile for the first 10,000 business miles in the tax year, then 25p, for cars and vans; 24p motorcycles; 20p bicycles). Keep a log. Check gov.uk.</p>'},
+{h:'Owner money: sole trader',html:'<ul><li>Money in = Funds introduced (equity)</li><li>Money out = Drawings (equity), never an expense</li></ul>'},
+{h:'Owner money: limited company',html:'<ul><li>Director pays personally → credit Director Loan Account</li><li>Director takes personally → debit Director Loan Account</li><li>Salary and dividends separate. Overdrawn loans can create tax charges.</li></ul>'}],
+tip:'Photograph receipts on the day.',
+warn:'Do not code personal spending to expenses.',
+do:['Find a credit card account in the Demo Company.','Record a Spend money for £15 petty cash.','Note what owner accounts you need.'],
+quiz:[
+{q:'Sole trader personal bill from business bank?',o:['Office costs','Drawings','Sales'],a:1,w:'Drawings.'},
+{q:'Paying your credit card bill from bank is…',o:['Transfer','Expense','Sale'],a:0,w:'Own-account transfer.'},
+{q:'Director paid a business cost personally?',o:['Company owes the director via loan account','Ignore','Sale'],a:0,w:'Credit Director Loan Account.'},
+{q:'What records support mileage?',o:['A log with date, route and purpose','None','A photo of the car'],a:0,w:'HMRC expects a log.'},
+{q:'How often count petty cash?',o:['Monthly','Yearly','Never'],a:0,w:'Monthly.'}]});
+
+/* ============ LEVEL 3 ============ */
+M({lvl:3,t:'Products, services and inventory',min:25,goal:'Set up items and know when you need real stock control.',widget:null,
+secs:[
+{h:'Products and services',html:'<p>Under Sales → Products and services (or search for it). Each item stores code, name, description, price, sales account, purchase account and VAT rates.</p>'},
+{h:'Untracked vs tracked',html:'<table><tr><th></th><th>Untracked</th><th>Tracked</th></tr><tr><td>Use for</td><td>Services, one-offs</td><td>Stock you count</td></tr><tr><td>Quantity on hand</td><td>Not kept</td><td>Kept and updated</td></tr><tr><td>Cost of sales</td><td>You code purchases</td><td>Xero posts COGS on sale</td></tr></table>'},
+{h:'When you need a stock app',html:'<p>Multiple warehouses, variants, kits, batches, or hundreds of SKUs → Unleashed, Cin7, inFlow.</p>'},
+{h:'Stock takes',html:'<p>Count physically. Post differences via stock adjustment or journal.</p>'}],
+tip:'Choose item codes you can remember and type.',
+warn:'Do not track inventory unless you will update it.',
+do:['Add an item with price and VAT.','Use it on an invoice.','Find a tracked item.'],
+quiz:[
+{q:'Main benefit of setting up items?',o:['Consistent, faster invoices','Xero charges less','VAT disappears'],a:0,w:'Consistency.'},
+{q:'Where does stock appear?',o:['P&L income','Balance Sheet asset','Nowhere'],a:1,w:'Asset.'},
+{q:'When use a stock app?',o:['Warehouses, variants, batches','Never','Only for services'],a:0,w:'Complex stock.'},
+{q:'How often count fast movers?',o:['Monthly','Never','Every five years'],a:0,w:'Monthly.'},
+{q:'Risk of bad inventory tracking?',o:['Wrong margins and stock','Higher VAT','Slower bank feeds'],a:0,w:'Worse than none.'}]});
+
+M({lvl:3,key:'vat',t:'VAT: registration, schemes and MTD',min:35,goal:'Register correctly, choose a scheme, prepare a VAT return and file on time.',widget:'vat',
+secs:[
+{h:'Who must register',html:'<p>You must register if your VAT-taxable turnover (standard, reduced and zero-rated sales, not exempt) goes over the threshold in any rolling 12 months, or you expect it to go over in the next 30 days alone. At time of writing the threshold is £90,000 (deregistration £88,000): check gov.uk. Voluntary registration below the threshold lets you reclaim VAT on costs, but you must then charge VAT on sales.</p>'},
+{h:'Choosing a scheme',html:'<table><tr><th>Scheme</th><th>How it works</th><th>Suits</th></tr><tr><td>Standard</td><td>Output minus input, on invoice dates</td><td>Most businesses</td></tr><tr><td>Cash accounting</td><td>VAT due when customers pay, reclaimed when you pay suppliers</td><td>Slow-paying customers</td></tr><tr><td>Flat Rate</td><td>Fixed % of gross turnover; generally no input VAT except single qualifying capital expenditure goods of £2,000 or more including VAT</td><td>Service businesses with few costs (check the 16.5% limited cost trader rule first)</td></tr><tr><td>Annual accounting</td><td>One return a year with advance payments</td><td>Steady businesses</td></tr><tr><td>Margin scheme</td><td>VAT on the profit margin</td><td>Second-hand goods, antiques</td></tr></table>'},
+{h:'MTD for VAT',html:'<p>All VAT-registered businesses must keep records digitally and file via compatible software such as Xero. You connect Xero to HMRC with your Government Gateway login (Tax menu). The authorisation lasts 18 months, then must be renewed.</p>'},
+{h:'Preparing a VAT return',html:'<ol><li>Fully reconcile the quarter.</li><li>Tax → VAT returns, open the period.</li><li>Review the nine boxes.</li><li>Investigate odd figures.</li><li>Box 3 minus Box 4 equals Box 5.</li><li>Submit and save confirmation. Post VAT payment. Set lock date.</li></ol>'},
+{h:'The nine boxes',html:'<table><tr><th>Box</th><th>Meaning</th></tr><tr><td>1</td><td>VAT due on sales</td></tr><tr><td>2</td><td>VAT due on goods brought into Northern Ireland from the EU (NI only)</td></tr><tr><td>3</td><td>Total VAT due (1+2)</td></tr><tr><td>4</td><td>VAT reclaimed on purchases</td></tr><tr><td>5</td><td>Net VAT to pay or reclaim (3−4)</td></tr><tr><td>6</td><td>Total sales ex VAT, including zero-rated and exempt</td></tr><tr><td>7</td><td>Total purchases ex VAT, including zero-rated and exempt</td></tr><tr><td>8</td><td>Goods supplied from Northern Ireland to the EU (NI only)</td></tr><tr><td>9</td><td>Goods acquired by Northern Ireland from the EU (NI only)</td></tr></table>'},
+{h:'Special VAT topics',html:'<ul><li><b>Reverse charge (CIS):</b> customer accounts for VAT on most construction services between VAT-registered businesses using domestic reverse charge tax codes.</li><li><b>Reverse charge (services from abroad):</b> you account for the VAT yourself.</li><li><b>Import VAT / PVA:</b> postponed VAT accounting lets you account on your return.</li><li><b>Partial exemption:</b> if you make exempt supplies.</li><li><b>Bad debt relief:</b> reclaim the output VAT on an invoice more than 6 months past its due date and written off in your books (not under Cash Accounting, where you never paid it).</li></ul>'},
+{h:'Deadlines',html:'<p>Return and payment are normally due one calendar month and seven days after the period end (Direct Debit is collected three working days later). Late returns earn penalty points; late payment brings penalties and interest.</p>'},
+{h:'MTD for Income Tax (ITSA)',html:'<p>Now live. Since 6 April 2026, sole traders and landlords with qualifying income over £50,000 must keep digital records and send quarterly updates. The threshold drops to £30,000 from April 2027 and £20,000 from April 2028. Qualifying income is gross self-employment plus property income. Check gov.uk.</p>'}],
+tip:'Run a pre-VAT review two weeks before the deadline.',
+warn:'Flat Rate looks simple but can cost you if you have lots of VAT-able purchases.',
+do:['Open the VAT report in the Demo Company and drill into a figure.','Use the VAT builder widget.','Check your VAT scheme and quarter dates.'],
+quiz:[
+{q:'Under MTD for VAT you must…',o:['Keep digital records and file via software','Paper returns','File yearly'],a:0,w:'Digital.'},
+{q:'Box 5 shows…',o:['Total sales','Net VAT','Total purchases'],a:1,w:'3−4.'},
+{q:'Cash accounting helps because…',o:['VAT due when customers pay','Never pay VAT','File quarterly'],a:0,w:'Cash basis for VAT.'},
+{q:'Standard deadline for quarterly VAT?',o:['1 month + 7 days after period end','14 days','6 months'],a:0,w:'Standard.'},
+{q:'Which scheme charges VAT on the profit?',o:['Flat Rate','Margin scheme','Annual'],a:1,w:'Margin.'}]});
+
+M({lvl:3,t:'Payroll, pensions and CIS',min:35,goal:'Understand payroll, auto-enrolment, statutory pay and CIS.',widget:null,
+secs:[
+{h:'When you become an employer',html:'<p>If you pay staff (including a director on salary), register as an employer with HMRC, operate PAYE, report each payroll in real time (RTI), and set up workplace pension auto-enrolment.</p>'},
+{h:'What Xero Payroll does',html:'<p>Tax codes, NI, statutory pay, holiday pay, payslips, pension deductions, FPS to HMRC, payroll journals.</p>'},
+{h:'The payroll cycle',html:'<ol><li>Set up payroll settings, pay calendar, HMRC details, pension scheme.</li><li>Add employees with starter checklist, tax code, NI category, bank details, pay rate.</li><li>Each period: create pay run, add hours/overtime/deductions, check, post.</li><li>Xero files the FPS to HMRC. Email payslips.</li><li>Pay staff from bank and reconcile.</li><li>Pay HMRC by the 22nd (electronic; 19th postal). Pension provider by their deadline.</li></ol>'},
+{h:'Journals payroll creates',html:'<p>Gross wages (expense), employer NI and pension (expenses), PAYE/NI/employee pension (liabilities), net pay (owed to employees).</p>'},
+{h:'Auto-enrolment pensions',html:'<ul><li>Assess workers each period.</li><li>Enrol eligible; re-enrol every three years.</li><li>Minimum contributions (currently 3% employer / 5% employee on qualifying earnings — check gov.uk).</li><li>Pay by 22nd.</li><li>Declaration of compliance to The Pensions Regulator.</li></ul>'},
+{h:'Statutory pay',html:'<p>SSP, SMP, SPP, ShPP, Parental Bereavement. Rates change each April. Xero calculates them. Some can be reclaimed.</p>'},
+{h:'P11D and benefits',html:'<p>Report benefits in kind by 6 July after the tax year and pay the Class 1A NIC by 22 July. Benefits can be payrolled instead, and HMRC plans to make payrolling mandatory: check gov.uk for the start date. Trivial benefits up to £50 each (conditions apply; directors of close companies are capped at £300 a year) are not taxable.</p>'},
+{h:'IR35',html:'<p>Off-payroll working rules. Medium/large clients determine status; small clients leave it to the contractor company.</p>'},
+{h:'CIS',html:'<p>Contractors deduct tax (20% / 30% / 0%) from subcontractors, report monthly by the 19th, pay by the 22nd. VAT domestic reverse charge applies to standard CIS supplies between VAT-registered businesses—ensure Xero reverse charge tax rates are used.</p>'}],
+tip:'Reconcile the PAYE liability monthly against the HMRC online account.',
+warn:'Do not pay staff cash in hand without payroll.',
+do:['View an employee record in the Demo Company Payroll.','Look at the PAYE Payable account.','Note deadlines: FPS by payday, PAYE by 22nd.'],
+quiz:[
+{q:'When must an FPS normally reach HMRC?',o:['On or before payday','Once a year','Year-end'],a:0,w:'RTI.'},
+{q:'PAYE and NI deducted but unpaid is a…',o:['Liability','Sale','Fixed asset'],a:0,w:'Liability.'},
+{q:'CIS applies to…',o:['Retail','Construction contractors and subcontractors','Charities'],a:1,w:'Construction.'},
+{q:'Minimum employer pension contribution currently?',o:['1%','3% on qualifying earnings','10%'],a:1,w:'3% (check thresholds).'},
+{q:'When is P11D due?',o:['6 July after tax year','31 January','5 April'],a:0,w:'6 July.'}]});
+
+M({lvl:3,t:'Dividends, salary and director loan',min:30,goal:'Understand how a limited company owner pays themselves and how to record it.',widget:null,
+secs:[
+{h:'Three ways to take money out',html:'<p><b>Salary</b> (expense, through payroll), <b>dividends</b> (distribution of profit, not an expense), and <b>director loan</b> (repayment of what the director lent the company, or a loan from the company to the director).</p>'},
+{h:'Salary',html:'<p>Business expense. Company deducts PAYE and NI, pays net to director, PAYE/NI to HMRC. Deductible for CT. Builds NI record.</p>'},
+{h:'Dividends',html:'<ul><li>Distributions of profit, not business expenses.</li><li>Company must have distributable reserves.</li><li>Board minute and dividend voucher required.</li><li>Cannot be paid if it would make the company insolvent.</li><li>Shareholders pay income tax on dividends above the dividend allowance, usually via Self Assessment.</li></ul>'},
+{h:'Recording dividends in Xero',html:'<ol><li>Create equity account Dividends paid.</li><li>Pay from bank and code to Dividends paid (No VAT).</li><li>Attach a copy of the dividend voucher.</li></ol>'},
+{h:'Director loan account',html:'<p>Money the company owes the director (if the director paid business costs personally) or vice versa. Overdrawn director loans left unpaid more than 9 months and 1 day after the accounting period end can trigger a Section 455 Corporation Tax charge (currently 33.75% of the loan, refunded once it is repaid), and larger loans can also create a benefit-in-kind charge. Keep it under review with your accountant.</p>'},
+{h:'When to consult',html:'<p>Before setting a salary/dividend mix. Rates change each tax year, and the optimal split depends on the director’s other income and the company’s position.</p>'}],
+tip:'Keep a dividend voucher on file for every dividend. HMRC can ask.',
+warn:'Do not call a payment a dividend if there are no distributable reserves.',
+do:['Find the Dividends paid account in the Demo Company.','Note the difference between the director loan account and drawings.'],
+quiz:[
+{q:'A dividend is…',o:['A business expense','A distribution of profit to shareholders','A salary'],a:1,w:'Distribution, not expense.'},
+{q:'Before a dividend, the company must have…',o:['Distributable reserves','Any amount of cash','A bank loan'],a:0,w:'Reserves.'},
+{q:'Where do you post a dividend payment in Xero?',o:['Sales','Equity → Dividends paid (No VAT)','Expense'],a:1,w:'Equity.'},
+{q:'Director paid business costs personally. The company…',o:['Owes the director via loan account','Ignores it','Records a sale'],a:0,w:'Loan account credit.'},
+{q:'Overdrawn director loan account left past 9 months and 1 day can trigger…',o:['A Section 455 tax charge','Nothing','Higher VAT'],a:0,w:'s455 tax risk.'}]});
+
+M({lvl:3,t:'Reports: reading the business',min:30,goal:'Know which report answers which question and read P&L and Balance Sheet confidently.',widget:null,
+secs:[
+{h:'The reports that matter',html:'<table><tr><th>Question</th><th>Report</th></tr><tr><td>Did I make a profit?</td><td>Profit and Loss</td></tr><tr><td>What do I own and owe?</td><td>Balance Sheet</td></tr><tr><td>Do the books balance?</td><td>Trial Balance</td></tr><tr><td>Who owes me?</td><td>Aged Receivables Summary</td></tr><tr><td>Who do I owe?</td><td>Aged Payables Summary</td></tr><tr><td>Cash in and out?</td><td>Cash Summary / Cash Flows</td></tr><tr><td>Where did this number come from?</td><td>Account Transactions</td></tr><tr><td>Is my bank right?</td><td>Bank Reconciliation Summary</td></tr><tr><td>How much VAT?</td><td>VAT return (Tax menu)</td></tr></table><p class="small mut">Find every report under <b>Reporting → All reports</b>. Star the ones you use so they stay at the top.</p>'},
+{h:'Read a P&L in five minutes',html:'<ol><li>Income: what you expect?</li><li>Cost of sales and Gross profit. Gross margin %.</li><li>Overheads: scan for odd lines.</li><li>Net profit: income minus all costs.</li><li>Compare to previous periods or budget.</li></ol>'},
+{h:'Read a Balance Sheet in five minutes',html:'<ul><li>Bank: matches real bank?</li><li>Debtors and Creditors: match Aged reports?</li><li>VAT, PAYE: agree to what you owe?</li><li>Director / owner accounts: plausible?</li><li>Suspense and clearing: nil or explained?</li></ul>'},
+{h:'Useful numbers',html:'<table><tr><th>Measure</th><th>Formula</th></tr><tr><td>Gross margin %</td><td>Gross profit ÷ Income</td></tr><tr><td>Net margin %</td><td>Net profit ÷ Income</td></tr><tr><td>Debtor days</td><td>Trade debtors ÷ Annual credit sales (inc. VAT) × 365</td></tr><tr><td>Current ratio</td><td>Current assets ÷ Current liabilities</td></tr><tr><td>Cash runway</td><td>Cash ÷ Average monthly cash costs</td></tr></table>'},
+{h:'Customising and sharing',html:'<p>Change report columns, compare periods, filter by tracking category, save a favourite layout, export to PDF or Excel, and publish to share with your accountant.</p>'}],
+tip:'Look at the P&L and Aged Receivables every Monday.',
+warn:'A report is only as good as the reconciliation behind it.',
+do:['Run P&L for last month and compare to the month before.','Run Aged Receivables and find the oldest overdue customer.','Open the Trial Balance and confirm debits equal credits.'],
+quiz:[
+{q:'Gross profit equals…',o:['Income minus cost of sales','Income minus all overheads','Cash in minus cash out'],a:0,w:'Before overheads.'},
+{q:'Where did this number come from?',o:['Account Transactions','The logo','Contacts'],a:0,w:'Account Transactions.'},
+{q:'Which should usually be nil on a Balance Sheet?',o:['Suspense and clearing','Bank','Sales'],a:0,w:'Temporary holding.'},
+{q:'Current ratio formula?',o:['Current assets ÷ Current liabilities','Sales − costs','Debtors + creditors'],a:0,w:'Liquidity.'},
+{q:'What does Debtor days measure?',o:['How long customers take to pay','How long you take to pay','Stock levels'],a:0,w:'Collection speed.'}]});
+
+M({lvl:3,t:'Credit control and getting paid faster',min:20,goal:'Collect cash sooner with reminders, online payments and a chase routine.',widget:null,
+secs:[
+{h:'Why it matters',html:'<p>Profitable businesses go bust because cash arrives late. Credit control is a routine.</p>'},
+{h:'Automatic invoice reminders',html:'<p>Turn on <b>Invoice reminders</b> in your invoice settings (search "reminders"). Set emails before, on and after the due date. Polite and regular beats angry and occasional.</p>'},
+{h:'Take payment online',html:'<p>Connect Stripe (cards), GoCardless (Direct Debit) or PayPal. A Pay now button on the invoice makes it easy. When the customer pays, Xero marks the invoice paid into the Stripe or GoCardless account; the later payout to your bank is reconciled as a transfer, with the fees coded separately.</p>'},
+{h:'A simple chase schedule',html:'<table><tr><th>When</th><th>Action</th></tr><tr><td>Day 0</td><td>Send invoice with clear terms</td></tr><tr><td>3 days before due</td><td>Friendly automatic reminder</td></tr><tr><td>1 day after due</td><td>Automatic overdue reminder</td></tr><tr><td>7 days overdue</td><td>Personal email</td></tr><tr><td>14 days overdue</td><td>Phone call</td></tr><tr><td>30 days overdue</td><td>Formal letter; consider stopping supply</td></tr></table>'},
+{h:'Late payment rights',html:'<p>For business-to-business debts, UK late payment law lets you charge statutory interest (8% above the Bank of England base rate) plus fixed compensation of £40, £70 or £100 per invoice depending on its size. It does not apply to consumers. State your terms clearly.</p>'},
+{h:'Statements and deposits',html:'<p>Send customer statements monthly. Take deposits for large jobs. Record prepayments.</p>'}],
+tip:'Ask for terms when you quote, not when you invoice.',
+warn:'Do not stop chasing because the customer is "a good client".',
+do:['Find Invoice reminders in the Demo Company settings.','List invoices over 30 days from Aged Receivables.','Find the Send statements option in Contacts.'],
+quiz:[
+{q:'What is a Pay now button for?',o:['Lets customers pay online straight away','Prints the invoice','Voids it'],a:0,w:'Faster cash.'},
+{q:'Best time to agree payment terms?',o:['When you quote','After due date','Never'],a:0,w:'Upfront.'},
+{q:'Which report shows how overdue?',o:['Aged Receivables','Aged Payables','Trial Balance'],a:0,w:'Aged Receivables.'},
+{q:'Statutory late payment interest is currently…',o:['8% above BoE base + fixed compensation','2% flat','Nothing'],a:0,w:'Business-to-business only. Check gov.uk for current rules.'},
+{q:'What should you send monthly?',o:['Customer statements','Invoices','VAT returns'],a:0,w:'Statements.'}]});
+
+M({lvl:3,t:'Tracking categories, multi-currency and projects',min:25,goal:'Slice profit by department, trade in foreign currencies and track job profitability.',widget:null,
+secs:[
+{h:'Tracking categories',html:'<p>A tag on transactions to report profit by that dimension, such as Department or Location. Xero allows up to two categories, each with several options. Set them up before you start.</p>'},
+{h:'Rules for tracking',html:'<ul><li>Keep options few.</li><li>Decide before you start.</li><li>Make it mandatory in your process.</li></ul>'},
+{h:'Multi-currency',html:'<p>Higher-plan feature. Invoices and bills in foreign currencies. Differences become realised or unrealised gains/losses. Add foreign bank accounts as bank accounts in that currency. VAT always reported in GBP.</p>'},
+{h:'Projects and time tracking',html:'<p>On plans that include Projects, estimate a job, track time and costs, invoice for work done. Profit per job. Otherwise tracking categories for jobs.</p>'}],
+tip:'Start with just one tracking category.',
+warn:'Do not use tracking to replace the chart of accounts.',
+do:['Open Tracking categories in the Demo Company.','Add a tag on an invoice line.','View a foreign-currency invoice if present.'],
+quiz:[
+{q:'What does a tracking category add?',o:['A report dimension','A new bank account','A VAT rate'],a:0,w:'Dimension.'},
+{q:'How many tracking categories can you have?',o:['Two','One hundred','Zero'],a:0,w:'Two.'},
+{q:'A gain from an exchange rate difference is…',o:['Realised currency gain','Sales','VAT'],a:0,w:'Realised gain.'},
+{q:'VAT on foreign sales is reported in…',o:['GBP','The sale currency','Either'],a:0,w:'GBP.'},
+{q:'Which plan feature is Projects typically on?',o:['Higher plans','Lower plans','Only in the Demo'],a:0,w:'Higher plans.'}]});
+
+M({lvl:3,t:'Fixed assets and depreciation',min:20,goal:'Capitalise the right purchases and depreciate them correctly.',widget:null,
+secs:[
+{h:'Asset or expense?',html:'<p>Items serving more than a year and above your capitalisation threshold are fixed assets: vans, machinery, computers. Everyday costs are expenses.</p>'},
+{h:'Fixed asset register',html:'<p>Accounting → Fixed assets. Enter name, purchase date, cost, asset type and depreciation method.</p>'},
+{h:'Depreciation methods',html:'<table><tr><th>Method</th><th>How</th></tr><tr><td>Straight line</td><td>Equal amount each year</td></tr><tr><td>Diminishing value</td><td>Fixed % of remaining balance</td></tr><tr><td>Full depreciation at purchase</td><td>Write off immediately</td></tr></table>'},
+{h:'Disposals and tax',html:'<p>Record disposals. Tax uses capital allowances instead of accounting depreciation. Your register must be accurate.</p>'}],
+tip:'Keep the fixed asset register in sync with insurance schedules.',
+warn:'Do not expense a £15,000 van.',
+do:['Open Fixed assets in the Demo Company.','Check the depreciation method and accounts.','Write your own capitalisation threshold.'],
+quiz:[
+{q:'Depreciation does what?',o:['Spreads cost over the asset life','Moves cash to savings','Reduces VAT'],a:0,w:'Allocates cost.'},
+{q:'£6,000 van, 5 years straight line. Annual?',o:['£600','£1,200','£6,000'],a:1,w:'£1,200.'},
+{q:'Accounting depreciation vs tax capital allowances?',o:['Different; accountant adjusts','Always identical','Not related'],a:0,w:'Different.'},
+{q:'Threshold for capitalising is…',o:['A policy choice (e.g. £500–£1,000)','Set by HMRC','Set by Xero'],a:0,w:'Your policy.'},
+{q:'Disposal of an asset creates…',o:['Profit or loss on disposal','A sale','A VAT adjustment'],a:0,w:'P/L on disposal.'}]});
+
+M({lvl:3,t:'Budgets and cash flow forecasting',min:25,goal:'Plan the year and see cash problems 13 weeks ahead.',widget:'cash',
+secs:[
+{h:'Why budget',html:'<p>A plan expressed in numbers. Comparing actual to budget each month tells you early whether things are drifting.</p>'},
+{h:'Building a budget',html:'<ol><li>Start with last year’s actuals.</li><li>Set sales targets by month (seasonality).</li><li>Estimate direct costs as % of sales; add known overheads.</li><li>In Xero, use Budget Manager or import a CSV.</li><li>Run Budget Variance each month.</li></ol>'},
+{h:'Cash is not profit',html:'<p>Profit can be high while the bank is empty. Cash is affected by when customers pay, stock purchases, VAT, PAYE, loan repayments, drawings and asset purchases.</p>'},
+{h:'A simple 13-week cash flow',html:'<p>See the widget below. Rows: opening bank, customer receipts, supplier payments, payroll, VAT/tax, loans/drawings/capex, closing bank.</p>'},
+{h:'Acting on the forecast',html:'<p>If the forecast dips negative, you have time to chase debtors, agree supplier terms, delay purchases or arrange finance.</p>'}],
+tip:'Make forecast vs actual a monthly agenda item.',
+warn:'Budgets built on hope are not budgets.',
+do:['Look for Budgets or Budget Variance in the Demo Company.','Draw the 13-week table for your business.','List every tax payment date in the next 12 months.'],
+quiz:[
+{q:'Profit and cash can differ because…',o:['Timing of payments, VAT, loans and stock','They are always equal','Xero rounds'],a:0,w:'Timing and non-P&L items.'},
+{q:'A 13-week cash flow looks ahead…',o:['About one quarter','Ten years','One day'],a:0,w:'13 weeks.'},
+{q:'Start a budget from…',o:['Last year’s actual figures','A guess','The bank balance'],a:0,w:'Real data.'},
+{q:'Which is not in the P&L?',o:['Loan repayments','Sales','Rent'],a:0,w:'Balance sheet item.'},
+{q:'When the forecast dips negative, first action?',o:['Chase debtors and delay purchases','Panic','Stop trading'],a:0,w:'Act early.'}]});
+
+/* ============ LEVEL 4 ============ */
+M({lvl:4,t:'How apps connect to Xero (the golden rules)',min:25,goal:'Understand the App Store, connections and avoid double-counting.',widget:null,
+secs:[
+{h:'The Xero App Store',html:'<p>apps.xero.com/uk lists third-party apps for sales channels, stock, payments, receipts, payroll, reporting. Each has its own pricing and support.</p>'},
+{h:'How a connection works',html:'<ol><li>In the app, choose Connect to Xero.</li><li>Log in to Xero and choose the organisation.</li><li>Xero shows the permissions requested. Approve.</li><li>See and remove any app under Settings → Connected apps.</li></ol>'},
+{h:'Two ways data arrives',html:'<table><tr><th>Method</th><th>What happens</th><th>Good for</th><th>Watch out</th></tr><tr><td>Order-by-order</td><td>Every sale becomes an invoice</td><td>Low volume, B2B</td><td>Floods Xero at volume</td></tr><tr><td>Summary / payout-based</td><td>One entry per payout</td><td>Online shops</td><td>Need the app reports for order detail</td></tr></table>'},
+{h:'Golden rules',html:'<ol><li>Pick a clean start date.</li><li>Create the accounts first.</li><li>Never double-post.</li><li>Test with one payout.</li><li>Reconcile to the bank.</li><li>Document VAT mapping.</li><li>Record the go-live date.</li></ol>'},
+{h:'Disconnecting safely',html:'<p>Note the last payout posted. Stop syncs. Finish reconciling the clearing account. Then disconnect.</p>'}],
+tip:'Run the app in parallel with manual calculation for the first two payouts.',
+warn:'Two systems posting the same sale is the most common integration disaster.',
+do:['Open Connected apps in the Demo Company.','Search the App Store for Shopify and eBay.','List the accounts you would need for an online shop.'],
+quiz:[
+{q:'Does an app see your Xero password?',o:['Yes','No, you authorise inside Xero','Only once'],a:1,w:'Permission token, not password.'},
+{q:'Most common integration mistake?',o:['Double-posting the same sales','Using a trial','Setting a start date'],a:0,w:'Double-post.'},
+{q:'Where can you remove an app?',o:['Settings → Connected apps','The bank','HMRC'],a:0,w:'Connected apps.'},
+{q:'What is a clearing account for?',o:['Holding sales until the payout is reconciled','Storing passwords','Paying staff'],a:0,w:'Clearing.'},
+{q:'Where should you test the app?',o:['With one payout, checked by hand','Only at year-end','Never'],a:0,w:'Test small.'}]});
+
+M({lvl:4,t:'Shopify to Xero',min:35,goal:'Set up Shopify so every payout reconciles to the bank with correct sales, fees, refunds and VAT.',widget:'payout',
+secs:[
+{h:'How money flows',html:'<p>Money goes through a payment gateway. The gateway holds it, then pays you a <b>payout</b> after deducting fees, refunds and chargebacks.</p><div class="callout ex"><b class="k">Example</b>Orders £1,200, refunds £60, fees £42.30. Payout: £1,097.70. Your bank sees £1,097.70. Your books must show £1,200 sales, £60 refunds and £42.30 fees.</div>'},
+{h:'Three ways to connect',html:'<table><tr><th>Method</th><th>How</th><th>Suits</th></tr><tr><td>Xero’s own Shopify integration</td><td>Posts summary sales into Xero. Check exactly what it posts and whether it splits fees, refunds and VAT the way your accountant needs.</td><td>Small, simple shops.</td></tr><tr><td>Payout-based app (A2X, Link My Books)</td><td>One entry per payout matching the bank deposit, splits sales, shipping, refunds, fees, VAT.</td><td>Most VAT-registered and growing shops.</td></tr><tr><td>Manual journal</td><td>Download the payout report, post a journal per payout.</td><td>Very low volume.</td></tr></table>'},
+{h:'Step 1: Create the accounts',html:'<table><tr><th>Account</th><th>Type</th><th>VAT</th></tr><tr><td>Shopify Sales</td><td>Revenue</td><td>Per product</td></tr><tr><td>Shopify Shipping Income</td><td>Revenue</td><td>20% usually</td></tr><tr><td>Shopify Discounts</td><td>Revenue (contra)</td><td>Follows sales</td></tr><tr><td>Shopify Refunds</td><td>Revenue (contra)</td><td>Follows sales</td></tr><tr><td>Shopify Fees</td><td>Expense or Direct cost</td><td>Per fee invoice</td></tr><tr><td>Shopify Clearing</td><td>Current Asset</td><td>No VAT</td></tr><tr><td>Chargebacks</td><td>Expense</td><td>No VAT</td></tr><tr><td>Gift Card Liability</td><td>Current Liability</td><td>No VAT</td></tr></table>'},
+{h:'Step 2: Connect',html:'<ol><li>Start a free trial of the app.</li><li>Connect Shopify.</li><li>Connect Xero.</li><li>Map each Shopify item to your Xero accounts.</li><li>Map VAT.</li><li>Set start date.</li><li>Test one payout.</li><li>Reconcile the bank line.</li><li>Check clearing returns to nil.</li></ol>'},
+{h:'Alternative: a manual journal per payout',html:'<ol><li>In Shopify admin open <b>Finances → Payouts</b> and export the payout transactions.</li><li>Total by type: sales (net), VAT, shipping, discounts, refunds, fees.</li><li>Post one <b>manual journal</b> using the layout in the payout checker below, with <b>Shopify Clearing</b> as the balancing account.</li><li>When the bank line arrives, reconcile it against the clearing amount.</li></ol><p>Add a separate clearing account for <b>each gateway</b> (PayPal, Klarna and so on), because each pays out separately.</p>'},
+{h:'VAT on Shopify sales',html:'<ul><li>UK prices usually VAT-inclusive.</li><li>Different products different rates.</li><li>Shipping follows VAT of main goods in many cases.</li><li>EU/US sales have special rules.</li><li>Shopify’s own bills come from outside the UK. If Shopify has your VAT number they are usually reverse charge: you account for the VAT on your return (net nil for most businesses).</li></ul>'},
+{h:'Other Shopify costs',html:'<p>Subscriptions, themes and apps appear on card statements. Record as bills.</p>'}],
+tip:'Ask for payout-level reports from any app you try.',
+warn:'Do not code Shopify payouts to Sales.',
+do:['Read a sample payout report.','List gateways and plan one clearing account each.','Use the payout checker with a recent payout.'],
+quiz:[
+{q:'Why does a payout not equal total sales?',o:['It is net of fees, refunds and chargebacks','Shopify keeps tax','Xero changes it'],a:0,w:'Net of deductions.'},
+{q:'What is a clearing account for?',o:['Holding sales until the payout reconciles','Storing passwords','Paying staff'],a:0,w:'Clearing.'},
+{q:'PayPal and Shopify Payments in one shop. How many clearing accounts?',o:['One per gateway','One for both','None'],a:0,w:'One each.'},
+{q:'Shopify subscription VAT for UK businesses?',o:['Usually reverse charge','Always 20%','Always zero'],a:0,w:'Reverse charge: you account for the VAT yourself, usually net nil.'},
+{q:'If a payout does not equal sales minus fees and refunds, you should…',o:['Investigate before posting','Plug the difference','Ignore'],a:0,w:'Investigate.'}]});
+
+M({lvl:4,t:'eBay to Xero',min:30,goal:'Book eBay sales, fees, refunds and postage correctly.',widget:'payout',
+secs:[
+{h:'How money flows',html:'<p>With eBay managed payments, eBay collects the buyer’s payment, deducts fees and pays in <b>payouts</b>. The bank shows a net lump sum.</p>'},
+{h:'What eBay takes out',html:'<table><tr><th>Item</th><th>Where</th></tr><tr><td>Item price + postage charged</td><td>eBay Sales / eBay Postage Income</td></tr><tr><td>Final value fee</td><td>eBay Fees</td></tr><tr><td>Promoted listings</td><td>Advertising</td></tr><tr><td>Insertion fees, shop subscription</td><td>eBay Fees</td></tr><tr><td>Postage labels bought through eBay</td><td>Postage and Carriage</td></tr><tr><td>Refunds</td><td>eBay Refunds (contra income)</td></tr></table>'},
+{h:'Where to get data',html:'<p>Seller Hub → Payments → Reports. Download transaction and payout reports as CSV.</p>'},
+{h:'Connecting',html:'<p>Use a payout-based app (A2X, Link My Books) or a manual journal per payout.</p>'},
+{h:'Manual method',html:'<ol><li>Create accounts: eBay Sales, Postage, Refunds, Fees, Ad Fees, eBay Clearing.</li><li>Download the payout report.</li><li>Total by type.</li><li>Post one manual journal: debit Clearing with gross sales, credit Sales, Postage and VAT, then debit Refunds and Fees and credit Clearing.</li><li>Check clearing equals the payout.</li><li>Reconcile the bank line.</li></ol>'},
+{h:'VAT on eBay fees',html:'<p>If you are VAT-registered, eBay fee invoices normally carry VAT that you can reclaim. Check each invoice rather than assuming. Record eBay fees as a bill or in the payout journal with the VAT shown on the invoice, so Box 4 of your VAT return is right.</p>'},
+{h:'Special cases',html:'<ul><li>Second-hand goods may allow the VAT Margin Scheme.</li><li>Record stock cost.</li><li>Platforms report sellers’ income to HMRC every year (digital platform reporting), so your figures must agree.</li><li>One clearing account per marketplace.</li></ul>'}],
+tip:'Download the eBay payout report the same day you reconcile.',
+warn:'Do not net fees off sales in your head.',
+do:['List line types from a sample payout report.','Create the six eBay accounts.','Use the payout checker.'],
+quiz:[
+{q:'An eBay payout of £842 is…',o:['The sales figure','Sales minus fees and refunds','Profit'],a:1,w:'Net of deductions.'},
+{q:'Where to download payout detail?',o:['Seller Hub → Payments → Reports','Xero Dashboard','HMRC'],a:0,w:'Seller Hub.'},
+{q:'Second-hand reselling may allow…',o:['The VAT Margin Scheme (ask your accountant first)','Ignoring VAT','Cash accounting only'],a:0,w:'Margin scheme.'},
+{q:'How many clearing accounts for eBay and Amazon?',o:['One per marketplace','One for both','None'],a:0,w:'One each.'},
+{q:'Do you still book gross sales if only the net payout hits the bank?',o:['Yes, sales and fees separately','No','Only at year-end'],a:0,w:'Gross and fees.'}]});
+
+M({lvl:4,t:'Stripe, PayPal, Amazon, Etsy and other connections',min:30,goal:'Apply the same payout method to every platform.',widget:null,
+secs:[
+{h:'One principle',html:'<p>Book the gross sale and the fee separately, route through a clearing or bank-type account, reconcile the payout. Do not book the net payout as sales.</p>'},
+{h:'Platform guide',html:'<table><tr><th>Platform</th><th>Setup</th><th>Trap</th></tr><tr><td>PayPal</td><td>Bank-type account with feed</td><td>Fees miscoded as sales; currency conversion; bank transfer not coded as Transfer</td></tr><tr><td>Stripe</td><td>Invoice payments or payout-based app</td><td>Booking only the net payout; forgetting refunds</td></tr><tr><td>GoCardless</td><td>Direct Debit collections</td><td>Payments batched; match to several invoices</td></tr><tr><td>Square / SumUp / Zettle</td><td>Daily takings summary</td><td>Card machine fees and monthly rental VAT</td></tr><tr><td>Amazon</td><td>Payout-based app</td><td>Fulfilment, storage and advertising fees</td></tr><tr><td>Etsy</td><td>Payout-based app or manual summary</td><td>Listing, transaction and offsite-ads fees</td></tr><tr><td>Woo/Wix/Squarespace</td><td>Order-based connectors or summary apps</td><td>Duplicated orders from retries</td></tr></table>'},
+{h:'Receipt and bill capture',html:'<p>Dext, Hubdoc and similar read receipts and supplier invoices and create draft bills. Review VAT and amounts before approving.</p>'},
+{h:'Other useful apps',html:'<ul><li>Expenses and spend cards: Pleo, Expensify</li><li>Stock: Unleashed, Cin7, inFlow</li><li>CRM and quoting</li><li>Reporting and forecasting: Fathom, Syft</li><li>Payroll and time tracking</li></ul>'},
+{h:'Choosing an app: checklist',html:'<ol><li>Does it post summaries that match the bank?</li><li>Can it map VAT by product and country?</li><li>UK support and clear pricing?</li><li>Can you export if you leave?</li><li>Does your accountant support it?</li></ol>'}],
+tip:'Fewer apps are better.',
+warn:'Never turn on two apps that both post the same payments.',
+do:['Use the Which integration tool.','Create PayPal and Stripe accounts in the Demo Company.','List your payment platforms.'],
+quiz:[
+{q:'PayPal shows sale and fee on separate lines. You should…',o:['Code sale to income, fee to fees','Ignore the fee','Combine as sales'],a:0,w:'Separate.'},
+{q:'Why use a payout-based app for Amazon?',o:['Settlements contain many fees and adjustments','Amazon requires it','It is free'],a:0,w:'Complexity.'},
+{q:'After receipt-capture creates a draft bill, you should…',o:['Check VAT and amounts','Approve instantly','Delete the PDF'],a:0,w:'Check.'},
+{q:'What should you do with two apps posting the same payments?',o:['Switch one off and clean up','Ignore','Turn both off'],a:0,w:'One only.'},
+{q:'Best number of apps per job?',o:['One strong tool','As many as possible','None'],a:0,w:'One.'}]});
+
+M({lvl:4,key:'payout',t:'Reconciling marketplace payouts: worked example',min:30,goal:'Walk through a complete payout reconciliation and diagnose differences.',widget:'payout',
+secs:[
+{h:'The scenario',html:'<p>Shopify. One October payout: gross sales £1,200 (inc. 20% VAT), refunds £60, fees £42.30. Shopify pays £1,097.70.</p>'},
+{h:'The posted entry',html:'<table><tr><th>Account</th><th>Debit</th><th>Credit</th></tr><tr><td>Shopify Clearing</td><td>£1,200.00</td><td></td></tr><tr><td>Shopify Sales (net)</td><td></td><td>£1,000.00</td></tr><tr><td>VAT on sales</td><td></td><td>£200.00</td></tr><tr><td>Shopify Refunds (net)</td><td>£50.00</td><td></td></tr><tr><td>VAT on refunds</td><td>£10.00</td><td></td></tr><tr><td>Shopify Fees</td><td>£42.30</td><td></td></tr><tr><td>Shopify Clearing</td><td></td><td>£102.30</td></tr></table><p>Clearing now holds £1,200 − £102.30 = £1,097.70.</p>'},
+{h:'The reconciliation',html:'<ol><li>Bank feed shows +£1,097.70.</li><li>Match it to the posted payout entry.</li><li>Shopify Clearing returns to £0.00.</li></ol>'},
+{h:'Diagnosing differences',html:'<table><tr><th>Symptom</th><th>Cause</th></tr><tr><td>Bank less than expected</td><td>Missed refund, chargeback, reserve, monthly fee</td></tr><tr><td>Bank more than expected</td><td>Previous period orders, tips, reversed fee</td></tr><tr><td>Clearing not zero</td><td>Posting period mismatch, missing payout, different gateway</td></tr><tr><td>Clearing negative</td><td>Refunds posted but sales before start date</td></tr><tr><td>VAT looks wrong</td><td>Product tax mappings, shipping VAT, zero-rated lines at 20%</td></tr></table>'},
+{h:'Weekly routine',html:'<ol><li>Reconcile payout bank lines.</li><li>Check each clearing account balance.</li><li>Check refunds were processed in the right period.</li><li>Month end: all payouts to the last day booked.</li></ol>'}],
+tip:'A clearing account that sits non-zero for weeks means something is missing.',
+warn:'Do not plug a clearing difference.',
+do:['Use the payout checker.','Post a journal by hand in the Demo Company.','Write the three questions you will ask when clearing is not nil.'],
+quiz:[
+{q:'After reconciling, clearing should be…',o:['Nil or explained','Equal to sales','Negative'],a:0,w:'Nil.'},
+{q:'Bank received £1,097.70, expected £1,100. Cause?',o:['A missed £2.30 fee or refund','Xero error','Higher sales'],a:0,w:'Small shortfall.'},
+{q:'Where do fees go in the payout journal?',o:['Debit Fees, credit Clearing','Credit Sales','Debit Bank'],a:0,w:'Fees debit.'},
+{q:'Negative clearing balance usually means?',o:['Refunds posted but sales were before start date','Profit','Bank error'],a:0,w:'Period mismatch.'},
+{q:'How often should clearing reach nil?',o:['After each payout reconciliation','Once a year','Never'],a:0,w:'After each payout.'}]});
+
+/* ============ LEVEL 5 ============ */
+M({lvl:5,t:'The month-end routine',min:30,goal:'Close every month in a repeatable sequence.',widget:null,
+secs:[
+{h:'Why a routine beats heroics',html:'<p>Experts do the same steps in the same order every month. 1–3 hours for a small business.</p>'},
+{h:'The 10-step sequence',html:'<ol><li>Bank, cards, PayPal: reconcile to month end.</li><li>Sales: raise all invoices; post repeating.</li><li>Purchases: enter all bills; chase missing.</li><li>Platforms: book all payouts; clearing at nil.</li><li>Payroll: posted; PAYE/NI/pension agreed.</li><li>Accruals and prepayments.</li><li>Depreciation.</li><li>Control accounts: Debtors = Aged Receivables, Creditors = Aged Payables, VAT agrees, Suspense nil.</li><li>Review P&L and Balance Sheet vs last month and budget.</li><li>Lock the month and send the management pack.</li></ol>'},
+{h:'Accruals and prepayments',html:'<table><tr><th></th><th>Accrual</th><th>Prepayment</th></tr><tr><td>Situation</td><td>Cost used, no bill yet</td><td>Paid for a future period</td></tr><tr><td>Example</td><td>£300 electricity used</td><td>£1,200 annual insurance</td></tr><tr><td>Journal</td><td>Dr Electricity / Cr Accruals</td><td>Dr Prepayments / Cr Insurance</td></tr><tr><td>Effect</td><td>Cost lands in right month</td><td>Cost spreads</td></tr></table><p>Post a manual journal dated the last day of the month. Set accruals to <b>auto-reverse</b> on the 1st of next month so the real bill is not counted twice. Release prepayments month by month instead (e.g. £100 a month for £1,200 annual insurance).</p>'},
+{h:'The management pack',html:'<p>One page: P&L this month vs last month and vs budget; cash position; debtors over 30 days; VAT/PAYE due dates; two or three comments in plain English.</p>'}],
+tip:'Put month-end in the diary on the same working day each month.',
+warn:'Skipping lock dates means someone will change a closed month.',
+do:['Use the Tools month-end checklist.','Post an accrual journal with auto-reverse.','Compare Balance Sheet Debtors to Aged Receivables.'],
+quiz:[
+{q:'What is an accrual?',o:['A cost used where the bill has not arrived','Cash in the bank','A discount'],a:0,w:'Cost in the right month.'},
+{q:'Debtors should equal…',o:['Aged Receivables','Aged Payables','Bank'],a:0,w:'Control account.'},
+{q:'Why set a lock date?',o:['Prevents changes to a finished month','Hides data','Speeds Xero'],a:0,w:'Protection.'},
+{q:'Which month-end journal is usually set to auto-reverse?',o:['An accrual','Depreciation','A monthly prepayment release'],a:0,w:'The accrual reverses on the 1st, so when the real bill arrives the cost is not counted twice.'},
+{q:'What goes in the management pack?',o:['P&L, cash, debtors, due dates, comments','Raw transactions','Every contact'],a:0,w:'Summary.'}]});
+
+M({lvl:5,t:'Year-end and working with your accountant',min:30,goal:'Prepare clean year-end books and hand them over.',widget:null,
+secs:[
+{h:'Deadlines',html:'<table><tr><th>Who</th><th>Deadline (check gov.uk)</th></tr><tr><td>Ltd: file accounts at Companies House</td><td>9 months after year-end</td></tr><tr><td>Ltd: pay Corporation Tax</td><td>9 months and 1 day after year-end</td></tr><tr><td>Ltd: file CT600</td><td>12 months after year-end</td></tr><tr><td>Ltd: confirmation statement</td><td>At least once a year, within 14 days of the review date</td></tr><tr><td>Sole trader: Self Assessment online</td><td>31 January after the tax year ends 5 April</td></tr><tr><td>Sole trader: tax payments</td><td>31 January (balance + first payment on account) and 31 July (second payment on account)</td></tr><tr><td>Payroll: final FPS</td><td>On or before the last payday of the tax year</td></tr></table>'},
+{h:'Pre year-end tasks',html:'<ol><li>Reconcile every account to year-end.</li><li>Raise outstanding sales invoices; enter all bills.</li><li>Review old debtors; consider bad debts.</li><li>Count stock and post an adjustment.</li><li>Reconcile loans, HP, director loan, VAT/PAYE.</li><li>Run depreciation and check the fixed asset register.</li><li>Prepare accruals and prepayments lists.</li><li>Reconcile payroll to P60/P11D.</li></ol>'},
+{h:'Handover pack',html:'<ul><li>Invite accountant as Adviser.</li><li>Trial Balance, P&L, Balance Sheet, Aged reports at year-end.</li><li>Bank statements and balances.</li><li>Fixed asset register, stock listing.</li><li>Loan statements.</li><li>Notes on unusual items.</li></ul>'},
+{h:'What the accountant does',html:'<p>Posts year-end journals (depreciation, CT, adjustments), prepares statutory accounts and tax returns. Xero rolls the year automatically. Profit moves to retained earnings.</p>'},
+{h:'After year-end',html:'<p>Once your accountant’s adjustments are posted, set the lock date to the year-end so the filed figures cannot change.</p>'}],
+tip:'Ask your accountant before year-end what they want to receive.',
+warn:'Do not wait until the deadline to find missing statements.',
+do:['Note your year-end and the three filing deadlines that apply.','Run a Trial Balance at year-end in the Demo Company.','Draft a note of anything unusual.'],
+quiz:[
+{q:'Corporation Tax for a limited company is normally paid…',o:['9 months and 1 day after year-end','31 January','Monthly'],a:0,w:'Check gov.uk for large companies.'},
+{q:'What role should your accountant have?',o:['Adviser','Read only','Invoice only'],a:0,w:'Adviser.'},
+{q:'After the accountant finalises, you should…',o:['Set a lock date at year-end','Delete transactions','Switch off feeds'],a:0,w:'Lock.'},
+{q:'What happens to profit at year-end in Xero?',o:['Moves to retained earnings automatically','Disappears','Is paid out'],a:0,w:'Retained earnings.'},
+{q:'What must accompany the handover pack?',o:['Notes on anything unusual','Every contact record','The company logo'],a:0,w:'Notes.'}]});
+
+M({lvl:5,t:'Finding and fixing errors',min:30,goal:'Diagnose and correct mistakes without damaging the audit trail.',widget:null,
+secs:[
+{h:'Detective tools',html:'<ul><li>History and notes on every transaction.</li><li>Account Transactions / General Ledger.</li><li>Journal Report: the debits and credits behind every transaction.</li><li>Bank Reconciliation Summary.</li><li>Find & Recode.</li><li>Trial Balance for odd balances.</li></ul>'},
+{h:'Common errors and fixes',html:'<table><tr><th>Error</th><th>Fix</th></tr><tr><td>Wrong account on an approved invoice</td><td>Edit or Find & Recode; otherwise a journal.</td></tr><tr><td>Duplicate bill or invoice</td><td>Void it.</td></tr><tr><td>Bank line reconciled wrong</td><td>Remove & redo, or unreconcile.</td></tr><tr><td>Payment recorded twice</td><td>Delete the duplicate payment; the invoice reopens.</td></tr><tr><td>Wrong VAT rate</td><td>Edit or Find & Recode; check the VAT return.</td></tr><tr><td>Money in suspense</td><td>Trace and recode.</td></tr><tr><td>Debtors do not equal Aged Receivables</td><td>Run both at the same date. Check conversion balances, unallocated credits and prepayments, foreign-currency invoices, and any journal to a separate debtors account.</td></tr><tr><td>Transaction in a locked period</td><td>Ask the right person; post in the current period if agreed.</td></tr></table>'},
+{h:'Manual journals: use sparingly',html:'<p>For accruals, depreciation, reclassification, corrections. Never to move Receivables, Payables, Bank or VAT control accounts.</p>'},
+{h:'A reliable method',html:'<ol><li>Prove it.</li><li>Explain it.</li><li>Fix the cause.</li><li>Correct it.</li><li>Note it.</li></ol>'}],
+tip:'When you find an error, ask "where else did this happen?" and fix the rule or default.',
+warn:'Deleting evidence to hide a mistake is worse than the mistake.',
+do:['View History and notes on any transaction.','Run Account Transactions for one account.','Find the Find & Recode option.'],
+quiz:[
+{q:'Duplicate approved bill. What do you do?',o:['Void it','Rename it','Ignore'],a:0,w:'Void.'},
+{q:'Where do you see who changed a transaction?',o:['History and notes','The bank','The P&L'],a:0,w:'History.'},
+{q:'Why avoid manual journals to Debtors?',o:['Breaks the link to Aged Receivables','Illegal','Slow'],a:0,w:'Debtors must be built from individual invoices and credit notes, or the aged list stops agreeing.'},
+{q:'What is Find & Recode for?',o:['Bulk change account or VAT on transactions','Deleting data','Emailing customers'],a:0,w:'Bulk edit.'},
+{q:'First step when you find an error?',o:['Prove what happened','Delete everything','Post a journal'],a:0,w:'Prove.'}]});
+
+M({lvl:5,t:'Security and internal controls',min:20,goal:'Protect the money, the data and the business.',widget:null,
+secs:[
+{h:'Protect logins',html:'<ul><li>MFA on every Xero user and on email and banking.</li><li>Password manager with unique long passwords.</li><li>Never share a login.</li><li>Remove leavers the same day. Review quarterly.</li></ul>'},
+{h:'Right access',html:'<table><tr><th>Person</th><th>Role</th></tr><tr><td>Owner/director</td><td>Adviser or Standard</td></tr><tr><td>Bookkeeper</td><td>Standard or Adviser</td></tr><tr><td>Sales staff</td><td>Invoice only</td></tr><tr><td>Investor/lender/auditor</td><td>Read only</td></tr><tr><td>Accountant</td><td>Adviser</td></tr></table>'},
+{h:'Separation of duties',html:'<ul><li>Bill creator should not be the sole approver and payer.</li><li>Dual authorisation on bank payments above a limit.</li><li>Review new suppliers and changes of bank details independently.</li></ul>'},
+{h:'Fraud to watch for',html:'<ul><li>Invoice redirection (phone a known number).</li><li>Fake invoices.</li><li>Impersonation of directors.</li><li>Payroll changes by email.</li></ul>'},
+{h:'Connected apps and data',html:'<p>Review Connected apps quarterly. Know what data each app reads. UK GDPR. Export key reports periodically.</p>'}],
+tip:'Rule: no bank detail change without a call to a number you already hold.',
+warn:'One shared admin login is the weakest control you can have.',
+do:['Check users and roles in the Demo Company.','Write your rule for changing supplier bank details.','List your connected apps.'],
+quiz:[
+{q:'Supplier emails new bank details. What first?',o:['Phone them on a known number to verify','Update immediately','Reply asking if real'],a:0,w:'Verify independently.'},
+{q:'Who should have full user accounts?',o:['Each individual separately','One shared login','Only the accountant'],a:0,w:'Separate.'},
+{q:'How often review connected apps?',o:['Quarterly','Never','Only after a breach'],a:0,w:'Quarterly.'},
+{q:'Who approves bills?',o:['Someone other than the creator, if possible','The creator','Nobody'],a:0,w:'Separation of duties.'},
+{q:'MFA should be on…',o:['Every Xero user','Only admins','Nobody'],a:0,w:'Everyone.'}]});
+
+M({lvl:5,t:'Power-user habits and staying current',min:25,goal:'Work faster, learn continuously and keep Xero tidy.',widget:null,
+secs:[
+{h:'Speed tricks',html:'<ul><li>Search (top bar) jumps to anything.</li><li>Quick-create (+) starts anything.</li><li>Bulk actions: tick many invoices to approve, email, print.</li><li>Copy to creates a new invoice, quote or credit note from an existing one.</li><li>Repeating transactions for anything on a schedule.</li><li>Saved filters and report layouts.</li><li>Mobile app for receipts, balances, expenses.</li></ul>'},
+{h:'Ten habits of an expert',html:'<ol><li>Reconcile weekly.</li><li>Invoice the day the job is done.</li><li>Attach evidence to every bill and spend.</li><li>Bank rules for repeat items.</li><li>Clearing and suspense at nil.</li><li>Aged Receivables every Monday.</li><li>Close and lock each month.</li><li>Notes on anything unusual.</li><li>Review users, apps and VAT settings quarterly.</li><li>Keep learning.</li></ol>'},
+{h:'Staying up to date',html:'<ul><li>Xero Central (central.xero.com).</li><li>Xero blog and product updates.</li><li>gov.uk for VAT, MTD, payroll and tax changes.</li><li>Quarterly check-in with your accountant.</li></ul>'},
+{h:'When to bring in a professional',html:'<p>Changing VAT scheme, selling abroad, hiring your first employee, buying large assets, taking a loan, planning to sell the business.</p>'},
+{h:'Your 30-60-90 day plan',html:'<table><tr><th>Day</th><th>Goal</th></tr><tr><td>1–30</td><td>Set up: organisation, chart, contacts, opening balances, bank feeds. Reconcile weekly.</td></tr><tr><td>31–60</td><td>Rules and automation; reminders; VAT return from Xero; connect sales platforms.</td></tr><tr><td>61–90</td><td>Month-end routine, reports pack, budget and cash forecast, security review.</td></tr></table>'}],
+tip:'Keep a running "Xero questions" note and review it monthly with your accountant.',
+warn:'Do not install apps or change settings in the live file to "see what happens".',
+do:['Try three speed tricks in the Demo Company.','Subscribe to HMRC and Xero updates.','Write your own 30-60-90 plan.'],
+quiz:[
+{q:'Fastest way to find a setting?',o:['Search at the top','Click every menu','Ask a friend'],a:0,w:'Search.'},
+{q:'Where is Xero’s official help?',o:['Xero Central','A 2015 forum post','Social media'],a:0,w:'Xero Central.'},
+{q:'Before changing an important setting you should…',o:['Test in the Demo Company or check with your accountant','Just try it','Delete data first'],a:0,w:'Test first.'},
+{q:'How often review users and connected apps?',o:['Quarterly','Never','Daily'],a:0,w:'Quarterly.'},
+{q:'What should you attach to every bill?',o:['The PDF or photo','Nothing','A signature'],a:0,w:'Supplied file evidence.'}]});
+
+/* ===== Exam bank ===== */
+var EXAM_BANK=[
+ {q:'Which of these INCREASES with a credit?',o:['An asset','A liability such as VAT owed','An expense'],a:1,w:'Liabilities, equity and income increase with credits.'},
+ {q:'A sale is recorded under accrual accounting when…',o:['The invoice is issued','The customer pays','The bank statement arrives'],a:0,w:'Accrual records when earned and invoiced.'},
+ {q:'Where do unpaid customer invoices belong at the conversion date?',o:['As one lump sum','As individual invoices dated as originally issued','They are ignored'],a:1,w:'Individual so they can be aged and chased.'},
+ {q:'What should a lock date be set at after your first month-end?',o:['The month-end date','The current day','Never'],a:0,w:'Lock at period end.'},
+ {q:'Which two numbers must agree when reconciliation is complete?',o:['Sales and cost','Statement balance and Balance in Xero','Debtors and creditors'],a:1,w:'Balances agree.'},
+ {q:'If you record a payment on the invoice and code the bank line as new income, what happens?',o:['Double-counted sale','Nothing','Faster reconciliation'],a:0,w:'Double-count.'},
+ {q:'A customer pays £500 more than the invoice. This is a…',o:['Sale','Overpayment','Bill'],a:1,w:'Held as a customer credit.'},
+ {q:'Which tab do you use for money moved between your own accounts?',o:['Match','Create','Transfer'],a:2,w:'Transfer.'},
+ {q:'The safest condition for a bank rule is…',o:['Any text field contains a specific name','Amount greater than £0','Contains "A"'],a:0,w:'Specific.'},
+ {q:'A sole trader personal item paid from the business bank is coded to…',o:['Office costs','Drawings','Sales'],a:1,w:'Drawings.'},
+ {q:'A credit card bill paid from the bank is coded as…',o:['Transfer','Expense','Sale'],a:0,w:'Own-account transfer.'},
+ {q:'Which of these would a limited company use rather than a sole trader?',o:['Drawings','Director loan account','Funds introduced'],a:1,w:'Director loan.'},
+ {q:'Bank charges are usually coded with which VAT rate?',o:['20% (VAT on Expenses)','Exempt Expenses','Zero Rated Expenses'],a:1,w:'Bank charges are an exempt financial service: no VAT to reclaim.'},
+ {q:'Box 5 on a VAT return equals…',o:['Box 3 minus Box 4','Total sales','Total purchases'],a:0,w:'Net VAT: total VAT due less VAT reclaimed.'},
+ {q:'MTD for VAT requires…',o:['Digital records and software filing','Paper returns','Annual filing'],a:0,w:'Digital.'},
+ {q:'Which VAT scheme charges VAT on profit?',o:['Flat Rate','Margin scheme','Annual accounting'],a:1,w:'Margin scheme.'},
+ {q:'PAYE and NI deducted but not yet paid to HMRC is a…',o:['Liability','Sale','Fixed asset'],a:0,w:'Liability.'},
+ {q:'An FPS is normally due to HMRC…',o:['On or before payday','Once a year','At year-end'],a:0,w:'RTI.'},
+ {q:'Minimum employer auto-enrolment contribution is currently…',o:['1%','3% on qualifying earnings','10%'],a:1,w:'3% (check current thresholds).'},
+ {q:'A dividend is…',o:['A business expense','A distribution of profit to shareholders','Salary'],a:1,w:'Distribution, not expense.'},
+ {q:'Before paying a dividend, the company must have…',o:['Distributable reserves','Any cash','A bank loan'],a:0,w:'Reserves.'},
+ {q:'Gross profit equals…',o:['Income minus cost of sales','Income minus all overheads','Cash in minus cash out'],a:0,w:'Before overheads.'},
+ {q:'Which report shows where a number came from?',o:['Account Transactions','The logo','Contacts'],a:0,w:'Account Transactions.'},
+ {q:'A clearing account should usually be…',o:['Nil or explained','Equal to sales','Negative'],a:0,w:'Nil.'},
+ {q:'Why does a Shopify payout not equal total sales?',o:['It is net of fees, refunds and chargebacks','Shopify keeps tax','Xero changes it'],a:0,w:'Net of deductions.'},
+ {q:'A second-hand goods reseller may be able to use…',o:['The VAT Margin Scheme','Cash accounting only','No VAT'],a:0,w:'Margin scheme — ask accountant first.'},
+ {q:'Why use Match before Create in reconciliation?',o:['Create is slower','Avoid double-counting','No reason'],a:1,w:'Double-count.'},
+ {q:'Which should usually be nil on a Balance Sheet?',o:['Suspense and clearing','Bank','Sales'],a:0,w:'Temporary holding.'},
+ {q:'Debtors on the Balance Sheet should equal…',o:['Aged Receivables','Aged Payables','Bank'],a:0,w:'Control account.'},
+ {q:'Corporation Tax for a limited company is normally paid…',o:['9 months and 1 day after year-end','31 January','Monthly'],a:0,w:'Check gov.uk for large companies.'},
+ {q:'What role should your accountant have?',o:['Adviser','Read only','Invoice only'],a:0,w:'Adviser.'},
+ {q:'A duplicate approved bill should be…',o:['Voided','Renamed','Ignored'],a:0,w:'Void.'},
+ {q:'Where do you see who changed a transaction?',o:['History and notes','The bank','The P&L'],a:0,w:'History.'},
+ {q:'A supplier emails new bank details. What first?',o:['Phone them on a known number','Update immediately','Reply to the email'],a:0,w:'Verify independently.'},
+ {q:'MFA should be on…',o:['Every Xero user','Only admins','Nobody'],a:0,w:'Everyone.'},
+ {q:'How often must Open Banking consent usually be renewed?',o:['Usually every 90 days','Every 10 years','Never'],a:0,w:'Usually every 90 days. Xero warns you first.'},
+ {q:'A director pays a business cost personally. The company…',o:['Owes the director via loan account','Ignores it','Records a sale'],a:0,w:'Loan account credit.'},
+ {q:'What is a prepayment?',o:['Money paid for a future period','A customer overpayment','A credit note'],a:0,w:'Paid in advance.'},
+ {q:'Which of these is a fixed asset?',o:['A van','Fuel','Rent'],a:0,w:'Long-life item.'},
+ {q:'Which report shows the bank statement vs Xero balance?',o:['Bank Reconciliation Summary','Aged Payables','Trial Balance'],a:0,w:'Summary.'}
+];
+
+/* ===== Storage & Rendering Helpers ===== */
+var VERSION='5.6';
+var KEY='xeroBookkeeper.v2.2'; /* key unchanged since v2.2 so existing progress carries over */
+function freshMem(){return {done:{},quiz:{},chk:{},name:'',theme:'auto',exam:null,badges:{}}}
+function isObj(o){return !!o&&typeof o==='object'&&!Array.isArray(o)}
+function cleanMem(o){
+ var m=freshMem();if(!isObj(o))return m;
+ ['done','quiz','chk','badges'].forEach(function(k){
+   if(!isObj(o[k]))return;
+   Object.keys(o[k]).forEach(function(x){var v=o[k][x];if(typeof v==='number'||typeof v==='boolean')m[k][x]=v});
+ });
+ if(typeof o.name==='string')m.name=o.name.slice(0,80);
+ if(['auto','light','dark'].indexOf(o.theme)>=0)m.theme=o.theme;
+ if(isObj(o.exam)&&typeof o.exam.score==='number')m.exam={score:Math.max(0,Math.min(20,Math.round(o.exam.score))),date:String(o.exam.date||'').slice(0,40)};
+ return m;
+}
+var mem=freshMem();
+function load(){try{var r=localStorage.getItem(KEY);if(r)mem=cleanMem(JSON.parse(r))}catch(e){mem=freshMem()}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(mem))}catch(e){}}
+load();
+
+var $=function(s){return document.querySelector(s)};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function gbp(n){return (n<0?'−':'')+'£'+Math.abs(n).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2})}
+var THEME_UI={auto:['◐','Theme: match device'],light:['☀','Theme: light'],dark:['☾','Theme: dark']};
+function applyTheme(){
+ var r=document.documentElement;
+ if(mem.theme==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',mem.theme);
+ var t=THEME_UI[mem.theme]||THEME_UI.auto;
+ var ic=$('#themeic'),b=$('#themebtn');
+ if(ic)ic.textContent=t[0];
+ if(b){b.setAttribute('aria-label',t[1]+'. Tap to change.');b.title=t[1]}
+ var dark=mem.theme==='dark'||(mem.theme==='auto'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+ var mt=document.querySelector('meta[name=theme-color]');if(mt)mt.setAttribute('content',dark?'#111c17':'#17694a');
+}
+applyTheme();
+var byId=function(id){return MODS.filter(function(m){return m.id===id})[0]};
+var byKey=function(k){return MODS.filter(function(m){return m.key===k})[0]};
+function isDone(id){return !!mem.done[id]}
+function doneCount(){return MODS.filter(function(m){return isDone(m.id)}).length}
+function pct(){return Math.round(doneCount()/MODS.length*100)}
+function lvlMods(n){return MODS.filter(function(m){return m.lvl===n})}
+function ring(){
+ var p=pct(),r=$('#ring');if(!r)return;
+ r.style.setProperty('--p',p);r.setAttribute('aria-valuenow',p);r.querySelector('span').textContent=p+'%';
+}
+function go(h){location.hash=h}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function passMark(n){return Math.ceil(n*0.67)}
+/* keep the Next button above the phone tab bar, then give it focus for keyboard users */
+function reveal(el){try{el.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});el.focus({preventScroll:true})}catch(e){}}
+
+/* ===== Sidebar index ===== */
+function buildSidebarIndex(cur){
+ var h='';
+ LEVELS.forEach(function(L){
+   h+='<div class="side-section">Level '+L.n+': '+esc(L.name)+'</div><div class="side-modules">';
+   lvlMods(L.n).forEach(function(m){
+     var d=isDone(m.id);
+     h+='<a class="side-mod-link'+(d?' dn':'')+(m.id===cur?' on':'')+'" href="#/m/'+m.id+'"'+(m.id===cur?' aria-current="page"':'')+'><span class="sn" aria-hidden="true">'+(d?'✓':m.n)+'</span><span>'+esc(m.t)+(d?'<span class="sr"> (complete)</span>':'')+'</span></a>';
+   });
+   h+='</div>';
+ });
+ $('#side-index').innerHTML=h;
+}
+
+/* ===== Badges ===== */
+var BADGES=[
+ {id:'first',i:'🌱',t:'First Steps',d:'Complete one module'},
+ {id:'lvl1',i:'📘',t:'Foundations',d:'Complete Level 1'},
+ {id:'lvl2',i:'📗',t:'Daily Books',d:'Complete Level 2'},
+ {id:'lvl3',i:'📙',t:'Running It',d:'Complete Level 3'},
+ {id:'lvl4',i:'📕',t:'Connected',d:'Complete Level 4'},
+ {id:'lvl5',i:'📓',t:'Expert',d:'Complete Level 5'},
+ {id:'recon',i:'🔗',t:'Reconciler',d:'Complete Bank reconciliation'},
+ {id:'vatpro',i:'💷',t:'VAT Pro',d:'Complete the VAT module'},
+ {id:'payout',i:'💰',t:'Payout Pro',d:'Complete Payout reconciliation'},
+ {id:'exam',i:'🏆',t:'Exam Pass',d:'Pass the final exam'},
+ {id:'flawless',i:'⭐',t:'Flawless',d:'100% on any module quiz'}
+];
+function checkBadges(){
+ function award(id){mem.badges[id]=true}
+ function keyDone(k){var m=byKey(k);return !!m&&isDone(m.id)}
+ if(MODS.some(function(m){return isDone(m.id)}))award('first');
+ [1,2,3,4,5].forEach(function(n){if(lvlMods(n).every(function(m){return isDone(m.id)}))award('lvl'+n)});
+ if(keyDone('recon'))award('recon');
+ if(keyDone('vat'))award('vatpro');
+ if(keyDone('payout'))award('payout');
+ if(mem.exam&&mem.exam.score>=16)award('exam');
+ MODS.forEach(function(m){if(mem.quiz[m.id]>=m.quiz.length)award('flawless')});
+ save();
+}
+
+/* ===== Router ===== */
+var TITLES={tools:'Practice tools',gloss:'Glossary',exam:'Final exam',me:'Progress and certificate'};
+function setTitle(t){$('#pagetitle').textContent=t;document.title=t+' · Xero Academy'}
+function route(){
+ var h=(location.hash||'').replace(/^#\/?/,'');
+ var parts=h.split('/');
+ var a=parts[0],b=parts[1],c=parts[2];
+ document.querySelectorAll('.side-nav > a, .tabbar a').forEach(function(x){
+   var k=x.dataset.k;
+   var on=(a===''&&k==='learn')||(a==='m'&&k==='learn')||(a==='exam'&&k==='me')||(a==='tool'&&k==='tools')||(a===k);
+   x.classList.toggle('on',!!on);
+   if(on)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');
+ });
+ var v=$('#app'),m=a==='m'?byId(b):null;
+ if(m){vModule(v,m);setTitle('Module '+m.n+': '+m.t)}
+ else if(a==='tools'){vTools(v);setTitle(TITLES.tools)}
+ else if(a==='tool'){vTool(v,b)}
+ else if(a==='gloss'){vGloss(v);setTitle(TITLES.gloss)}
+ else if(a==='exam'){vExam(v);setTitle(TITLES.exam)}
+ else if(a==='me'){vMe(v);setTitle(TITLES.me)}
+ else{vHome(v);setTitle('Course home')}
+ buildSidebarIndex(m?m.id:null);
+ var target=m&&c!==undefined?document.getElementById('sec-'+c):null;
+ if(target)target.scrollIntoView();else window.scrollTo(0,0);
+ try{v.focus({preventScroll:true})}catch(e){}
+ ring();checkBadges();updateTop();
+ closeMenu();
+}
+window.addEventListener('hashchange',route);
+var scrollTick=false;
+function updateTop(){$('#totop').classList.toggle('show',window.scrollY>400)}
+window.addEventListener('scroll',function(){if(scrollTick)return;scrollTick=true;requestAnimationFrame(function(){updateTop();scrollTick=false})},{passive:true});
+
+/* ===== Home ===== */
+function vHome(v){
+ var d=doneCount(),n=MODS.length,next=MODS.filter(function(m){return !isDone(m.id)})[0];
+ var qp=MODS.filter(function(m){return (mem.quiz[m.id]||0)>=passMark(m.quiz.length)}).length;
+ var exam=mem.exam?mem.exam.score+'/20':'—';
+ var h='<section class="hero" aria-labelledby="hero-h">'+(d===n&&mem.exam?'<div class="stamp" aria-hidden="true">BALANCED</div>':'')+
+   '<h2 id="hero-h">Xero Academy</h2><p class="hero-sub">From Xero to expert</p><p class="lede">UK bookkeeping in Xero, from your first login to a clean month-end. Five levels, '+n+' modules, practice tools and a final exam.</p>'+
+   '<table class="ledger" aria-label="Your progress"><tr><th scope="col">Your progress</th><th scope="col" class="num">Done</th><th scope="col" class="num">To go</th></tr>'+
+   '<tr><td>Modules</td><td class="num">'+d+'</td><td class="num">'+(n-d)+'</td></tr>'+
+   '<tr><td>Quizzes passed</td><td class="num">'+qp+'</td><td class="num">'+(n-qp)+'</td></tr>'+
+   '<tr class="tot"><td>Final exam</td><td class="num">'+exam+'</td><td class="num">'+(mem.exam?'0':'1')+'</td></tr></table>';
+ if(next)h+='<a class="btn" href="#/m/'+next.id+'">'+(d===0?'Start module 1':'Continue: module '+next.n)+'</a><p class="small mut" style="margin:10px 0 0">'+(d===0?'':'Next up: ')+esc(next.t)+'</p>';
+ else h+='<a class="btn" href="#/exam">'+(mem.exam?'Retake the final exam':'Take the final exam')+'</a>';
+ h+='</section>';
+ h+='<div class="callout tip"><b class="k">Practise for free</b>Every Xero login includes a <b>Demo Company</b> full of sample data. Do all the "Try it in Xero" tasks there first. Open it from the organisation name menu at the top-left of Xero.</div>';
+ LEVELS.forEach(function(L){
+   var ms=lvlMods(L.n);
+   var dn=ms.filter(function(m){return isDone(m.id)}).length;
+   h+='<div class="card lvl"><div class="lvlhead"><div><span class="chip">Level '+L.n+'</span><h3 style="margin:8px 0 0">'+esc(L.name)+'</h3></div><div class="count" aria-label="'+dn+' of '+ms.length+' complete">'+dn+'/'+ms.length+'</div></div><p class="mut small" style="margin:4px 0">'+esc(L.sub)+'</p><div class="bar" aria-hidden="true"><i style="width:'+(ms.length?dn/ms.length*100:0)+'%"></i></div>';
+   ms.forEach(function(m){
+     var dd=isDone(m.id),isNext=next&&next.id===m.id;
+     h+='<a class="mod'+(dd?' done':'')+(isNext?' next':'')+'" href="#/m/'+m.id+'"><span class="n" aria-hidden="true">'+(dd?'✓':m.n)+'</span><span class="t">'+esc(m.t)+(dd?' <span class="sr">(complete)</span>':'')+'<small>'+m.min+' min. '+esc(m.goal)+'</small></span></a>';
+   });
+   h+='</div>';
+ });
+ h+='<p class="disc">Independent training material. Not affiliated with or endorsed by Xero Limited. "Xero" is a trademark of Xero Limited. Prices, plan names, HMRC thresholds and screens change often: always check gov.uk and xero.com/uk before acting. This is education, not tax or legal advice. Last content review: October 2026 (v'+VERSION+').</p>';
+ v.innerHTML=h;
+}
+
+/* ===== Module ===== */
+function vModule(v,m){
+ var i=MODS.indexOf(m),prev=MODS[i-1],nx=MODS[i+1],L=LEVELS[m.lvl-1];
+ var h='<div class="row"><span class="chip">Level '+m.lvl+': '+esc(L.name)+'</span>'+(isDone(m.id)?'<span class="chip" style="background:var(--okbg);color:var(--ok)">✓ Complete</span>':'')+'</div>'+
+   '<h2>'+esc(m.t)+'</h2><div class="meta"><span>Module '+m.n+' of '+MODS.length+'</span><span>About '+m.min+' minutes</span></div><p class="lede"><b>Goal:</b> '+esc(m.goal)+'</p>';
+ h+='<p class="noprint"><button class="btn alt sm" data-print>🖨 Print this module</button></p>';
+ m.secs.forEach(function(s,k){
+   h+='<section class="card sec" id="sec-'+k+'"><h3><span class="stepno" aria-hidden="true">'+(k+1)+'</span><span>'+esc(s.h)+'</span></h3>'+s.html+'</section>';
+ });
+ if(m.tip)h+='<div class="callout tip"><b class="k">Bookkeeper tip</b>'+m.tip+'</div>';
+ if(m.warn)h+='<div class="callout warn"><b class="k">Common mistake</b>'+m.warn+'</div>';
+ if(m.widget)h+='<div class="card"><h3>Practice</h3><div id="wg"></div></div>';
+ if(m.do&&m.do.length){
+   h+='<div class="card"><h3>Try it in Xero (Demo Company)</h3>';
+   m.do.forEach(function(t,k){
+     var id=m.id+'.'+k;
+     h+='<label class="chk"><input type="checkbox" data-c="'+id+'" '+(mem.chk[id]?'checked':'')+'><span>'+t+'</span></label>';
+   });
+   h+='</div>';
+ }
+ h+='<div class="card"><h3>Quick quiz</h3><div id="qz"></div></div>';
+ h+='<div class="sticky-nav noprint">'+(prev?'<a class="btn alt" href="#/m/'+prev.id+'">← Module '+prev.n+'</a>':'<span></span>')+(nx?'<a class="btn" href="#/m/'+nx.id+'">Module '+nx.n+' →</a>':'<a class="btn" href="#/exam">Final exam →</a>')+'</div>';
+ v.innerHTML=h;
+ v.querySelector('[data-print]').onclick=function(){window.print()};
+ v.querySelectorAll('[data-c]').forEach(function(c){c.onchange=function(){mem.chk[c.dataset.c]=c.checked;save()}});
+ if(m.widget&&WIDGETS[m.widget])WIDGETS[m.widget]($('#wg'));
+ quiz($('#qz'),m.quiz,{
+   onScore:function(score,ok){
+     mem.quiz[m.id]=Math.max(mem.quiz[m.id]||0,score);
+     if(ok)mem.done[m.id]=1;
+     save();ring();checkBadges();buildSidebarIndex(m.id);
+   },
+   onSkip:isDone(m.id)?null:function(){mem.done[m.id]=1;save();route()}
+ });
+}
+
+/* ===== Quiz engine ===== */
+function quiz(box,qs,opt){
+ opt=opt||{};
+ var pass=opt.pass||passMark(qs.length);
+ var i=0,score=0,answered=[],keyh=null,finished=false;
+ function unbind(){if(keyh){document.removeEventListener('keydown',keyh);keyh=null}}
+ function result(){
+   finished=true;unbind();
+   var ok=score>=pass;
+   box.innerHTML='<div class="res '+(ok?'pass':'fail')+'" role="status"><div class="big">'+score+'/'+qs.length+'</div><p>'+(ok?(opt.passText||'Passed. Module marked complete.'):(opt.failText||'Not quite: you need '+pass+'. Re-read the sections and try again.'))+'</p></div>'+
+     '<div class="row"><button class="btn alt sm" data-a="rt">Retake</button><button class="btn alt sm" data-a="rv">Review answers</button></div><div class="rev"></div>';
+   box.querySelector('[data-a=rt]').onclick=function(){if(opt.onRetake)opt.onRetake();else{i=0;score=0;answered=[];finished=false;show()}};
+   box.querySelector('[data-a=rv]').onclick=function(){
+     var rh='';
+     qs.forEach(function(q,k){
+       var a=answered[k];
+       rh+='<div class="card"><p><b>'+(k+1)+'. '+q.q+'</b></p>';
+       q.o.forEach(function(t,ki){
+         var c=ki===q.a,w=ki===a&&!c;
+         rh+='<p class="ro'+(c?' c':(w?' w':''))+'">'+(c?'✓ ':(w?'✗ ':''))+t+(c?' (correct)':(w?' (your answer)':''))+'</p>';
+       });
+       if(a===undefined)rh+='<p class="ro w">Not answered.</p>';
+       rh+='<p class="why">'+q.w+'</p></div>';
+     });
+     box.querySelector('.rev').innerHTML=rh;
+     this.disabled=true;
+   };
+   if(opt.onScore)opt.onScore(score,ok);
+ }
+ function show(){
+   unbind();
+   if(i>=qs.length){result();return}
+   var q=qs[i];
+   box.innerHTML='<p class="qmeta"><span>Question '+(i+1)+' of '+qs.length+'</span><span class="desk-only">Keys <span class="kbd">1</span>–<span class="kbd">'+q.o.length+'</span></span></p><p class="qq">'+q.q+'</p><div class="os" role="group" aria-label="Answers"></div><div class="fb" aria-live="polite"></div>';
+   var os=box.querySelector('.os');
+   q.o.forEach(function(t,k){
+     var b=document.createElement('button');
+     b.className='opt';b.type='button';
+     b.innerHTML='<span class="key" aria-hidden="true">'+(k+1)+'</span><span class="txt">'+t+'</span><span class="mk" aria-hidden="true"></span>';
+     b.onclick=function(){pick(k)};
+     os.appendChild(b);
+   });
+   function pick(k){
+     if(finished||answered[i]!==undefined)return;
+     unbind();
+     answered[i]=k;
+     var bs=box.querySelectorAll('.opt');
+     bs.forEach(function(x){x.disabled=true});
+     bs[q.a].classList.add('ok');bs[q.a].querySelector('.mk').textContent='✓';
+     var right=k===q.a;
+     if(!right){bs[k].classList.add('bad');bs[k].querySelector('.mk').textContent='✗'}else score++;
+     var fb=box.querySelector('.fb');
+     fb.innerHTML='<p class="why'+(right?'':' no')+'"><b>'+(right?'Correct.':'Not quite.')+'</b> '+q.w+'</p><button class="btn sm" type="button">'+(i+1<qs.length?'Next question':'See result')+'</button>';
+     var nb=fb.querySelector('button');
+     nb.onclick=function(){i++;show()};
+     reveal(nb);
+   }
+   keyh=function(e){
+     if(!document.body.contains(box)){unbind();return}
+     if(e.ctrlKey||e.metaKey||e.altKey)return;
+     if(e.target&&e.target.matches&&e.target.matches('input,textarea,select'))return;
+     if(document.querySelector('#searchov.show'))return;
+     var n=parseInt(e.key,10);
+     if(n>=1&&n<=q.o.length){e.preventDefault();pick(n-1)}
+   };
+   document.addEventListener('keydown',keyh);
+   if(opt.onSkip&&i===0){
+     var s=document.createElement('p');s.className='small mut';
+     s.innerHTML='Already know this? <a href="#" data-a="sk">Mark complete without the quiz</a>';
+     box.appendChild(s);
+     s.querySelector('[data-a=sk]').onclick=function(e){e.preventDefault();unbind();opt.onSkip()};
+   }
+ }
+ show();
+ return {finish:function(){if(!finished){i=qs.length;show()}}};
+}
+
+/* ===== Tools ===== */
+var TOOLS=[
+ ['setup','Setup checklist','Everything to configure when you start a new Xero file'],
+ ['month','Month-end checklist','The routine that keeps books clean'],
+ ['drill','Debits and credits trainer','Pick the right journal for 8 real transactions'],
+ ['recsim','Bank reconciliation simulator','Practise Match, Create, Transfer and Discuss'],
+ ['payout','Shopify / eBay payout checker','Prove a payout equals sales minus fees and refunds'],
+ ['vat','VAT calculator','Net to gross, gross to net, and the Flat Rate Scheme'],
+ ['vatreturn','VAT return builder','Practise filling boxes 1 to 7 from a quarter of transactions'],
+ ['cash','13-week cash flow','Build a rolling cash forecast'],
+ ['picker','Which integration do I need?','Answer 4 questions, get a shortlist']
+];
+function vTools(v){
+ v.innerHTML='<h2>Practice tools</h2><p class="lede">Drills and checklists. Your ticks and answers are saved on this device.</p><div class="tiles">'+
+  TOOLS.map(function(t){return '<a class="tile" href="#/tool/'+t[0]+'"><b>'+t[1]+'</b><span>'+t[2]+'</span></a>'}).join('')+
+  '<a class="tile" href="#/gloss"><b>Glossary</b><span>Plain-English meaning of every accounting term</span></a></div>';
+}
+function vTool(v,k){
+ var t=TOOLS.filter(function(x){return x[0]===k})[0];
+ var fn=t&&(TOOLW[k]||WIDGETS[k]);
+ if(!fn){go('#/tools');return}
+ setTitle(t[1]);
+ v.innerHTML='<p class="noprint"><a href="#/tools">← All tools</a></p><h2>'+t[1]+'</h2><p class="lede">'+t[2]+'.</p><div class="card" id="wg"></div>';
+ fn($('#wg'));
+}
+var TOOLW={
+ setup:function(box){checklist(box,'setup',SETUP_LIST)},
+ month:function(box){checklist(box,'month',MONTH_LIST)}
+};
+function checklist(box,key,list){
+ var h='',tot=0;
+ list.forEach(function(g,gi){
+   h+='<h3>'+g.h+'</h3>';
+   g.i.forEach(function(t,k){
+     var id=key+'.'+gi+'.'+k;tot++;
+     h+='<label class="chk"><input type="checkbox" data-c="'+id+'" '+(mem.chk[id]?'checked':'')+'><span>'+t+'</span></label>';
+   });
+ });
+ h+='<p class="row" style="margin-top:16px"><span class="mut small" data-a="cnt"></span><button class="btn alt sm" data-a="clr" type="button">Clear ticks</button></p>';
+ box.innerHTML=h;
+ function count(){var n=box.querySelectorAll('[data-c]:checked').length;box.querySelector('[data-a=cnt]').textContent=n+' of '+tot+' done'}
+ box.querySelectorAll('[data-c]').forEach(function(c){c.onchange=function(){mem.chk[c.dataset.c]=c.checked;save();count()}});
+ box.querySelector('[data-a=clr]').onclick=function(){
+   if(!confirm('Clear every tick on this checklist?'))return;
+   Object.keys(mem.chk).filter(function(x){return x.indexOf(key+'.')===0}).forEach(function(x){delete mem.chk[x]});
+   save();checklist(box,key,list);
+ };
+ count();
+}
+
+/* ===== Widgets ===== */
+var VAT_SCENARIO=[
+ {d:'05 Jul',t:'Sale',desc:'Consulting invoice: £4,000 + £800 VAT (20%)',box:[1,6],amts:[800,4000]},
+ {d:'12 Jul',t:'Sale',desc:'Books sold: £500, zero-rated (0% VAT)',box:[6],amts:[0,500]},
+ {d:'20 Jul',t:'Sale',desc:'Training course: £2,500 + £500 VAT (20%)',box:[1,6],amts:[500,2500]},
+ {d:'02 Aug',t:'Purchase',desc:'Materials bill: £1,200 + £240 VAT (20%)',box:[4,7],amts:[240,1200]},
+ {d:'15 Aug',t:'Purchase',desc:'Software subscription: £100 + £20 VAT (20%)',box:[4,7],amts:[20,100]},
+ {d:'28 Aug',t:'Purchase',desc:'Bank charges: £15, exempt (no VAT charged)',box:[7],amts:[0,15]},
+ {d:'10 Sep',t:'Purchase',desc:'Business insurance: £600, exempt (no VAT charged)',box:[7],amts:[0,600]},
+ {d:'30 Sep',t:'Purchase',desc:'Staff wages: £3,000 (No VAT, outside the scope)',box:[],amts:[0,3000]}
+];
+var WIDGETS={};
+function choiceRun(box,items,opts){
+ /* shared engine for the drill and the reconciliation simulator */
+ var list=shuffle(items),i=0,sc=0;
+ function show(){
+   if(i>=list.length){
+     box.innerHTML='<div class="res'+(sc>=opts.good?'':' fail')+'" role="status"><div class="big">'+sc+'/'+list.length+'</div><p>'+(sc>=opts.good?opts.goodText:opts.badText)+'</p></div><button class="btn" type="button" data-a="again">Try again</button>';
+     box.querySelector('[data-a=again]').onclick=function(){choiceRun(box,items,opts)};
+     return;
+   }
+   var it=list[i];
+   box.innerHTML='<p class="qmeta"><span>'+opts.label+' '+(i+1)+' of '+list.length+'</span></p>'+opts.head(it)+'<div class="os" role="group" aria-label="Answers"></div><div class="fb" aria-live="polite"></div>';
+   var os=box.querySelector('.os');
+   opts.choices(it).forEach(function(t,k){
+     var b=document.createElement('button');
+     b.className='opt';b.type='button';
+     b.innerHTML='<span class="key" aria-hidden="true">'+(k+1)+'</span><span class="txt"></span><span class="mk" aria-hidden="true"></span>';
+     b.querySelector('.txt').textContent=t;
+     b.onclick=function(){
+       var bs=box.querySelectorAll('.opt');bs.forEach(function(x){x.disabled=true});
+       bs[it.a].classList.add('ok');bs[it.a].querySelector('.mk').textContent='✓';
+       var right=k===it.a;
+       if(!right){b.classList.add('bad');b.querySelector('.mk').textContent='✗'}else sc++;
+       var fb=box.querySelector('.fb');
+       fb.innerHTML='<p class="why'+(right?'':' no')+'"><b>'+(right?'Correct.':'Not quite.')+'</b> '+it.w+'</p><button class="btn sm" type="button">Next</button>';
+       var nb=fb.querySelector('button');nb.onclick=function(){i++;show()};reveal(nb);
+     };
+     os.appendChild(b);
+   });
+ }
+ show();
+}
+WIDGETS.drill=function(box){
+ var mb=byKey('basics');
+ choiceRun(box,DRILL,{label:'Scenario',good:7,goodText:'Excellent. You think like a bookkeeper.',badText:'Good start. Re-read module '+(mb?mb.n:2)+', then try again.',
+   head:function(q){return '<p class="qq">'+q.s+'</p><p class="small mut">Dr = debit, Cr = credit.</p>'},
+   choices:function(q){return q.o}});
+};
+WIDGETS.recsim=function(box){
+ var mr=byKey('recon');
+ choiceRun(box,RECSIM,{label:'Bank line',good:6,goodText:'Well reconciled.',badText:'Review the four tabs in module '+(mr?mr.n:13)+'.',
+   head:function(l){return '<div class="res"><b>'+l.d+'</b> '+esc(l.desc)+'<div class="big">'+(l.amt>0?'Money in ':'Money out ')+gbp(Math.abs(l.amt))+'</div></div><p class="small"><b>Xero already has:</b> '+l.ctx+'</p><p><b>Which tab do you use?</b></p>'},
+   choices:function(){return ['Match','Create','Transfer','Discuss']}});
+};
+WIDGETS.payout=function(box){
+ var q=function(s){return box.querySelector(s)};
+ box.innerHTML='<p>Enter one payout’s figures. The checker works out what the payout should be and compares it with what hit your bank.</p>'+
+ '<div class="grid2"><div><label class="f" for="po-g">Gross sales incl. VAT (£)</label><input type="number" inputmode="decimal" id="po-g" value="1200" step="0.01"></div>'+
+ '<div><label class="f" for="po-vr">VAT rate on sales (%)</label><input type="number" inputmode="decimal" id="po-vr" value="20"></div>'+
+ '<div><label class="f" for="po-f">Platform fees (£)</label><input type="number" inputmode="decimal" id="po-f" value="42.30" step="0.01"></div>'+
+ '<div><label class="f" for="po-r">Refunds incl. VAT (£)</label><input type="number" inputmode="decimal" id="po-r" value="60" step="0.01"></div>'+
+ '<div><label class="f" for="po-o">Other deductions, e.g. ad fees (£)</label><input type="number" inputmode="decimal" id="po-o" value="0" step="0.01"></div>'+
+ '<div><label class="f" for="po-b">Amount that hit the bank (£)</label><input type="number" inputmode="decimal" id="po-b" value="1097.70" step="0.01"></div></div><div data-a="out" aria-live="polite"></div>';
+ function n(id){var x=parseFloat(q('#po-'+id).value);return isFinite(x)?x:0}
+ function calc(){
+   var g=n('g'),vr=Math.max(0,n('vr')),f=n('f'),r=n('r'),o=n('o'),b=n('b');
+   var exp=g-r-f-o,diff=b-exp,net=g/(1+vr/100),vat=g-net,rnet=r/(1+vr/100),rvat=r-rnet,same=Math.abs(diff)<0.005;
+   q('[data-a=out]').innerHTML='<div class="res"><div>Expected payout: <b>'+gbp(exp)+'</b></div><div class="small mut">Sales '+gbp(g)+' less refunds '+gbp(r)+', fees '+gbp(f)+' and other '+gbp(o)+'</div>'+
+   '<div style="margin-top:6px">Difference to bank: <b style="color:'+(same?'var(--ok)':'var(--red)')+'">'+(same?'None. It reconciles.':gbp(diff))+'</b></div></div>'+
+   (same?'':'<div class="callout warn"><b class="k">Investigate before posting</b>A difference usually means a missed refund, a chargeback or dispute fee, a reserve or holdback, orders from a different payout period, or a gateway that pays out separately.</div>')+
+   '<h4>How the summary journal looks in Xero</h4><table><tr><th>Account</th><th>Debit</th><th>Credit</th></tr>'+
+   '<tr><td>Marketplace Clearing (asset)</td><td>'+gbp(g)+'</td><td></td></tr>'+
+   '<tr><td>Sales (net of VAT)</td><td></td><td>'+gbp(net)+'</td></tr>'+
+   '<tr><td>VAT on sales (output)</td><td></td><td>'+gbp(vat)+'</td></tr>'+
+   '<tr><td>Refunds (net)</td><td>'+gbp(rnet)+'</td><td></td></tr>'+
+   '<tr><td>VAT on refunds</td><td>'+gbp(rvat)+'</td><td></td></tr>'+
+   '<tr><td>Marketplace fees (expense)</td><td>'+gbp(f+o)+'</td><td></td></tr>'+
+   '<tr><td>Marketplace Clearing</td><td></td><td>'+gbp(r+f+o)+'</td></tr>'+
+   '<tr><td>Totals</td><td><b>'+gbp(g+rnet+rvat+f+o)+'</b></td><td><b>'+gbp(net+vat+r+f+o)+'</b></td></tr></table>'+
+   '<p class="small mut">Net effect on clearing: '+gbp(exp)+', exactly the payout. When the bank line arrives, reconcile it against that clearing amount and clearing returns to nil. Fees here are shown without VAT: check the platform’s fee invoice for any VAT you can reclaim.</p>';
+ }
+ box.querySelectorAll('input').forEach(function(x){x.oninput=calc});
+ calc();
+};
+WIDGETS.vat=function(box){
+ var q=function(s){return box.querySelector(s)};
+ box.innerHTML='<h3>Net and gross</h3><div class="grid2"><div><label class="f" for="vt-a">Amount (£)</label><input type="number" inputmode="decimal" id="vt-a" value="100" step="0.01"></div><div><label class="f" for="vt-r">VAT rate</label><select id="vt-r"><option value="20">20% standard</option><option value="5">5% reduced</option><option value="0">0% zero-rated</option></select></div></div><div data-a="o1" aria-live="polite"></div>'+
+ '<h3>Flat Rate Scheme</h3><p class="small mut">You charge customers normal VAT but pay HMRC a fixed % of your VAT-inclusive turnover. Your rate depends on your trade; newly registered businesses get 1% off in the first year, and “limited cost traders” must use 16.5%. You can still reclaim VAT on a single capital asset costing £2,000 or more including VAT.</p>'+
+ '<div class="grid2"><div><label class="f" for="vt-t">Gross (VAT-inclusive) turnover in the quarter (£)</label><input type="number" inputmode="decimal" id="vt-t" value="30000"></div><div><label class="f" for="vt-fr">Your flat rate (%)</label><input type="number" inputmode="decimal" id="vt-fr" value="12" step="0.5"></div></div><div data-a="o2" aria-live="polite"></div>';
+ function c(){
+   var a=parseFloat(q('#vt-a').value)||0,r=parseFloat(q('#vt-r').value)||0;
+   q('[data-a=o1]').innerHTML='<div class="res">If '+gbp(a)+' is <b>net</b>: VAT '+gbp(a*r/100)+', gross <b>'+gbp(a*(1+r/100))+'</b><br>If '+gbp(a)+' is <b>gross</b>: net <b>'+gbp(a/(1+r/100))+'</b>, VAT '+gbp(a-a/(1+r/100))+'</div>';
+   var t=parseFloat(q('#vt-t').value)||0,fr=parseFloat(q('#vt-fr').value)||0,vc=t-t/1.2;
+   q('[data-a=o2]').innerHTML='<div class="res">You pay HMRC: <b>'+gbp(t*fr/100)+'</b><br>VAT you collected (all sales at 20%): '+gbp(vc)+'<br>You keep: <b>'+gbp(vc-t*fr/100)+'</b> before comparing input VAT</div><p class="small mut">Under the standard scheme you would also reclaim VAT on your purchases, so compare both before choosing. If your costs on goods are under 2% of turnover (or £1,000 a year), the 16.5% limited cost trader rate applies.</p>';
+ }
+ box.querySelectorAll('input,select').forEach(function(x){x.oninput=c;x.onchange=c});
+ c();
+};
+WIDGETS.vatreturn=function(box){
+ var q=function(s){return box.querySelector(s)};
+ box.innerHTML='<p>A quarter of transactions for a VAT-registered business on the standard scheme. Work out the boxes, then check.</p>'+
+ '<table><tr><th>Date</th><th>Type</th><th>Description</th></tr>'+
+ VAT_SCENARIO.map(function(x){return '<tr><td>'+x.d+'</td><td>'+x.t+'</td><td>'+x.desc+'</td></tr>'}).join('')+
+ '</table><p class="small mut">Enter whole pounds or pence, numbers only.</p><div class="grid2">'+
+ [['b1','Box 1 (VAT due on sales)'],['b4','Box 4 (VAT reclaimed)'],['b5','Box 5 (net VAT to pay)'],['b6','Box 6 (sales ex VAT)'],['b7','Box 7 (purchases ex VAT)']].map(function(x){
+   return '<div><label class="f" for="vr-'+x[0]+'">'+x[1]+'</label><input type="number" inputmode="decimal" id="vr-'+x[0]+'" step="0.01"></div>'}).join('')+
+ '</div><p><button class="btn" type="button" data-a="chk">Check answers</button></p><div data-a="out" aria-live="polite"></div>';
+ function num(id){return parseFloat(q('#vr-'+id).value)||0}
+ q('[data-a=chk]').onclick=function(){
+   var b1=0,b4=0,b6=0,b7=0;
+   VAT_SCENARIO.forEach(function(x){
+     var vat=x.amts[0],net=x.amts[x.amts.length-1];
+     if(x.box.indexOf(1)>=0)b1+=vat;
+     if(x.box.indexOf(4)>=0)b4+=vat;
+     if(x.box.indexOf(6)>=0)b6+=net;
+     if(x.box.indexOf(7)>=0)b7+=net;
+   });
+   var b5=b1-b4,right=0;
+   function line(id,label,correct){var u=num(id),ok=Math.abs(u-correct)<0.5;if(ok)right++;return '<div><b>'+label+'</b>: '+gbp(correct)+'. Yours: '+gbp(u)+' <span style="color:var('+(ok?'--ok':'--red')+');font-weight:800">'+(ok?'✓ correct':'✗')+'</span></div>'}
+   var h='<div class="res">'+line('b1','Box 1',b1)+line('b4','Box 4',b4)+line('b5','Box 5',b5)+line('b6','Box 6',b6)+line('b7','Box 7',b7)+'<p><b>'+right+' of 5 correct.</b></p></div>';
+   h+='<div class="callout tip"><b class="k">Why</b>Box 2 is nil (NI only), so Box 3 = Box 1 and Box 5 = Box 3 − Box 4. Zero-rated sales go in Box 6 but not Box 1. Bank charges and insurance are exempt: no VAT, but they still count in Box 7. Wages are outside the scope (No VAT) and stay off the return. See HMRC VAT Notice 700/12.</div>';
+   q('[data-a=out]').innerHTML=h;
+ };
+};
+WIDGETS.cash=function(box){
+ var weeks=13;
+ var names=['Opening bank','+ Customer receipts','− Supplier payments','− Payroll and PAYE','− VAT and tax','− Loans, drawings, capex'];
+ var state=names.map(function(){return Array(weeks).fill(0)});
+ var h='<p class="small mut">Enter every figure as a positive number: outflow rows are subtracted for you. Week 1 opening bank is your starting cash; each week’s closing balance becomes the next week’s opening.</p>';
+ h+='<div class="cashwrap"><table><tr><th scope="col">Line</th>';
+ for(var w=0;w<weeks;w++)h+='<th scope="col">W'+(w+1)+'</th>';
+ h+='</tr>';
+ names.forEach(function(nm,ri){
+   h+='<tr><td>'+nm+'</td>';
+   for(var w=0;w<weeks;w++){
+     if(ri===0&&w>0)h+='<td class="mut" data-o="'+w+'">—</td>';
+     else h+='<td><input type="number" inputmode="decimal" aria-label="'+nm.replace(/^[+−] /,'')+', week '+(w+1)+'" data-r="'+ri+'" data-w="'+w+'"></td>';
+   }
+   h+='</tr>';
+ });
+ h+='<tr><td><b>Closing bank</b></td>';
+ for(var w=0;w<weeks;w++)h+='<td data-cl="'+w+'">—</td>';
+ h+='</tr></table></div><p class="small mut" data-a="low"></p>';
+ box.innerHTML=h;
+ function calc(){
+   var open=state[0][0],low=null;
+   for(var w=0;w<weeks;w++){
+     var o=box.querySelector('[data-o="'+w+'"]');if(o)o.textContent=gbp(open);
+     var close=open+state[1][w]-state[2][w]-state[3][w]-state[4][w]-state[5][w];
+     var cell=box.querySelector('[data-cl="'+w+'"]');
+     cell.innerHTML='<b>'+gbp(close)+'</b>';cell.style.color=close<0?'var(--red)':'';
+     if(low===null||close<low.v)low={v:close,w:w+1};
+     open=close;
+   }
+   box.querySelector('[data-a=low]').textContent=low?'Lowest point: '+gbp(low.v)+' in week '+low.w+(low.v<0?'. Act now: chase debtors, agree supplier terms or arrange finance.':'.'):'';
+ }
+ box.querySelectorAll('input[data-r]').forEach(function(x){
+   x.oninput=function(){var v=parseFloat(x.value);state[+x.dataset.r][+x.dataset.w]=isFinite(v)?Math.abs(v):0;calc()};
+ });
+ calc();
+};
+WIDGETS.picker=function(box){
+ var q=function(s){return box.querySelector(s)};
+ box.innerHTML='<label class="f" for="pk-p">Where do you sell?</label><select id="pk-p"><option value="shopify">Shopify only</option><option value="ebay">eBay only</option><option value="multi">Several (Shopify, eBay, Amazon, Etsy)</option></select>'+
+ '<label class="f" for="pk-v">Orders per month</label><select id="pk-v"><option value="s">Under 100</option><option value="m">100–1,000</option><option value="l">Over 1,000</option></select>'+
+ '<label class="f" for="pk-vt">VAT-registered?</label><select id="pk-vt"><option value="y">Yes</option><option value="n">No</option></select>'+
+ '<label class="f" for="pk-x">Sell outside the UK?</label><select id="pk-x"><option value="n">No</option><option value="y">Yes (EU / worldwide)</option></select><div data-a="o" aria-live="polite"></div>';
+ function c(){
+   var p=q('#pk-p').value,v=q('#pk-v').value,vt=q('#pk-vt').value,x=q('#pk-x').value;
+   var h='<div class="res">';
+   if(p==='multi'||x==='y'||v==='l'||(vt==='y'&&v!=='s'))h+='<b>Shortlist: a payout-based summary tool such as A2X or Link My Books.</b><br>You have enough channels, volume or VAT complexity that a basic connector will cost time and risk VAT errors. Trial both on one month of data.';
+   else if(p==='shopify'&&vt==='n'&&v==='s')h+='<b>Start with Xero’s own Shopify integration from the Xero App Store</b>, or the manual method. Re-assess when you register for VAT or grow.';
+   else if(p==='ebay'&&v==='s')h+='<b>Manual payout journal from the eBay transaction report</b>, or a low-cost summary tool. With few orders, one journal per payout is quick and gives full control.';
+   else h+='<b>Shortlist: Link My Books or A2X.</b><br>Both reconcile each payout to one bank line. Link My Books is usually the cheaper entry point for simple UK setups; A2X handles more complex VAT mapping.';
+   h+='</div><p class="small mut">Prices and features change. Check each app page in the Xero App Store and use the free trials.</p>';
+   q('[data-a=o]').innerHTML=h;
+ }
+ box.querySelectorAll('select').forEach(function(x){x.onchange=c});
+ c();
+};
+
+/* ===== Glossary ===== */
+function vGloss(v){
+ v.innerHTML='<h2>Glossary</h2><p class="lede">Plain-English meanings of the terms used in this course.</p><label class="f" for="gs">Filter terms</label><input type="text" id="gs" placeholder="e.g. accrual, VAT, clearing" autocomplete="off"><dl class="gl" id="gl"></dl>';
+ var sorted=GLOSS.slice().sort(function(a,b){return a[0].localeCompare(b[0],'en-GB')});
+ function r(){
+   var q=($('#gs').value||'').toLowerCase().trim();
+   $('#gl').innerHTML=sorted.filter(function(g){return !q||((g[0]+' '+g[1]).toLowerCase().indexOf(q)>=0)}).map(function(g){return '<dt>'+esc(g[0])+'</dt><dd>'+esc(g[1])+'</dd>'}).join('')||'<p class="mut">No term matches “'+esc(q)+'”. Try a shorter word.</p>';
+ }
+ $('#gs').oninput=r;r();
+}
+
+/* ===== Exam ===== */
+var examTimer=null;
+function vExam(v){
+ if(examTimer){clearInterval(examTimer);examTimer=null}
+ v.innerHTML='<h2>Final exam</h2><p class="lede">20 random questions from a bank of '+EXAM_BANK.length+' covering the whole course. Pass mark 16/20 (80%). You have 30 minutes; unanswered questions count as wrong when time runs out. Retake as often as you like.</p>'+
+ '<div class="timer" id="tmr" role="timer" aria-live="off">30:00 remaining</div>'+
+ '<div class="card"><div id="qz"></div></div>';
+ var qs=shuffle(EXAM_BANK).slice(0,20);
+ var startTime=Date.now(),limit=30*60*1000,ctl,timeUp=false;
+ examTimer=setInterval(function(){
+   var t=$('#tmr');
+   if(!t){clearInterval(examTimer);examTimer=null;return}
+   var left=limit-(Date.now()-startTime);
+   if(left<=0){clearInterval(examTimer);examTimer=null;timeUp=true;if(ctl)ctl.finish();return}
+   var m=Math.floor(left/60000),s=Math.floor((left%60000)/1000);
+   t.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s+' remaining';
+ },1000);
+ ctl=quiz($('#qz'),qs,{
+   pass:16,
+   passText:'Passed the final exam. Your certificate is ready.',
+   failText:'Not this time: the pass mark is 16. Revisit the modules behind the questions you missed, then retake.',
+   onRetake:function(){vExam(v)},
+   onScore:function(sc,ok){
+     if(examTimer){clearInterval(examTimer);examTimer=null}
+     var t=$('#tmr');if(t)t.textContent=timeUp?'Time up: exam submitted.':'Exam complete.';
+     if(ok){
+       if(!mem.exam||sc>=mem.exam.score)mem.exam={score:sc,date:new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})};
+       save();checkBadges();
+       $('#qz').insertAdjacentHTML('beforeend','<p><a class="btn" href="#/me">View certificate</a></p>');
+     }
+   }
+ });
+}
+
+/* ===== Progress & settings ===== */
+function vMe(v){
+ var d=doneCount();
+ var h='<h2>Progress and certificate</h2><div class="card"><div class="big">'+pct()+'%</div><div class="bar" aria-hidden="true"><i style="width:'+pct()+'%"></i></div><p>'+d+' of '+MODS.length+' modules complete.</p>';
+ h+='<div class="lvlchips">';
+ LEVELS.forEach(function(L){
+   var ms=lvlMods(L.n),cd=ms.filter(function(m){return isDone(m.id)}).length;
+   h+='<span class="lvlchip '+(cd===ms.length?'done':'')+'">Level '+L.n+': '+cd+'/'+ms.length+'</span>';
+ });
+ h+='</div></div>';
+ h+='<div class="card"><h3>Badges</h3><div class="badges">';
+ BADGES.forEach(function(b){
+   var on=!!mem.badges[b.id];
+   h+='<div class="badge '+(on?'on':'')+'"><div class="bi" aria-hidden="true">'+b.i+'</div><b>'+b.t+'</b><small>'+(on?'Earned':b.d)+'</small></div>';
+ });
+ h+='</div></div>';
+ if(mem.exam)h+='<div class="cert"><div class="mut">Certificate of completion</div><h2>Xero Academy</h2><p class="mut">From Xero to expert</p><p>awarded to</p><div class="nm">'+esc(mem.name||'Your name')+'</div><p>Final exam score '+esc(mem.exam.score)+'/20, '+esc(mem.exam.date)+'</p><p class="small mut">Independent training course. Not issued by Xero Limited.</p></div><p class="noprint"><button class="btn" type="button" data-print>Print certificate</button></p>';
+ else h+='<div class="card"><h3>Certificate</h3><p>Pass the <a href="#/exam">final exam</a> (16/20) to unlock your printable certificate.</p></div>';
+ h+='<div class="card noprint"><h3>Settings</h3><label class="f" for="nm">Your name (for the certificate)</label><input type="text" id="nm" maxlength="80" value="'+esc(mem.name)+'" placeholder="Your name" autocomplete="name">'+
+ '<label class="f" for="th">Theme</label><select id="th"><option value="auto">Match my device</option><option value="light">Light (best in sunlight)</option><option value="dark">Dark</option></select>'+
+ '<p class="row" style="margin-top:16px"><button class="btn alt sm" type="button" id="exp">Export progress</button><button class="btn alt sm" type="button" id="imp">Import progress</button><button class="btn alt sm" type="button" id="rs" style="color:var(--red);border-color:var(--red)">Reset all progress</button></p>'+
+ '<p class="small mut" id="impmsg" aria-live="polite"></p><input type="file" id="impf" accept=".json,application/json" hidden></div>';
+ v.innerHTML=h;
+ var pb=v.querySelector('[data-print]');if(pb)pb.onclick=function(){window.print()};
+ $('#nm').oninput=function(e){mem.name=e.target.value.slice(0,80);save();var n=v.querySelector('.cert .nm');if(n)n.textContent=mem.name||'Your name'};
+ $('#th').value=mem.theme;
+ $('#th').onchange=function(e){mem.theme=e.target.value;save();applyTheme()};
+ $('#exp').onclick=function(){
+   var blob=new Blob([JSON.stringify(mem,null,2)],{type:'application/json'});
+   var url=URL.createObjectURL(blob);
+   var a=document.createElement('a');a.href=url;a.download='xero-academy-progress.json';document.body.appendChild(a);a.click();a.remove();
+   setTimeout(function(){URL.revokeObjectURL(url)},1500);
+ };
+ $('#imp').onclick=function(){$('#impf').click()};
+ $('#impf').onchange=function(e){
+   var f=e.target.files[0];if(!f)return;
+   if(f.size>500000){$('#impmsg').textContent='That file is too large to be a progress file.';return}
+   var r=new FileReader();
+   r.onload=function(){
+     try{var o=JSON.parse(r.result);if(!isObj(o)||!isObj(o.done))throw 0;mem=cleanMem(o);save();applyTheme();route()}
+     catch(err){$('#impmsg').textContent='Import failed: choose a file saved with Export progress.'}
+   };
+   r.readAsText(f);
+ };
+ $('#rs').onclick=function(){
+   if(confirm('Delete all progress, ticks, badges and your certificate on this device?')){
+     mem=freshMem();save();applyTheme();route();
+   }
+ };
+}
+
+/* ===== Search overlay ===== */
+var lastFocus=null;
+function openSearch(){
+ lastFocus=document.activeElement;
+ $('#searchov').classList.add('show');
+ $('#sq').focus();
+}
+function closeSearch(){
+ if(!$('#searchov').classList.contains('show'))return;
+ $('#searchov').classList.remove('show');$('#sq').value='';$('#sres').innerHTML='';
+ if(lastFocus&&lastFocus.focus)try{lastFocus.focus({preventScroll:true})}catch(e){}
+}
+$('#searchbtn').onclick=openSearch;
+$('#searchov').onclick=function(e){if(e.target.id==='searchov')closeSearch()};
+function strip(html){return html.replace(/<[^>]+>/g,' ')}
+var SEARCH_IDX=null;
+function searchIndex(){
+ if(SEARCH_IDX)return SEARCH_IDX;
+ SEARCH_IDX=[];
+ MODS.forEach(function(m){
+   SEARCH_IDX.push({h:'#/m/'+m.id,t:m.n+'. '+m.t,s:'Level '+m.lvl+' module',x:(m.t+' '+m.goal).toLowerCase()});
+   m.secs.forEach(function(s,k){SEARCH_IDX.push({h:'#/m/'+m.id+'/'+k,t:s.h,s:'In module '+m.n+': '+m.t,x:(s.h+' '+strip(s.html||'')).toLowerCase()})});
+ });
+ GLOSS.forEach(function(g){SEARCH_IDX.push({h:'#/gloss',t:g[0],s:g[1].length>90?g[1].slice(0,88)+'…':g[1],x:(g[0]+' '+g[1]).toLowerCase()})});
+ TOOLS.forEach(function(t){SEARCH_IDX.push({h:'#/tool/'+t[0],t:t[1],s:'Practice tool',x:(t[1]+' '+t[2]).toLowerCase()})});
+ return SEARCH_IDX;
+}
+$('#sq').oninput=function(){
+ var q=this.value.toLowerCase().trim();
+ if(!q){$('#sres').innerHTML='';return}
+ var res=searchIndex().filter(function(r){return r.x.indexOf(q)>=0}).sort(function(x,y){return (y.t.toLowerCase().indexOf(q)>=0)-(x.t.toLowerCase().indexOf(q)>=0)});
+ if(!res.length){$('#sres').innerHTML='<p class="mut nomatch">Nothing matches “'+esc(q)+'”. Try a single word such as VAT or reconcile.</p>';return}
+ $('#sres').innerHTML=res.slice(0,30).map(function(r){return '<a role="listitem" href="'+r.h+'"><b>'+esc(r.t)+'</b><small>'+esc(r.s)+'</small></a>'}).join('');
+};
+$('#sq').onkeydown=function(e){if(e.key==='Enter'){var f=$('#sres a');if(f){e.preventDefault();f.click()}}};
+$('#sres').onclick=function(e){if(e.target.closest('a')){$('#searchov').classList.remove('show');$('#sq').value='';$('#sres').innerHTML=''}};
+document.addEventListener('keydown',function(e){
+ if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!(e.target.matches&&e.target.matches('input,textarea,select'))){e.preventDefault();openSearch()}
+ if(e.key==='Escape'){closeSearch();closeMenu()}
+});
+
+/* ===== Mobile contents drawer, theme, back to top ===== */
+function openMenu(){$('#sidebar').classList.add('open');$('#scrim').classList.add('show');$('#menubtn').setAttribute('aria-expanded','true');var on=$('.side-mod-link.on')||$('.side-nav>a');if(on)try{on.scrollIntoView({block:'center'});on.focus({preventScroll:true})}catch(e){}}
+function closeMenu(){if(!$('#sidebar').classList.contains('open'))return;$('#sidebar').classList.remove('open');$('#scrim').classList.remove('show');$('#menubtn').setAttribute('aria-expanded','false')}
+$('#menubtn').onclick=function(){$('#sidebar').classList.contains('open')?closeMenu():openMenu()};
+$('#scrim').onclick=closeMenu;
+$('#themebtn').onclick=function(){
+ var order=['auto','light','dark'];
+ mem.theme=order[(order.indexOf(mem.theme||'auto')+1)%3];
+ save();applyTheme();
+ var th=$('#th');if(th)th.value=mem.theme;
+};
+if(window.matchMedia){var mq=matchMedia('(prefers-color-scheme: dark)');var onMq=function(){if(mem.theme==='auto')applyTheme()};if(mq.addEventListener)mq.addEventListener('change',onMq);else if(mq.addListener)mq.addListener(onMq)}
+$('#totop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',route);else route();
+</script><a href="../index.html" style="position:fixed;left:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:60;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;background:#141943;color:#fff;font:600 13px/1 system-ui,sans-serif;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25)">← Course library</a>
+</body></html>

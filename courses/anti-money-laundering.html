@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="Shaun Ellison, Actua Business Services Limited">
+<title>Anti-Money Laundering for Small Practices | Actua Business Services Limited</title>
+<!-- Actua tutorial series: Anti-Money Laundering for Small Practices. Built on house style master v3.0. By Shaun Ellison & Actua Business Services Limited, with AI. -->
+<style>
+:root{
+  --bg:#F3F4F8; --surface:#FFFFFF; --raised:#FAFBFD; --ink:#0F1226; --muted:#41465F; --line:#D6D9E6; --line-strong:#B9BED3;
+  --accent:#1F2A44; --accent-ink:#FFFFFF; --accent-soft:#E3E7F1;
+  --cover:#121A2E; --cover-ink:#FFFFFF; --cover-muted:#CCD4EA; --cover-line:rgba(255,255,255,.16);
+  --rail:#ECEDF5; --mark:#FFC21A; --mark-ink:#231900;
+  --good:#0B5E32; --on-good:#FFFFFF; --good-soft:#E3F2E9; --bad:#A3203A; --on-bad:#FFFFFF; --bad-soft:#F8E6EA; --away:#D99400;
+  --bubble:#ECEDF3; --screen:#2A2E48;
+  --shadow:0 1px 2px rgba(15,18,38,.06),0 10px 30px -16px rgba(15,18,38,.22);
+  --r-l:16px; --r-m:12px; --r-s:8px;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+    --accent:#B6C2E2; --accent-ink:#0B0D19; --accent-soft:#1E2538;
+    --cover:#0D1322; --cover-ink:#FFFFFF; --cover-muted:#CCD4EA; --cover-line:rgba(255,255,255,.14);
+    --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+    --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+    --bubble:#23263D; --screen:#090A14;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0D19; --surface:#151829; --raised:#1A1E33; --ink:#F3F4FB; --muted:#BFC3DB; --line:#2D3152; --line-strong:#40456B;
+  --accent:#B6C2E2; --accent-ink:#0B0D19; --accent-soft:#1E2538;
+  --cover:#0D1322; --cover-ink:#FFFFFF; --cover-muted:#CCD4EA; --cover-line:rgba(255,255,255,.14);
+  --rail:#11142A; --mark:#FFD24D; --mark-ink:#231900;
+  --good:#63DCA0; --on-good:#0B0D19; --good-soft:#12301F; --bad:#FF8A9C; --on-bad:#1A0007; --bad-soft:#3A1520; --away:#FFC24A;
+  --bubble:#23263D; --screen:#090A14;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.125rem;line-height:1.65;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1.5px}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:6px}
+svg{max-width:100%}
+.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
+.skip{position:absolute;left:-999px;top:0;background:var(--mark);color:var(--mark-ink);padding:.6rem 1rem;z-index:40;font-weight:700}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ===== Top bar ===== */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1280px;margin:0 auto;padding:.55rem 1.1rem;display:flex;align-items:center;gap:.8rem;min-height:64px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);min-width:0}
+.mark-logo{width:38px;height:38px;flex:none}
+.brand-t{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-t b{font-size:.98rem;letter-spacing:-.01em;white-space:nowrap}
+.brand-t span{font-size:.78rem;color:var(--muted);white-space:nowrap}
+.bar-spacer{flex:1}
+.ring{display:flex;align-items:center;gap:.55rem;font-size:.88rem;color:var(--muted);white-space:nowrap}
+.ring svg{width:38px;height:38px;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--accent-soft);stroke-width:4}
+.ring .val{fill:none;stroke:var(--good);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .5s}
+.ring b{color:var(--ink)}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font:inherit;font-size:.9rem;font-weight:600;min-height:44px;min-width:44px;padding:0 .8rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ibtn:hover{border-color:var(--accent);color:var(--accent)}
+.only-narrow{display:none}
+@media (max-width:1099px){.only-narrow{display:inline-flex}}
+@media (max-width:720px){.brand-t span,.ring-label,.ibtn .lbl{display:none}.ibtn{padding:0 .6rem}}
+@media (max-width:420px){.brand-t{display:none}}
+
+/* ===== Cover ===== */
+.cover{background:var(--cover);color:var(--cover-ink);position:relative;overflow:hidden;border-bottom:4px solid var(--accent)}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--cover-line) 1px,transparent 1px),linear-gradient(90deg,var(--cover-line) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(115deg,transparent 35%,#000 100%);-webkit-mask-image:linear-gradient(115deg,transparent 35%,#000 100%);opacity:.55}
+.cover-in{position:relative;max-width:1280px;margin:0 auto;padding:3.4rem 1.1rem 3rem;display:grid;gap:2rem}
+@media (min-width:1000px){.cover-in{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end;padding:4.2rem 1.1rem 3.6rem}}
+.series{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--cover-muted);margin:0 0 1.1rem}
+.series .pip{width:8px;height:8px;border-radius:50%;background:var(--mark)}
+.cover h1{font-size:clamp(2.5rem,6.6vw,4.6rem);line-height:1;letter-spacing:-.035em;margin:0 0 1.1rem;font-weight:800;max-width:12ch}
+.cover .lead{font-size:1.25rem;line-height:1.55;color:var(--cover-muted);max-width:52ch;margin:0 0 1.8rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font:inherit;font-weight:700;font-size:1.02rem;min-height:52px;padding:0 1.35rem;border-radius:12px;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-light{background:#FFFFFF;color:#121A2E}
+.btn-light:hover{background:var(--mark);color:var(--mark-ink)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#FFFFFF;background:transparent}
+.btn-ghost:hover{border-color:#FFFFFF;background:rgba(255,255,255,.08)}
+.meta{list-style:none;margin:0;padding:1.3rem 1.4rem;border:1px solid var(--cover-line);border-radius:var(--r-l);background:rgba(255,255,255,.05);display:grid;gap:.95rem}
+.meta li{display:flex;gap:.8rem;align-items:flex-start}
+.meta .i{width:1.35rem;height:1.35rem;color:var(--mark);margin-top:.15rem}
+.meta b{display:block;font-size:1.02rem}
+.meta span{font-size:.92rem;color:var(--cover-muted)}
+.credit{margin:1.8rem 0 0;font-size:.92rem;color:var(--cover-muted);display:flex;align-items:center;gap:.6rem}
+.credit svg{width:26px;height:26px}
+
+/* ===== Layout ===== */
+.shell{max-width:1280px;margin:0 auto;padding:2rem 1.1rem 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2.4rem}
+@media (min-width:1100px){.shell{grid-template-columns:272px minmax(0,1fr)}}
+.outline{display:none}
+@media (min-width:1100px){.outline{display:block;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 116px);overflow:auto;padding-right:.2rem}}
+.outline h2{font-size:.82rem;font-weight:700;color:var(--muted);margin:.2rem 0 .7rem .7rem;letter-spacing:.02em}
+.outline ol{list-style:none;margin:0 0 1.2rem;padding:0}
+.outline a{display:grid;grid-template-columns:22px 1fr auto;gap:.65rem;align-items:center;padding:.5rem .7rem;border-radius:10px;color:var(--ink);text-decoration:none;font-size:.95rem;line-height:1.3}
+.outline a:hover{background:var(--surface)}
+.outline a[aria-current="true"]{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);font-weight:700}
+.outline .st{width:22px;height:22px;border-radius:50%;border:2px solid var(--line-strong);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--muted)}
+.outline li.done .st{background:var(--good);border-color:var(--good);color:var(--on-good)}
+.outline .mins{font-size:.8rem;color:var(--muted)}
+.drawer-head{display:none}
+@media (max-width:1099px){
+  .outline.open{display:block;position:fixed;z-index:35;inset:0 auto 0 0;width:min(340px,88vw);background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 1rem) 1rem calc(env(safe-area-inset-bottom,0px) + 1rem);overflow:auto;box-shadow:20px 0 60px rgba(0,0,0,.35)}
+  .outline.open .drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+  .scrim{position:fixed;inset:0;background:rgba(6,8,20,.55);z-index:34}
+}
+.content{min-width:0}
+
+/* ===== Section frame ===== */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);box-shadow:var(--shadow);margin:0 0 1.6rem;overflow:hidden}
+.panel-body{padding:1.6rem clamp(1.1rem,3.2vw,2.4rem) 1.9rem}
+.sec-kicker{display:inline-flex;align-items:center;gap:.45rem;font-size:.9rem;font-weight:700;color:var(--accent);margin:0 0 .35rem}
+.panel h2{font-size:clamp(1.6rem,3.6vw,2.05rem);line-height:1.15;letter-spacing:-.025em;margin:0 0 .6rem;font-weight:800}
+.panel h3{font-size:1.2rem;letter-spacing:-.01em;margin:1.8rem 0 .5rem}
+.panel p,.panel li{max-width:70ch}
+.panel p{margin:.55rem 0}
+
+/* Explorer */
+.explore-grid{display:grid;gap:1rem;margin-top:1.2rem}
+.mock-wrap{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:.6rem;overflow-x:auto}
+.mock{display:block;width:100%;min-width:640px;height:auto}
+.info{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;background:var(--raised);border:1px solid var(--line);border-left:5px solid var(--mark);border-radius:var(--r-m);padding:1rem 1.2rem;min-height:110px}
+.info .badge{width:42px;height:42px;border-radius:12px;background:var(--mark);color:var(--mark-ink);display:grid;place-items:center}
+.info h3{margin:0 0 .25rem;font-size:1.15rem}
+.info p{margin:0 0 .4rem}
+.info .hint{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{font:inherit;font-size:.92rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:44px}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+
+/* SVG classes */
+.f-surface{fill:var(--surface)} .f-rail{fill:var(--rail)} .f-soft{fill:var(--accent-soft)}
+.f-brand{fill:var(--accent)} .f-bubble{fill:var(--bubble)} .f-screen{fill:var(--screen)}
+.f-good{fill:var(--good)} .f-bad{fill:var(--bad)} .f-away{fill:var(--away)} .f-mark{fill:var(--mark)}
+.s-line{stroke:var(--line-strong);stroke-width:1.5} .s-brand{stroke:var(--accent);stroke-width:2}
+.t,.tm,.tb,.tw,.tk,.tob{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+.t{fill:var(--ink)} .tm{fill:var(--muted)} .tb{fill:var(--accent-ink)} .tw{fill:#FFFFFF} .tk{fill:var(--mark-ink)} .tob{fill:var(--on-bad)}
+.ic{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.icw{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.hl{fill:none;stroke:var(--mark);stroke-width:4}
+.hs{fill:transparent;stroke:transparent;stroke-width:4;cursor:pointer;transition:stroke .15s,fill .15s}
+.hs:hover{stroke:var(--mark)}
+.hs:focus{outline:none}
+.hs:focus-visible,.hs.sel{stroke:var(--mark);fill:rgba(255,194,26,.16)}
+@keyframes nudge{0%,100%{stroke:transparent}50%{stroke:var(--mark)}}
+.mock.fresh .hs{animation:nudge 2.4s ease-in-out 2}
+
+/* Lesson header */
+.lesson-head{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start;padding:1.5rem clamp(1.1rem,3.2vw,2.4rem);border-bottom:1px solid var(--line);background:var(--raised)}
+.num{width:56px;height:56px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+.panel.done .num{background:var(--good);color:var(--on-good)}
+.lesson-head h2{margin:.1rem 0 .3rem}
+.lmeta{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;font-size:.92rem;color:var(--muted);margin:0}
+.lmeta span{display:inline-flex;align-items:center;gap:.35rem}
+.learn{margin:0 0 1.3rem;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--accent-soft)}
+.learn b{display:block;font-size:.95rem;margin-bottom:.3rem}
+.learn ul{margin:0;padding:0;list-style:none;display:grid;gap:.25rem}
+.learn li{display:flex;gap:.55rem;align-items:flex-start;font-size:1.02rem}
+.learn li .i{color:var(--accent);margin-top:.28rem}
+
+/* Content components */
+.steps{counter-reset:s;list-style:none;padding:0;margin:1rem 0}
+.steps>li{counter-increment:s;position:relative;padding:0 0 1rem 3.2rem;min-height:2.4rem}
+.steps>li::before{content:counter(s);position:absolute;left:0;top:-.05rem;width:2.15rem;height:2.15rem;border-radius:10px;background:var(--surface);border:2px solid var(--accent);color:var(--accent);font-weight:800;display:grid;place-items:center;font-size:.98rem}
+.steps>li:not(:last-child)::after{content:"";position:absolute;left:1.04rem;top:2.25rem;bottom:.15rem;width:2px;background:var(--line)}
+.btnlike{display:inline-block;padding:0 .45rem;border-radius:6px;background:var(--accent-soft);font-weight:700;white-space:nowrap}
+kbd{font-family:inherit;font-size:.88em;font-weight:700;padding:.05rem .45rem;border:1px solid var(--line-strong);border-bottom-width:3px;border-radius:6px;background:var(--raised);white-space:nowrap}
+.callout{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;padding:1rem 1.15rem;border-radius:var(--r-m);margin:1.3rem 0;background:var(--raised);border:1px solid var(--line)}
+.callout .ci{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.callout.warn{background:var(--bad-soft);border-color:transparent}
+.callout.warn .ci{background:var(--bad);color:var(--on-bad)}
+.callout>div>b:first-child{display:block;margin-bottom:.1rem}
+.callout p{margin:0}
+.figure{margin:1.4rem 0;background:var(--raised);border:1px solid var(--line);border-radius:var(--r-m);padding:1.1rem;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:480px}
+.figcap{font-size:.9rem;color:var(--muted);margin:.7rem 0 0}
+.legend{margin:.8rem 0 0;padding-left:1.4rem;font-size:1rem}
+.legend li{margin:.2rem 0}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem;margin:1rem 0}
+.feature{padding:1rem 1.1rem;border-radius:var(--r-m);border:1px solid var(--line);background:var(--raised)}
+.feature .fi{width:40px;height:40px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;margin-bottom:.6rem}
+.feature b{display:block;font-size:1.05rem;margin-bottom:.15rem}
+.feature p{margin:0;font-size:1rem;color:var(--muted)}
+.lesson-foot{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;padding:1.1rem clamp(1.1rem,3.2vw,2.4rem);border-top:1px solid var(--line);background:var(--raised)}
+.done-btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;min-height:48px;padding:0 1.15rem;border-radius:12px;border:2px solid var(--good);background:var(--surface);color:var(--good);cursor:pointer}
+.panel.done .done-btn{background:var(--good);color:var(--on-good)}
+.next-btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;min-height:48px;padding:0 1.15rem;border-radius:12px;background:var(--accent);color:var(--accent-ink)}
+.next-btn:hover{filter:brightness(1.08)}
+
+/* Tables, fixes, glossary */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-m);margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{background:var(--raised);font-size:.92rem}
+details{border:1px solid var(--line);border-radius:var(--r-m);margin:.55rem 0;background:var(--raised);overflow:hidden}
+summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;min-height:52px;display:flex;align-items:center;gap:.7rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-left:auto;width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details[open] summary{border-bottom:1px solid var(--line)}
+details>div{padding:.6rem 1.1rem 1rem;background:var(--surface)}
+dl.gloss{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+dl.gloss dt,dl.gloss dd{padding:.65rem .9rem;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;background:var(--raised)}
+dl.gloss dt:last-of-type,dl.gloss dd:last-of-type{border-bottom:0}
+@media (max-width:560px){dl.gloss{grid-template-columns:1fr}dl.gloss dd{border-bottom:1px solid var(--line)}}
+
+/* Quiz */
+.q{border-top:1px solid var(--line);padding:1.2rem 0}
+.q:first-of-type{border-top:0;padding-top:.4rem}
+.qt{font-weight:700;margin:0 0 .7rem!important;font-size:1.08rem}
+.opts{display:grid;gap:.5rem}
+.opt{display:flex;align-items:center;gap:.7rem;font:inherit;text-align:left;padding:.7rem 1rem;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;min-height:52px}
+.opt::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong)}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--good);color:var(--on-good);font-weight:700}
+.opt.right::before{border-color:var(--on-good);background:var(--on-good)}
+.opt.wrong{border-color:var(--bad);border-width:2px}
+.why{margin:.7rem 0 0!important;padding:.7rem 1rem;border-radius:10px;background:var(--good-soft)}
+.why.miss{background:var(--bad-soft)}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;font-weight:700;font-size:1.1rem;margin-top:1rem}
+.ghost-btn{font:inherit;font-weight:700;font-size:.95rem;min-height:44px;padding:0 1rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.ghost-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Certificate */
+.cert-lock{display:flex;gap:.9rem;align-items:center;padding:1rem 1.2rem;border-radius:var(--r-m);background:var(--raised);border:1px dashed var(--line-strong)}
+.cert-form{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-end;margin:1rem 0}
+.cert-form label{display:grid;gap:.3rem;font-weight:700;font-size:.95rem;flex:1 1 260px}
+.cert-form input{font:inherit;font-weight:400;min-height:50px;padding:0 .9rem;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+.cert{margin-top:1.2rem;background:#FFFFFF;color:#141943;border-radius:6px;padding:10px;box-shadow:var(--shadow)}
+.cert-in{border:2px solid #141943;outline:1px solid #141943;outline-offset:-8px;padding:2.6rem 2rem;text-align:center;font-family:Georgia,"Times New Roman",serif}
+.cert-in .ct{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:.85rem;color:#3B43A8;margin:0 0 .6rem}
+.cert-in h3{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 1.2rem;font-weight:400;letter-spacing:.01em}
+.cert-in .nm{font-size:clamp(1.7rem,4.6vw,2.6rem);font-style:italic;margin:.4rem 0 .4rem;border-bottom:1px solid #9EA2C4;display:inline-block;padding:0 1.5rem .3rem}
+.cert-in p{margin:.4rem auto;max-width:44ch;font-size:1.05rem;color:#2A2F55}
+.cert-in .cc{font-family:"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:1.2rem;color:#141943}
+.cert-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-top:2rem;font-family:"Segoe UI",system-ui,sans-serif;font-size:.85rem;color:#2A2F55;text-align:left}
+.cert-foot svg{width:48px;height:48px}
+
+/* Sources, footer, dialog */
+.src{list-style:none;padding:0;margin:1rem 0;border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden}
+.src li{padding:.8rem 1rem;border-bottom:1px solid var(--line);font-size:1rem}
+.src li:last-child{border-bottom:0}
+.src b{display:block}
+.src span{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;background:var(--good-soft);color:var(--ink);padding:.3rem .8rem;border-radius:999px;font-size:.92rem}
+footer{background:var(--cover);color:var(--cover-muted)}
+.foot-in{max-width:1280px;margin:0 auto;padding:2.2rem 1.1rem 2.6rem;display:grid;gap:1.4rem}
+@media (min-width:800px){.foot-in{grid-template-columns:auto 1fr;align-items:start}}
+.foot-brand{display:flex;gap:.8rem;align-items:center;color:var(--cover-ink)}
+.foot-brand svg{width:44px;height:44px}
+.foot-brand b{display:block;font-size:1.05rem}
+.foot-txt{font-size:.92rem;display:grid;gap:.45rem}
+.foot-txt p{margin:0}
+.foot-txt strong{color:var(--cover-ink)}
+dialog{max-width:580px;width:calc(100% - 2rem);border:1px solid var(--line);border-radius:var(--r-l);padding:0;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(6,8,20,.62)}
+.dlg-head{display:flex;gap:.9rem;align-items:center;padding:1.3rem 1.5rem;background:var(--cover);color:var(--cover-ink)}
+.dlg-head svg{width:44px;height:44px}
+.dlg-head h2{margin:0;font-size:1.3rem}
+.dlg-body{padding:1.1rem 1.5rem 1.5rem}
+.dlg-body p{margin:.55rem 0;font-size:1.02rem}
+
+/* Print */
+@media print{
+  .bar,.outline,.cta,.lesson-foot,#explore,#quiz,.skip,.cert-form,.cert-actions,.scrim{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .cover{background:#fff;color:#000;border:0}.cover::before{display:none}.cover .lead,.meta span,.credit{color:#333}
+  .panel{box-shadow:none;border:1px solid #999;break-inside:avoid-page}
+  details>div{display:block}
+  html.print-cert body *{visibility:hidden}
+  html.print-cert #certCard,html.print-cert #certCard *{visibility:visible}
+  html.print-cert #certCard{position:absolute;left:0;top:0;width:100%;box-shadow:none}
+}
+
+.cgame{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.9rem;margin-top:1rem}
+.ccard{border:1px solid var(--line);border-radius:var(--r-m);background:var(--raised);padding:1rem;display:flex;flex-direction:column;gap:.6rem}
+.ccard.right{border-color:var(--good);box-shadow:inset 0 0 0 1px var(--good)}
+.ccard.wrong{border-color:var(--bad);box-shadow:inset 0 0 0 1px var(--bad)}
+.ccard .ct{margin:0!important;font-weight:700;font-size:1.02rem}
+.ccard .cx{margin:0!important;font-size:.98rem}
+.ccard .mail{background:#FFFFFF;color:#141943;border-radius:8px;padding:.7rem .85rem;font-size:.93rem;border:1px solid #D6D9E6}
+.ccard .mail p{margin:.15rem 0!important}
+.ccard .mail .mh{color:#41465F;font-size:.85rem}
+.cbtns{display:grid;gap:.35rem}
+.cbtns button{font:inherit;font-weight:700;font-size:.92rem;min-height:46px;border-radius:10px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;padding:.3rem .6rem;text-align:left}
+.cbtns button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.cbtns button:disabled{cursor:default;opacity:.6}
+.cbtns button.pick{opacity:1;border-width:2px;border-color:var(--ink)}
+.cwhy{margin:0!important;font-size:.96rem;padding:.6rem .8rem;border-radius:10px;background:var(--good-soft)}
+.cwhy.miss{background:var(--bad-soft)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="var(--accent)"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="var(--accent-ink)" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="var(--mark)"/></symbol>
+    <symbol id="logo-cert" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#141943"/><path d="M11 30 L20 9 L29 30" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 23 H25.4" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round"/><circle cx="30.5" cy="10" r="3" fill="#FFC21A"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="M15.5 10.5 21.5 7v10l-6-3.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/></symbol>
+    <symbol id="i-level" viewBox="0 0 24 24"><path d="M4 20V14M10 20V9M16 20V4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M5 3l6 17 2.5-7.5L21 10z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11M11 10.5V4a1.5 1.5 0 0 1 3 0v6.5M14 10.5V5.5a1.5 1.5 0 0 1 3 0V13M17 11a1.5 1.5 0 0 1 3 0v3a7 7 0 0 1-7 7h-1a7 7 0 0 1-6.2-3.8L3.5 14a1.5 1.5 0 0 1 2.6-1.5L8 15"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a5 5 0 0 0 8 0M9 9.5v.5M15 9.5v.5"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17v.5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h1M10 10h1M14 10h1M18 10h0M7 14h10"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.5M4 12h.5M4 18h.5"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#lesson-1">Skip to the first lesson</a>
+<header class="bar"><div class="bar-in">
+<button class="ibtn only-narrow" id="menuBtn" type="button" aria-controls="outline" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg><span class="lbl">Contents</span></button>
+<a class="brand" href="#top"><svg class="mark-logo" aria-hidden="true"><use href="#logo"/></svg><span class="brand-t"><b>Actua Business Services Limited</b><span>Tutorial series</span></span></a>
+<span class="bar-spacer"></span><a class="ibtn" href="../index.html" title="Back to the course library"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Library</span></a>
+<div class="ring" aria-live="polite"><svg viewBox="0 0 40 40" aria-hidden="true"><circle class="trk" cx="20" cy="20" r="16"/><circle class="val" id="ringVal" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="100.53"/></svg><span class="ring-label" id="ringText"><b>0</b> of 7 lessons</span></div>
+<button class="ibtn" id="themeBtn" type="button" aria-label="Switch to dark mode"><svg class="i"><use id="themeIcon" href="#i-moon"/></svg></button>
+<button class="ibtn" id="aboutBtn" type="button" aria-haspopup="dialog"><svg class="i"><use href="#i-info"/></svg><span class="lbl">About</span></button>
+</div></header>
+<section class="cover" id="top" aria-labelledby="title"><div class="cover-in"><div>
+<p class="series"><span class="pip" aria-hidden="true"></span>Running the firm</p>
+<h1 id="title">Anti-Money Laundering for Small Practices</h1>
+<p class="lead">Your legal duties in plain English: risk assessment, customer due diligence, red flags, reporting to the MLRO, tipping off, record keeping and the 2026 changes.</p>
+<div class="cta"><a class="btn btn-light" href="#lesson-1">Start lesson 1 <svg class="i"><use href="#i-arrow"/></svg></a><a class="btn btn-ghost" href="#cases"><svg class="i"><use href="#i-pointer"/></svg>Try the case studies</a></div>
+<p class="credit"><svg aria-hidden="true"><use href="#logo"/></svg>By Shaun Ellison &amp; Actua Business Services Limited, with AI</p>
+</div><ul class="meta" aria-label="Course details"><li><svg class="i"><use href="#i-book"/></svg><div><b>7 short lessons</b><span>Plus 6 case studies</span></div></li><li><svg class="i"><use href="#i-clock"/></svg><div><b>About 35 minutes</b><span>Stop and start whenever you like</span></div></li><li><svg class="i"><use href="#i-level"/></svg><div><b>All staff</b><span>Required training for client work</span></div></li><li><svg class="i"><use href="#i-shield"/></svg><div><b id="coverChecked">Facts checked 6 November 2026</b><span>Including the June 2026 amendments</span></div></li></ul></div></section>
+<div class="shell">
+<nav class="outline" id="outline" aria-label="Course contents">
+<div class="drawer-head"><b>Course contents</b><button class="ibtn" id="menuClose" type="button" aria-label="Close contents"><svg class="i"><use href="#i-x"/></svg></button></div>
+<h2>Lessons</h2><ol id="outlineLessons"></ol>
+<h2>Practice and help</h2><ol><li><a href="#cases"><span class="st" aria-hidden="true">◎</span><span>Case studies</span><span></span></a></li><li><a href="#quiz"><span class="st" aria-hidden="true">?</span><span>Check yourself</span><span></span></a></li><li><a href="#certificate"><span class="st" aria-hidden="true">★</span><span>Certificate</span><span></span></a></li><li><a href="#glossary"><span class="st" aria-hidden="true">A</span><span>Glossary</span><span></span></a></li><li><a href="#sources"><span class="st" aria-hidden="true">§</span><span>Sources</span><span></span></a></li></ol>
+</nav>
+<main class="content" id="main">
+<section class="panel" id="lesson-1" data-lesson="1" aria-labelledby="h1l">
+<header class="lesson-head"><span class="num" aria-hidden="true">1</span><div><p class="sec-kicker" style="margin:0">Lesson 1 of 7</p><h2 id="h1l">Why anti-money laundering matters</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The law behind it</li><li><svg class="i"><use href="#i-check"/></svg>Who supervises the practice</li></ul></div>
+<p>Accountants and bookkeepers are in the <b>regulated sector</b>. Criminals use businesses and professional advisers to make dirty money look clean, so the law puts duties on practices to spot and report it.</p><div class="tbl"><table><thead><tr><th scope="col">Law</th><th scope="col">What it requires</th></tr></thead><tbody><tr><td><b>Money Laundering Regulations 2017</b> (amended, most recently in 2026)</td><td>Risk assessment, customer due diligence, policies, training and record keeping</td></tr><tr><td><b>Proceeds of Crime Act 2002</b></td><td>Offences of money laundering, failing to report suspicion, and tipping off</td></tr><tr><td><b>Terrorism Act 2000</b></td><td>Similar duties for terrorist financing</td></tr></tbody></table></div><div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>These are personal duties</b><p>Some offences apply to you personally, not just the practice. Failing to report a suspicion in the regulated sector can be a criminal offence.</p></div></div><div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Supervision is changing</b><p>Every practice must be supervised for AML, currently by a professional body or HMRC. The government has confirmed that the Financial Conduct Authority (FCA) will become the single AML supervisor for accountancy and other professional services. Legislation is going through Parliament; the practice will tell you about any changes.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-2">Next: risk assessment <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-2" data-lesson="2" aria-labelledby="h2l">
+<header class="lesson-head"><span class="num" aria-hidden="true">2</span><div><p class="sec-kicker" style="margin:0">Lesson 2 of 7</p><h2 id="h2l">Risk assessment</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Firm-wide and client risk</li></ul></div>
+<p>The practice must have a written <b>firm-wide risk assessment</b>, and each client must be risk-assessed before work starts and kept under review.</p><div class="tbl"><table><thead><tr><th scope="col">Risk factor</th><th scope="col">Higher risk examples</th></tr></thead><tbody><tr><td><b>Client</b></td><td>Complex ownership, reluctance to give information, politically exposed persons</td></tr><tr><td><b>Service</b></td><td>Handling client money, company formation, payroll for cash businesses</td></tr><tr><td><b>Geography</b></td><td>Links to high-risk countries</td></tr><tr><td><b>Delivery</b></td><td>Never meeting the client, unusual instructions through third parties</td></tr><tr><td><b>Sector</b></td><td>Cash-intensive businesses, property, high-value goods</td></tr></tbody></table></div><div class="callout"><span class="ci"><svg class="i"><use href="#i-check"/></svg></span><div><b>Low, medium or high</b><p>The rating decides the level of checks: simplified, standard or enhanced due diligence. Record the reasons for the rating.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-3">Next: customer due diligence <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-3" data-lesson="3" aria-labelledby="h3l">
+<header class="lesson-head"><span class="num" aria-hidden="true">3</span><div><p class="sec-kicker" style="margin:0">Lesson 3 of 7</p><h2 id="h3l">Customer due diligence</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>6 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Identify and verify</li><li><svg class="i"><use href="#i-check"/></svg>When enhanced checks apply</li></ul></div>
+<ol class="steps"><li><b>Identify</b> the client: full name, date of birth, address; for companies, registered details.</li><li><b>Verify</b> it from reliable, independent sources, such as photo ID, electronic checks or certified digital identity services.</li><li>Identify the <b>beneficial owners</b> (usually anyone owning or controlling more than 25%) and take reasonable steps to verify them.</li><li>Understand the <b>purpose and nature</b> of the relationship and, where needed, the source of funds.</li><li>Complete this <b>before</b> starting work, and record it.</li></ol><div class="tbl"><table><thead><tr><th scope="col">Situation</th><th scope="col">Enhanced due diligence</th></tr></thead><tbody><tr><td>Politically exposed person (PEP), family member or close associate</td><td>Yes; domestic PEPs start from a lower risk than foreign PEPs</td></tr><tr><td>Links to a high-risk third country</td><td>Yes, proportionate to the risk</td></tr><tr><td>Unusually complex or large transactions with no clear purpose</td><td>Yes</td></tr><tr><td>Anything rated high risk</td><td>Yes</td></tr></tbody></table></div><div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Ongoing monitoring</b><p>Due diligence isn’t one-off. Keep details up to date and watch for activity that doesn’t fit what you know about the client. If you find a discrepancy between what you know and the Companies House PSC register, it must be reported to Companies House.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-4">Next: red flags <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-4" data-lesson="4" aria-labelledby="h4l">
+<header class="lesson-head"><span class="num" aria-hidden="true">4</span><div><p class="sec-kicker" style="margin:0">Lesson 4 of 7</p><h2 id="h4l">Spotting red flags</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>4 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>Warning signs to watch for</li></ul></div>
+<div class="tbl"><table><thead><tr><th scope="col">Red flag</th><th scope="col">Example</th></tr></thead><tbody><tr><td>Unexplained wealth or cash</td><td>A client with modest income suddenly buys property for cash</td></tr><tr><td>Reluctance to provide information</td><td>Delays and excuses over ID or records</td></tr><tr><td>Transactions with no business sense</td><td>Money moving through accounts with no clear purpose</td></tr><tr><td>Unusual payments</td><td>Fees paid by an unconnected third party, or overpayments followed by refund requests</td></tr><tr><td>Records that don’t add up</td><td>Takings far higher than the business could plausibly generate</td></tr><tr><td>Pressure or secrecy</td><td>Urgency, or requests to avoid putting things in writing</td></tr></tbody></table></div><div class="callout"><span class="ci"><svg class="i"><use href="#i-help"/></svg></span><div><b>Suspicion is a low bar</b><p>You don’t need proof. If something makes you suspect money laundering, it should be reported internally.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-5">Next: reporting suspicions <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-5" data-lesson="5" aria-labelledby="h5l">
+<header class="lesson-head"><span class="num" aria-hidden="true">5</span><div><p class="sec-kicker" style="margin:0">Lesson 5 of 7</p><h2 id="h5l">Reporting suspicions, and tipping off</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>5 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What to do</li><li><svg class="i"><use href="#i-check"/></svg>What never to do</li></ul></div>
+<ol class="steps"><li>Report your suspicion <b>promptly</b> to the practice’s <b>MLRO</b> (Money Laundering Reporting Officer, also called the nominated officer), using the internal report form.</li><li>Don’t investigate further or confront the client.</li><li>The MLRO decides whether to make a <b>Suspicious Activity Report (SAR)</b> to the National Crime Agency.</li><li>If the work involves dealing with suspected criminal property, the MLRO may need to ask the NCA for a defence before the work continues.</li><li>Keep the report confidential and separate from the client file.</li></ol><div class="callout warn"><span class="ci"><svg class="i"><use href="#i-alert"/></svg></span><div><b>Tipping off is a crime</b><p>Never tell the client, or anyone else, that a report has been or might be made, or that they’re under investigation. Doing so can be a criminal offence.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-6">Next: records and training <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-6" data-lesson="6" aria-labelledby="h6l">
+<header class="lesson-head"><span class="num" aria-hidden="true">6</span><div><p class="sec-kicker" style="margin:0">Lesson 6 of 7</p><h2 id="h6l">Records and training</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>3 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>What to keep, and for how long</li></ul></div>
+<div class="tbl"><table><thead><tr><th scope="col">Keep</th><th scope="col">How long</th></tr></thead><tbody><tr><td>Due diligence records</td><td>5 years after the business relationship ends</td></tr><tr><td>Records of transactions</td><td>5 years from completion</td></tr><tr><td>Internal reports and MLRO decisions</td><td>As set out in the practice’s policy</td></tr><tr><td>Training records</td><td>Evidence that staff are trained</td></tr></tbody></table></div><div class="callout"><span class="ci"><svg class="i"><use href="#i-check"/></svg></span><div><b>Training</b><p>Everyone working on client matters must be trained on AML and the practice’s procedures, and refreshed regularly. Completing this course and keeping the certificate helps evidence that.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#lesson-7">Next: what changed in 2026 <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="lesson-7" data-lesson="7" aria-labelledby="h7l">
+<header class="lesson-head"><span class="num" aria-hidden="true">7</span><div><p class="sec-kicker" style="margin:0">Lesson 7 of 7</p><h2 id="h7l">What changed in 2026</h2><p class="lmeta"><span><svg class="i"><use href="#i-clock"/></svg>3 minutes</span></p></div></header>
+<div class="panel-body"><div class="learn"><b>In this lesson</b><ul><li><svg class="i"><use href="#i-check"/></svg>The 2026 amendments</li></ul></div>
+<p>The <b>Money Laundering and Terrorist Financing (Amendment) Regulations 2026</b> were made on 9 June 2026, and most changes came into force on <b>30 June 2026</b>. They tune the existing rules rather than replacing them.</p><div class="tbl"><table><thead><tr><th scope="col">Change</th><th scope="col">What it means</th></tr></thead><tbody><tr><td>Revised enhanced due diligence</td><td>More targeted, risk-based EDD requirements</td></tr><tr><td>High-risk third countries</td><td>A more proportionate approach</td></tr><tr><td>Off-the-shelf companies</td><td>Due diligence applies to any sale of a ready-made company</td></tr><tr><td>Digital identity</td><td>Government guidance on using certified digital identity services for checks</td></tr></tbody></table></div><div class="callout"><span class="ci"><svg class="i"><use href="#i-info"/></svg></span><div><b>Keep up to date</b><p>The CCAB Anti-Money Laundering Guidance for the Accountancy Sector remains the main reference. Check for the revised edition and the practice’s updated policy.</p></div></div>
+</div><footer class="lesson-foot"><button class="done-btn" type="button"></button><a class="next-btn" href="#cases">Next: case studies <svg class="i"><use href="#i-arrow"/></svg></a></footer></section><section class="panel" id="cases" aria-labelledby="hcases"><div class="panel-body">
+<p class="sec-kicker"><svg class="i"><use href="#i-pointer"/></svg>Practice</p><h2 id="hcases">Case studies</h2><p>Six realistic situations. Choose what you’d do.</p>
+<div class="cgame" id="cgame"></div><div class="score" id="cScore" aria-live="polite"></div></div></section>
+<section class="panel" id="quiz" aria-labelledby="hqz"><div class="panel-body"><p class="sec-kicker"><svg class="i"><use href="#i-help"/></svg>Check yourself</p><h2 id="hqz">Quick questions</h2><p>Pick an answer to see whether you’re right, and why.</p><div id="quizBody"></div><div class="score" id="quizScore" aria-live="polite"></div></div></section>
+<section class="panel" id="certificate" aria-labelledby="hct"><div class="panel-body"><p class="sec-kicker"><svg class="i"><use href="#i-award"/></svg>Certificate</p><h2 id="hct">Your certificate of completion</h2><div id="certArea"></div></div></section>
+<section class="panel" id="glossary" aria-labelledby="hglossary"><div class="panel-body"><p class="sec-kicker"><svg class="i"><use href="#i-list"/></svg>Reference</p><h2 id="hglossary">Words explained</h2><dl class="gloss"><dt>Beneficial owner</dt><dd>Someone who ultimately owns or controls a client, usually more than 25%.</dd><dt>CDD</dt><dd>Customer due diligence: identifying and verifying clients.</dd><dt>EDD</dt><dd>Enhanced due diligence for higher-risk situations.</dd><dt>MLRO</dt><dd>Money Laundering Reporting Officer, or nominated officer.</dd><dt>NCA</dt><dd>National Crime Agency, which receives SARs.</dd><dt>PEP</dt><dd>Politically exposed person.</dd><dt>SAR</dt><dd>Suspicious Activity Report.</dd><dt>Tipping off</dt><dd>Disclosing that a report has been or may be made.</dd></dl></div></section><section class="panel" id="sources" aria-labelledby="hsources"><div class="panel-body"><p class="sec-kicker"><svg class="i"><use href="#i-shield"/></svg>Sources</p><h2 id="hsources">Sources and last checked</h2><p><span class="pill"><svg class="i"><use href="#i-check"/></svg><span id="checkedDate">Facts last checked: 6 November 2026</span></span></p><p>Rules were checked against the sources below on that date. Always follow the practice’s own AML policy and your supervisor’s guidance.</p><ul class="src"><li><b>Money Laundering Regulations 2017, as amended by SI 2026/621</b><span>legislation.gov.uk, with summaries from the Law Society and UK compliance publishers. Used for lessons 1, 3 and 7.</span></li><li><b>Proceeds of Crime Act 2002 (failure to disclose; tipping off)</b><span>legislation.gov.uk. Used for lessons 1 and 5.</span></li><li><b>CCAB Anti-Money Laundering Guidance for the Accountancy Sector</b><span>CCAB. Used throughout.</span></li><li><b>Reform of AML supervision: FCA as single professional services supervisor</b><span>HM Treasury announcement (October 2025) and consultation response (June 2026). Used for lesson 1.</span></li></ul></div></section>
+</main></div>
+<footer><div class="foot-in"><div class="foot-brand"><svg aria-hidden="true"><use href="#logo"/></svg><div><b>Actua Business Services Limited</b><span>Tutorial series</span></div></div>
+<div class="foot-txt"><p><strong>By Shaun Ellison &amp; Actua Business Services Limited, with AI.</strong></p><p>© 2026 Actua Business Services Limited. Your progress is saved on this device only. For general guidance; not tax advice for your specific circumstances.</p><p>This course is independent and doesn’t replace the practice’s AML policy or your supervisor’s guidance.</p></div></div></footer>
+<dialog id="about" aria-labelledby="aboutTitle"><div class="dlg-head"><svg aria-hidden="true"><use href="#logo"/></svg><div><h2 id="aboutTitle">About this course</h2><span id="aboutVersion"></span></div></div>
+<div class="dlg-body"><p><b>Anti-Money Laundering for Small Practices</b></p><p>By Shaun Ellison &amp; Actua Business Services Limited, with AI. Part of the Actua Business Services Limited tutorial series for staff and clients.</p><p>Written with AI assistance. Facts were checked against official sources on the date shown in Sources. This is general guidance, not tax advice for your specific circumstances.</p><p>Works fully offline. Your progress and certificate name are stored on this device only; nothing is sent anywhere.</p><p>This course doesn’t replace the practice’s AML policy or supervisor guidance.</p>
+<button class="next-btn" style="border:0;font:inherit;font-weight:700;cursor:pointer" type="button" id="aboutClose">Close</button></div></dialog>
+<script>
+(function(){
+  "use strict";
+  /* ================= TUTORIAL CONFIG ================= */
+  var CONFIG = { title:"Anti-Money Laundering for Small Practices", version:"Version 1.0", checked:"6 November 2026", storageKey:"actua.aml" };
+  var LESSONS = [["Why anti-money laundering matters", 4], ["Risk assessment", 4], ["Customer due diligence", 6], ["Spotting red flags", 4], ["Reporting suspicions, and tipping off", 5], ["Records and training", 3], ["What changed in 2026", 3]];
+  var QUIZ = [{"q": "When must customer due diligence be completed?", "o": ["Before starting work", "Within a year", "Only for big clients"], "a": 0, "why": "Due diligence comes before the business relationship starts."}, {"q": "Who do you report a suspicion to?", "o": ["The client", "The practice’s MLRO", "Your friends"], "a": 1, "why": "Report internally to the MLRO, who decides whether to submit a SAR."}, {"q": "How long are due diligence records kept?", "o": ["1 year", "5 years after the relationship ends", "Forever"], "a": 1, "why": "Five years after the business relationship ends."}, {"q": "What is tipping off?", "o": ["Giving a client a discount", "Telling someone a report has been or may be made", "Reporting to the NCA"], "a": 1, "why": "Disclosing a report or investigation can be a criminal offence."}, {"q": "Which body will become the single AML supervisor for accountants?", "o": ["HMRC", "The Financial Conduct Authority", "Companies House"], "a": 1, "why": "The government confirmed the FCA will take on this role."}];
+  /* =================================================== */
+
+  var TOTAL = LESSONS.length;
+  var K_DONE = CONFIG.storageKey + ".done.v1", K_NAME = CONFIG.storageKey + ".name.v1", K_THEME = "actua.theme.v1";
+  function load(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function save(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls, txt){ var n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; }
+
+  $("aboutVersion").textContent = CONFIG.version + ", facts checked " + CONFIG.checked;
+  $("checkedDate").textContent = "Facts last checked: " + CONFIG.checked;
+  $("coverChecked").textContent = "Facts checked " + CONFIG.checked;
+
+  /* Theme */
+  var root = document.documentElement, themeBtn = $("themeBtn"), themeIcon = $("themeIcon");
+  function isDark(){ var t = root.getAttribute("data-theme"); if (t === "dark") return true; if (t === "light") return false; return !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches); }
+  function paintTheme(){ var d = isDark(); themeIcon.setAttribute("href", d ? "#i-sun" : "#i-moon"); themeBtn.setAttribute("aria-label", d ? "Switch to light mode" : "Switch to dark mode"); }
+  var st = load(K_THEME); if (st === "dark" || st === "light") root.setAttribute("data-theme", st);
+  paintTheme();
+  themeBtn.addEventListener("click", function(){ var n = isDark() ? "light" : "dark"; root.setAttribute("data-theme", n); save(K_THEME, n); paintTheme(); });
+
+  /* About */
+  var dlg = $("about");
+  $("aboutBtn").addEventListener("click", function(){ if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open",""); });
+  $("aboutClose").addEventListener("click", function(){ if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); });
+
+  /* Outline + drawer */
+  var outline = $("outline"), ol = $("outlineLessons"), menuBtn = $("menuBtn"), scrim = null;
+  LESSONS.forEach(function(L, i){
+    var n = i + 1, li = el("li"); li.dataset.for = n;
+    var a = el("a"); a.href = "#lesson-" + n;
+    var s = el("span","st", String(n)); s.setAttribute("aria-hidden","true");
+    a.appendChild(s); a.appendChild(el("span", null, L[0])); a.appendChild(el("span","mins", L[1] + " min"));
+    li.appendChild(a); ol.appendChild(li);
+  });
+  function openMenu(){ outline.classList.add("open"); menuBtn.setAttribute("aria-expanded","true"); scrim = el("div","scrim"); scrim.addEventListener("click", closeMenu); document.body.appendChild(scrim); var f = outline.querySelector("a"); if (f) f.focus(); }
+  function closeMenu(){ outline.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); if (scrim){ scrim.remove(); scrim = null; } }
+  menuBtn.addEventListener("click", function(){ outline.classList.contains("open") ? closeMenu() : openMenu(); });
+  $("menuClose").addEventListener("click", function(){ closeMenu(); menuBtn.focus(); });
+  outline.addEventListener("click", function(e){ if (e.target.closest("a")) closeMenu(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && outline.classList.contains("open")) { closeMenu(); menuBtn.focus(); } });
+
+  /* Scrollspy */
+  var links = Array.prototype.slice.call(outline.querySelectorAll("a"));
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          var id = "#" + en.target.id;
+          links.forEach(function(a){ a.setAttribute("aria-current", a.getAttribute("href") === id ? "true" : "false"); });
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll("main .panel[id]").forEach(function(p){ io.observe(p); });
+  }
+
+  /* Scenario cards */
+  (function(){
+    var C = [{"t": "New client, no ID yet", "x": "A new sole trader wants you to start their tax return today. They’ll “send ID later”.", "o": ["Start the work now", "Complete due diligence before starting work", "Refuse forever"], "a": 1, "why": "Due diligence must be completed before work starts. Explain politely and help them provide it."}, {"t": "Cash-rich café", "x": "A café client’s takings have tripled with no change in staff or opening hours. They can’t explain it.", "o": ["Ignore it; more profit means more fees", "Report your suspicion to the MLRO", "Ask the client if they’re laundering money"], "a": 1, "why": "Unexplained takings are a red flag. Report internally; never question the client about laundering."}, {"t": "Overpaid fee", "x": "A client pays your £600 invoice twice, from an account in another person’s name, and asks for the refund to go to a third account.", "o": ["Refund to the third account", "Speak to the MLRO before doing anything", "Keep the money"], "a": 1, "why": "Overpayments from third parties with refunds elsewhere are a classic red flag."}, {"t": "The client asks", "x": "After you report to the MLRO, the client asks why their accounts are taking so long.", "o": ["Tell them about the report", "Give a normal, truthful update without mentioning any report, and check with the MLRO", "Tell them they’re under investigation"], "a": 1, "why": "Anything hinting at a report could be tipping off. Ask the MLRO how to respond."}, {"t": "A Member of Parliament", "x": "A new client is an elected member of the UK Parliament, starting a consultancy business.", "o": ["Treat them as a politically exposed person and apply enhanced due diligence", "No checks needed", "Refuse to act"], "a": 0, "why": "They’re a PEP. Domestic PEPs start from lower risk than foreign PEPs, but enhanced due diligence still applies."}, {"t": "Register mismatch", "x": "While onboarding a company, you find its real 40% owner isn’t on the Companies House PSC register.", "o": ["Ignore it", "Report the discrepancy to Companies House, and consider whether it’s suspicious", "Update the register yourself"], "a": 1, "why": "Discrepancies with the PSC register must be reported to Companies House. Consider whether it’s also suspicious."}];
+    var host = $("cgame"), score = $("cScore"), done, right;
+    function build(){
+      host.innerHTML = ""; score.innerHTML = ""; done = 0; right = 0;
+      C.forEach(function(c, i){
+        var card = el("div","ccard"); card.appendChild(el("p","ct",(i+1)+". "+c.t));
+        if (c.mail){ var m = el("div","mail"); c.mail.forEach(function(line, j){ m.appendChild(el("p", j < 2 ? "mh" : null, line)); }); card.appendChild(m); }
+        if (c.x) card.appendChild(el("p","cx",c.x));
+        var bx = el("div","cbtns"); bx.setAttribute("role","group"); bx.setAttribute("aria-label","Answer for case "+(i+1));
+        var why = el("p","cwhy"); why.hidden = true; why.setAttribute("aria-live","polite");
+        c.o.forEach(function(o, oi){
+          var b = el("button", null, o); b.type = "button";
+          b.addEventListener("click", function(){
+            Array.prototype.forEach.call(bx.children, function(x){ x.disabled = true; }); b.classList.add("pick");
+            var ok = oi === c.a; card.classList.add(ok ? "right" : "wrong");
+            why.hidden = false; why.classList.toggle("miss", !ok);
+            why.textContent = (ok ? "Correct. " : "Not quite. ") + c.why;
+            done++; if (ok) right++;
+            if (done === C.length){ score.appendChild(el("span", null, "You got " + right + " out of " + C.length + ". " + (right === C.length ? "Excellent judgement." : "Review lessons 3 to 5, then try again."))); var a = el("button","ghost-btn","Try again"); a.type = "button"; a.addEventListener("click", build); score.appendChild(a); }
+          });
+          bx.appendChild(b);
+        });
+        card.appendChild(bx); card.appendChild(why); host.appendChild(card);
+      });
+    }
+    build();
+  })();
+  /* Progress */
+  var done = []; try { done = JSON.parse(load(K_DONE) || "[]"); if (!Array.isArray(done)) done = []; } catch(e){ done = []; }
+  var panels = Array.prototype.slice.call(document.querySelectorAll("[data-lesson]"));
+  function render(){
+    panels.forEach(function(sec){
+      var n = Number(sec.dataset.lesson), d = done.indexOf(n) !== -1, btn = sec.querySelector(".done-btn");
+      sec.classList.toggle("done", d);
+      btn.innerHTML = "";
+      var ic = document.createElementNS("http://www.w3.org/2000/svg","svg"); ic.setAttribute("class","i");
+      var u = document.createElementNS("http://www.w3.org/2000/svg","use"); u.setAttribute("href","#i-check"); ic.appendChild(u);
+      btn.appendChild(ic); btn.appendChild(document.createTextNode(d ? "Completed (select to undo)" : "Mark lesson " + n + " complete"));
+      btn.setAttribute("aria-pressed", d ? "true" : "false");
+      var li = ol.querySelector('li[data-for="' + n + '"]');
+      if (li){ li.classList.toggle("done", d); li.querySelector(".st").textContent = d ? "✓" : String(n); }
+    });
+    var c = done.length;
+    $("ringVal").setAttribute("stroke-dashoffset", String(100.53 * (1 - c / TOTAL)));
+    $("ringText").innerHTML = "<b>" + c + "</b> of " + TOTAL + " lessons";
+    renderCert();
+  }
+  panels.forEach(function(sec){
+    var n = Number(sec.dataset.lesson);
+    sec.querySelector(".done-btn").addEventListener("click", function(){
+      var i = done.indexOf(n); if (i === -1) done.push(n); else done.splice(i,1);
+      save(K_DONE, JSON.stringify(done)); render();
+    });
+  });
+
+  /* Certificate */
+  function renderCert(){
+    var area = $("certArea"); area.innerHTML = "";
+    var left = TOTAL - done.length;
+    if (left > 0){
+      var lock = el("div","cert-lock");
+      lock.innerHTML = '<svg class="i" style="width:1.6em;height:1.6em;color:var(--accent)"><use href="#i-award"/></svg>';
+      lock.appendChild(el("p", null, "Mark all " + TOTAL + " lessons complete to unlock your certificate. " + left + (left === 1 ? " lesson" : " lessons") + " to go."));
+      lock.querySelector("p").style.margin = "0";
+      area.appendChild(lock); return;
+    }
+    area.appendChild(el("p", null, "Well done, you’ve completed every lesson. Type your name as you’d like it to appear, then print or save it as a PDF."));
+    var form = el("div","cert-form");
+    var lab = el("label", null, "Your full name");
+    var inp = el("input"); inp.type = "text"; inp.autocomplete = "name"; inp.maxLength = 60; inp.value = load(K_NAME) || "";
+    lab.appendChild(inp); form.appendChild(lab);
+    var pr = el("button","next-btn"); pr.type = "button"; pr.style.border = "0"; pr.style.font = "inherit"; pr.style.fontWeight = "700"; pr.style.cursor = "pointer";
+    pr.innerHTML = '<svg class="i"><use href="#i-print"/></svg>'; pr.appendChild(document.createTextNode("Print certificate"));
+    form.appendChild(pr); area.appendChild(form);
+    var hint = el("p","figcap","If the print window doesn’t open, press Ctrl + P (Cmd + P on a Mac)."); area.appendChild(hint);
+
+    var card = el("div","cert"); card.id = "certCard";
+    var inner = el("div","cert-in");
+    inner.appendChild(el("p","ct","Actua Business Services Limited tutorial series"));
+    inner.appendChild(el("h3", null, "Certificate of completion"));
+    inner.appendChild(el("p", null, "This is to certify that"));
+    var nm = el("div","nm", inp.value || "Your name"); inner.appendChild(nm);
+    inner.appendChild(el("p", null, "has successfully completed the course"));
+    inner.appendChild(el("p","cc", CONFIG.title));
+    var dateStr = new Date().toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" });
+    var foot = el("div","cert-foot");
+    var l = el("div"); l.innerHTML = "<b>Date</b><br>"; l.appendChild(document.createTextNode(dateStr));
+    var m = el("div"); m.style.textAlign = "center"; m.innerHTML = '<svg aria-hidden="true"><use href="#logo-cert"/></svg>';
+    var r = el("div"); r.style.textAlign = "right"; r.innerHTML = "<b>Issued by</b><br>Actua Business Services Limited";
+    foot.appendChild(l); foot.appendChild(m); foot.appendChild(r);
+    inner.appendChild(foot);
+    inner.appendChild(el("p","figcap","By Shaun Ellison & Actua Business Services Limited, with AI. " + CONFIG.version + "."));
+    card.appendChild(inner); area.appendChild(card);
+
+    inp.addEventListener("input", function(){ nm.textContent = inp.value.trim() || "Your name"; save(K_NAME, inp.value.trim()); });
+    pr.addEventListener("click", function(){
+      root.classList.add("print-cert");
+      var cleanup = function(){ root.classList.remove("print-cert"); window.removeEventListener("afterprint", cleanup); };
+      window.addEventListener("afterprint", cleanup);
+      try { window.print(); } catch(e){}
+      setTimeout(cleanup, 4000);
+    });
+  }
+
+  /* Quiz */
+  var answered, right;
+  function buildQuiz(){
+    answered = 0; right = 0; var qb = $("quizBody"); qb.innerHTML = ""; $("quizScore").innerHTML = "";
+    QUIZ.forEach(function(item, qi){
+      var w = el("div","q"), qt = el("p","qt",(qi + 1) + ". " + item.q); qt.id = "qt" + qi; w.appendChild(qt);
+      var opts = el("div","opts"); opts.setAttribute("role","group"); opts.setAttribute("aria-labelledby","qt" + qi);
+      var why = el("p","why"); why.hidden = true; why.setAttribute("aria-live","polite");
+      item.o.forEach(function(text, oi){
+        var b = el("button","opt",text); b.type = "button";
+        b.addEventListener("click", function(){
+          var all = opts.querySelectorAll(".opt");
+          Array.prototype.forEach.call(all, function(x){ x.disabled = true; });
+          all[item.a].classList.add("right");
+          var ok = oi === item.a; if (!ok) b.classList.add("wrong");
+          why.hidden = false; why.classList.toggle("miss", !ok);
+          why.textContent = (ok ? "Correct. " : "Not quite. ") + item.why;
+          answered++; if (ok) right++;
+          if (answered === QUIZ.length) finish();
+        });
+        opts.appendChild(b);
+      });
+      w.appendChild(opts); w.appendChild(why); qb.appendChild(w);
+    });
+  }
+  function finish(){
+    var s = $("quizScore");
+    s.appendChild(el("span", null, "You scored " + right + " out of " + QUIZ.length + ". " + (right === QUIZ.length ? "Brilliant, you understand your AML duties." : "Look back at the lessons for any you missed, then try again.")));
+    var r = el("button","ghost-btn","Try again"); r.type = "button"; r.addEventListener("click", buildQuiz); s.appendChild(r);
+  }
+
+  buildQuiz();
+  render();
+})();
+</script>
+</body>
+</html>
